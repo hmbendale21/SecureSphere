@@ -53,3 +53,26 @@ body{
 .btn-primary:hover{
     background-color: #0096D6;
 }
+
+.hero{
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero h1{
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.hero p{
+    font-size: 1.2rem;
+    color: #B0BEC5;
+    max-width: 600px;
+}
+
+.hero-image img{
+    width: 100%;
+    max-width: 500px;
+}
