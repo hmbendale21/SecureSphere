@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #08111F;
+    color: white;
+}
+
+.navbar{
+    background: rgba(13, 27, 42, 0.9);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(0,180,255,0.15);
+    box-shadow: 0 4px 25px rgba(0,180,255,0.12);
+}
+
+.navbar-brand{
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #00B4FF !important;
+}
+
+.nav-link{
+    color: white !important;
+    font-weight: 500;
+    margin-left: 18px;
+    transition: 0.3s;
+}
+
+.nav-link:hover{
+    color: #00B4FF !important;
+}
+
+.btn-primary{
+    background-color: #00B4FF;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 22px;
+    font-weight: 600;
+}
+
+.btn-primary:hover{
+    background-color: #0096D6;
+}
