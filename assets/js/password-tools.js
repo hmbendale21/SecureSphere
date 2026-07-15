@@ -26,6 +26,8 @@ const lowercaseCheck = document.getElementById("lowercase");
 const numbersCheck = document.getElementById("numbers");
 const symbolsCheck = document.getElementById("symbols");
 const copyBtn = document.getElementById("copy-btn");
+const strengthBar = document.getElementById("strength-bar");
+const strengthText = document.getElementById("strength-text");
 
 function generatePassword() {
 
@@ -53,6 +55,46 @@ function generatePassword() {
         return;
     }
 
+    function checkPasswordStrength(password) {
+
+        let score = 0;
+    
+        if (password.length >= 12) score++;
+    
+        if (/[A-Z]/.test(password)) score++;
+    
+        if (/[a-z]/.test(password)) score++;
+    
+        if (/[0-9]/.test(password)) score++;
+    
+        if (/[^A-Za-z0-9]/.test(password)) score++;
+    
+        if (score <= 2) {
+    
+            strengthBar.style.width = "35%";
+            strengthBar.className = "progress-bar bg-danger";
+            strengthText.textContent = "🔴 Weak";
+    
+        }
+    
+        else if (score <= 4) {
+    
+            strengthBar.style.width = "70%";
+            strengthBar.className = "progress-bar bg-warning";
+            strengthText.textContent = "🟡 Medium";
+    
+        }
+    
+        else {
+    
+            strengthBar.style.width = "100%";
+            strengthBar.className = "progress-bar bg-success";
+            strengthText.textContent = "🟢 Strong";
+    
+        }
+    
+    }
+
     // Step 2: Get selected password length
     let passwordLength = Number(lengthSlider.value);
 
@@ -73,6 +115,7 @@ function generatePassword() {
     // Step 5: Display password
     passwordBox.value = password;
 
+    checkPasswordStrength(password);
 }
 
 generateBtn.addEventListener("click", generatePassword);
