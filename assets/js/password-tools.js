@@ -5,10 +5,10 @@
 // Password Display
 const passwordBox = document.getElementById("generated-password");
 const passphraseBox =
-document.getElementById("generated-passphrase");
+    document.getElementById("generated-passphrase");
 
 const copyPassphraseBtn =
-document.getElementById("copy-passphrase-btn");
+    document.getElementById("copy-passphrase-btn");
 // Generate Button
 const generateBtn = document.getElementById("generate-btn");
 
@@ -266,16 +266,35 @@ function getRandomWord() {
 
 function generatePassphrase() {
 
-    // Get two random words
-    const word1 = getRandomWord();
-    const word2 = getRandomWord();
+    // Number of words selected
+    const wordCount = Number(
+        document.getElementById("word-count").value
+    );
 
     // Get separator
     const separator =
         document.getElementById("separator").value;
 
-    // Create passphrase
-    let passphrase = word1 + separator + word2;
+    // Store generated words
+    const selectedWords = [];
+
+    // Generate required number of words
+    for (let i = 0; i < wordCount; i++) {
+
+        let word;
+
+        do {
+
+            word = getRandomWord();
+
+        } while (selectedWords.includes(word));
+
+        selectedWords.push(word);
+
+    }
+
+    // Join all words
+    let passphrase = selectedWords.join(separator);
 
     // Add random number
     if (document.getElementById("include-number").checked) {
