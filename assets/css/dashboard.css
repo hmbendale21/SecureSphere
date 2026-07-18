@@ -1,0 +1,414 @@
+body{
+    background: linear-gradient(135deg,#0b1120,#111827,#0d1117);
+    color:#ffffff;
+    font-family: "Segoe UI",sans-serif;
+    min-height:100vh;
+}
+
+.dashboard-hero{
+    padding:90px 0 60px;
+    text-align:center;
+    position:relative;
+}
+
+.dashboard-hero h1{
+    font-size:3.6rem;
+    font-weight:700;
+}
+
+.dashboard-hero p{
+    color:#9ca3af;
+    max-width:700px;
+    margin:auto;
+}
+
+
+.dashboard-content{
+
+    padding:60px 0;
+
+}
+
+.placeholder-card{
+
+    background:#161b22;
+
+    border-radius:15px;
+
+    padding:40px;
+
+    text-align:center;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.3);
+
+}
+
+.placeholder-card h2{
+
+    margin-bottom:20px;
+
+}
+
+.placeholder-card ul{
+
+    list-style:none;
+
+    padding:0;
+
+}
+
+.placeholder-card li{
+
+    padding:10px;
+
+    font-size:18px;
+
+}
+
+.dashboard-card{
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(88,166,255,.25);
+
+    border-radius:20px;
+
+    padding:30px;
+
+    transition:.35s;
+
+    overflow:hidden;
+
+    position:relative;
+
+}
+
+.dashboard-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#58a6ff;
+
+    box-shadow:
+
+    0 0 25px rgba(88,166,255,.25),
+
+    0 0 60px rgba(88,166,255,.15);
+
+}
+
+.dashboard-card h3{
+
+    color:#58a6ff;
+
+    font-weight:600;
+
+    margin-bottom:20px;
+
+}
+
+#securityScore{
+
+    font-size:70px;
+
+    color:#22c55e;
+
+    font-weight:bold;
+
+}
+
+.btn {
+    border-radius: 10px;
+    transition:3s;
+
+}
+
+.btn:hover{
+    transform:scale(1.04);
+}
+
+.news-list{
+
+    list-style:none;
+
+    padding:0;
+
+}
+
+.news-list li{
+
+    padding:12px;
+
+    margin:10px 0;
+
+    background:rgba(255,255,255,.03);
+
+    border-left:4px solid #58a6ff;
+
+    border-radius:8px;
+
+}
+
+#greeting{
+
+    color:#58a6ff;
+
+    margin-top:15px;
+
+}
+
+#currentDateTime{
+
+    color:#8b949e;
+
+    margin-bottom:20px;
+
+}
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    top:-200px;
+
+    left:-200px;
+
+    width:500px;
+
+    height:500px;
+
+    background:#2563eb;
+
+    filter:blur(180px);
+
+    opacity:.18;
+
+    z-index:-1;
+
+}
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    right:-150px;
+
+    bottom:-150px;
+
+    width:450px;
+
+    height:450px;
+
+    background:#06b6d4;
+
+    filter:blur(180px);
+
+    opacity:.15;
+
+    z-index:-1;
+
+}
+
+.dashboard-hero h2{
+
+    color:#58a6ff;
+
+    font-weight:300;
+
+    margin-bottom:25px;
+
+}
+
+.score-circle{
+
+    width:180px;
+
+    height:180px;
+
+    border-radius:50%;
+
+    border:8px solid #22c55e;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin:25px auto;
+
+    box-shadow:
+
+    0 0 20px rgba(34,197,94,.3);
+
+}
+
+h2{
+
+    font-weight:700;
+
+}
+
+.container .row h2{
+
+    color:#58a6ff;
+
+    font-weight:bold;
+
+}
+
+.container .row p{
+
+    color:#9ca3af;
+
+}
+
+/* ===========================
+   Premium Navbar
+=========================== */
+
+.custom-navbar{
+
+    background:rgba(13,17,23,.85);
+
+    backdrop-filter:blur(14px);
+
+    border-bottom:1px solid rgba(88,166,255,.15);
+
+    padding:12px 0;
+
+}
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    text-decoration:none;
+
+}
+
+.logo i{
+
+    font-size:34px;
+
+    color:#58a6ff;
+
+}
+
+.logo-text{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.logo-text span{
+
+    color:white;
+
+    font-size:22px;
+
+    font-weight:700;
+
+}
+
+.logo-text small{
+
+    color:#8b949e;
+
+    font-size:12px;
+
+}
+
+.nav-link{
+
+    color:#c9d1d9 !important;
+
+    margin:0 8px;
+
+    font-weight:500;
+
+    transition:.3s;
+
+    position:relative;
+
+}
+
+.nav-link:hover{
+
+    color:#58a6ff !important;
+
+}
+
+.nav-link.active{
+
+    color:#58a6ff !important;
+
+}
+
+.nav-link::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-8px;
+
+    width:0;
+
+    height:2px;
+
+    background:#58a6ff;
+
+    transition:.3s;
+
+}
+
+.nav-link:hover::after,
+
+.nav-link.active::after{
+
+    width:100%;
+
+}
+
+.theme-btn{
+
+    width:42px;
+
+    height:42px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#161b22;
+
+    color:#58a6ff;
+
+    transition:.3s;
+
+}
+
+.theme-btn:hover{
+
+    background:#58a6ff;
+
+    color:white;
+
+    transform:rotate(25deg);
+
+}
