@@ -93,21 +93,143 @@ passwordInput.addEventListener("input", function () {
     }
 
     score.innerHTML = passwordScore + " / 100";
+    updateStrength(passwordScore);
+    updateSuggestions(suggestionList);
+
+    let characterSet = 0;
+
+    if (/[a-z]/.test(password)) characterSet += 26;
+    if (/[A-Z]/.test(password)) characterSet += 26;
+    if (/[0-9]/.test(password)) characterSet += 10;
+    if (/[^A-Za-z0-9]/.test(password)) characterSet += 32;
+
+    let entropyValue = 0;
+
+    if (password.length > 0 && characterSet > 0) {
+        entropyValue = Math.round(password.length * Math.log2(characterSet));
+    }
+
+    entropy.innerHTML = entropyValue + " Bits";
+
+    if (passwordScore <= 20) {
+
+        riskLevel.innerHTML = "Very High";
+        riskLevel.className = "text-danger";
+    
+    }
+    else if (passwordScore <= 40) {
+    
+        riskLevel.innerHTML = "High";
+        riskLevel.className = "text-warning";
+    
+    }
+    else if (passwordScore <= 60) {
+    
+        riskLevel.innerHTML = "Medium";
+        riskLevel.className = "text-info";
+    
+    }
+    else if (passwordScore <= 80) {
+    
+        riskLevel.innerHTML = "Low";
+        riskLevel.className = "text-primary";
+    
+    }
+    else {
+    
+        riskLevel.innerHTML = "Very Low";
+        riskLevel.className = "text-success";
+    
+    }
+
+    if (entropyValue < 28) {
+
+        crackTime.innerHTML = "Instantly";
+    
+    }
+    else if (entropyValue < 36) {
+    
+        crackTime.innerHTML = "Few Minutes";
+    
+    }
+    else if (entropyValue < 60) {
+    
+        crackTime.innerHTML = "More than a hour";
+    
+    }
+    else if (entropyValue < 80) {
+    
+        crackTime.innerHTML = "Few Days";
+    
+    }
+    else {
+    
+        crackTime.innerHTML = "Several Months";
+    
+    }
+
+});
+
+function updateStrength(passwordScore) {
+
+    strengthBar.style.width = passwordScore + "%";
+
+    strengthBar.className = "progress-bar";
+
+    if (passwordScore <= 20) {
+
+        strengthBar.classList.add("bg-danger");
+        strengthText.innerHTML = "Very Weak";
+
+    }
+
+    else if (passwordScore <= 40) {
+
+        strengthBar.classList.add("bg-warning");
+        strengthText.innerHTML = "Weak";
+
+    }
+
+    else if (passwordScore <= 60) {
+
+        strengthBar.classList.add("bg-info");
+        strengthText.innerHTML = "Fair";
+
+    }
+
+    else if (passwordScore <= 80) {
+
+        strengthBar.classList.add("bg-primary");
+        strengthText.innerHTML = "Strong";
+
+    }
+
+    else {
+
+        strengthBar.classList.add("bg-success");
+        strengthText.innerHTML = "Very Strong";
+
+    }
+
+}
+
+function updateSuggestions(suggestionList) {
 
     suggestions.innerHTML = "";
 
-if (suggestionList.length === 0) {
+    if (suggestionList.length === 0) {
 
-    suggestions.innerHTML = "<li>Excellent password!</li>";
+        suggestions.innerHTML =
+            "<li class='text-success'>Excellent password!</li>";
 
-} else {
+        return;
 
-    suggestionList.forEach(function(item){
+    }
+
+    suggestionList.forEach(function (item) {
 
         suggestions.innerHTML += `<li>${item}</li>`;
 
     });
 
 }
-
-});
