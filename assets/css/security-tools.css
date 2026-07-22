@@ -11,6 +11,8 @@
     backdrop-filter: blur(14px);
     box-shadow: 0 8px 20px rgba(0,0,0,.25);
     height: 100%;
+    display:flex;
+    flex-direction:column;
 }
 
 .dashboard-card:hover{
@@ -47,11 +49,13 @@
 
 .dashboard-card p{
 
-    color:#b8c5d6;
+    color:#b6c2d0;
 
     line-height:1.8;
 
-    margin-bottom:25px;
+    font-size:.98rem;
+
+    margin-bottom:28px;
 
 }
 
@@ -76,5 +80,214 @@
 .dashboard-card .btn-primary:hover{
 
     background:#58a6ff;
+
+}
+
+.dashboard-card .tool-btn{
+
+    margin-top:auto;
+
+}
+
+.security-tools-section{
+
+    padding:50px 0 80px;
+
+}
+
+.tool-title{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    font-size:1.4rem;
+
+    margin-bottom:18px;
+
+}
+
+.tool-badge{
+
+    background:rgba(255,193,7,.18);
+
+    color:#facc15;
+
+    padding:6px 14px;
+
+    border-radius:20px;
+
+    font-size:.78rem;
+
+    border:1px solid rgba(255,193,7,.25);
+
+}
+
+.tool-btn{
+
+    margin-top:auto;
+
+    width:100%;
+
+    padding:14px;
+
+    border-radius:12px;
+
+    font-weight:600;
+
+    background:#58a6ff;
+
+    border:none;
+
+    color:white;
+
+    transition:.35s;
+
+}
+
+.tool-btn:hover{
+
+    background:#3b82f6;
+
+    transform:translateY(-3px);
+
+    box-shadow:0 12px 30px rgba(88,166,255,.30);
+
+}
+
+.featured-tool{
+
+    border:1px solid rgba(88,166,255,.45);
+
+    box-shadow:
+        0 0 35px rgba(88,166,255,.15);
+
+}
+
+/*=========================================
+    Statistics Section
+=========================================*/
+
+.security-stats{
+
+    padding:20px 0 60px;
+
+}
+
+.stat-card{
+
+    text-align:center;
+
+    padding:35px 20px;
+
+}
+
+.stat-icon{
+
+    font-size:2.7rem;
+
+    color:#58a6ff;
+
+    margin-bottom:20px;
+
+}
+
+.stat-card h3{
+
+    font-size:2.3rem;
+
+    color:#ffffff;
+
+    font-weight:700;
+
+    margin-bottom:10px;
+
+}
+
+.stat-card p{
+
+    margin:0;
+
+    color:#9ca3af;
+
+    font-size:1rem;
+
+}
+
+/*=========================================
+        Tool Header
+=========================================*/
+
+.tool-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:20px;
+
+}
+
+.tool-info{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+}
+
+.tool-icon{
+
+    font-size:2rem;
+
+    color:#58a6ff;
+
+}
+
+.tool-info h3{
+
+    margin:0;
+
+    color:#fff;
+
+    font-size:1.45rem;
+
+}
+
+.tool-status{
+
+    padding:6px 14px;
+
+    border-radius:30px;
+
+    font-size:.8rem;
+
+    font-weight:600;
+
+}
+
+.tool-status.live{
+
+    background:rgba(34,197,94,.15);
+
+    color:#22c55e;
+
+    border:1px solid rgba(34,197,94,.30);
+
+}
+
+.tool-status.upcoming{
+
+    background:rgba(250,204,21,.12);
+
+    color:#facc15;
+
+    border:1px solid rgba(250,204,21,.25);
 
 }
