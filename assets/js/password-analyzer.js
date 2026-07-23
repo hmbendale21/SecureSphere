@@ -1,3 +1,10 @@
+const checkUpper = document.getElementById("checkUpper");
+const checkLower = document.getElementById("checkLower");
+const checkNumber = document.getElementById("checkNumber");
+const checkSymbol = document.getElementById("checkSymbol");
+const checkLength = document.getElementById("checkLength");
+const checkRepeat = document.getElementById("checkRepeat");
+
 const passwordInput = document.getElementById("passwordInput");
 const togglePassword = document.getElementById("togglePassword");
 
@@ -103,8 +110,22 @@ passwordInput.addEventListener("input", function () {
     if (/[0-9]/.test(password)) characterSet += 10;
     if (/[^A-Za-z0-9]/.test(password)) characterSet += 32;
 
+    const hasUpper = /[A-Z]/.test(password);
+    const hasLower = /[a-z]/.test(password);
+    const hasNumber = /[0-9]/.test(password);
+    const hasSymbol = /[^A-Za-z0-9]/.test(password);
+    const hasLength = password.length >= 12;
+    const noRepeat = !/(.)\1{2,}/.test(password);
+
+
     let entropyValue = 0;
 
+    updateCheck(checkUpper, hasUpper, "Uppercase Letters");
+    updateCheck(checkLower, hasLower, "Lowercase Letters");
+    updateCheck(checkNumber, hasNumber, "Numbers");
+    updateCheck(checkSymbol, hasSymbol, "Special Characters");
+    updateCheck(checkLength, hasLength, "Minimum Length");
+    updateCheck(checkRepeat, noRepeat, "Repeated Characters");
     if (password.length > 0 && characterSet > 0) {
         entropyValue = Math.round(password.length * Math.log2(characterSet));
     }
@@ -115,57 +136,57 @@ passwordInput.addEventListener("input", function () {
 
         riskLevel.innerHTML = "Very High";
         riskLevel.className = "text-danger";
-    
+
     }
     else if (passwordScore <= 40) {
-    
+
         riskLevel.innerHTML = "High";
         riskLevel.className = "text-warning";
-    
+
     }
     else if (passwordScore <= 60) {
-    
+
         riskLevel.innerHTML = "Medium";
         riskLevel.className = "text-info";
-    
+
     }
     else if (passwordScore <= 80) {
-    
+
         riskLevel.innerHTML = "Low";
         riskLevel.className = "text-primary";
-    
+
     }
     else {
-    
+
         riskLevel.innerHTML = "Very Low";
         riskLevel.className = "text-success";
-    
+
     }
 
     if (entropyValue < 28) {
 
         crackTime.innerHTML = "Instantly";
-    
+
     }
     else if (entropyValue < 36) {
-    
+
         crackTime.innerHTML = "Few Minutes";
-    
+
     }
     else if (entropyValue < 60) {
-    
+
         crackTime.innerHTML = "More than a hour";
-    
+
     }
     else if (entropyValue < 80) {
-    
+
         crackTime.innerHTML = "Few Days";
-    
+
     }
     else {
-    
+
         crackTime.innerHTML = "Several Months";
-    
+
     }
 
 });
@@ -233,3 +254,65 @@ function updateSuggestions(suggestionList) {
     });
 
 }
+
+function updateCheck(element, condition, text) {
+
+    if (condition) {
+
+        element.innerHTML = `<i class="bi bi-check-circle-fill text-success"></i> ${text}`;
+    
+        element.style.borderColor = "#22c55e";
+        element.style.background = "rgba(34,197,94,0.12)";
+    
+    } else {
+    
+        element.innerHTML = `<i class="bi bi-x-circle-fill text-danger"></i> ${text}`;
+    
+        element.style.borderColor = "#ef4444";
+        element.style.background = "rgba(239,68,68,0.10)";
+    
+    }
+
+}
+
+const toggleBtn = document.getElementById("toolsToggle");
+const toolsContent = document.getElementById("toolsContent");
+const toggleIcon = document.getElementById("toggleIcon");
+
+toggleBtn.addEventListener("click", () => {
+
+    toolsContent.classList.toggle("show");
+
+    if (toolsContent.classList.contains("show")) {
+
+        toggleIcon.className = "bi bi-chevron-up";
+
+    } else {
+
+        toggleIcon.className = "bi bi-chevron-down";
+
+    }
+
+});
+
+const sidebarToggle = document.getElementById("sidebarToggle");
+const sidebarMenu = document.getElementById("sidebarMenu");
+const sidebarArrow = document.getElementById("sidebarArrow");
+
+sidebarToggle.addEventListener("click", () => {
+
+    sidebarMenu.classList.toggle("show");
+
+    if (sidebarMenu.classList.contains("show")) {
+
+        sidebarArrow.classList.remove("bi-chevron-right");
+        sidebarArrow.classList.add("bi-chevron-down");
+
+    } else {
+
+        sidebarArrow.classList.remove("bi-chevron-down");
+        sidebarArrow.classList.add("bi-chevron-right");
+
+    }
+
+}); 
