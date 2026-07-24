@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hash Generator | SecureSphere</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+    <link rel="stylesheet" href="../assets/css/hash-generator.css">
+
+</head>
+
+<body>
+
+    <!-- ========================= -->
+    <!-- Navbar -->
+    <!-- ========================= -->
+
+    <nav class="navbar navbar-expand-lg custom-navbar sticky-top">
+
+        <div class="container">
+
+            <!-- Logo -->
+            <a class="navbar-brand logo" href="../index.html">
+
+                <i class="bi bi-shield-lock-fill"></i>
+
+                <div class="logo-text">
+
+                    <span>SecureSphere</span>
+
+                    <small>Cybersecurity Platform</small>
+
+                </div>
+
+            </a>
+
+            <!-- Mobile Toggle -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <ul class="navbar-nav mx-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.html">Dashboard</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="password-tools.html">Password Tools</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active " href="security-tools.html">Security Tools</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Cyber News</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Learn Cyber</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+
+                </ul>
+
+                <div class="nav-actions">
+
+                    <button class="theme-btn">
+
+                        <i class="bi bi-moon-stars"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <!-- ========================= -->
+    <!-- Back Button -->
+    <!-- ========================= -->
+
+    <div class="container mt-4">
+
+        <a href="security-tools.html" class="back-btn">
+
+            <i class="bi bi-arrow-left"></i>
+
+            Back to Security Tools
+
+        </a>
+
+        <!-- Security Tools Sidebar -->
+
+        <div class="security-sidebar">
+
+            <button class="sidebar-toggle" id="sidebarToggle">
+
+                <div class="sidebar-title">
+
+                    <i class="bi bi-list"></i>
+
+                    <span>Security Tools</span>
+
+                </div>
+
+                <i class="bi bi-chevron-right" id="sidebarArrow"></i>
+
+            </button>
+
+            <div class="sidebar-menu" id="sidebarMenu">
+
+                <a href="password-analyzer.html" class="sidebar-link">
+
+                    <i class="bi bi-key"></i>
+
+                    Password Analyzer
+
+                </a>
+
+                <a href="hash-generator.html" class="sidebar-link active">
+
+                    <i class="bi bi-hash"></i>
+
+                    Hash Generator
+
+                </a>
+
+                <a href="#" class="sidebar-link disabled">
+
+                    <i class="bi bi-file-lock2"></i>
+
+                    File Hash
+
+                </a>
+
+                <a href="#" class="sidebar-link disabled">
+
+                    <i class="bi bi-link-45deg"></i>
+
+                    URL Encoder
+
+                </a>
+
+                <a href="#" class="sidebar-link disabled">
+
+                    <i class="bi bi-globe"></i>
+
+                    URL Checker
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ========================= -->
+    <!-- Hero -->
+    <!-- ========================= -->
+
+    <section class="dashboard-hero">
+
+        <div class="container text-center">
+
+            <h1 class="hero-title">
+
+                🔒 Hash Generator
+
+            </h1>
+
+            <h2 class="hero-subtitle">
+
+                Generate Secure Cryptographic Hashes
+
+            </h2>
+
+            <p class="hero-description">
+
+                Generate secure cryptographic hashes using SHA-256,
+                SHA-512, SHA-1 and MD5 algorithms.
+                A useful utility for developers, cybersecurity professionals
+                and digital forensic investigations.
+
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- Hash Generator -->
+    <!-- ========================= -->
+
+    <section class="hash-generator-section">
+
+        <div class="container">
+
+            <div class="row justify-content-center">
+
+                <div class="col-lg-9">
+
+                    <div class="dashboard-card hash-card fade-in">
+
+                        <h3>
+
+                            <i class="bi bi-shield-lock"></i>
+
+                            Hash Generator
+
+                        </h3>
+
+                        <!-- Input -->
+
+                        <div class="mb-4">
+
+                            <label class="form-label">
+
+                                Enter Text
+
+                            </label>
+
+                            <textarea class="form-control" id="inputText" rows="6"
+                                placeholder="Type or paste your text here..."></textarea>
+
+                        </div>
+
+                        <!-- Character Count -->
+
+                        <div class="text-end mb-4">
+
+                            <small id="charCount">
+
+                                Characters : 0
+
+                            </small>
+
+                        </div>
+
+                        <!-- Algorithm -->
+
+                        <label class="form-label">
+
+                            Select Algorithm
+
+                        </label>
+
+                        <div class="algorithm-grid">
+
+                            <label class="algorithm-option">
+
+                                <input type="radio" name="algorithm" value="SHA-256" checked>
+
+                                SHA-256
+
+                            </label>
+
+                            <label class="algorithm-option">
+
+                                <input type="radio" name="algorithm" value="SHA-512">
+
+                                SHA-512
+
+                            </label>
+
+                            <label class="algorithm-option">
+
+                                <input type="radio" name="algorithm" value="SHA-1">
+
+                                SHA-1
+
+                            </label>
+
+                            <label class="algorithm-option">
+
+                                <input type="radio" name="algorithm" value="MD5">
+
+                                MD5
+
+                            </label>
+
+                        </div>
+
+                        <!-- Buttons -->
+
+                        <div class="button-group">
+
+                            <button class="btn btn-primary" id="generateBtn">
+
+                                <i class="bi bi-lightning-charge-fill"></i>
+
+                                Generate Hash
+
+                            </button>
+
+                            <button class="btn btn-outline-light" id="clearBtn">
+
+                                <i class="bi bi-trash3"></i>
+
+                                Clear
+
+                            </button>
+
+                        </div>
+
+                        <hr>
+
+                        <!-- Output -->
+
+                        <h4 class="output-title">
+
+                            Generated Hash
+
+                        </h4>
+
+                        <textarea class="form-control output-box" id="hashOutput" rows="5" readonly
+                            placeholder="Generated hash will appear here..."></textarea>
+
+                        <div class="button-group mt-4">
+
+                            <button class="btn btn-success" id="copyBtn">
+
+                                <i class="bi bi-clipboard"></i>
+
+                                Copy
+
+                            </button>
+
+                            <button class="btn btn-info" id="downloadBtn">
+
+                                <i class="bi bi-download"></i>
+
+                                Download
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/hash-generator.js"></script>
+
+</body>
+
+</html>
