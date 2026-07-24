@@ -275,25 +275,6 @@ function updateCheck(element, condition, text) {
 
 }
 
-const toggleBtn = document.getElementById("toolsToggle");
-const toolsContent = document.getElementById("toolsContent");
-const toggleIcon = document.getElementById("toggleIcon");
-
-toggleBtn.addEventListener("click", () => {
-
-    toolsContent.classList.toggle("show");
-
-    if (toolsContent.classList.contains("show")) {
-
-        toggleIcon.className = "bi bi-chevron-up";
-
-    } else {
-
-        toggleIcon.className = "bi bi-chevron-down";
-
-    }
-
-});
 
 const sidebarToggle = document.getElementById("sidebarToggle");
 const sidebarMenu = document.getElementById("sidebarMenu");
@@ -305,14 +286,12 @@ sidebarToggle.addEventListener("click", () => {
 
     if (sidebarMenu.classList.contains("show")) {
 
-        sidebarArrow.classList.remove("bi-chevron-right");
-        sidebarArrow.classList.add("bi-chevron-down");
+        sidebarArrow.className = "bi bi-chevron-down";
 
     } else {
 
-        sidebarArrow.classList.remove("bi-chevron-down");
-        sidebarArrow.classList.add("bi-chevron-right");
+        sidebarArrow.className = "bi bi-chevron-right";
 
     }
 
-}); 
+});
