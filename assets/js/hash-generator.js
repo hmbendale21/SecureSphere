@@ -96,15 +96,17 @@ try {
     if (selectedAlgorithm === "MD5") {
 
         hash = CryptoJS.MD5(text).toString();
-
+    
     } else {
-
+    
         hash = await generateHash(text, selectedAlgorithm);
-
+    
     }
-
+    
+    hashOutput.value = hash;
+    
     hashOutput.select();
-
+    
     showToast(`${selectedAlgorithm} hash generated successfully!`);
 
 } catch (error) {
@@ -214,6 +216,10 @@ downloadBtn.addEventListener("click", () => {
         return;
 
     }
+
+    const selectedAlgorithm = document.querySelector(
+        'input[name="algorithm"]:checked'
+    ).value;
 
     const blob = new Blob([hash], {
         type: "text/plain"
