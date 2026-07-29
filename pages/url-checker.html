@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Url-Encoder | SecureSphere</title>
+    <title>URL Checker | SecureSphere</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="../assets/css/dashboard.css">
-    <link rel="stylesheet" href="../assets/css/url-encoder.css">
+    <link rel="stylesheet" href="../assets/css/url-checker.css">
 
 </head>
 
@@ -172,7 +172,7 @@
 
                 <a href="url-checker.html" class="sidebar-link active">
 
-                    <i class="bi bi-search"></i>
+                    <i class="bi bi-shield-check"></i>
 
                     URL Checker
 
@@ -194,20 +194,19 @@
 
             <h1 class="hero-title">
 
-                🔗 URL Encoder / Decoder
-
+                🔍 URL Security Checker
             </h1>
 
             <h2 class="hero-subtitle">
 
-                Encode and Decode URLs Safely
-
+                Analyze URLs for Security Risks
             </h2>
 
             <p class="hero-description">
 
-                Convert text into URL-safe format or decode encoded URLs.
-                Useful for web development, APIs, cybersecurity testing, and handling special characters safely.
+                Analyze websites for common security indicators including HTTPS usage,
+                domain information, suspicious patterns,
+                URL length, and overall risk before visiting a website.
 
             </p>
         </div>
@@ -215,7 +214,7 @@
     </section>
 
     <!-- ========================= -->
-    <!-- URL Encoder / Decoder -->
+    <!--URL Security Checker -->
     <!-- ========================= -->
 
     <section class="hash-generator-section">
@@ -230,9 +229,9 @@
 
                         <h3>
 
-                            <i class="bi bi-shield-lock"></i>
+                            <i class="bi bi-search"></i>
 
-                            URL Encoder / Decoder
+                            Analyze URL
 
                         </h3>
 
@@ -242,12 +241,12 @@
 
                             <label class="form-label">
 
-                                Enter Text
+                                Enter Website URL
 
                             </label>
 
                             <textarea class="form-control" id="inputText" rows="6"
-                                placeholder="Enter a URL or Plain  text..."></textarea>
+                                placeholder="https://example.com/login"></textarea>
 
                         </div>
 
@@ -262,43 +261,23 @@
                             </small>
 
                         </div>
-
-                        <label class="form-label">
-
-                            Select Operation
-
-                        </label>
-
-                        <div class="algorithm-grid">
-
-                            <label class="algorithm-option">
-
-                                <input type="radio" name="operation" value="encode" checked>
-
-                                URL Encode
-
-                            </label>
-
-                            <label class="algorithm-option">
-
-                                <input type="radio" name="operation" value="decode">
-
-                                URL Decode
-
-                            </label>
-
-                        </div>
-
                         <!-- Buttons -->
 
                         <div class="button-group">
 
                             <button class="btn btn-primary" id="generateBtn">
 
-                                <i class="bi bi-lightning-charge-fill"></i>
+                                <i class="bi bi-search"></i>
+                                Analyze URL
+                                <div class="progress mt-4">
 
-                                Process Text
-
+                                    <div class="progress-bar" id="riskBar" style="width:0%">
+    
+                                        0%
+    
+                                    </div>
+    
+                                </div>
                             </button>
 
                             <button class="btn btn-outline-light" id="clearBtn">
@@ -312,40 +291,43 @@
                         </div>
 
                         <hr>
-
-                        <div id="statusMessage" class="alert d-none mt-3"></div>
-
                         <!-- Output -->
 
                         <h4 class="output-title">
 
-                            Processed Output
+                            Analysis Report
 
                         </h4>
-                        <textarea class="form-control output-box" id="hashOutput" rows="5" readonly
-                            placeholder="Encoded or decoded URL will appear here..."></textarea>
+                        <textarea class="form-control output-box font-monospace" id="hashOutput" rows="12" readonly
+                            placeholder="URL security report will appear here..."></textarea>
+
+                        <div class="alert alert-success text-center mt-4" id="verdictBadge">
+
+                            Waiting for Analysis...
+
+                        </div>
 
                         <hr class="my-4">
 
                         <h4 class="output-title">
 
-                            <i class="bi bi-info-circle-fill"></i>
+                            <i class="bi bi-shield-check"></i>
 
-                            Encoding Information
+                            URL Analysis Details
 
                         </h4>
 
                         <div class="row g-3">
 
-                            <div class="col-md-6">
+                            <div class="col-md-4">
 
                                 <div class="dashboard-card p-3">
 
-                                    <h6>Operation</h6>
+                                    <h6>Protocol</h6>
 
-                                    <p id="operationType">
+                                    <p id="protocol">
 
-                                        Encode
+                                        --
 
                                     </p>
 
@@ -353,15 +335,15 @@
 
                             </div>
 
-                            <div class="col-md-6">
+                            <div class="col-md-4">
 
                                 <div class="dashboard-card p-3">
 
-                                    <h6>Output Format</h6>
+                                    <h6>Domain</h6>
 
-                                    <p id="outputFormat">
+                                    <p id="domain">
 
-                                        Percent Encoded
+                                        --
 
                                     </p>
 
@@ -369,15 +351,15 @@
 
                             </div>
 
-                            <div class="col-md-6">
+                            <div class="col-md-4">
 
                                 <div class="dashboard-card p-3">
 
-                                    <h6>Purpose</h6>
+                                    <h6>Top Level Domain</h6>
 
-                                    <p id="purpose">
+                                    <p id="tld">
 
-                                        Safe URL Transmission
+                                        --
 
                                     </p>
 
@@ -385,20 +367,100 @@
 
                             </div>
 
-                            <div class="col-md-6">
+                            <div class="col-md-4">
 
                                 <div class="dashboard-card p-3">
 
-                                    <h6>Common Usage</h6>
+                                    <h6>URL Length</h6>
 
-                                    <p id="usage">
+                                    <p id="urlLength">
 
-                                        Query Parameters, REST APIs
+                                        0
+
                                     </p>
 
                                 </div>
 
                             </div>
+
+                            <div class="col-md-4">
+
+                                <div class="dashboard-card p-3">
+
+                                    <h6>HTTPS</h6>
+
+                                    <p id="httpsStatus">
+
+                                        --
+
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-4">
+
+                                <div class="dashboard-card p-3">
+
+                                    <h6>Risk Level</h6>
+
+                                    <p id="riskLevel">
+
+                                        Waiting...
+
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="dashboard-card p-3">
+                                    <h6>Risk Score</h6>
+                                    <p id="riskScore">0 / 100</p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="dashboard-card p-3">
+                                    <h6>IP Address</h6>
+                                    <p id="ipStatus">No</p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+
+                                <div class="dashboard-card p-3">
+
+                                    <h6>Suspicious Keywords</h6>
+
+                                    <p id="keywordCount">
+
+                                        0
+
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-4">
+
+                                <div class="dashboard-card p-3">
+
+                                    <h6>Scan Time</h6>
+
+                                    <p id="scanTime">
+
+                                        0 ms
+
+                                    </p>
+
+                                </div>
+
+                            </div>
+
 
                         </div>
 
@@ -406,16 +468,24 @@
 
                         <h4 class="output-title">
                             <i class="bi bi-shield-check"></i>
-                            URL Encoding Information
+                            URL Security Tips
                         </h4>
 
-                        <div class="alert alert-info" id="securityTip">
+                        <div class="alert alert-warning" id="securityTip">
 
-                            <strong>Important:</strong>
+                            <strong>Security Tip:</strong><br>
 
-                            URL Encoding is NOT encryption.
+                            ✔ Verify the domain name carefully. <br>
 
-                            It only converts unsafe URL characters into a browser-safe format.
+                            ✔ Avoid clicking shortened links from unknown sources.<br>
+
+                            ✔ Never enter passwords on HTTP websites.<br>
+
+                            ✔ HTTPS improves security but does not guarantee legitimacy.<br>
+
+                            ✔ Check for spelling mistakes in domains.<br>
+
+                            HTTPS improves security but does not guarantee a website is legitimate.
 
                         </div>
 
@@ -479,7 +549,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js"></script>
-    <script src="../assets/js/url-encoder.js"></script>
+    <script src="../assets/js/url-checker.js"></script>
 
 </body>
 
