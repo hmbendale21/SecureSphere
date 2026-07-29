@@ -31,13 +31,16 @@ const copyBtn = document.getElementById("copyBtn");
 const downloadBtn = document.getElementById("downloadBtn");
 
 const outputBox = document.getElementById("hashOutput");
-
 const protocol = document.getElementById("protocol");
 const domain = document.getElementById("domain");
 const tld = document.getElementById("tld");
 const urlLength = document.getElementById("urlLength");
 const httpsStatus = document.getElementById("httpsStatus");
 const riskLevel = document.getElementById("riskLevel");
+const riskScore = document.getElementById("riskScore");
+const keywordCount = document.getElementById("keywordCount");
+const ipStatus = document.getElementById("ipStatus");
+const riskBar = document.getElementById("riskBar");
 
 const securityTip = document.getElementById("securityTip");
 
@@ -63,7 +66,7 @@ const toastMessage = document.getElementById("toastMessage");
 
 const toast = new bootstrap.Toast(liveToast);
 
-function showToast(message){
+function showToast(message) {
 
     toastMessage.textContent = message;
 
@@ -73,14 +76,14 @@ function showToast(message){
 
 
 /* ======================================
-   URL Checker
+   Analyze Button
 ====================================== */
 
 generateBtn.addEventListener("click", () => {
 
-    const text = inputText.value.trim();
+    const url = inputText.value.trim();
 
-    if(text === ""){
+    if (url === "") {
 
         showToast("Please enter a URL.");
 
@@ -92,12 +95,14 @@ generateBtn.addEventListener("click", () => {
 
     generateBtn.innerHTML = `
         <span class="spinner-border spinner-border-sm me-2"></span>
-        Analyzing...
+        Scanning...
     `;
+
+    const startTime = performance.now();
 
     setTimeout(() => {
 
-        analyzeURL(text);
+        scanURL(url, startTime);
 
         generateBtn.disabled = false;
 
@@ -106,126 +111,124 @@ generateBtn.addEventListener("click", () => {
             Analyze URL
         `;
 
-    },300);
+    }, 300);
 
 });
 
 
 /* ======================================
-   URL Analysis
+   Main Scanner
 ====================================== */
 
-function analyzeURL(url){
+function scanURL(userURL, startTime) {
 
-    let report = "";
+    try {
 
-    let risk = 0;
+        userURL = userURL.trim();
 
-    try{
+        if (userURL === "") {
 
-        let formattedURL = url;
+            showToast("Please enter a URL.");
 
-        if(
-            !formattedURL.startsWith("http://") &&
-            !formattedURL.startsWith("https://")
-        ){
-
-            formattedURL = "https://" + formattedURL;
+            return;
 
         }
 
-        const parsed = new URL(formattedURL);
+        if (!/^https?:\/\//i.test(userURL)) {
 
-        protocol.textContent = parsed.protocol.replace(":","");
+            userURL = "https://" + userURL;
 
-        domain.textContent = parsed.hostname;
+        }
 
-        const parts = parsed.hostname.split(".");
+        const parsed = new URL(userURL);
 
-        tld.textContent = parts[parts.length-1];
+        let risk = 0;
+
+        let suspiciousWords = [];
+
+        /* -----------------------
+           Basic Information
+        ----------------------- */
+
+        protocol.textContent =
+            parsed.protocol.replace(":", "").toUpperCase();
+
+            domain.textContent =
+            parsed.hostname.replace(/^www\./, "");
+
+        tld.textContent =
+            "." + parsed.hostname.split(".").pop();
 
         urlLength.textContent =
-            formattedURL.length + " Characters";
+            userURL.length + " Characters";
 
-        if(parsed.protocol === "https:"){
+        /* -----------------------
+           HTTPS
+        ----------------------- */
+
+        if (parsed.protocol === "https:") {
 
             httpsStatus.innerHTML =
-                "<span class='text-success'>Secure (HTTPS)</span>";
-
-            report += "HTTPS : Yes\n";
-
+                '<span class="text-success fw-bold">✔ Secure</span>';
         }
 
-        else{
+        else {
 
             httpsStatus.innerHTML =
-                "<span class='text-danger'>Not Secure (HTTP)</span>";
-
-            report += "HTTPS : No\n";
-
+                '<span class="text-danger fw-bold">✖ Not Secure</span>';
             risk += 30;
 
         }
 
-
-        report +=
-`Protocol : ${parsed.protocol}
-
-Domain : ${parsed.hostname}
-
-Top Level Domain : .${parts[parts.length-1]}
-
-URL Length : ${formattedURL.length}
-
-`;
-
-        /* IP Address Detection */
+        /* -----------------------
+           IP Address
+        ----------------------- */
 
         const ipRegex =
-        /^(\d{1,3}\.){3}\d{1,3}$/;
+            /^(\d{1,3}\.){3}\d{1,3}$/;
 
-        if(ipRegex.test(parsed.hostname)){
+        if (ipRegex.test(parsed.hostname)) {
 
-            report +=
-"Warning : Uses IP Address\n";
+            ipStatus.innerHTML =
+                "<span class='text-danger'>Yes</span>";
 
             risk += 25;
 
         }
 
-        /* Suspicious Keywords */
+        else {
+
+            ipStatus.innerHTML =
+                "<span class='text-success'>No</span>";
+
+        }
+
+        /* -----------------------
+           Keywords
+        ----------------------- */
 
         const keywords = [
 
             "login",
-
             "verify",
-
-            "secure",
-
             "update",
-
+            "password",
             "bank",
-
-            "account",
-
             "signin",
-
-            "password"
+            "secure",
+            "account"
 
         ];
 
-        let found = [];
+        keywords.forEach(word => {
 
-        keywords.forEach(word=>{
+            if (
+                userURL
+                    .toLowerCase()
+                    .includes(word)
+            ) {
 
-            if(
-                formattedURL
-                .toLowerCase()
-                .includes(word)
-            ){
-
-                found.push(word);
+                suspiciousWords.push(word);
 
                 risk += 5;
 
@@ -233,148 +236,392 @@ URL Length : ${formattedURL.length}
 
         });
 
-        if(found.length>0){
+        keywordCount.textContent =
+            suspiciousWords.length;
 
-            report +=
-`Suspicious Words : ${found.join(", ")}\n`;
+        /* -----------------------
+           Long URL
+        ----------------------- */
 
-        }
+        if (userURL.length > 120) {
 
-        else{
-
-            report +=
-"Suspicious Words : None\n";
-
-        }
-
-        /* Long URL */
-
-        if(formattedURL.length>120){
-
-            risk +=20;
-
-            report +=
-"Long URL Detected\n";
+            risk += 20;
 
         }
 
-        /* @ Symbol */
+        /* -----------------------
+           @ Symbol
+        ----------------------- */
 
-        if(formattedURL.includes("@")){
+        if (userURL.includes("@")) {
 
-            risk +=20;
-
-            report +=
-"Contains @ Symbol\n";
+            risk += 20;
 
         }
 
-        /* Double Slash */
+        /* -----------------------
+           Multiple //
+        ----------------------- */
 
-        if(
-            formattedURL.substring(8).includes("//")
-        ){
+        if (
+            userURL.substring(8).includes("//")
+        ) {
 
-            risk +=10;
-
-            report +=
-"Contains Multiple //\n";
+            risk += 10;
 
         }
 
         performAdvancedChecks(
+
             parsed,
-            formattedURL,
-            found,
-            risk
+
+            userURL,
+
+            suspiciousWords,
+
+            risk,
+
+            startTime
+
         );
-        
-        outputBox.select();
-        
-        showToast("Analysis completed.");
 
     }
 
-    catch{
+    catch (error) {
 
-        showToast("Invalid URL.");
+        console.error("Actual Error:", error);
 
-    }
-
-}
-/* ======================================
-   Risk Level
-====================================== */
-
-function updateRisk(risk){
-
-    if(risk <= 10){
-
-        riskLevel.innerHTML =
-        "<span class='text-success'>SAFE</span>";
-
-        securityTip.innerHTML = `
-        <strong>Security Tip:</strong><br>
-        This URL appears safe based on basic checks.
-        Always verify the website before entering
-        personal information.
-        `;
+        alert(error.message);
 
     }
-
-    else if(risk <= 30){
-
-        riskLevel.innerHTML =
-        "<span class='text-warning'>LOW RISK</span>";
-
-        securityTip.innerHTML = `
-        <strong>Security Tip:</strong><br>
-        Some minor suspicious indicators were found.
-        Double-check the website before proceeding.
-        `;
-
-    }
-
-    else if(risk <= 60){
-
-        riskLevel.innerHTML =
-        "<span class='text-warning'>MEDIUM RISK</span>";
-
-        securityTip.innerHTML = `
-        <strong>Warning:</strong><br>
-        This URL contains multiple suspicious indicators.
-        Be careful before opening it.
-        `;
-
-    }
-
-    else{
-
-        riskLevel.innerHTML =
-        "<span class='text-danger'>HIGH RISK</span>";
-
-        securityTip.innerHTML = `
-        <strong>Danger!</strong><br>
-        This URL looks highly suspicious.
-        Avoid entering passwords or financial details.
-        `;
-
-    }
-
 }
 
-document.getElementById("riskScore").textContent = `${risk} / 100`;
-
-
 /* ======================================
-   Copy Output
+   Advanced Security Analysis
 ====================================== */
 
-copyBtn.addEventListener("click", async()=>{
+function performAdvancedChecks(
+    parsed,
+    userURL,
+    suspiciousWords,
+    risk,
+    startTime
+) {
 
-    const text = outputBox.value.trim();
+    /* -----------------------------
+       Shortened URL Detection
+    ----------------------------- */
 
-    if(text===""){
+    const shorteners = [
+
+        "bit.ly",
+        "tinyurl.com",
+        "t.co",
+        "goo.gl",
+        "ow.ly",
+        "is.gd",
+        "buff.ly",
+        "cutt.ly"
+
+    ];
+
+    if (shorteners.some(site => parsed.hostname.includes(site))) {
+
+        risk += 25;
+
+    }
+
+    /* -----------------------------
+       Fake HTTPS in Domain
+    ----------------------------- */
+
+    const host = parsed.hostname.toLowerCase();
+
+    if (
+        host.includes("https") ||
+        host.includes("secure") ||
+        host.includes("login")
+    ) {
+
+        risk += 10;
+
+    }
+
+    /* -----------------------------
+       Too Many Hyphens
+    ----------------------------- */
+
+    const hyphenCount =
+        (host.match(/-/g) || []).length;
+
+    if (hyphenCount >= 3) {
+
+        risk += 15;
+
+    }
+
+    /* -----------------------------
+       Limit Risk
+    ----------------------------- */
+
+    risk = Math.min(risk, 100);
+
+    /* -----------------------------
+       Risk Score
+    ----------------------------- */
+
+    riskScore.textContent =
+        `${risk} / 100`;
+
+    /* -----------------------------
+       Progress Bar
+    ----------------------------- */
+
+    if (riskBar) {
+
+        riskBar.style.width =
+            risk + "%";
+
+        riskBar.textContent =
+            risk + "%";
+
+        riskBar.className =
+            "progress-bar";
+
+        if (risk <= 20) {
+
+            riskBar.classList.add(
+                "bg-success"
+            );
+
+        }
+
+        else if (risk <= 40) {
+
+            riskBar.classList.add(
+                "bg-info"
+            );
+
+        }
+
+        else if (risk <= 60) {
+
+            riskBar.classList.add(
+                "bg-warning"
+            );
+
+        }
+
+        else {
+
+            riskBar.classList.add(
+                "bg-danger"
+            );
+
+        }
+
+    }
+
+    /* -----------------------------
+       Verdict
+    ----------------------------- */
+
+    let verdict = "";
+
+    let badgeClass = "";
+
+    if (risk <= 20) {
+
+        verdict = "🟢 SAFE";
+
+        badgeClass = "alert-success";
+
+    }
+
+    else if (risk <= 40) {
+
+        verdict = "🟡 LOW RISK";
+
+        badgeClass = "alert-info";
+
+    }
+
+    else if (risk <= 60) {
+
+        verdict = "🟠 MEDIUM RISK";
+
+        badgeClass = "alert-warning";
+
+    }
+
+    else {
+
+        verdict = "🔴 HIGH RISK";
+
+        badgeClass = "alert-danger";
+
+    }
+
+    riskLevel.textContent =
+        verdict;
+
+    /* -----------------------------
+       Verdict Badge
+    ----------------------------- */
+
+    const verdictBadge =
+        document.getElementById("verdictBadge");
+
+    if (verdictBadge) {
+
+        verdictBadge.className =
+            `alert ${badgeClass} text-center mt-4`;
+
+        verdictBadge.innerHTML =
+            `<strong>${verdict}</strong>`;
+
+    }
+
+    /* -----------------------------
+       Scan Time
+    ----------------------------- */
+
+    const endTime =
+        performance.now();
+
+    const scanTime =
+        document.getElementById("scanTime");
+
+    if (scanTime) {
+
+        scanTime.textContent =
+            `${(endTime - startTime).toFixed(2)} ms`;
+
+    }
+
+    /* -----------------------------
+       Security Tips
+    ----------------------------- */
+
+    if (risk <= 20) {
+
+        securityTip.innerHTML = `
+
+<strong>✔ Safe Website</strong><br>
+
+• HTTPS is enabled.<br>
+
+• No major suspicious indicators found.<br>
+
+• Still verify before entering sensitive information.
+
+`;
+
+    }
+
+    else if (risk <= 60) {
+
+        securityTip.innerHTML = `
+
+<strong>⚠ Be Careful</strong><br>
+
+• Some suspicious indicators were detected.<br>
+
+• Verify the website carefully before logging in.
+
+`;
+
+    }
+
+    else {
+
+        securityTip.innerHTML = `
+
+<strong>🚨 High Risk Website</strong><br>
+
+• Multiple suspicious indicators detected.<br>
+
+• Avoid entering passwords or payment details.
+
+`;
+
+    }
+
+    /* -----------------------------
+       Professional Report
+    ----------------------------- */
+
+    outputBox.value =
+
+        `========================================
+SecureSphere URL Security Report
+========================================
+
+URL
+----------------------------------------
+${userURL}
+
+Protocol
+----------------------------------------
+${parsed.protocol.replace(":",'')};
+
+Domain
+----------------------------------------
+${parsed.hostname}
+
+Top Level Domain
+----------------------------------------
+.${parsed.hostname.split(".").pop()}
+
+HTTPS
+----------------------------------------
+${parsed.protocol === "https:" ? "Yes" : "No"}
+
+IP Address
+----------------------------------------
+${ipStatus.innerText}
+
+Suspicious Keywords
+----------------------------------------
+${suspiciousWords.length ?
+            suspiciousWords.join(", ")
+            :
+            "None"}
+
+URL Length
+----------------------------------------
+${userURL.length} Characters
+
+Risk Score
+----------------------------------------
+${risk}/100
+
+Overall Verdict
+----------------------------------------
+${verdict}
+
+Scan Time
+----------------------------------------
+${(endTime - startTime).toFixed(2)} ms
+
+Generated By
+----------------------------------------
+SecureSphere
+
+========================================`;
+    showToast("URL analysis completed successfully.");
+
+}
+
+/* ======================================
+   Copy Report
+====================================== */
+
+copyBtn.addEventListener("click", async () => {
+
+    const report = outputBox.value.trim();
+
+    if (report === "") {
 
         showToast("Nothing to copy.");
 
@@ -382,36 +629,36 @@ copyBtn.addEventListener("click", async()=>{
 
     }
 
-    try{
+    try {
 
-        await navigator.clipboard.writeText(text);
-
-        showToast("Copied successfully!");
+        await navigator.clipboard.writeText(report);
 
         const original = copyBtn.innerHTML;
 
         copyBtn.innerHTML = `
-        <i class="bi bi-check-circle-fill"></i>
-        Copied!
+            <i class="bi bi-check-circle-fill"></i>
+            Copied!
         `;
 
         copyBtn.classList.remove("btn-success");
         copyBtn.classList.add("btn-primary");
 
-        setTimeout(()=>{
+        showToast("Report copied successfully.");
+
+        setTimeout(() => {
 
             copyBtn.innerHTML = original;
 
             copyBtn.classList.remove("btn-primary");
             copyBtn.classList.add("btn-success");
 
-        },2000);
+        }, 2000);
 
     }
 
-    catch{
+    catch {
 
-        showToast("Copy failed.");
+        showToast("Unable to copy report.");
 
     }
 
@@ -422,11 +669,11 @@ copyBtn.addEventListener("click", async()=>{
    Download Report
 ====================================== */
 
-downloadBtn.addEventListener("click",()=>{
+downloadBtn.addEventListener("click", () => {
 
     const report = outputBox.value.trim();
 
-    if(report===""){
+    if (report === "") {
 
         showToast("Nothing to download.");
 
@@ -440,7 +687,7 @@ downloadBtn.addEventListener("click",()=>{
 
         {
 
-            type:"text/plain"
+            type: "text/plain"
 
         }
 
@@ -452,9 +699,15 @@ downloadBtn.addEventListener("click",()=>{
 
     link.href = url;
 
-    link.download = "url-security-report.txt";
+    link.download =
+        `SecureSphere_URL_Report_${new Date().getTime()
+        }.txt`;
+
+    document.body.appendChild(link);
 
     link.click();
+
+    document.body.removeChild(link);
 
     URL.revokeObjectURL(url);
 
@@ -464,268 +717,111 @@ downloadBtn.addEventListener("click",()=>{
 
 
 /* ======================================
-   Clear
+   Clear Scanner
 ====================================== */
 
-clearBtn.addEventListener("click",()=>{
+clearBtn.addEventListener("click", () => {
 
-    inputText.value="";
+    inputText.value = "";
 
-    outputBox.value="";
+    outputBox.value = "";
 
-    charCount.textContent="Characters : 0";
+    outputBox.scrollTop = 0;
 
-    protocol.textContent="--";
+    charCount.textContent = "Characters : 0";
 
-    domain.textContent="--";
+    protocol.textContent = "--";
 
-    tld.textContent="--";
+    domain.textContent = "--";
 
-    urlLength.textContent="0";
+    tld.textContent = "--";
 
-    httpsStatus.textContent="--";
+    urlLength.textContent = "0";
 
-    riskLevel.textContent="Waiting...";
+    httpsStatus.textContent = "--";
 
-    securityTip.innerHTML=`
-    <strong>Security Tip:</strong><br>
-    Always verify a website before entering
-    passwords or personal information.
-    `;
+    riskLevel.textContent = "Waiting...";
+
+    riskScore.textContent = "0 / 100";
+
+    keywordCount.textContent = "0";
+
+    ipStatus.textContent = "No";
+
+    if (riskBar) {
+
+        riskBar.style.width = "0%";
+
+        riskBar.textContent = "0%";
+
+        riskBar.className = "progress-bar";
+
+    }
+
+    const verdictBadge =
+        document.getElementById("verdictBadge");
+
+    if (verdictBadge) {
+
+        verdictBadge.className =
+            "alert alert-success text-center mt-4";
+
+        verdictBadge.innerHTML =
+            "Waiting for Analysis...";
+
+    }
+
+    const scanTime =
+        document.getElementById("scanTime");
+
+    if (scanTime) {
+
+        scanTime.textContent = "0 ms";
+
+    }
+
+    securityTip.innerHTML = `
+
+<strong>Security Tip</strong><br>
+
+✔ Verify the website domain carefully.<br>
+
+✔ Avoid opening suspicious links.<br>
+
+✔ HTTPS does not guarantee trust.<br>
+
+✔ Never enter passwords on unknown websites.
+
+`;
 
     inputText.focus();
 
-    showToast("Cleared successfully.");
-
-});
-
-
-/* ======================================
-   Keyboard Shortcut
-====================================== */
-
-inputText.addEventListener("keydown",(e)=>{
-
-    if(e.ctrlKey && e.key==="Enter"){
-
-        generateBtn.click();
-
-    }
+    showToast("Scanner reset successfully.");
 
 });
 
 /* ======================================
-   Advanced Security Analysis
+   Initial Page State
 ====================================== */
 
-const riskScore = document.getElementById("riskScore");
-const keywordCount = document.getElementById("keywordCount");
-const ipStatus = document.getElementById("ipStatus");
-const riskBar = document.getElementById("riskBar");
+window.addEventListener("load", () => {
 
+    protocol.textContent = "--";
 
-function performAdvancedChecks(parsed, formattedURL, found, risk){
+    domain.textContent = "--";
 
-    /* -------------------------------
-       Shortened URL Detection
-    ------------------------------- */
+    tld.textContent = "--";
 
-    const shorteners = [
+    urlLength.textContent = "0";
 
-        "bit.ly",
-        "tinyurl.com",
-        "t.co",
-        "goo.gl",
-        "is.gd",
-        "buff.ly",
-        "cutt.ly",
-        "ow.ly"
+    httpsStatus.textContent = "--";
 
-    ];
+    riskLevel.textContent = "Waiting...";
 
-    shorteners.forEach(site=>{
+    riskScore.textContent = "0 / 100";
 
-        if(parsed.hostname.includes(site)){
+    keywordCount.textContent = "0";
 
-            risk += 25;
+    ipStatus.textContent = "No";
 
-        }
-
-    });
-
-
-    /* -------------------------------
-       Fake HTTPS in Domain
-    ------------------------------- */
-
-    const host = parsed.hostname.toLowerCase();
-
-    if(
-        host.includes("https") ||
-        host.includes("secure") ||
-        host.includes("login")
-    ){
-
-        risk += 10;
-
-    }
-
-
-    /* -------------------------------
-       Too Many Hyphens
-    ------------------------------- */
-
-    const hyphenCount =
-        (host.match(/-/g) || []).length;
-
-    if(hyphenCount >= 3){
-
-        risk += 15;
-
-    }
-
-
-    /* -------------------------------
-       IP Status
-    ------------------------------- */
-
-    const ipRegex =
-    /^(\d{1,3}\.){3}\d{1,3}$/;
-
-    if(ipRegex.test(parsed.hostname)){
-
-        ipStatus.innerHTML =
-        "<span class='text-danger'>Yes</span>";
-
-    }
-
-    else{
-
-        ipStatus.innerHTML =
-        "<span class='text-success'>No</span>";
-
-    }
-
-
-    /* -------------------------------
-       Keyword Count
-    ------------------------------- */
-
-    keywordCount.textContent =
-        found.length;
-
-
-    /* -------------------------------
-       Risk Score
-    ------------------------------- */
-
-    if(risk > 100){
-
-        risk = 100;
-
-    }
-
-    riskScore.textContent =
-        `${risk} / 100`;
-
-
-    /* -------------------------------
-       Progress Bar
-    ------------------------------- */
-
-    if(riskBar){
-
-        riskBar.style.width =
-            risk + "%";
-
-        riskBar.innerHTML =
-            risk + "%";
-
-        riskBar.className =
-            "progress-bar";
-
-        if(risk <=20){
-
-            riskBar.classList.add(
-                "bg-success"
-            );
-
-        }
-
-        else if(risk<=40){
-
-            riskBar.classList.add(
-                "bg-info"
-            );
-
-        }
-
-        else if(risk<=60){
-
-            riskBar.classList.add(
-                "bg-warning"
-            );
-
-        }
-
-        else{
-
-            riskBar.classList.add(
-                "bg-danger"
-            );
-
-        }
-
-    }
-
-
-    updateRisk(risk);
-
-
-    /* -------------------------------
-       Professional Report
-    ------------------------------- */
-
-    outputBox.value =
-
-`==========================================
-SecureSphere URL Security Report
-==========================================
-
-URL:
-${formattedURL}
-
-Protocol:
-${parsed.protocol.replace(":","").toUpperCase()}
-
-Domain:
-${parsed.hostname}
-
-Top Level Domain:
-.${parsed.hostname.split(".").pop()}
-
-HTTPS:
-${parsed.protocol==="https:"?"Yes":"No"}
-
-IP Address Used:
-${ipRegex.test(parsed.hostname)?"Yes":"No"}
-
-Suspicious Keywords:
-${found.length?found.join(", "):"None"}
-
-URL Length:
-${formattedURL.length} Characters
-
-Risk Score:
-${risk}/100
-
-Overall Verdict:
-${riskLevel.textContent}
-
-Generated:
-${new Date().toLocaleString()}
-
-Generated by SecureSphere
-==========================================`;
-
-}
+});
