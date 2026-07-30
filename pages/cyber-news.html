@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cyber News | SecureSphere</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/cyber-news.css">
+</head>
+
+<body>
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero-section">
+
+        <div class="container">
+
+            <div class="hero-content text-center">
+
+                <span class="hero-badge">
+                    <i class="bi bi-shield-lock-fill"></i>
+                    SecureSphere News Center
+                </span>
+
+                <h1>
+                    Cybersecurity News
+                </h1>
+
+                <p>
+                    Stay informed about the latest cyber attacks,
+                    vulnerabilities, ransomware campaigns,
+                    security research and global cyber incidents.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SEARCH ================= -->
+
+    <section class="container my-5">
+
+        <div class="search-box">
+
+            <i class="bi bi-search"></i>
+
+            <input type="text" id="searchInput" class="form-control" placeholder="Search cybersecurity news...">
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CATEGORY FILTER ================= -->
+
+    <section class="container mb-5">
+
+        <div class="category-buttons">
+
+            <button class="btn category-btn active">All</button>
+
+            <button class="btn category-btn">Malware</button>
+
+            <button class="btn category-btn">Ransomware</button>
+
+            <button class="btn category-btn">Data Breach</button>
+
+            <button class="btn category-btn">Phishing</button>
+
+            <button class="btn category-btn">Cloud</button>
+
+            <button class="btn category-btn">AI Security</button>
+
+            <button class="btn category-btn">Zero-Day</button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= LIVE STATS ================= -->
+
+    <section class="container mb-5">
+
+        <div class="row g-4">
+
+            <div class="col-lg-3">
+                <div class="stat-card">
+                    <h2 id="articleCount">0</h2>
+                    <p>Articles</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3">
+                <div class="stat-card">
+                    <h2 id="criticalCount">0</h2>
+                    <p>Critical Alerts</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3">
+                <div class="stat-card">
+                    <h2 id="breachCount">0</h2>
+                    <p>Data Breaches</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3">
+                <div class="stat-card">
+                    <h2 id="updateTime">--</h2>
+                    <p>Updated</p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= BREAKING NEWS ================= -->
+
+    <section class="container mb-5">
+
+        <div class="breaking-news">
+
+            <span class="breaking-label">
+                BREAKING
+            </span>
+
+            <marquee id="breakingText">
+
+                Loading latest cybersecurity headlines...
+
+            </marquee>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= NEWS ================= -->
+
+    <section class="container mb-5">
+
+        <div class="row">
+
+            <!-- Left -->
+
+            <div class="col-lg-8">
+
+                <div class="row g-4" id="newsContainer">
+
+                </div>
+
+            </div>
+
+
+            <!-- Right Sidebar -->
+
+            <div class="col-lg-4">
+
+                <div class="sidebar-card">
+
+                    <h4>
+                        <i class="bi bi-fire"></i>
+                        Trending Topics
+                    </h4>
+
+                    <ul id="trendingTopics">
+
+                        <li>Loading...</li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="sidebar-card mt-4">
+
+                    <h4>
+
+                        <i class="bi bi-exclamation-triangle-fill"></i>
+
+                        Threat Feed
+
+                    </h4>
+
+                    <div id="threatFeed">
+
+                        Loading...
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+
+        <div class="container text-center">
+
+            <p>
+
+                © 2026 SecureSphere • Cyber News Dashboard
+
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="../assets/js/cyber-news.js"></script>
+
+</body>
+
+</html>
