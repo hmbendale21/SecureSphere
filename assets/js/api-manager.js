@@ -38,15 +38,16 @@ async function fetchNewsData() {
 
         const data = await response.json();
 
-        return data.results.map(normalizeNewsData);
+        return (data.results || []).map(normalizeNewsData);
 
     }
-
     catch (error) {
 
-        console.error(error);
-
-    }
+      console.error("NewsData Error:", error);
+  
+      return [];
+  
+  }
 
 }
 /* ==========================================
@@ -65,7 +66,7 @@ async function fetchGNews(){
         const data =
         await response.json();
 
-        return data.articles.map(normalizeGNews);
+        return data.articles || [].map(normalizeGNews);
 
     }
 
