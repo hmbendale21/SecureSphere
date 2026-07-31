@@ -158,8 +158,8 @@ if (refreshBtn) {
         refreshBtn.disabled = true;
 
         refreshBtn.innerHTML = `
-        <i class="bi bi-arrow-clockwise"></i>
-        Refresh
+        <i class="bi bi-arrow-repeat"></i>
+        Refreshing...
         `;
 
         await loadNews();
@@ -167,8 +167,8 @@ if (refreshBtn) {
         refreshBtn.disabled = false;
 
         refreshBtn.innerHTML = `
-        <i class="bi bi-arrow-repeat"></i>
-        Refreshing...
+        <i class="bi bi-arrow-clockwise"></i>
+        Refresh
         `;
 
     });

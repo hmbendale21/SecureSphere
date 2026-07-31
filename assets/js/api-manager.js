@@ -66,7 +66,7 @@ async function fetchGNews(){
         const data =
         await response.json();
 
-        return data.articles || [].map(normalizeGNews);
+        return (data.articles || []).map(normalizeGNews);
 
     }
 
