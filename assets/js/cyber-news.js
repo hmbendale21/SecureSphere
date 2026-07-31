@@ -7,6 +7,13 @@ const newsContainer =
 const refreshBtn =
     document.getElementById("refreshBtn");
 
+const searchInput =
+    document.getElementById("searchInput");
+
+let allArticles = [];
+const categoryButtons =
+    document.querySelectorAll(".category-btn");
+
 async function loadNews() {
 
     const newsData =
@@ -15,7 +22,7 @@ async function loadNews() {
     const gNews =
         await fetchGNews();
 
-    const articles = [
+    const allArticles = [
 
         ...newsData,
 
@@ -23,15 +30,54 @@ async function loadNews() {
 
     ];
 
-    displayAllArticles(articles);
+    displayAllArticles(allArticles);
 
     updateLastRefresh();
 
     console.log("News Updated Successfully");
+    console.log("NewsData:", newsData);
 
+    console.log("GNews:", gNews);
+    
+    console.log("All Articles:", allArticles);
+
+    console.table(
+        allArticles.map(article => ({
+            Title: article.title,
+            Category: article.category
+        }))
+    );
 }
 
 function displayAllArticles(articles) {
+
+    if (articles.length === 0) {
+
+        newsContainer.innerHTML = `
+    
+            <div class="col-12 text-center py-5">
+    
+                <i class="bi bi-search fs-1 text-info"></i>
+    
+                <h3 class="mt-3">
+    
+                    No Articles Found
+    
+                </h3>
+    
+                <p>
+    
+                    Try another keyword.
+    
+                </p>
+    
+            </div>
+    
+        `;
+
+        return;
+
+    }
 
     let html = "";
 
@@ -70,11 +116,10 @@ function displayAllArticles(articles) {
 
                     <p class="news-desc">
 
-                        ${
-                            article.description
-                            ? article.description.substring(0, 180) + "..."
-                            : "No description available."
-                        }
+                        ${article.description
+                ? article.description.substring(0, 180) + "..."
+                : "No description available."
+            }
 
                     </p>
 
@@ -200,3 +245,96 @@ function updateLastRefresh() {
     }
 
 }
+
+/* ==========================================
+      Live Search
+========================================== */
+
+if (searchInput) {
+
+    searchInput.addEventListener("input", function () {
+
+        const keyword = this.value.toLowerCase().trim();
+
+        if (keyword === "") {
+
+            displayAllArticles(allArticles);
+
+            return;
+
+        }
+
+        const filteredArticles = allArticles.filter(article => {
+
+            const title =
+                (article.title || "").toLowerCase();
+
+            const description =
+                (article.description || "").toLowerCase();
+
+            const source =
+                (article.source || "").toLowerCase();
+
+            const category =
+                (article.category || "").toLowerCase();
+
+            return (
+
+                title.includes(keyword) ||
+
+                description.includes(keyword) ||
+
+                source.includes(keyword) ||
+
+                category.includes(keyword)
+
+            );
+
+        });
+
+        displayAllArticles(filteredArticles);
+
+    });
+
+}
+
+/* ==========================================
+      Category Filter
+========================================== */
+
+categoryButtons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        categoryButtons.forEach(btn =>
+            btn.classList.remove("active")
+        );
+
+        button.classList.add("active");
+
+        const selected =
+            button.dataset.category;
+
+        if (selected === "all") {
+
+            displayAllArticles(allArticles);
+
+            return;
+
+        }
+
+        const filtered =
+            allArticles.filter(article => {
+
+                const category =
+                    (article.category || "").toLowerCase();
+
+                return category.includes(selected);
+
+            });
+
+        displayAllArticles(filtered);
+
+    });
+
+});

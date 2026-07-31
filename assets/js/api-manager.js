@@ -119,18 +119,10 @@ function normalizeNewsData(article){
 
             "Unknown Author",
 
-        category:
-
-            article.category &&
-            article.category.length>0
-
-            ?
-
-            article.category[0]
-
-            :
-
-            "Cyber Security"
+            category:
+            getCategoryFromText(
+                article.title + " " + article.description
+            )
 
     };
 
@@ -178,5 +170,29 @@ function normalizeGNews(article){
             "Cyber Security"
 
     };
+
+}
+
+function getCategoryFromText(text){
+
+    text = (text || "").toLowerCase();
+
+    if(text.includes("malware"))
+        return "Malware";
+
+    if(text.includes("ransom"))
+        return "Ransomware";
+
+    if(text.includes("phishing"))
+        return "Phishing";
+
+    if(text.includes("zero-day"))
+        return "Zero-Day";
+
+    if(text.includes("artificial intelligence") ||
+       text.includes("ai"))
+        return "AI";
+
+    return "Technology";
 
 }

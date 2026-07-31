@@ -201,11 +201,19 @@ img{
 
 .category-btn.active{
 
-    background:linear-gradient(135deg,
-    var(--primary),
-    var(--secondary));
+    background:linear-gradient(
+        135deg,
+        #4da3ff,
+        #00d4ff
+    );
+
+    color:white;
 
     border:none;
+
+    box-shadow:
+        0 0 15px
+        rgba(77,163,255,.4);
 
 }
 
@@ -583,5 +591,13 @@ img{
     background:#3b82f6;
 
     color:white;
+
+}
+
+.search-box input:focus{
+
+    border-color:#4da3ff;
+
+    box-shadow:0 0 20px rgba(77,163,255,.35);
 
 }
