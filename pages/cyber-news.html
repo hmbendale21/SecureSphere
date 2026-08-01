@@ -14,38 +14,116 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
     <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
     <link rel="stylesheet" href="../assets/css/cyber-news.css">
 </head>
 
 <body>
 
-    <!-- ================= HERO ================= -->
+    <!-- ========================= -->
+    <!-- Navbar -->
+    <!-- ========================= -->
 
-    <section class="hero-section">
+    <nav class="navbar navbar-expand-lg custom-navbar sticky-top">
 
         <div class="container">
 
-            <div class="hero-content text-center">
+            <!-- Logo -->
+            <a class="navbar-brand logo" href="../index.html">
 
-                <span class="hero-badge">
-                    <i class="bi bi-shield-lock-fill"></i>
-                    SecureSphere News Center
-                </span>
+                <i class="bi bi-shield-lock-fill"></i>
 
-                <h1>
-                    Cybersecurity News
-                </h1>
+                <div class="logo-text">
 
-                <p>
-                    Stay informed about the latest cyber attacks,
-                    vulnerabilities, ransomware campaigns,
-                    security research and global cyber incidents.
-                </p>
+                    <span>SecureSphere</span>
+
+                    <small>Cybersecurity Platform</small>
+
+                </div>
+
+            </a>
+
+            <!-- Mobile Toggle -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <ul class="navbar-nav mx-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.html">Dashboard</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="password-tools.html">Password Tools</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="security-tools.html">Security Tools</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="cyber-news.html">Cyber News</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Learn Cyber</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+
+                </ul>
+
+                <div class="nav-actions">
+
+                    <button class="theme-btn">
+
+                        <i class="bi bi-moon-stars"></i>
+
+                    </button>
+
+                </div>
 
             </div>
 
         </div>
 
+    </nav>
+
+    <!-- ================= HERO ================= -->
+
+    <section class="dashboard-hero">
+
+        <div class="container text-center">
+    
+            <h1 class="hero-title">
+                📰 Cyber News Center
+            </h1>
+    
+            <h2 class="hero-subtitle">
+                Latest Cybersecurity Intelligence
+            </h2>
+    
+            <p class="hero-description">
+    
+                Stay informed about the latest cyber attacks,
+                vulnerabilities, ransomware campaigns,
+                security research and global cyber incidents.
+    
+            </p>
+    
+        </div>
+    
     </section>
 
 

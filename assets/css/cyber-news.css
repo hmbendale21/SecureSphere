@@ -42,9 +42,13 @@
 
 body{
 
-    background:var(--bg);
-    color:var(--text);
-    font-family:'Poppins',sans-serif;
+    background:linear-gradient(135deg,#0b1120,#111827,#0d1117);
+
+    color:#ffffff;
+
+    font-family:"Segoe UI",sans-serif;
+
+    min-height:100vh;
 
 }
 
@@ -58,64 +62,6 @@ img{
 
     width:100%;
     display:block;
-
-}
-
-/* ==========================================
-   Hero
-========================================== */
-
-.hero-section{
-
-    padding:90px 0 70px;
-
-    background:
-
-        radial-gradient(circle at top,
-        rgba(77,163,255,.18),
-        transparent 60%);
-
-}
-
-.hero-badge{
-
-    display:inline-flex;
-
-    align-items:center;
-
-    gap:10px;
-
-    background:rgba(77,163,255,.12);
-
-    color:var(--primary);
-
-    border:1px solid rgba(77,163,255,.3);
-
-    padding:10px 18px;
-
-    border-radius:30px;
-
-    margin-bottom:25px;
-
-}
-
-.hero-section h1{
-
-    font-size:52px;
-
-    font-weight:700;
-
-}
-
-.hero-section p{
-
-    max-width:760px;
-
-    margin:20px auto 0;
-
-    color:var(--muted);
-
-    line-height:1.8;
 
 }
 
@@ -670,5 +616,95 @@ img{
         transform:translateX(-100%);
 
     }
+
+}
+
+.news-actions{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+.bookmark-btn{
+
+    border:none;
+
+    background:#1f2937;
+
+    color:#ffd54f;
+
+    width:42px;
+
+    height:42px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    font-size:18px;
+
+}
+
+.bookmark-btn:hover{
+
+    background:#ffd54f;
+
+    color:#111827;
+
+    transform:scale(1.08);
+
+}
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    top:-200px;
+
+    left:-200px;
+
+    width:500px;
+
+    height:500px;
+
+    background:#2563eb;
+
+    filter:blur(180px);
+
+    opacity:.18;
+
+    z-index:-1;
+
+}
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    right:-150px;
+
+    bottom:-150px;
+
+    width:450px;
+
+    height:450px;
+
+    background:#06b6d4;
+
+    filter:blur(180px);
+
+    opacity:.15;
+
+    z-index:-1;
 
 }

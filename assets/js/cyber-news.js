@@ -131,34 +131,46 @@ function displayAllArticles(articles) {
 
                     <div class="news-footer">
 
-                        <div>
-
-                            <small class="source">
-
-                                📰 ${article.source || "Unknown Source"}
-
-                            </small>
-
-                            <br>
-
-                            <small class="publish-date">
-
-                                🕒 ${article.publishedAt || "Unknown Date"}
-
-                            </small>
-
-                        </div>
-
+                    <div>
+                
+                        <small class="source">
+                
+                            📰 ${article.source}
+                
+                        </small>
+                
+                        <br>
+                
+                        <small class="publish-date">
+                
+                            🕒 ${article.publishedAt}
+                
+                        </small>
+                
+                    </div>
+                
+                    <div class="news-actions">
+                
+                        <button
+                            class="bookmark-btn"
+                            onclick="toggleBookmark('${article.url}')">
+                
+                            ⭐
+                
+                        </button>
+                
                         <a
                             href="${article.url}"
                             target="_blank"
                             class="read-btn">
-
+                
                             Read More
-
+                
                         </a>
-
+                
                     </div>
+                
+                </div>
 
                 </div>
 
@@ -404,7 +416,7 @@ function updateStatistics() {
     const breachCount =
         document.getElementById("breachCount");
 
-    if(articleCount)
+    if (articleCount)
         articleCount.textContent =
             allArticles.length;
 
@@ -412,7 +424,7 @@ function updateStatistics() {
 
     let breach = 0;
 
-    allArticles.forEach(article=>{
+    allArticles.forEach(article => {
 
         const text = (
 
@@ -424,7 +436,7 @@ function updateStatistics() {
 
         ).toLowerCase();
 
-        if(
+        if (
 
             text.includes("critical") ||
 
@@ -432,13 +444,13 @@ function updateStatistics() {
 
             text.includes("emergency")
 
-        ){
+        ) {
 
             critical++;
 
         }
 
-        if(
+        if (
 
             text.includes("breach") ||
 
@@ -446,7 +458,7 @@ function updateStatistics() {
 
             text.includes("database")
 
-        ){
+        ) {
 
             breach++;
 
@@ -454,11 +466,11 @@ function updateStatistics() {
 
     });
 
-    if(criticalCount)
+    if (criticalCount)
         criticalCount.textContent =
             critical;
 
-    if(breachCount)
+    if (breachCount)
         breachCount.textContent =
             breach;
 
@@ -468,11 +480,11 @@ function updateStatistics() {
       Remove Duplicate Articles
 ========================================== */
 
-function removeDuplicateArticles(articles){
+function removeDuplicateArticles(articles) {
 
     const seen = new Set();
 
-    return articles.filter(article=>{
+    return articles.filter(article => {
 
         const key = (
 
@@ -482,7 +494,7 @@ function removeDuplicateArticles(articles){
 
         ).toLowerCase();
 
-        if(seen.has(key)){
+        if (seen.has(key)) {
 
             return false;
 
@@ -493,5 +505,43 @@ function removeDuplicateArticles(articles){
         return true;
 
     });
+
+}
+
+/* ==========================================
+      Bookmark System
+========================================== */
+
+function toggleBookmark(url){
+
+    let bookmarks =
+        JSON.parse(
+            localStorage.getItem("bookmarks")
+        ) || [];
+
+    if(bookmarks.includes(url)){
+
+        bookmarks =
+            bookmarks.filter(item=>item!==url);
+
+        alert("Bookmark Removed");
+
+    }
+
+    else{
+
+        bookmarks.push(url);
+
+        alert("Article Bookmarked");
+
+    }
+
+    localStorage.setItem(
+
+        "bookmarks",
+
+        JSON.stringify(bookmarks)
+
+    );
 
 }
