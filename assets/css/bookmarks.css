@@ -1,0 +1,39 @@
+.bookmark-card{
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(88,166,255,.2);
+
+    border-radius:18px;
+
+    padding:25px;
+
+    transition:.3s;
+
+}
+
+.bookmark-card:hover{
+
+    transform:translateY(-5px);
+
+}
+
+.remove-btn{
+
+    background:#ef4444;
+
+    color:white;
+
+    border:none;
+
+    border-radius:10px;
+
+    padding:10px 16px;
+
+}
+
+.read-btn{
+
+    margin-left:10px;
+
+}

@@ -151,13 +151,27 @@ function displayAllArticles(articles) {
                 
                     <div class="news-actions">
                 
-                        <button
-                            class="bookmark-btn"
-                            onclick="toggleBookmark('${article.url}')">
+                    <button
+                    class="bookmark-btn ${isBookmarked(article.url) ? 'saved' : ''}"
+                    onclick='toggleBookmark(${JSON.stringify(article)})'
                 
-                            ⭐
+                    <i class="bi ${
+                        isBookmarked(article.url)
+                            ? "bi-bookmark-fill"
+                            : "bi-bookmark"
+                    }"></i>
                 
-                        </button>
+                    <span>
+                
+                        ${
+                            isBookmarked(article.url)
+                                ? "Saved"
+                                : "Save"
+                        }
+                
+                    </span>
+                
+                </button>
                 
                         <a
                             href="${article.url}"
@@ -512,27 +526,25 @@ function removeDuplicateArticles(articles) {
       Bookmark System
 ========================================== */
 
-function toggleBookmark(url){
+function toggleBookmark(url, button){
 
-    let bookmarks =
-        JSON.parse(
-            localStorage.getItem("bookmarks")
-        ) || [];
+    let bookmarks = JSON.parse(
 
-    if(bookmarks.includes(url)){
+        localStorage.getItem("bookmarks")
 
-        bookmarks =
-            bookmarks.filter(item=>item!==url);
+    ) || [];
 
-        alert("Bookmark Removed");
+    const index = bookmarks.indexOf(url);
+
+    if(index > -1){
+
+        bookmarks.splice(index,1);
 
     }
 
     else{
 
-        bookmarks.push(url);
-
-        alert("Article Bookmarked");
+        bookmarks.push(article);
 
     }
 
@@ -543,5 +555,55 @@ function toggleBookmark(url){
         JSON.stringify(bookmarks)
 
     );
+
+    if(index > -1){
+
+        showToast("Bookmark Removed");
+    
+    }
+    
+    else{
+    
+        showToast("Article Saved");
+    
+    }
+    
+    displayAllArticles(allArticles);
+
+}
+
+function isBookmarked(url){
+
+    const bookmarks = JSON.parse(
+
+        localStorage.getItem("bookmarks")
+
+    ) || [];
+
+    return bookmarks.includes(url);
+
+}
+
+/* ==========================================
+      Toast Notification
+========================================== */
+
+function showToast(message){
+
+    const toast =
+        document.getElementById("toastNotification");
+
+    const toastMessage =
+        document.getElementById("toastMessage");
+
+    toastMessage.textContent = message;
+
+    toast.classList.add("show");
+
+    setTimeout(()=>{
+
+        toast.classList.remove("show");
+
+    },3000);
 
 }

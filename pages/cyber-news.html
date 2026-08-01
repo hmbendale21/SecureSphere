@@ -82,6 +82,16 @@
                         <a class="nav-link" href="#">Contact</a>
                     </li>
 
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="bookmarks.html">
+
+                            Bookmarks
+
+                        </a>
+
+                    </li>
+
                 </ul>
 
                 <div class="nav-actions">
@@ -105,25 +115,25 @@
     <section class="dashboard-hero">
 
         <div class="container text-center">
-    
+
             <h1 class="hero-title">
                 📰 Cyber News Center
             </h1>
-    
+
             <h2 class="hero-subtitle">
                 Latest Cybersecurity Intelligence
             </h2>
-    
+
             <p class="hero-description">
-    
+
                 Stay informed about the latest cyber attacks,
                 vulnerabilities, ransomware campaigns,
                 security research and global cyber incidents.
-    
+
             </p>
-    
+
         </div>
-    
+
     </section>
 
 
@@ -132,39 +142,33 @@
     <section class="container my-5">
 
         <div class="row g-3 align-items-center">
-    
+
             <div class="col-lg-10">
-    
+
                 <div class="search-box">
-    
+
                     <i class="bi bi-search"></i>
-    
-                    <input
-                        type="text"
-                        id="searchInput"
-                        class="form-control"
-                        placeholder="Search cybersecurity news...">
-    
+
+                    <input type="text" id="searchInput" class="form-control" placeholder="Search cybersecurity news...">
+
                 </div>
-    
+
             </div>
-    
+
             <div class="col-lg-2">
-    
-                <button
-                    id="refreshBtn"
-                    class="btn btn-primary w-100">
-    
+
+                <button id="refreshBtn" class="btn btn-primary w-100">
+
                     <i class="bi bi-arrow-clockwise"></i>
-    
+
                     Refresh
-    
+
                 </button>
-    
+
             </div>
-    
+
         </div>
-    
+
     </section>
 
 
@@ -223,27 +227,25 @@
     <section class="container mb-5">
 
         <div class="breaking-news">
-    
+
             <div class="breaking-label">
-    
+
                 🚨 BREAKING
-    
+
             </div>
-    
+
             <div class="ticker-wrapper">
-    
-                <div
-                    id="breakingTicker"
-                    class="ticker">
-    
+
+                <div id="breakingTicker" class="ticker">
+
                     Loading latest cybersecurity headlines...
-    
+
                 </div>
-    
+
             </div>
-    
+
         </div>
-    
+
     </section>
 
 
@@ -324,6 +326,20 @@
         </div>
 
     </footer>
+
+    <!-- ===========================
+    Toast Notification
+=========================== -->
+
+    <div id="toastNotification" class="toast-notification">
+
+        <i id="toastIcon" class="bi bi-check-circle-fill"></i>
+
+        <span id="toastMessage">
+            Notification
+        </span>
+
+    </div>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
