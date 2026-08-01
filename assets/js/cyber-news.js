@@ -22,13 +22,13 @@ async function loadNews() {
     const gNews =
         await fetchGNews();
 
-    allArticles = [
+    allArticles = removeDuplicateArticles([
 
         ...newsData,
 
         ...gNews
 
-    ];
+    ]);
 
     displayAllArticles(allArticles);
 
@@ -37,7 +37,7 @@ async function loadNews() {
     updateBreakingNews();
 
     updateStatistics();
-    
+
     updateLastRefresh();
 
     console.log("News Updated Successfully");
@@ -461,5 +461,37 @@ function updateStatistics() {
     if(breachCount)
         breachCount.textContent =
             breach;
+
+}
+
+/* ==========================================
+      Remove Duplicate Articles
+========================================== */
+
+function removeDuplicateArticles(articles){
+
+    const seen = new Set();
+
+    return articles.filter(article=>{
+
+        const key = (
+
+            (article.title || "") +
+
+            (article.url || "")
+
+        ).toLowerCase();
+
+        if(seen.has(key)){
+
+            return false;
+
+        }
+
+        seen.add(key);
+
+        return true;
+
+    });
 
 }
