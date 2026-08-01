@@ -94,32 +94,8 @@
 
     <section class="container mb-5">
 
-        <div class="category-buttons">
+        <div class="category-buttons" id="categoryButtons">
 
-            <button class="btn category-btn active" data-category="all">
-                All
-            </button>
-        
-            <button class="btn category-btn" data-category="malware">
-                Malware
-            </button>
-        
-            <button class="btn category-btn" data-category="ransomware">
-                Ransomware
-            </button>
-        
-            <button class="btn category-btn" data-category="phishing">
-                Phishing
-            </button>
-        
-            <button class="btn category-btn" data-category="ai">
-                AI
-            </button>
-        
-            <button class="btn category-btn" data-category="technology">
-                Technology
-            </button>
-        
         </div>
 
     </section>
@@ -169,19 +145,27 @@
     <section class="container mb-5">
 
         <div class="breaking-news">
-
-            <span class="breaking-label">
-                BREAKING
-            </span>
-
-            <marquee id="breakingText">
-
-                Loading latest cybersecurity headlines...
-
-            </marquee>
-
+    
+            <div class="breaking-label">
+    
+                🚨 BREAKING
+    
+            </div>
+    
+            <div class="ticker-wrapper">
+    
+                <div
+                    id="breakingTicker"
+                    class="ticker">
+    
+                    Loading latest cybersecurity headlines...
+    
+                </div>
+    
+            </div>
+    
         </div>
-
+    
     </section>
 
 

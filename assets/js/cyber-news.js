@@ -11,8 +11,8 @@ const searchInput =
     document.getElementById("searchInput");
 
 let allArticles = [];
-const categoryButtons =
-    document.querySelectorAll(".category-btn");
+const categoryContainer =
+    document.getElementById("categoryButtons");
 
 async function loadNews() {
 
@@ -22,7 +22,7 @@ async function loadNews() {
     const gNews =
         await fetchGNews();
 
-    const allArticles = [
+    allArticles = [
 
         ...newsData,
 
@@ -32,13 +32,19 @@ async function loadNews() {
 
     displayAllArticles(allArticles);
 
+    createCategoryButtons();
+
+    updateBreakingNews();
+
+    updateStatistics();
+    
     updateLastRefresh();
 
     console.log("News Updated Successfully");
     console.log("NewsData:", newsData);
 
     console.log("GNews:", gNews);
-    
+
     console.log("All Articles:", allArticles);
 
     console.table(
@@ -299,42 +305,161 @@ if (searchInput) {
 }
 
 /* ==========================================
-      Category Filter
+      Dynamic Categories
 ========================================== */
 
-categoryButtons.forEach(button => {
+function createCategoryButtons() {
 
-    button.addEventListener("click", () => {
+    const categories = [
+        "All",
+        ...new Set(
+            allArticles.map(article => article.category)
+        )
+    ];
 
-        categoryButtons.forEach(btn =>
-            btn.classList.remove("active")
-        );
+    categoryContainer.innerHTML = "";
 
-        button.classList.add("active");
+    categories.forEach(category => {
 
-        const selected =
-            button.dataset.category;
+        const button = document.createElement("button");
 
-        if (selected === "all") {
+        button.className = "btn category-btn";
 
-            displayAllArticles(allArticles);
+        if (category === "All")
+            button.classList.add("active");
 
-            return;
+        button.textContent = category;
 
-        }
+        button.dataset.category = category.toLowerCase();
 
-        const filtered =
-            allArticles.filter(article => {
+        button.addEventListener("click", () => {
 
-                const category =
-                    (article.category || "").toLowerCase();
+            document
+                .querySelectorAll(".category-btn")
+                .forEach(btn =>
+                    btn.classList.remove("active")
+                );
 
-                return category.includes(selected);
+            button.classList.add("active");
 
-            });
+            if (category === "All") {
 
-        displayAllArticles(filtered);
+                displayAllArticles(allArticles);
+
+                return;
+
+            }
+
+            const filtered =
+                allArticles.filter(article =>
+                    article.category.toLowerCase() === category.toLowerCase()
+                );
+
+            displayAllArticles(filtered);
+
+        });
+
+        categoryContainer.appendChild(button);
 
     });
 
-});
+}
+
+/* ==========================================
+      Breaking News
+========================================== */
+
+function updateBreakingNews() {
+
+    const ticker =
+        document.getElementById("breakingTicker");
+
+    if (!ticker)
+        return;
+
+    const headlines =
+        allArticles
+            .slice(0, 10)
+            .map(article => article.title);
+
+    ticker.innerHTML =
+        headlines
+            .map(title => `📰 ${title}`)
+            .join(" &nbsp;&nbsp;&nbsp; 🔹 &nbsp;&nbsp;&nbsp; ");
+
+}
+
+/* ==========================================
+      Dashboard Statistics
+========================================== */
+
+function updateStatistics() {
+
+    const articleCount =
+        document.getElementById("articleCount");
+
+    const criticalCount =
+        document.getElementById("criticalCount");
+
+    const breachCount =
+        document.getElementById("breachCount");
+
+    if(articleCount)
+        articleCount.textContent =
+            allArticles.length;
+
+    let critical = 0;
+
+    let breach = 0;
+
+    allArticles.forEach(article=>{
+
+        const text = (
+
+            article.title +
+
+            " " +
+
+            article.description
+
+        ).toLowerCase();
+
+        if(
+
+            text.includes("critical") ||
+
+            text.includes("zero-day") ||
+
+            text.includes("emergency")
+
+        ){
+
+            critical++;
+
+        }
+
+        if(
+
+            text.includes("breach") ||
+
+            text.includes("data leak") ||
+
+            text.includes("database")
+
+        ){
+
+            breach++;
+
+        }
+
+    });
+
+    if(criticalCount)
+        criticalCount.textContent =
+            critical;
+
+    if(breachCount)
+        breachCount.textContent =
+            breach;
+
+}
