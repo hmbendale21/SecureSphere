@@ -87,8 +87,7 @@ function displayAllArticles(articles) {
 
     let html = "";
 
-    articles.forEach(article => {
-
+    articles.forEach((article, index) => {
         const card = `
 
         <div class="col-lg-6">
@@ -153,8 +152,7 @@ function displayAllArticles(articles) {
                 
                     <button
                     class="bookmark-btn ${isBookmarked(article.url) ? 'saved' : ''}"
-                    onclick='toggleBookmark(${JSON.stringify(article)})'
-                
+                    onclick="toggleBookmark(${index})"                
                     <i class="bi ${
                         isBookmarked(article.url)
                             ? "bi-bookmark-fill"
@@ -526,7 +524,9 @@ function removeDuplicateArticles(articles) {
       Bookmark System
 ========================================== */
 
-function toggleBookmark(url, button){
+function toggleBookmark(index){
+
+    const article = allArticles[index];
 
     let bookmarks = JSON.parse(
 
@@ -534,17 +534,29 @@ function toggleBookmark(url, button){
 
     ) || [];
 
-    const index = bookmarks.indexOf(url);
+    const exists = bookmarks.find(
 
-    if(index > -1){
+        item => item.url === article.url
 
-        bookmarks.splice(index,1);
+    );
+
+    if(exists){
+
+        bookmarks = bookmarks.filter(
+
+            item => item.url !== article.url
+
+        );
+
+        showToast("Bookmark Removed");
 
     }
 
     else{
 
         bookmarks.push(article);
+
+        showToast("Article Saved");
 
     }
 
@@ -556,18 +568,6 @@ function toggleBookmark(url, button){
 
     );
 
-    if(index > -1){
-
-        showToast("Bookmark Removed");
-    
-    }
-    
-    else{
-    
-        showToast("Article Saved");
-    
-    }
-    
     displayAllArticles(allArticles);
 
 }
@@ -580,10 +580,13 @@ function isBookmarked(url){
 
     ) || [];
 
-    return bookmarks.includes(url);
+    return bookmarks.some(
+
+        item => item.url === url
+
+    );
 
 }
-
 /* ==========================================
       Toast Notification
 ========================================== */
