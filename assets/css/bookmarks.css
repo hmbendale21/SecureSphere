@@ -37,3 +37,49 @@
     margin-left:10px;
 
 }
+
+/* ===========================
+   Back Button
+=========================== */
+
+.back-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    background:rgba(88,166,255,.08);
+
+    color:#58a6ff;
+
+    border:1px solid rgba(88,166,255,.25);
+
+    padding:10px 18px;
+
+    border-radius:12px;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.back-btn:hover{
+
+    background:#58a6ff;
+
+    color:white;
+
+    transform:translateX(-4px);
+
+}
+
+.back-btn i{
+
+    font-size:18px;
+
+}
