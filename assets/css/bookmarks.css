@@ -50,21 +50,21 @@
 
     gap:10px;
 
-    background:rgba(88,166,255,.08);
-
-    color:#58a6ff;
-
-    border:1px solid rgba(88,166,255,.25);
-
     padding:10px 18px;
 
     border-radius:12px;
 
     text-decoration:none;
 
+    background:rgba(88,166,255,.08);
+
+    color:#58a6ff;
+
+    border:1px solid rgba(88,166,255,.25);
+
     font-weight:600;
 
-    transition:.3s;
+    transition:.3s ease;
 
 }
 
@@ -72,9 +72,9 @@
 
     background:#58a6ff;
 
-    color:white;
+    color:#fff;
 
-    transform:translateX(-4px);
+    transform:translateX(-5px);
 
 }
 
