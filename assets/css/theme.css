@@ -1,0 +1,66 @@
+/* ==========================================
+   SecureSphere Theme Variables
+========================================== */
+
+:root{
+
+    /* Dark Theme */
+
+    --bg-primary:#0b1120;
+    --bg-secondary:#111827;
+    --bg-card:#161b22;
+
+    --text-primary:#ffffff;
+    --text-secondary:#9ca3af;
+
+    --accent:#58a6ff;
+
+    --border:rgba(88,166,255,.18);
+
+    --shadow:0 10px 25px rgba(0,0,0,.25);
+
+}
+
+/* ==========================================
+   Light Theme
+========================================== */
+
+body.light-theme{
+
+    --bg-primary:#f4f7fb;
+    --bg-secondary:#ffffff;
+    --bg-card:#ffffff;
+
+    --text-primary:#111827;
+    --text-secondary:#64748b;
+
+    --accent:#2563eb;
+
+    --border:#dbeafe;
+
+    --shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+/* ==========================================
+   Smooth Theme Change
+========================================== */
+
+body,
+body *,
+.navbar,
+.dashboard-card,
+button,
+a{
+
+    transition:
+
+        background-color .35s ease,
+
+        color .35s ease,
+
+        border-color .35s ease,
+
+        box-shadow .35s ease;
+
+}

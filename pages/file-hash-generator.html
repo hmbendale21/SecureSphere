@@ -9,6 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="../assets/css/dashboard.css">
+    <link rel="stylesheet" href="../assets/css/theme.css">  
     <link rel="stylesheet" href="../assets/css/file-hash-generator.css">
 
 </head>
@@ -81,11 +82,17 @@
 
                 <div class="nav-actions">
 
-                    <button class="theme-btn">
-
-                        <i class="bi bi-moon-stars"></i>
-
-                    </button>
+                    <button
+                    id="themeToggle"
+                    class="theme-btn">
+                
+                    <i
+                        id="themeIcon"
+                        class="bi bi-moon-stars">
+                
+                    </i>
+                
+                </button>
 
                 </div>
 
@@ -529,6 +536,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js"></script>
+    <script src="../assets/js/theme.js"></script> 
     <script src="../assets/js/file-hash-generator.js"></script>
 
 </body>
