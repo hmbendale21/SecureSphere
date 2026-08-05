@@ -14,10 +14,26 @@
     --text-secondary:#9ca3af;
 
     --accent:#58a6ff;
+    --accent-hover:#79c0ff;
 
     --border:rgba(88,166,255,.18);
 
     --shadow:0 10px 25px rgba(0,0,0,.25);
+
+    /* Solid "surface" blocks used by sidebars, toggles, pills, etc. */
+    --surface:#1b2538;
+    --surface-hover:#243652;
+
+    /* Translucent overlays used for glassy inputs / cards */
+    --overlay-soft:rgba(255,255,255,.04);
+    --overlay:rgba(255,255,255,.05);
+    --overlay-strong:rgba(255,255,255,.08);
+
+    /* Translucent glass-effect card background (with backdrop-filter) */
+    --card-glass:rgba(22,27,34,.85);
+
+    /* Fixed semantic colors (same in both themes) */
+    --danger:#ff4d4f;
 
 }
 
@@ -35,10 +51,24 @@ body.light-theme{
     --text-secondary:#64748b;
 
     --accent:#2563eb;
+    --accent-hover:#1d4ed8;
 
     --border:#dbeafe;
 
     --shadow:0 10px 25px rgba(0,0,0,.08);
+
+    --heading-color:#0f172a;
+
+    --paragraph-color:#475569;
+
+    --surface:#eef2f9;
+    --surface-hover:#dbeafe;
+
+    --overlay-soft:rgba(15,23,42,.03);
+    --overlay:rgba(15,23,42,.04);
+    --overlay-strong:rgba(15,23,42,.06);
+
+    --card-glass:rgba(255,255,255,.85);
 
 }
 
@@ -62,5 +92,59 @@ a{
         border-color .35s ease,
 
         box-shadow .35s ease;
+
+}
+
+/* ==========================================
+   Global Text Theme
+========================================== */
+
+body{
+
+    color:var(--text-primary);
+
+}
+
+h1,h2,h3,h4,h5,h6{
+
+    color:var(--heading-color,var(--text-primary));
+
+}
+
+p,
+span,
+small,
+label,
+li{
+
+    color:var(--paragraph-color,var(--text-secondary));
+
+}
+
+/* Light Theme Overrides */
+
+body.light-theme input,
+body.light-theme textarea{
+
+    color:var(--text-primary);
+
+    background:var(--bg-card);
+
+}
+
+body.light-theme .form-control{
+
+    color:var(--text-primary);
+
+    background:var(--bg-card);
+
+}
+
+body.light-theme .news-card,
+body.light-theme .dashboard-card,
+body.light-theme .sidebar-card,
+body.light-theme .stat-card{
+
+    color:var(--text-primary);
 
 }

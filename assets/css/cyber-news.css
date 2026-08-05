@@ -4,29 +4,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
-/* ==========================================
-   Root Variables
-========================================== */
-
-:root{
-
-    --bg:#0d1117;
-    --card:#161b22;
-    --card2:#1f2630;
-
-    --primary:#4da3ff;
-    --secondary:#00d4ff;
-
-    --success:#00d084;
-    --warning:#f5b301;
-    --danger:#ff4d4f;
-
-    --text:#ffffff;
-    --muted:#9aa6b2;
-
-    --border:rgba(255,255,255,.08);
-
-}
 
 /* ==========================================
    Global
@@ -42,13 +19,21 @@
 
 body{
 
-    background:linear-gradient(135deg,#0b1120,#111827,#0d1117);
+    background:
 
-    color:#ffffff;
+        linear-gradient(
 
-    font-family:"Segoe UI",sans-serif;
+            135deg,
 
-    min-height:100vh;
+            var(--bg-primary),
+
+            var(--bg-secondary),
+
+            var(--bg-primary)
+
+        );
+
+    color:var(--text-primary);
 
 }
 
@@ -83,7 +68,7 @@ img{
 
     left:18px;
 
-    color:var(--primary);
+    color:var(--accent);
 
     font-size:20px;
 
@@ -91,12 +76,11 @@ img{
 
 .search-box input{
 
-    background:var(--card);
+    background:var(--bg-card);
 
     border:1px solid var(--border);
 
-    color:white;
-
+    color:var(--text-primary);
     padding:16px 20px 16px 55px;
 
     border-radius:15px;
@@ -105,13 +89,13 @@ img{
 
 .search-box input:focus{
 
-    border-color:var(--primary);
+    border-color:var(--accent);
 
     box-shadow:0 0 20px rgba(77,163,255,.3);
 
-    background:var(--card);
+    background:var(--bg-card);
 
-    color:white;
+    color:var(--text-primary);
 
 }
 
@@ -131,9 +115,9 @@ img{
 
 .category-btn{
 
-    background:var(--card);
+    background:var(--bg-card);
 
-    color:white;
+    color:var(--text-primary);
 
     border:1px solid var(--border);
 
@@ -147,14 +131,9 @@ img{
 
 .category-btn.active{
 
-    background:linear-gradient(
-        135deg,
-        #4da3ff,
-        #00d4ff
-    );
+    background:linear-gradient(135deg,#4da3ff,#00d4ff);
 
-    color:white;
-
+    color:#ffffff;
     border:none;
 
     box-shadow:
@@ -169,7 +148,7 @@ img{
 
 .stat-card{
 
-    background:var(--card);
+    background:var(--bg-card);
 
     border:1px solid var(--border);
 
@@ -187,13 +166,13 @@ img{
 
     transform:translateY(-6px);
 
-    border-color:var(--primary);
+    border-color:var(--accent);
 
 }
 
 .stat-card h2{
 
-    color:var(--primary);
+    color:var(--accent);
 
     font-size:40px;
 
@@ -203,7 +182,7 @@ img{
 
 .stat-card p{
 
-    color:var(--muted);
+    color:var(--text-secondary);
 
     margin-top:8px;
 
@@ -221,7 +200,7 @@ img{
 
     overflow:hidden;
 
-    background:var(--card);
+    background:var(--bg-card);
 
     border-radius:15px;
 
@@ -233,6 +212,8 @@ img{
 
     background:var(--danger);
 
+    color:#ffffff;
+
     padding:16px 24px;
 
     font-weight:700;
@@ -243,7 +224,7 @@ img{
 
     padding:15px;
 
-    color:white;
+    color:var(--text-primary);
 
 }
 
@@ -253,7 +234,7 @@ img{
 
 .news-card{
 
-    background:var(--card);
+    background:var(--bg-card);
 
     border-radius:18px;
 
@@ -300,7 +281,7 @@ img{
 
     background:rgba(77,163,255,.12);
 
-    color:var(--primary);
+    color:var(--accent);
 
     padding:6px 14px;
 
@@ -324,7 +305,7 @@ img{
 
 .news-desc{
 
-    color:var(--muted);
+    color:var(--text-secondary);
 
     line-height:1.7;
 
@@ -352,8 +333,7 @@ img{
         #2563eb
     );
 
-    color:white;
-
+    color:#ffffff;
     padding:10px 18px;
 
     border-radius:10px;
@@ -366,7 +346,7 @@ img{
 
     transform:translateY(-2px);
 
-    color:white;
+    color:#ffffff;
 
 }
 
@@ -376,7 +356,7 @@ img{
 
 .sidebar-card{
 
-    background:var(--card);
+    background:var(--bg-card);
 
     border:1px solid var(--border);
 
@@ -404,7 +384,7 @@ img{
 
     padding:12px 0;
 
-    border-bottom:1px solid rgba(255,255,255,.05);
+    border-bottom:1px solid var(--border);
 
 }
 
@@ -420,7 +400,7 @@ img{
 
     margin-top:60px;
 
-    color:var(--muted);
+    color:var(--text-secondary);
 
 }
 
@@ -478,7 +458,7 @@ img{
 
     display:block;
 
-    color:#9ca3af;
+    color:var(--text-secondary);
 
     margin-bottom:15px;
 
@@ -488,7 +468,7 @@ img{
 
 .publish-date{
 
-    color:#9ca3af;
+    color:var(--text-secondary);
 
 }
 
@@ -504,16 +484,14 @@ img{
 
     background:#ff4d4f;
 
-    color:white;
-
+    color:#ffffff;
 }
 
 .news-category.ransomware{
 
     background:#7c3aed;
 
-    color:white;
-
+    color:#ffffff;
 }
 
 .news-category.phishing{
@@ -528,16 +506,14 @@ img{
 
     background:#10b981;
 
-    color:white;
-
+    color:#ffffff;
 }
 
 .news-category.technology{
 
     background:#3b82f6;
 
-    color:white;
-
+    color:#ffffff;
 }
 
 .search-box input:focus{
@@ -559,17 +535,17 @@ img{
 
     border-radius:14px;
 
-    border:1px solid rgba(255,255,255,.08);
+    border:1px solid var(--border);
 
-    background:#1d232f;
+    background:var(--bg-card);
 
 }
 
 .breaking-label{
 
-    background:#ff4d4f;
+    background:var(--danger);
 
-    color:white;
+    color:#ffffff;
 
     font-weight:700;
 
@@ -637,11 +613,11 @@ img{
 
     gap:8px;
 
-    border:1px solid rgba(255,255,255,.15);
+    border:1px solid var(--border);
 
-    background:#1f2937;
+    background:var(--surface);
 
-    color:#ffffff;
+    color:var(--text-primary);
 
     padding:10px 16px;
 
@@ -659,12 +635,12 @@ img{
 
 .bookmark-btn:hover{
 
-    background:#2563eb;
 
-    color:white;
-
-    transform:translateY(-2px);
-
+        background:var(--accent);
+    
+        color:#ffffff;
+    
+        transform:translateY(-2px);
 }
 
 .bookmark-btn.saved{
@@ -743,10 +719,9 @@ body::after{
 
     right:25px;
 
-    background:#161b22;
+    background:var(--bg-card);
 
-    color:white;
-
+    color:var(--text-primary);
     padding:16px 22px;
 
     border-left:5px solid #22c55e;
@@ -763,7 +738,7 @@ body::after{
 
     font-weight:600;
 
-    box-shadow:0 10px 30px rgba(0,0,0,.4);
+    box-shadow:var(--shadow);
 
     opacity:0;
 

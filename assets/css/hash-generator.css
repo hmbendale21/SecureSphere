@@ -6,7 +6,7 @@
 
     gap:10px;
 
-    color:#58a6ff;
+    color:var(--accent);
 
     text-decoration:none;
 
@@ -20,7 +20,7 @@
 
 .back-btn:hover{
 
-    color:#79c0ff;
+    color:var(--accent-hover);
 
     transform:translateX(-5px);
 
@@ -46,13 +46,13 @@
 
     padding:14px 18px;
 
-    background:#1b2538;
+    background:var(--surface);
 
-    border:1px solid rgba(88,166,255,.2);
+    border:1px solid var(--border);
 
     border-radius:12px;
 
-    color:#58a6ff;
+    color:var(--accent);
 
     cursor:pointer;
 
@@ -88,9 +88,9 @@
 
     text-decoration:none;
 
-    color:#d1d5db;
+    color:var(--text-secondary);
 
-    background:#1b2538;
+    background:var(--surface);
 
     border-radius:10px;
 
@@ -100,9 +100,9 @@
 
 .sidebar-link:hover{
 
-    background:#243652;
+    background:var(--surface-hover);
 
-    color:white;
+    color:var(--text-primary);
 
 }
 
@@ -110,9 +110,9 @@
 
     background:rgba(88,166,255,.15);
 
-    border-left:4px solid #58a6ff;
+    border-left:4px solid var(--accent);
 
-    color:#58a6ff;
+    color:var(--accent);
 
 }
 
@@ -124,9 +124,7 @@
 
 }
 
-/*==============================
-      Hash Generator
-==============================*/
+/* Hash Generator */
 
 .hash-generator-section{
 
@@ -146,7 +144,7 @@
 
 .hash-card h3{
 
-    color:#58a6ff;
+    color:var(--accent);
 
     margin-bottom:30px;
 
@@ -160,7 +158,7 @@
 
 .form-label{
 
-    color:#fff;
+    color:var(--text-primary);
 
     font-weight:600;
 
@@ -170,11 +168,11 @@
 
 .form-control{
 
-    background:rgba(255,255,255,.05);
+    background:var(--overlay);
 
-    border:1px solid rgba(88,166,255,.2);
+    border:1px solid var(--border);
 
-    color:white;
+    color:var(--text-primary);
 
     border-radius:12px;
 
@@ -182,11 +180,11 @@
 
 .form-control:focus{
 
-    background:rgba(255,255,255,.08);
+    background:var(--overlay-strong);
 
-    color:white;
+    color:var(--text-primary);
 
-    border-color:#58a6ff;
+    border-color:var(--accent);
 
     box-shadow:0 0 15px rgba(88,166,255,.2);
 
@@ -200,7 +198,7 @@ textarea{
 
 #charCount{
 
-    color:#9ca3af;
+    color:var(--text-secondary);
 
 }
 
@@ -218,7 +216,7 @@ textarea{
 
 .algorithm-option{
 
-    background:rgba(255,255,255,.04);
+    background:var(--overlay-soft);
 
     border:1px solid rgba(88,166,255,.15);
 
@@ -230,13 +228,13 @@ textarea{
 
     transition:.3s;
 
-    color:white;
+    color:var(--text-primary);
 
 }
 
 .algorithm-option:hover{
 
-    border-color:#58a6ff;
+    border-color:var(--accent);
 
 }
 
@@ -266,7 +264,7 @@ textarea{
 
 .output-title{
 
-    color:#58a6ff;
+    color:var(--accent);
 
     margin-bottom:20px;
 

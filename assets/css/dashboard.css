@@ -44,7 +44,7 @@ body {
 
 .placeholder-card {
 
-    background: #161b22;
+    background: var(--bg-card);
 
     border-radius: 15px;
 
@@ -102,7 +102,7 @@ body {
 
     transform: translateY(-8px);
 
-    border-color: #58a6ff;
+    border-color: var(--accent);
 
     background:var(--bg-card);
 
@@ -160,7 +160,7 @@ body {
 
     background: rgba(255, 255, 255, .03);
 
-    border-left: 4px solid #58a6ff;
+    border-left: 4px solid var(--accent);
 
     border-radius: 8px;
 
@@ -272,7 +272,7 @@ h2 {
 
 .container .row h2 {
 
-    color: #58a6ff;
+    color:var(--accent);
 
     font-weight: bold;
 
@@ -280,7 +280,7 @@ h2 {
 
 .container .row p {
 
-    color: #9ca3af;
+    color:var(--text-secondary);
 
 }
 
@@ -316,7 +316,7 @@ h2 {
 
     font-size: 34px;
 
-    color: #58a6ff;
+    color: var(--accent);
 
 }
 
@@ -368,7 +368,7 @@ h2 {
 
 .nav-link.active {
 
-    color: #58a6ff !important;
+    color: var(--accent) !important;
 
 }
 
@@ -420,7 +420,7 @@ h2 {
 
 .theme-btn:hover {
 
-    background: #58a6ff;
+    background: var(--accent);
 
     color: white;
 
