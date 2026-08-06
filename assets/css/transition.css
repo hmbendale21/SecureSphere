@@ -1,0 +1,21 @@
+/* ==========================================
+   SecureSphere Page Transition
+========================================== */
+
+/* Fade In */
+
+body{
+
+    opacity:1;
+
+    transition:opacity .45s ease;
+
+}
+
+/* Fade Out */
+
+body.fade-out{
+
+    opacity:0;
+
+}
