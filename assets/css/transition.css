@@ -2,20 +2,80 @@
    SecureSphere Page Transition
 ========================================== */
 
-/* Fade In */
-
 body{
 
     opacity:1;
 
-    transition:opacity .45s ease;
+    transform:translateY(0);
+
+    transition:
+
+        opacity .45s ease,
+
+        transform .45s ease;
 
 }
 
-/* Fade Out */
+/* Leaving Page */
 
 body.fade-out{
 
     opacity:0;
+
+    transform:translateY(8px) scale(.995);
+
+    transform:translateY(0) scale(1);
+
+}
+
+/* Enter Animation */
+
+body.fade-in{
+
+    opacity:0;
+
+    transform:translateY(15px);
+
+    animation:
+
+        pageEnter .45s ease forwards;
+
+}
+
+@keyframes pageEnter{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(15px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+body.fade-out{
+
+    pointer-events:none;
+
+}
+
+@media (prefers-reduced-motion: reduce){
+
+    body{
+
+        transition:none;
+
+        animation:none;
+
+    }
 
 }
