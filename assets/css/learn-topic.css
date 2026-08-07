@@ -1,0 +1,467 @@
+/* ==========================================
+   Learn Topic Page
+========================================== */
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+/* ==========================================
+   Search Box
+========================================== */
+
+.search-box{
+
+    position:relative;
+
+}
+
+.search-box i{
+
+    position:absolute;
+
+    left:18px;
+
+    top:18px;
+
+    color:var(--accent);
+
+    font-size:20px;
+
+}
+
+.search-box input{
+
+    background:var(--bg-card);
+
+    color:var(--text-primary);
+
+    border:1px solid var(--border);
+
+    border-radius:15px;
+
+    padding:16px 20px 16px 55px;
+
+}
+
+.search-box input:focus{
+
+    background:var(--bg-card);
+
+    color:var(--text-primary);
+
+    border-color:var(--accent);
+
+    box-shadow:0 0 15px rgba(88,166,255,.25);
+
+}
+
+/* ==========================================
+   Quick Navigation
+========================================== */
+
+.learn-link{
+
+    display:block;
+
+    background:var(--bg-card);
+
+    color:var(--text-primary);
+
+    padding:15px;
+
+    border-radius:12px;
+
+    text-decoration:none;
+
+    border:1px solid var(--border);
+
+    transition:.3s;
+
+    font-weight:600;
+
+    text-align:center;
+
+}
+
+.learn-link:hover{
+
+    background:var(--accent);
+
+    color:white;
+
+    transform:translateY(-4px);
+
+}
+
+/* ==========================================
+   Content Cards
+========================================== */
+
+.dashboard-card{
+
+    background:var(--bg-card);
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    padding:35px;
+
+    transition:.35s;
+
+}
+
+.dashboard-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 15px 30px rgba(88,166,255,.18);
+
+}
+
+.dashboard-card h2{
+
+    color:var(--accent);
+
+    margin-bottom:20px;
+
+}
+
+.dashboard-card p{
+
+    color:var(--text-secondary);
+
+    line-height:1.8;
+
+}
+
+/* ==========================================
+   Lists
+========================================== */
+
+.dashboard-card ul{
+
+    padding-left:25px;
+
+}
+
+.dashboard-card li{
+
+    margin-bottom:10px;
+
+    color:var(--text-primary);
+
+}
+
+/* ==========================================
+   Example Box
+========================================== */
+
+.example-box{
+
+    margin-top:20px;
+
+    background:rgba(88,166,255,.08);
+
+    border-left:5px solid var(--accent);
+
+    padding:20px;
+
+    border-radius:12px;
+
+    color:var(--text-primary);
+
+}
+
+/* ==========================================
+   Tables
+========================================== */
+
+.table{
+
+    border-radius:12px;
+
+    overflow:hidden;
+
+}
+
+.table th{
+
+    background:var(--accent);
+
+    color:white;
+
+}
+
+.table td{
+
+    background:var(--bg-card);
+
+    color:var(--text-primary);
+
+}
+
+.table-hover tbody tr:hover td{
+
+    background:rgba(88,166,255,.08);
+
+}
+
+/* ==========================================
+   Responsive
+========================================== */
+
+@media(max-width:768px){
+
+    .dashboard-card{
+
+        padding:22px;
+
+    }
+
+}
+
+/* ==========================================
+   OSI Model
+========================================== */
+
+.osi-model{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+    margin-top:25px;
+
+}
+
+.osi{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:18px 25px;
+
+    border-radius:12px;
+
+    color:white;
+
+    transition:.3s;
+
+    cursor:pointer;
+
+}
+
+.osi:hover{
+
+    transform:translateX(8px);
+
+}
+
+.layer7{background:#ef4444;}
+.layer6{background:#f97316;}
+.layer5{background:#eab308;}
+.layer4{background:#22c55e;}
+.layer3{background:#3b82f6;}
+.layer2{background:#8b5cf6;}
+.layer1{background:#6366f1;}
+
+.osi span{
+
+    font-weight:bold;
+
+}
+
+.osi strong{
+
+    font-size:20px;
+
+}
+
+.osi small{
+
+    opacity:.9;
+
+}
+
+/* ==========================================
+   Comparison Table
+========================================== */
+
+.comparison-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    overflow:hidden;
+
+    border-radius:15px;
+
+}
+
+.comparison-table th{
+
+    background:linear-gradient(
+        135deg,
+        #2563eb,
+        #4da3ff
+    );
+
+    color:white;
+
+    padding:16px;
+
+    text-align:center;
+
+}
+
+.comparison-table td{
+
+    background:var(--bg-card);
+
+    color:var(--text-primary);
+
+    padding:16px;
+
+    border:1px solid var(--border);
+
+    vertical-align:middle;
+
+}
+
+.comparison-table tbody tr:hover td{
+
+    background:rgba(88,166,255,.08);
+
+}
+
+.comparison-box{
+
+    margin-top:30px;
+
+    padding:25px;
+
+    border-left:5px solid var(--accent);
+
+    background:rgba(88,166,255,.08);
+
+    border-radius:15px;
+
+}
+
+.comparison-box h5{
+
+    color:var(--accent);
+
+    margin-bottom:15px;
+
+}
+
+.comparison-box li{
+
+    margin-bottom:10px;
+
+}
+
+/* ==========================================
+   Network Devices
+========================================== */
+
+.device-card{
+
+    background:var(--bg-card);
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    padding:30px;
+
+    text-align:center;
+
+    height:100%;
+
+    transition:.35s ease;
+
+}
+
+.device-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:var(--accent);
+
+    box-shadow:0 15px 30px rgba(88,166,255,.20);
+
+}
+
+.device-icon{
+
+    width:80px;
+
+    height:80px;
+
+    margin:0 auto 20px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:20px;
+
+    background:rgba(88,166,255,.10);
+
+}
+
+.device-icon i{
+
+    font-size:38px;
+
+    color:var(--accent);
+
+}
+
+.device-card h4{
+
+    color:var(--text-primary);
+
+    margin-bottom:15px;
+
+    font-weight:700;
+
+}
+
+.device-card p{
+
+    color:var(--text-secondary);
+
+    line-height:1.8;
+
+    min-height:90px;
+
+}
+
+.device-example{
+
+    margin-top:20px;
+
+    background:rgba(88,166,255,.08);
+
+    border-radius:10px;
+
+    padding:12px;
+
+    color:var(--text-primary);
+
+}
