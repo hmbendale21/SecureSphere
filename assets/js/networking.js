@@ -112,41 +112,245 @@ const networkingTopics = [
 
     {
         id: "topology",
+
         title: "🛰 Network Topologies",
+
         content: `
+    
+        <div class="row g-4">
+    
+            <div class="col-lg-6">
+    
+                <div class="topology-card">
+    
+                <div class="topology-diagram bus">
 
-            <ul>
-
-                <li>Bus Topology</li>
-
-                <li>Star Topology ⭐ (Most Common)</li>
-
-                <li>Ring Topology</li>
-
-                <li>Mesh Topology</li>
-
-                <li>Tree Topology</li>
-
-            </ul>
-
-            <div class="example-box">
-
-                <strong>Interview Tip:</strong>
-
-                Star Topology is widely used because failure of one cable
-                does not affect the entire network.
-
+                <div class="bus-line"></div>
+            
+                <div class="device d1"></div>
+            
+                <div class="device d2"></div>
+            
+                <div class="device d3"></div>
+            
+                <div class="device d4"></div>
+            
             </div>
+    
+                    <h4>Bus Topology</h4>
+    
+                    <p>
+    
+                        All devices share a single communication cable (backbone).
+    
+                    </p>
+    
+                    <h6>Advantages</h6>
+    
+                    <ul>
+    
+                        <li>Easy to install</li>
+    
+                        <li>Low cost</li>
+    
+                    </ul>
+    
+                    <h6>Disadvantages</h6>
+    
+                    <ul>
+    
+                        <li>Single cable failure affects the network</li>
+    
+                        <li>Difficult troubleshooting</li>
+    
+                    </ul>
+    
+                </div>
+    
+            </div>
+    
+            <div class="col-lg-6">
 
+            <div class="topology-card">
+        
+                <div class="topology-diagram star">
+        
+                    <svg class="star-svg" viewBox="0 0 240 180">
+        
+                        <line x1="120" y1="90" x2="120" y2="25"></line>
+                        <line x1="120" y1="90" x2="120" y2="155"></line>
+                        <line x1="120" y1="90" x2="35" y2="90"></line>
+                        <line x1="120" y1="90" x2="205" y2="90"></line>
+        
+                    </svg>
+        
+                    <div class="center-node"></div>
+        
+                    <div class="node top"></div>
+                    <div class="node right"></div>
+                    <div class="node bottom"></div>
+                    <div class="node left"></div>
+        
+                </div>
+        
+                <h4>Star Topology</h4>
+        
+                <p>
+                    Every device connects to a central switch or hub.
+                </p>
+        
+                <h6>Advantages</h6>
+        
+                <ul>
+        
+                    <li>Most reliable</li>
+        
+                    <li>Easy troubleshooting</li>
+        
+                    <li>Easy expansion</li>
+        
+                </ul>
+        
+                <h6>Disadvantages</h6>
+        
+                <ul>
+        
+                    <li>Requires more cabling</li>
+        
+                    <li>Switch failure affects all devices</li>
+        
+                </ul>
+        
+            </div>
+        
+        </div>
+
+        
+            <div class="col-lg-6">
+    
+                <div class="topology-card">
+    
+                    <div class="topology-diagram ring">
+    
+                    <div class="ring-circle">
+
+                    <div class="ring-node n1"></div>
+                
+                    <div class="ring-node n2"></div>
+                
+                    <div class="ring-node n3"></div>
+                
+                    <div class="ring-node n4"></div>
+                
+                </div>
+    
+                    </div>
+    
+                    <h4>Ring Topology</h4>
+    
+                    <p>
+    
+                        Each device is connected to two neighboring devices, forming a ring.
+    
+                    </p>
+    
+                    <h6>Advantages</h6>
+    
+                    <ul>
+    
+                        <li>Equal access for all devices</li>
+    
+                        <li>No collisions</li>
+    
+                    </ul>
+    
+                    <h6>Disadvantages</h6>
+    
+                    <ul>
+    
+                        <li>Failure of one device may affect the network</li>
+    
+                    </ul>
+    
+                </div>
+    
+            </div>
+    
+            <div class="col-lg-6">
+    
+                <div class="topology-card">
+    
+                <div class="topology-diagram mesh">
+
+    <div class="mesh-node tl"></div>
+
+    <div class="mesh-node tr"></div>
+
+    <div class="mesh-node bl"></div>
+
+    <div class="mesh-node br"></div>
+
+    <svg class="mesh-svg" viewBox="0 0 200 200">
+
+        <line x1="30" y1="30" x2="170" y2="30"/>
+
+        <line x1="30" y1="170" x2="170" y2="170"/>
+
+        <line x1="30" y1="30" x2="30" y2="170"/>
+
+        <line x1="170" y1="30" x2="170" y2="170"/>
+
+        <line x1="30" y1="30" x2="170" y2="170"/>
+
+        <line x1="170" y1="30" x2="30" y2="170"/>
+
+    </svg>
+
+</div>
+    
+                    <h4>Mesh Topology</h4>
+    
+                    <p>
+    
+                        Every device is connected to every other device.
+    
+                    </p>
+    
+                    <h6>Advantages</h6>
+    
+                    <ul>
+    
+                        <li>Very reliable</li>
+    
+                        <li>No single point of failure</li>
+    
+                    </ul>
+    
+                    <h6>Disadvantages</h6>
+    
+                    <ul>
+    
+                        <li>Expensive</li>
+    
+                        <li>Complex installation</li>
+    
+                    </ul>
+    
+                </div>
+    
+            </div>
+    
+        </div>
+    
         `
     },
 
     {
-        id:"osi",
-    
-        title:"🖥 OSI Model",
-    
-        content:`
+        id: "osi",
+
+        title: "🖥 OSI Model",
+
+        content: `
     
     <div class="osi-model">
     
@@ -227,9 +431,9 @@ const networkingTopics = [
 
     {
         id: "tcpip",
-    
+
         title: "📡 TCP/IP Model vs OSI Model",
-    
+
         content: `
     
             <p>
@@ -364,9 +568,9 @@ const networkingTopics = [
 
     {
         id: "devices",
-    
+
         title: "🖥 Network Devices",
-    
+
         content: `
     
         <div class="row g-4">
@@ -571,7 +775,7 @@ const container = document.getElementById("networkContent");
 
 let html = "";
 
-networkingTopics.forEach(topic=>{
+networkingTopics.forEach(topic => {
 
     html += `
 
@@ -601,23 +805,23 @@ container.innerHTML = html;
 
 const search = document.getElementById("topicSearch");
 
-search.addEventListener("keyup",()=>{
+search.addEventListener("keyup", () => {
 
     const keyword = search.value.toLowerCase();
 
-    document.querySelectorAll(".dashboard-card").forEach(card=>{
+    document.querySelectorAll(".dashboard-card").forEach(card => {
 
         const text = card.innerText.toLowerCase();
 
-        if(text.includes(keyword)){
+        if (text.includes(keyword)) {
 
-            card.style.display="block";
+            card.style.display = "block";
 
         }
 
-        else{
+        else {
 
-            card.style.display="none";
+            card.style.display = "none";
 
         }
 
