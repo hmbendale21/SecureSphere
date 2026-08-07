@@ -1,0 +1,185 @@
+/* ==========================================
+   Learn Cyber
+========================================== */
+
+.search-box{
+
+    position:relative;
+
+}
+
+.search-box i{
+
+    position:absolute;
+
+    left:20px;
+
+    top:18px;
+
+    color:var(--accent);
+
+    font-size:20px;
+
+}
+
+.search-box input{
+
+    background:var(--bg-card);
+
+    border:1px solid var(--border);
+
+    color:var(--text-primary);
+
+    padding:16px 20px 16px 55px;
+
+    border-radius:15px;
+
+}
+
+.search-box input:focus{
+
+    background:var(--bg-card);
+
+    color:var(--text-primary);
+
+    border-color:var(--accent);
+
+    box-shadow:0 0 20px rgba(88,166,255,.25);
+
+}
+
+/* ==========================================
+   Topic Cards
+========================================== */
+
+.topic-card{
+
+    background:var(--bg-card);
+
+    border:1px solid var(--border);
+
+    border-radius:20px;
+
+    padding:30px;
+
+    height:100%;
+
+    transition:.35s;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.topic-card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:var(--accent);
+
+    box-shadow:0 15px 35px rgba(88,166,255,.25);
+
+}
+
+.topic-icon{
+
+    width:75px;
+
+    height:75px;
+
+    border-radius:18px;
+
+    background:rgba(88,166,255,.12);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin-bottom:25px;
+
+}
+
+.topic-icon i{
+
+    font-size:34px;
+
+    color:var(--accent);
+
+}
+
+.topic-title{
+
+    color:var(--text-primary);
+
+    font-size:24px;
+
+    font-weight:700;
+
+    margin-bottom:15px;
+
+}
+
+.topic-desc{
+
+    color:var(--text-secondary);
+
+    line-height:1.8;
+
+    margin-bottom:25px;
+
+}
+
+.learn-btn{
+
+    display:inline-block;
+
+    background:linear-gradient(
+        135deg,
+        #4da3ff,
+        #2563eb
+    );
+
+    color:white;
+
+    padding:12px 22px;
+
+    border-radius:12px;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.learn-btn:hover{
+
+    color:white;
+
+    transform:translateY(-3px);
+
+}
+
+.section-title{
+
+    color:var(--accent);
+
+    font-size:36px;
+
+    font-weight:700;
+
+    margin-bottom:15px;
+
+}
+
+.section-subtitle{
+
+    color:var(--text-secondary);
+
+    margin-bottom:50px;
+
+}
