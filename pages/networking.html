@@ -12,8 +12,6 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <!-- Dashboard CSS -->
     <link rel="stylesheet" href="../assets/css/dashboard.css">
     <link rel="stylesheet" href="../assets/css/learn-topic.css">
@@ -24,7 +22,7 @@
 </head>
 
 <body>
-
+    <div id="learnNavbar"></div>
 <!-- ==========================================
 Hero Section
 ========================================== -->
@@ -234,6 +232,72 @@ Hero Section
 <script src="../assets/js/transition.js"></script>   
 <script src="../assets/js/networking.js"></script>
 
+<script>
+
+    fetch("../assets/components/learn-navbar.html")
+    
+        .then(response => {
+
+            if (!response.ok) {
+
+                throw new Error(
+                    "Navbar file not found: " + response.status
+                );
+
+            }
+
+            return response.text();
+
+        })
+
+        .then(data => {
+
+            const navbar =
+                document.getElementById("learnNavbar");
+
+            navbar.innerHTML = data;
+
+
+            /* ===============================
+               ACTIVE PAGE
+            =============================== */
+
+            const currentPage =
+                window.location.pathname
+                    .split("/")
+                    .pop();
+
+
+            document
+                .querySelectorAll(".learn-nav-item")
+                .forEach(link => {
+
+                    const linkPage =
+                        link.getAttribute("href")
+                            .split("/")
+                            .pop();
+
+
+                    if(linkPage === currentPage){
+
+                        link.classList.add("active");
+
+                    }
+
+                });
+
+        })
+
+        .catch(error => {
+
+            console.error(
+                "Learn Navbar Error:",
+                error
+            );
+
+        });
+
+</script>
 </body>
 
 </html>

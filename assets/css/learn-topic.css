@@ -2285,3 +2285,252 @@ html{
     transform:rotate(180deg);
 
 }
+
+/* ==========================================
+   LEARN CYBER NAVBAR
+========================================== */
+
+.learn-navbar{
+
+    position:sticky;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    z-index:9999;
+
+    padding:12px 20px;
+
+    background:var(--bg-card);
+
+    border-bottom:1px solid var(--border);
+
+    backdrop-filter:blur(15px);
+
+    -webkit-backdrop-filter:blur(15px);
+
+}
+
+.learn-nav-inner{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:8px;
+
+}
+
+
+/* ==========================================
+   NAV ITEMS
+========================================== */
+
+.learn-nav-item{
+
+    position:relative;
+
+    width:42px;
+
+    height:42px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-decoration:none;
+
+    color:var(--text-secondary);
+
+    border:1px solid transparent;
+
+    border-radius:10px;
+
+    transition:.3s ease;
+
+}
+
+.learn-nav-item i{
+
+    font-size:18px;
+
+    transition:.3s ease;
+
+}
+
+.learn-nav-item:hover{
+
+    color:var(--accent);
+
+    background:rgba(88,166,255,.10);
+
+    border-color:rgba(88,166,255,.25);
+
+    transform:translateY(-2px);
+
+}
+
+.learn-nav-item:hover i{
+
+    transform:scale(1.12);
+
+}
+
+
+/* ==========================================
+   TOOLTIP
+========================================== */
+
+.learn-nav-item::after{
+
+    content:attr(data-tooltip);
+
+    position:absolute;
+
+    top:calc(100% + 10px);
+
+    left:50%;
+
+    transform:translateX(-50%) translateY(-5px);
+
+    padding:7px 11px;
+
+    background:var(--bg-card);
+
+    color:var(--text-primary);
+
+    border:1px solid var(--border);
+
+    border-radius:8px;
+
+    font-size:12px;
+
+    font-weight:600;
+
+    white-space:nowrap;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    pointer-events:none;
+
+    transition:.25s ease;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+
+}
+
+.learn-nav-item:hover::after{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:translateX(-50%) translateY(0);
+
+}
+
+
+/* ==========================================
+   DIVIDER
+========================================== */
+
+.learn-nav-divider{
+
+    width:1px;
+
+    height:25px;
+
+    margin:0 5px;
+
+    background:var(--border);
+
+}
+
+
+/* ==========================================
+   ACTIVE PAGE
+========================================== */
+
+.learn-nav-item.active{
+
+    color:var(--accent);
+
+    background:rgba(88,166,255,.12);
+
+    border-color:rgba(88,166,255,.30);
+
+}
+
+.learn-nav-item.active i{
+
+    filter:drop-shadow(0 0 5px var(--accent));
+
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media(max-width:900px){
+
+    .learn-navbar{
+
+        overflow-x:auto;
+
+    }
+
+    .learn-nav-inner{
+
+        width:max-content;
+
+        justify-content:flex-start;
+
+        margin:auto;
+
+    }
+
+}
+
+@media(max-width:500px){
+
+    .learn-navbar{
+
+        padding:10px;
+
+    }
+
+    .learn-nav-item{
+
+        width:38px;
+
+        height:38px;
+
+    }
+
+    .learn-nav-item i{
+
+        font-size:16px;
+
+    }
+
+    .learn-nav-divider{
+
+        margin:0 2px;
+
+    }
+
+}
