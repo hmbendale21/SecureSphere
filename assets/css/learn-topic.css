@@ -1158,3 +1158,1130 @@ html{
     }
 
 }
+
+/* ==========================================
+   NETWORK PROTOCOLS
+========================================== */
+
+.protocol-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:20px;
+
+    margin-top:30px;
+
+}
+
+.protocol-card{
+
+    display:flex;
+
+    gap:20px;
+
+    padding:25px;
+
+    background:var(--bg-card);
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    transition:.35s ease;
+
+}
+
+.protocol-card:hover{
+
+    transform:translateY(-6px);
+
+    border-color:var(--accent);
+
+    box-shadow:0 15px 30px rgba(88,166,255,.18);
+
+}
+
+.protocol-icon{
+
+    min-width:60px;
+
+    width:60px;
+
+    height:60px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:15px;
+
+    background:rgba(88,166,255,.12);
+
+}
+
+.protocol-icon i{
+
+    font-size:28px;
+
+    color:var(--accent);
+
+}
+
+.protocol-icon.secure{
+
+    background:rgba(34,197,94,.12);
+
+}
+
+.protocol-icon.secure i{
+
+    color:#22c55e;
+
+}
+
+.protocol-content{
+
+    flex:1;
+
+}
+
+.protocol-header{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:10px;
+
+    margin-bottom:10px;
+
+}
+
+.protocol-header h4{
+
+    margin:0;
+
+    color:var(--text-primary);
+
+    font-weight:700;
+
+}
+
+.protocol-content p{
+
+    color:var(--text-secondary);
+
+    line-height:1.7;
+
+    margin-bottom:15px;
+
+}
+
+.protocol-badge{
+
+    padding:5px 10px;
+
+    border-radius:20px;
+
+    font-size:11px;
+
+    font-weight:600;
+
+    white-space:nowrap;
+
+    background:rgba(88,166,255,.12);
+
+    color:var(--accent);
+
+}
+
+.secure-badge{
+
+    background:rgba(34,197,94,.12);
+
+    color:#22c55e;
+
+}
+
+.protocol-details{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:15px;
+
+    color:var(--text-primary);
+
+    font-size:14px;
+
+    padding-top:12px;
+
+    border-top:1px solid var(--border);
+
+}
+
+.protocol-details strong{
+
+    color:var(--accent);
+
+}
+
+.security-note{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    margin-top:15px;
+
+    padding:10px 12px;
+
+    border-radius:10px;
+
+    background:rgba(239,68,68,.08);
+
+    color:var(--text-secondary);
+
+    font-size:13px;
+
+}
+
+.security-note i{
+
+    color:#ef4444;
+
+}
+
+.security-note.safe{
+
+    background:rgba(34,197,94,.08);
+
+}
+
+.security-note.safe i{
+
+    color:#22c55e;
+
+}
+
+
+/* ==========================================
+   Protocol Badges
+========================================== */
+
+.web{
+
+    color:#60a5fa;
+
+}
+
+.network{
+
+    color:#a78bfa;
+
+}
+
+.file{
+
+    color:#f59e0b;
+
+}
+
+.email{
+
+    color:#f472b6;
+
+}
+
+
+/* ==========================================
+   Responsive
+========================================== */
+
+@media(max-width:768px){
+
+    .protocol-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .protocol-card{
+
+        padding:20px;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .protocol-card{
+
+        flex-direction:column;
+
+    }
+
+    .protocol-icon{
+
+        width:55px;
+
+        min-width:55px;
+
+        height:55px;
+
+    }
+
+    .protocol-header{
+
+        align-items:flex-start;
+
+        flex-direction:column;
+
+    }
+
+}
+
+/* ==========================================
+   IP ADDRESSING
+========================================== */
+
+.ip-highlight{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:25px;
+
+    padding:25px;
+
+    margin:30px 0;
+
+    background:rgba(88,166,255,.08);
+
+    border:1px solid var(--border);
+
+    border-left:5px solid var(--accent);
+
+    border-radius:16px;
+
+}
+
+.ip-highlight-icon{
+
+    width:65px;
+
+    height:65px;
+
+    min-width:65px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:16px;
+
+    background:rgba(88,166,255,.12);
+
+}
+
+.ip-highlight-icon i{
+
+    font-size:30px;
+
+    color:var(--accent);
+
+}
+
+.ip-highlight h4{
+
+    color:var(--text-primary);
+
+    margin-bottom:8px;
+
+}
+
+.ip-highlight p{
+
+    margin-bottom:12px;
+
+}
+
+.ip-example{
+
+    display:inline-block;
+
+    padding:8px 15px;
+
+    border-radius:8px;
+
+    background:var(--bg-card);
+
+    border:1px solid var(--border);
+
+    color:var(--accent);
+
+    font-family:monospace;
+
+    font-size:18px;
+
+    font-weight:600;
+
+}
+
+
+/* ==========================================
+   IP CARDS
+========================================== */
+
+.ip-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:20px;
+
+    margin:30px 0;
+
+}
+
+.ip-card{
+
+    padding:25px;
+
+    background:var(--bg-card);
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    transition:.35s ease;
+
+}
+
+.ip-card:hover{
+
+    transform:translateY(-7px);
+
+    border-color:var(--accent);
+
+    box-shadow:0 15px 30px rgba(88,166,255,.18);
+
+}
+
+.ip-card-icon{
+
+    width:55px;
+
+    height:55px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:14px;
+
+    background:rgba(88,166,255,.12);
+
+    margin-bottom:18px;
+
+}
+
+.ip-card-icon i{
+
+    font-size:25px;
+
+    color:var(--accent);
+
+}
+
+.ip-card-icon.ipv6{
+
+    background:rgba(139,92,246,.12);
+
+}
+
+.ip-card-icon.ipv6 i{
+
+    color:#8b5cf6;
+
+}
+
+.ip-card-icon.public-ip{
+
+    background:rgba(34,197,94,.12);
+
+}
+
+.ip-card-icon.public-ip i{
+
+    color:#22c55e;
+
+}
+
+.ip-card-icon.private-ip{
+
+    background:rgba(245,158,11,.12);
+
+}
+
+.ip-card-icon.private-ip i{
+
+    color:#f59e0b;
+
+}
+
+.ip-card-icon.static-ip{
+
+    background:rgba(236,72,153,.12);
+
+}
+
+.ip-card-icon.static-ip i{
+
+    color:#ec4899;
+
+}
+
+.ip-card-icon.dynamic-ip{
+
+    background:rgba(6,182,212,.12);
+
+}
+
+.ip-card-icon.dynamic-ip i{
+
+    color:#06b6d4;
+
+}
+
+.ip-card h4{
+
+    color:var(--text-primary);
+
+    font-weight:700;
+
+    margin-bottom:12px;
+
+}
+
+.ip-card p{
+
+    color:var(--text-secondary);
+
+    line-height:1.7;
+
+}
+
+.ip-info{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:7px;
+
+    margin-top:18px;
+
+    padding-top:15px;
+
+    border-top:1px solid var(--border);
+
+    color:var(--accent);
+
+    font-size:13px;
+
+}
+
+
+/* ==========================================
+   PRIVATE IP RANGES
+========================================== */
+
+.private-range-box{
+
+    margin-top:30px;
+
+    padding:25px;
+
+    background:var(--bg-card);
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+}
+
+.private-range-box h4{
+
+    color:var(--accent);
+
+    margin-bottom:10px;
+
+}
+
+.ip-table{
+
+    margin-top:20px;
+
+    margin-bottom:0;
+
+}
+
+.ip-table th{
+
+    background:var(--accent);
+
+    color:white;
+
+    padding:14px;
+
+}
+
+.ip-table td{
+
+    background:var(--bg-card);
+
+    color:var(--text-primary);
+
+    border-color:var(--border);
+
+    padding:14px;
+
+}
+
+.ip-table tbody tr:hover td{
+
+    background:rgba(88,166,255,.08);
+
+}
+
+
+/* ==========================================
+   IP SECURITY
+========================================== */
+
+.ip-security-box{
+
+    margin-top:25px;
+
+    padding:25px;
+
+    border-left:5px solid #22c55e;
+
+    background:rgba(34,197,94,.07);
+
+    border-radius:15px;
+
+}
+
+.ip-security-box h4{
+
+    color:#22c55e;
+
+    margin-bottom:18px;
+
+}
+
+.ip-security-box li{
+
+    color:var(--text-secondary);
+
+    margin-bottom:10px;
+
+    line-height:1.6;
+
+}
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:992px){
+
+    .ip-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .ip-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .ip-highlight{
+
+        align-items:flex-start;
+
+        flex-direction:column;
+
+    }
+
+}
+
+/* ==========================================
+   NETWORK PORTS
+========================================== */
+
+.port-search{
+
+    position:relative;
+
+    margin:30px 0 25px;
+
+}
+
+.port-search i{
+
+    position:absolute;
+
+    left:18px;
+
+    top:16px;
+
+    color:var(--accent);
+
+    font-size:18px;
+
+}
+
+.port-search input{
+
+    width:100%;
+
+    padding:14px 20px 14px 50px;
+
+    background:var(--bg-card);
+
+    color:var(--text-primary);
+
+    border:1px solid var(--border);
+
+    border-radius:12px;
+
+    outline:none;
+
+    transition:.3s;
+
+}
+
+.port-search input::placeholder{
+
+    color:var(--text-secondary);
+
+}
+
+.port-search input:focus{
+
+    border-color:var(--accent);
+
+    box-shadow:0 0 15px rgba(88,166,255,.15);
+
+}
+
+
+/* ==========================================
+   PORT TABLE
+========================================== */
+
+.port-table{
+
+    margin:0;
+
+    border-collapse:separate;
+
+    border-spacing:0;
+
+    overflow:hidden;
+
+    border:1px solid var(--border);
+
+    border-radius:15px;
+
+}
+
+.port-table th{
+
+    background:linear-gradient(
+        135deg,
+        #2563eb,
+        #4da3ff
+    );
+
+    color:white;
+
+    padding:16px;
+
+    border:0;
+
+    white-space:nowrap;
+
+}
+
+.port-table td{
+
+    background:var(--bg-card);
+
+    color:var(--text-primary);
+
+    padding:15px;
+
+    border-color:var(--border);
+
+    vertical-align:middle;
+
+}
+
+.port-table tbody tr{
+
+    transition:.25s;
+
+}
+
+.port-table tbody tr:hover td{
+
+    background:rgba(88,166,255,.08);
+
+}
+
+.port-number{
+
+    display:inline-block;
+
+    min-width:55px;
+
+    padding:5px 9px;
+
+    text-align:center;
+
+    border-radius:8px;
+
+    background:rgba(88,166,255,.12);
+
+    color:var(--accent);
+
+    font-family:monospace;
+
+    font-weight:700;
+
+}
+
+
+/* ==========================================
+   SECURITY BADGES
+========================================== */
+
+.security-badge{
+
+    display:inline-block;
+
+    padding:5px 10px;
+
+    border-radius:20px;
+
+    font-size:11px;
+
+    font-weight:700;
+
+    white-space:nowrap;
+
+}
+
+.security-badge.safe{
+
+    color:#22c55e;
+
+    background:rgba(34,197,94,.12);
+
+}
+
+.security-badge.risky{
+
+    color:#ef4444;
+
+    background:rgba(239,68,68,.12);
+
+}
+
+.security-badge.warning{
+
+    color:#f59e0b;
+
+    background:rgba(245,158,11,.12);
+
+}
+
+
+/* ==========================================
+   PORT INFO CARDS
+========================================== */
+
+.port-info-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:20px;
+
+    margin-top:30px;
+
+}
+
+.port-info-card{
+
+    padding:25px;
+
+    background:var(--bg-card);
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+    transition:.3s;
+
+}
+
+.port-info-card:hover{
+
+    transform:translateY(-6px);
+
+    border-color:var(--accent);
+
+    box-shadow:0 12px 25px rgba(88,166,255,.15);
+
+}
+
+.port-info-card > i{
+
+    font-size:30px;
+
+    color:var(--accent);
+
+    display:block;
+
+    margin-bottom:15px;
+
+}
+
+.port-info-card h4{
+
+    color:var(--text-primary);
+
+    font-weight:700;
+
+    margin-bottom:10px;
+
+}
+
+.port-info-card p{
+
+    color:var(--text-secondary);
+
+    line-height:1.7;
+
+    margin:0;
+
+}
+
+
+/* ==========================================
+   SECURITY BOX
+========================================== */
+
+.port-security-box{
+
+    margin-top:25px;
+
+    padding:25px;
+
+    background:rgba(34,197,94,.07);
+
+    border-left:5px solid #22c55e;
+
+    border-radius:15px;
+
+}
+
+.port-security-box h4{
+
+    color:#22c55e;
+
+    margin-bottom:10px;
+
+}
+
+.port-security-box p{
+
+    color:var(--text-secondary);
+
+    line-height:1.7;
+
+    margin:0;
+
+}
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:992px){
+
+    .port-info-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .port-table{
+
+        min-width:850px;
+
+    }
+
+}   
+
+/* ==========================================
+   INTERVIEW QUESTIONS
+========================================== */
+
+.interview-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+    margin-top:30px;
+
+}
+
+.interview-item{
+
+    background:var(--bg-card);
+
+    border:1px solid var(--border);
+
+    border-radius:14px;
+
+    overflow:hidden;
+
+    transition:.3s ease;
+
+}
+
+.interview-item:hover{
+
+    border-color:var(--accent);
+
+}
+
+.interview-question{
+
+    width:100%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:20px;
+
+    padding:20px 22px;
+
+    border:0;
+
+    background:transparent;
+
+    color:var(--text-primary);
+
+    text-align:left;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+}
+
+.interview-question i{
+
+    color:var(--accent);
+
+    font-size:18px;
+
+    transition:.3s ease;
+
+    flex-shrink:0;
+
+}
+
+.interview-answer{
+
+    display:none;
+
+    padding:0 22px 20px;
+
+    border-top:1px solid var(--border);
+
+}
+
+.interview-answer p{
+
+    margin:18px 0 0;
+
+    color:var(--text-secondary);
+
+    line-height:1.8;
+
+}
+
+.interview-item.active{
+
+    border-color:var(--accent);
+
+    box-shadow:0 8px 25px rgba(88,166,255,.10);
+
+}
+
+.interview-item.active .interview-question{
+
+    color:var(--accent);
+
+}
+
+.interview-item.active .interview-question i{
+
+    transform:rotate(180deg);
+
+}
