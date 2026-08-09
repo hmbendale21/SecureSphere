@@ -3492,3 +3492,1533 @@ html{
     }
 
 }
+
+/* ==========================================
+   LINUX NETWORKING COMMANDS
+========================================== */
+
+.network-command-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:20px;
+
+}
+
+.network-command-card{
+
+    position:relative;
+
+    padding:25px;
+
+    background:var(--bg-card);
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+    transition:.3s ease;
+
+}
+
+.network-command-card:hover{
+
+    transform:translateY(-6px);
+
+    border-color:var(--accent);
+
+    box-shadow:0 12px 28px rgba(88,166,255,.14);
+
+}
+
+.network-command-icon{
+
+    width:52px;
+
+    height:52px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin-bottom:18px;
+
+    border-radius:13px;
+
+    background:rgba(88,166,255,.10);
+
+}
+
+.network-command-icon i{
+
+    font-size:24px;
+
+    color:var(--accent);
+
+}
+
+.network-command-card h4{
+
+    color:var(--text-primary);
+
+    font-family:monospace;
+
+    font-size:20px;
+
+    margin-bottom:12px;
+
+}
+
+.network-command-card code{
+
+    display:block;
+
+    width:max-content;
+
+    max-width:100%;
+
+    padding:7px 10px;
+
+    margin-bottom:13px;
+
+    overflow-x:auto;
+
+    color:#22c55e;
+
+    background:rgba(34,197,94,.08);
+
+    border-radius:7px;
+
+    font-family:monospace;
+
+    font-size:13px;
+
+}
+
+.network-command-card p{
+
+    color:var(--text-secondary);
+
+    line-height:1.65;
+
+    margin-bottom:15px;
+
+}
+
+.network-use{
+
+    display:inline-block;
+
+    padding:5px 9px;
+
+    color:var(--accent);
+
+    background:rgba(88,166,255,.08);
+
+    border:1px solid rgba(88,166,255,.15);
+
+    border-radius:20px;
+
+    font-size:11px;
+
+    font-weight:600;
+
+}
+
+
+/* ==========================================
+   LINUX NETWORK SECURITY
+========================================== */
+
+.linux-network-security{
+
+    margin-top:30px;
+
+    padding:25px;
+
+    background:rgba(34,197,94,.06);
+
+    border:1px solid var(--border);
+
+    border-left:5px solid #22c55e;
+
+    border-radius:16px;
+
+}
+
+.linux-network-security-header{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:18px;
+
+    margin-bottom:25px;
+
+}
+
+.linux-network-security-header > i{
+
+    font-size:30px;
+
+    color:#22c55e;
+
+}
+
+.linux-network-security-header h4{
+
+    color:#22c55e;
+
+    margin-bottom:7px;
+
+}
+
+.linux-network-security-header p{
+
+    color:var(--text-secondary);
+
+    line-height:1.7;
+
+    margin:0;
+
+}
+
+.security-command-examples{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:15px;
+
+}
+
+.security-command-examples > div{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:15px;
+
+    padding:15px;
+
+    background:var(--bg-card);
+
+    border:1px solid var(--border);
+
+    border-radius:10px;
+
+}
+
+.security-command-examples span{
+
+    color:var(--text-primary);
+
+    font-size:13px;
+
+}
+
+.security-command-examples code{
+
+    padding:6px 9px;
+
+    color:#22c55e;
+
+    background:rgba(34,197,94,.08);
+
+    border-radius:6px;
+
+    font-family:monospace;
+
+    font-size:12px;
+
+}
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:992px){
+
+    .network-command-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .network-command-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .security-command-examples{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .security-command-examples > div{
+
+        align-items:flex-start;
+
+        flex-direction:column;
+
+    }
+
+    .linux-network-security-header{
+
+        flex-direction:column;
+
+    }
+
+}
+
+/* ==========================================
+   LINUX PROCESSES & SYSTEM MONITORING
+========================================== */
+
+.process-intro{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+    padding:25px;
+
+    margin-bottom:30px;
+
+    background:var(--bg-card);
+
+    border:1px solid var(--border);
+
+    border-left:5px solid var(--accent);
+
+    border-radius:16px;
+
+}
+
+.process-intro-icon{
+
+    min-width:60px;
+
+    width:60px;
+
+    height:60px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:14px;
+
+    background:rgba(88,166,255,.12);
+
+}
+
+.process-intro-icon i{
+
+    color:var(--accent);
+
+    font-size:28px;
+
+}
+
+.process-intro h4{
+
+    color:var(--text-primary);
+
+    margin-bottom:7px;
+
+}
+
+.process-intro p{
+
+    color:var(--text-secondary);
+
+    line-height:1.7;
+
+    margin:0;
+
+}
+
+
+/* ==========================================
+   PROCESS CARDS
+========================================== */
+
+.process-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:20px;
+
+}
+
+.process-card{
+
+    padding:23px;
+
+    background:var(--bg-card);
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+    transition:.3s ease;
+
+}
+
+.process-card:hover{
+
+    transform:translateY(-6px);
+
+    border-color:var(--accent);
+
+    box-shadow:0 12px 25px rgba(88,166,255,.14);
+
+}
+
+.process-icon{
+
+    width:48px;
+
+    height:48px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin-bottom:16px;
+
+    border-radius:12px;
+
+    background:rgba(88,166,255,.10);
+
+}
+
+.process-icon i{
+
+    color:var(--accent);
+
+    font-size:22px;
+
+}
+
+.process-card h4{
+
+    color:var(--text-primary);
+
+    font-family:monospace;
+
+    margin-bottom:12px;
+
+}
+
+.process-card code{
+
+    display:inline-block;
+
+    padding:6px 9px;
+
+    margin-bottom:12px;
+
+    color:#22c55e;
+
+    background:rgba(34,197,94,.08);
+
+    border-radius:6px;
+
+    font-family:monospace;
+
+    font-size:12px;
+
+}
+
+.process-card p{
+
+    color:var(--text-secondary);
+
+    line-height:1.6;
+
+    margin:0;
+
+}
+
+
+/* ==========================================
+   PROCESS INFORMATION
+========================================== */
+
+.process-info-box{
+
+    margin-top:30px;
+
+    padding:25px;
+
+    background:var(--bg-card);
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+}
+
+.process-info-box h4{
+
+    color:var(--text-primary);
+
+    margin-bottom:20px;
+
+}
+
+.process-info-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:15px;
+
+}
+
+.process-info-grid > div{
+
+    padding:16px;
+
+    text-align:center;
+
+    background:rgba(88,166,255,.06);
+
+    border:1px solid var(--border);
+
+    border-radius:10px;
+
+}
+
+.process-info-grid span{
+
+    display:block;
+
+    color:var(--accent);
+
+    font-family:monospace;
+
+    font-size:18px;
+
+    font-weight:700;
+
+    margin-bottom:6px;
+
+}
+
+.process-info-grid p{
+
+    color:var(--text-secondary);
+
+    font-size:13px;
+
+    margin:0;
+
+}
+
+
+/* ==========================================
+   PROCESS SECURITY
+========================================== */
+
+.process-security-box{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:18px;
+
+    margin-top:25px;
+
+    padding:25px;
+
+    background:rgba(245,158,11,.07);
+
+    border-left:5px solid #f59e0b;
+
+    border-radius:15px;
+
+}
+
+.process-security-box > i{
+
+    color:#f59e0b;
+
+    font-size:30px;
+
+}
+
+.process-security-box h4{
+
+    color:#f59e0b;
+
+    margin-bottom:8px;
+
+}
+
+.process-security-box p{
+
+    color:var(--text-secondary);
+
+    line-height:1.7;
+
+    margin:0;
+
+}
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:1100px){
+
+    .process-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .process-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .process-info-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .process-intro{
+
+        align-items:flex-start;
+
+        flex-direction:column;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .process-info-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+/* ==========================================
+   LINUX SHELL SCRIPTING
+========================================== */
+
+.shell-intro{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+    padding:25px;
+
+    margin-bottom:25px;
+
+    background:var(--bg-card);
+
+    border:1px solid var(--border);
+
+    border-left:5px solid var(--accent);
+
+    border-radius:16px;
+
+}
+
+.shell-intro-icon{
+
+    min-width:60px;
+
+    width:60px;
+
+    height:60px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:14px;
+
+    background:rgba(88,166,255,.12);
+
+}
+
+.shell-intro-icon i{
+
+    color:var(--accent);
+
+    font-size:28px;
+
+}
+
+.shell-intro h4{
+
+    color:var(--text-primary);
+
+    margin-bottom:7px;
+
+}
+
+.shell-intro p{
+
+    color:var(--text-secondary);
+
+    line-height:1.7;
+
+    margin:0;
+
+}
+
+
+/* ==========================================
+   SHELL CODE
+========================================== */
+
+.shell-code-card{
+
+    margin-bottom:30px;
+
+    overflow:hidden;
+
+    background:#0d1117;
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+}
+
+.shell-code-header{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:14px 18px;
+
+    background:rgba(255,255,255,.04);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+.shell-code-header > div{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+.shell-code-header i{
+
+    color:#22c55e;
+
+    font-size:20px;
+
+}
+
+.shell-code-header span{
+
+    color:#e5e7eb;
+
+    font-family:monospace;
+
+}
+
+.shell-badge{
+
+    padding:4px 9px;
+
+    color:#22c55e;
+
+    background:rgba(34,197,94,.10);
+
+    border:1px solid rgba(34,197,94,.20);
+
+    border-radius:20px;
+
+    font-size:11px;
+
+}
+
+.shell-code-card pre{
+
+    margin:0;
+
+    padding:22px;
+
+    overflow-x:auto;
+
+}
+
+.shell-code-card code{
+
+    color:#e5e7eb;
+
+    font-family:monospace;
+
+    font-size:14px;
+
+    line-height:1.8;
+
+}
+
+
+/* ==========================================
+   SHELL CONCEPTS
+========================================== */
+
+.shell-concept-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:20px;
+
+    margin-bottom:30px;
+
+}
+
+.shell-concept-card{
+
+    padding:23px;
+
+    background:var(--bg-card);
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+    transition:.3s ease;
+
+}
+
+.shell-concept-card:hover{
+
+    transform:translateY(-6px);
+
+    border-color:var(--accent);
+
+    box-shadow:0 12px 25px rgba(88,166,255,.14);
+
+}
+
+.shell-concept-card > i{
+
+    display:block;
+
+    margin-bottom:16px;
+
+    color:var(--accent);
+
+    font-size:25px;
+
+}
+
+.shell-concept-card h4{
+
+    color:var(--text-primary);
+
+    margin-bottom:12px;
+
+}
+
+.shell-concept-card code{
+
+    display:inline-block;
+
+    margin-bottom:12px;
+
+    padding:6px 9px;
+
+    color:#22c55e;
+
+    background:rgba(34,197,94,.08);
+
+    border-radius:6px;
+
+    font-family:monospace;
+
+    font-size:12px;
+
+}
+
+.shell-concept-card p{
+
+    color:var(--text-secondary);
+
+    line-height:1.6;
+
+    margin:0;
+
+}
+
+
+/* ==========================================
+   SHELL EXAMPLES
+========================================== */
+
+.shell-examples{
+
+    padding:25px;
+
+    margin-bottom:25px;
+
+    background:var(--bg-card);
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+}
+
+.shell-examples h4{
+
+    color:var(--text-primary);
+
+    margin-bottom:20px;
+
+}
+
+.shell-example{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:20px;
+
+    padding:15px 0;
+
+    border-bottom:1px solid var(--border);
+
+}
+
+.shell-example:last-child{
+
+    border-bottom:0;
+
+}
+
+.shell-example span{
+
+    display:block;
+
+    color:var(--text-primary);
+
+    font-weight:600;
+
+}
+
+.shell-example small{
+
+    display:block;
+
+    margin-top:4px;
+
+    color:var(--text-secondary);
+
+}
+
+.shell-example code{
+
+    padding:7px 10px;
+
+    color:#22c55e;
+
+    background:rgba(34,197,94,.08);
+
+    border-radius:7px;
+
+    font-family:monospace;
+
+    font-size:12px;
+
+}
+
+
+/* ==========================================
+   SHELL SECURITY
+========================================== */
+
+.shell-security-box{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:18px;
+
+    padding:25px;
+
+    background:rgba(34,197,94,.07);
+
+    border-left:5px solid #22c55e;
+
+    border-radius:15px;
+
+}
+
+.shell-security-box > i{
+
+    color:#22c55e;
+
+    font-size:30px;
+
+}
+
+.shell-security-box h4{
+
+    color:#22c55e;
+
+    margin-bottom:8px;
+
+}
+
+.shell-security-box p{
+
+    color:var(--text-secondary);
+
+    line-height:1.7;
+
+    margin:0;
+
+}
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:1000px){
+
+    .shell-concept-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .shell-concept-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .shell-intro{
+
+        align-items:flex-start;
+
+        flex-direction:column;
+
+    }
+
+    .shell-example{
+
+        align-items:flex-start;
+
+        flex-direction:column;
+
+    }
+
+    .shell-security-box{
+
+        flex-direction:column;
+
+    }
+
+}
+
+/* ==========================================
+   LINUX SECURITY & HARDENING
+========================================== */
+
+.hardening-intro{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+    padding:25px;
+
+    margin-bottom:30px;
+
+    background:var(--bg-card);
+
+    border:1px solid var(--border);
+
+    border-left:5px solid #22c55e;
+
+    border-radius:16px;
+
+}
+
+.hardening-intro-icon{
+
+    min-width:60px;
+
+    width:60px;
+
+    height:60px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:14px;
+
+    background:rgba(34,197,94,.10);
+
+}
+
+.hardening-intro-icon i{
+
+    color:#22c55e;
+
+    font-size:28px;
+
+}
+
+.hardening-intro h4{
+
+    color:var(--text-primary);
+
+    margin-bottom:7px;
+
+}
+
+.hardening-intro p{
+
+    color:var(--text-secondary);
+
+    line-height:1.7;
+
+    margin:0;
+
+}
+
+
+/* ==========================================
+   HARDENING CARDS
+========================================== */
+
+.hardening-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:20px;
+
+}
+
+.hardening-card{
+
+    padding:25px;
+
+    background:var(--bg-card);
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+    transition:.3s ease;
+
+}
+
+.hardening-card:hover{
+
+    transform:translateY(-6px);
+
+    border-color:#22c55e;
+
+    box-shadow:0 12px 25px rgba(34,197,94,.12);
+
+}
+
+.hardening-icon{
+
+    width:52px;
+
+    height:52px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin-bottom:17px;
+
+    border-radius:13px;
+
+    background:rgba(34,197,94,.09);
+
+}
+
+.hardening-icon i{
+
+    color:#22c55e;
+
+    font-size:23px;
+
+}
+
+.hardening-card h4{
+
+    color:var(--text-primary);
+
+    margin-bottom:10px;
+
+}
+
+.hardening-card p{
+
+    color:var(--text-secondary);
+
+    line-height:1.65;
+
+    margin-bottom:15px;
+
+}
+
+.hardening-card code{
+
+    display:inline-block;
+
+    padding:6px 9px;
+
+    color:#22c55e;
+
+    background:rgba(34,197,94,.08);
+
+    border-radius:6px;
+
+    font-family:monospace;
+
+    font-size:12px;
+
+}
+
+
+/* ==========================================
+   HARDENING CHECKLIST
+========================================== */
+
+.hardening-checklist{
+
+    margin-top:30px;
+
+    padding:25px;
+
+    background:var(--bg-card);
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+}
+
+.hardening-checklist h4{
+
+    color:var(--text-primary);
+
+    margin-bottom:20px;
+
+}
+
+.checklist-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:12px;
+
+}
+
+.check-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:13px 15px;
+
+    background:rgba(34,197,94,.06);
+
+    border:1px solid var(--border);
+
+    border-radius:10px;
+
+}
+
+.check-item i{
+
+    color:#22c55e;
+
+    font-size:17px;
+
+}
+
+.check-item span{
+
+    color:var(--text-secondary);
+
+    font-size:13px;
+
+}
+
+
+/* ==========================================
+   HARDENING COMMANDS
+========================================== */
+
+.hardening-command-box{
+
+    margin-top:25px;
+
+    padding:25px;
+
+    background:var(--bg-card);
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+}
+
+.hardening-command-box h4{
+
+    color:var(--text-primary);
+
+    margin-bottom:20px;
+
+}
+
+.hardening-command-list{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:12px;
+
+}
+
+.hardening-command-list > div{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:15px;
+
+    padding:14px;
+
+    background:rgba(88,166,255,.05);
+
+    border:1px solid var(--border);
+
+    border-radius:9px;
+
+}
+
+.hardening-command-list span{
+
+    color:var(--text-primary);
+
+    font-size:13px;
+
+}
+
+.hardening-command-list code{
+
+    padding:6px 9px;
+
+    color:#22c55e;
+
+    background:rgba(34,197,94,.08);
+
+    border-radius:6px;
+
+    font-family:monospace;
+
+    font-size:11px;
+
+}
+
+
+/* ==========================================
+   SECURITY NOTE
+========================================== */
+
+.hardening-security-box{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:18px;
+
+    margin-top:25px;
+
+    padding:25px;
+
+    background:rgba(88,166,255,.07);
+
+    border-left:5px solid var(--accent);
+
+    border-radius:15px;
+
+}
+
+.hardening-security-box > i{
+
+    color:var(--accent);
+
+    font-size:30px;
+
+}
+
+.hardening-security-box h4{
+
+    color:var(--accent);
+
+    margin-bottom:8px;
+
+}
+
+.hardening-security-box p{
+
+    color:var(--text-secondary);
+
+    line-height:1.7;
+
+    margin:0;
+
+}
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:992px){
+
+    .hardening-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .hardening-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .checklist-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .hardening-command-list{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .hardening-command-list > div{
+
+        align-items:flex-start;
+
+        flex-direction:column;
+
+    }
+
+    .hardening-intro{
+
+        align-items:flex-start;
+
+        flex-direction:column;
+
+    }
+
+    .hardening-security-box{
+
+        flex-direction:column;
+
+    }
+
+}

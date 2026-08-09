@@ -5,54 +5,32 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Linux Fundamentals | SecureSphere</title>
 
 
     <!-- Bootstrap -->
 
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-    >
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 
 
     <!-- Bootstrap Icons -->
 
-    <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-    >
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
 
     <!-- SecureSphere CSS -->
 
-    <link
-        rel="stylesheet"
-        href="../assets/css/dashboard.css"
-    >
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
 
-    <link
-        rel="stylesheet"
-        href="../assets/css/learn-topic.css"
-    >
+    <link rel="stylesheet" href="../assets/css/learn-topic.css">
 
-    <link
-        rel="stylesheet"
-        href="../assets/css/theme.css"
-    >
+    <link rel="stylesheet" href="../assets/css/theme.css">
 
-    <link
-        rel="stylesheet"
-        href="../assets/css/loading.css"
-    >
+    <link rel="stylesheet" href="../assets/css/loading.css">
 
-    <link
-        rel="stylesheet"
-        href="../assets/css/transition.css"
-    >
+    <link rel="stylesheet" href="../assets/css/transition.css">
 
 </head>
 
@@ -586,425 +564,1890 @@
         <!-- ==========================================
         LINUX FILE PERMISSIONS
    ========================================== -->
-   
-   <section class="topic-section">
-   
-       <div class="section-heading">
-   
-           <span class="section-number">
-               04
-           </span>
-   
-           <div>
-   
-               <h2>
-                   Linux File Permissions
-               </h2>
-   
-               <p>
-                   Linux permissions control who can read,
-                   modify and execute files and directories.
-               </p>
-   
-           </div>
-   
-       </div>
-   
-   
-       <!-- Permission Structure -->
-   
-       <div class="permission-card">
-   
-           <h4>
-               Understanding <code>rwx</code>
-           </h4>
-   
-           <p>
-               Every file and directory has permissions for three
-               categories of users: Owner, Group and Others.
-           </p>
-   
-           <div class="permission-visual">
-   
-               <div class="permission-group">
-   
-                   <span class="permission-label">
-                       Owner
-                   </span>
-   
-                   <strong>
-                       rwx
-                   </strong>
-   
-                   <small>
-                       Read · Write · Execute
-                   </small>
-   
-               </div>
-   
-   
-               <div class="permission-group">
-   
-                   <span class="permission-label">
-                       Group
-                   </span>
-   
-                   <strong>
-                       rwx
-                   </strong>
-   
-                   <small>
-                       Read · Write · Execute
-                   </small>
-   
-               </div>
-   
-   
-               <div class="permission-group">
-   
-                   <span class="permission-label">
-                       Others
-                   </span>
-   
-                   <strong>
-                       r-x
-                   </strong>
-   
-                   <small>
-                       Read · Execute
-                   </small>
-   
-               </div>
-   
-           </div>
-   
-       </div>
-   
-   
-       <!-- Permission Values -->
-   
-       <div class="permission-values">
-   
-           <div class="permission-value-card">
-   
-               <span>r</span>
-   
-               <h4>Read</h4>
-   
-               <p>
-                   Allows viewing the contents of a file.
-               </p>
-   
-               <strong>4</strong>
-   
-           </div>
-   
-   
-           <div class="permission-value-card">
-   
-               <span>w</span>
-   
-               <h4>Write</h4>
-   
-               <p>
-                   Allows modifying the contents of a file.
-               </p>
-   
-               <strong>2</strong>
-   
-           </div>
-   
-   
-           <div class="permission-value-card">
-   
-               <span>x</span>
-   
-               <h4>Execute</h4>
-   
-               <p>
-                   Allows executing a file or entering a directory.
-               </p>
-   
-               <strong>1</strong>
-   
-           </div>
-   
-       </div>
-   
-   
-       <!-- chmod -->
-   
-       <div class="command-explain-card">
-   
-           <div class="command-explain-header">
-   
-               <i class="bi bi-shield-lock-fill"></i>
-   
-               <div>
-   
-                   <h4>
-                       chmod
-                   </h4>
-   
-                   <p>
-                       Change file or directory permissions.
-                   </p>
-   
-               </div>
-   
-           </div>
-   
-   
-           <div class="command-example">
-   
-               <code>
+
+        <section class="topic-section">
+
+            <div class="section-heading">
+
+                <span class="section-number">
+                    04
+                </span>
+
+                <div>
+
+                    <h2>
+                        Linux File Permissions
+                    </h2>
+
+                    <p>
+                        Linux permissions control who can read,
+                        modify and execute files and directories.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Permission Structure -->
+
+            <div class="permission-card">
+
+                <h4>
+                    Understanding <code>rwx</code>
+                </h4>
+
+                <p>
+                    Every file and directory has permissions for three
+                    categories of users: Owner, Group and Others.
+                </p>
+
+                <div class="permission-visual">
+
+                    <div class="permission-group">
+
+                        <span class="permission-label">
+                            Owner
+                        </span>
+
+                        <strong>
+                            rwx
+                        </strong>
+
+                        <small>
+                            Read · Write · Execute
+                        </small>
+
+                    </div>
+
+
+                    <div class="permission-group">
+
+                        <span class="permission-label">
+                            Group
+                        </span>
+
+                        <strong>
+                            rwx
+                        </strong>
+
+                        <small>
+                            Read · Write · Execute
+                        </small>
+
+                    </div>
+
+
+                    <div class="permission-group">
+
+                        <span class="permission-label">
+                            Others
+                        </span>
+
+                        <strong>
+                            r-x
+                        </strong>
+
+                        <small>
+                            Read · Execute
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Permission Values -->
+
+            <div class="permission-values">
+
+                <div class="permission-value-card">
+
+                    <span>r</span>
+
+                    <h4>Read</h4>
+
+                    <p>
+                        Allows viewing the contents of a file.
+                    </p>
+
+                    <strong>4</strong>
+
+                </div>
+
+
+                <div class="permission-value-card">
+
+                    <span>w</span>
+
+                    <h4>Write</h4>
+
+                    <p>
+                        Allows modifying the contents of a file.
+                    </p>
+
+                    <strong>2</strong>
+
+                </div>
+
+
+                <div class="permission-value-card">
+
+                    <span>x</span>
+
+                    <h4>Execute</h4>
+
+                    <p>
+                        Allows executing a file or entering a directory.
+                    </p>
+
+                    <strong>1</strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- chmod -->
+
+            <div class="command-explain-card">
+
+                <div class="command-explain-header">
+
+                    <i class="bi bi-shield-lock-fill"></i>
+
+                    <div>
+
+                        <h4>
+                            chmod
+                        </h4>
+
+                        <p>
+                            Change file or directory permissions.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="command-example">
+
+                    <code>
                    chmod 755 script.sh
                </code>
-   
-           </div>
-   
-   
-           <div class="permission-breakdown">
-   
-               <span>
-                   <strong>7</strong>
-                   Owner
-               </span>
-   
-               <span>
-                   <strong>5</strong>
-                   Group
-               </span>
-   
-               <span>
-                   <strong>5</strong>
-                   Others
-               </span>
-   
-           </div>
-   
-   
-           <p class="permission-note">
-   
-               <strong>755</strong> means the owner can read,
-               write and execute, while group and others can
-               read and execute.
-   
-           </p>
-   
-       </div>
-   
-   
-       <!-- chown -->
-   
-       <div class="command-explain-card">
-   
-           <div class="command-explain-header">
-   
-               <i class="bi bi-person-fill"></i>
-   
-               <div>
-   
-                   <h4>
-                       chown
-                   </h4>
-   
-                   <p>
-                       Change file ownership.
-                   </p>
-   
-               </div>
-   
-           </div>
-   
-   
-           <div class="command-example">
-   
-               <code>
+
+                </div>
+
+
+                <div class="permission-breakdown">
+
+                    <span>
+                        <strong>7</strong>
+                        Owner
+                    </span>
+
+                    <span>
+                        <strong>5</strong>
+                        Group
+                    </span>
+
+                    <span>
+                        <strong>5</strong>
+                        Others
+                    </span>
+
+                </div>
+
+
+                <p class="permission-note">
+
+                    <strong>755</strong> means the owner can read,
+                    write and execute, while group and others can
+                    read and execute.
+
+                </p>
+
+            </div>
+
+
+            <!-- chown -->
+
+            <div class="command-explain-card">
+
+                <div class="command-explain-header">
+
+                    <i class="bi bi-person-fill"></i>
+
+                    <div>
+
+                        <h4>
+                            chown
+                        </h4>
+
+                        <p>
+                            Change file ownership.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="command-example">
+
+                    <code>
                    sudo chown user:filegroup report.txt
                </code>
-   
-           </div>
-   
-           <p class="permission-note">
-   
-               Ownership controls which user and group are
-               associated with a file.
-   
-           </p>
-   
-       </div>
-   
-   
-       <!-- chgrp -->
-   
-       <div class="command-explain-card">
-   
-           <div class="command-explain-header">
-   
-               <i class="bi bi-people-fill"></i>
-   
-               <div>
-   
-                   <h4>
-                       chgrp
-                   </h4>
-   
-                   <p>
-                       Change the group ownership of a file.
-                   </p>
-   
-               </div>
-   
-           </div>
-   
-   
-           <div class="command-example">
-   
-               <code>
+
+                </div>
+
+                <p class="permission-note">
+
+                    Ownership controls which user and group are
+                    associated with a file.
+
+                </p>
+
+            </div>
+
+
+            <!-- chgrp -->
+
+            <div class="command-explain-card">
+
+                <div class="command-explain-header">
+
+                    <i class="bi bi-people-fill"></i>
+
+                    <div>
+
+                        <h4>
+                            chgrp
+                        </h4>
+
+                        <p>
+                            Change the group ownership of a file.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="command-example">
+
+                    <code>
                    sudo chgrp security report.txt
                </code>
-   
-           </div>
-   
-       </div>
-   
-   
-       <!-- Numeric Permissions -->
-   
-       <div class="permission-table-wrapper">
-   
-           <h4>
-               Common Numeric Permissions
-           </h4>
-   
-           <div class="table-responsive">
-   
-               <table class="table permission-table">
-   
-                   <thead>
-   
-                       <tr>
-   
-                           <th>
-                               Permission
-                           </th>
-   
-                           <th>
-                               Meaning
-                           </th>
-   
-                           <th>
-                               Example
-                           </th>
-   
-                       </tr>
-   
-                   </thead>
-   
-                   <tbody>
-   
-                       <tr>
-   
-                           <td>
-                               <code>777</code>
-                           </td>
-   
-                           <td>
-                               Read, write and execute for everyone
-                           </td>
-   
-                           <td>
-                               <code>rwxrwxrwx</code>
-                           </td>
-   
-                       </tr>
-   
-   
-                       <tr>
-   
-                           <td>
-                               <code>755</code>
-                           </td>
-   
-                           <td>
-                               Owner full access; others read/execute
-                           </td>
-   
-                           <td>
-                               <code>rwxr-xr-x</code>
-                           </td>
-   
-                       </tr>
-   
-   
-                       <tr>
-   
-                           <td>
-                               <code>644</code>
-                           </td>
-   
-                           <td>
-                               Owner read/write; others read
-                           </td>
-   
-                           <td>
-                               <code>rw-r--r--</code>
-                           </td>
-   
-                       </tr>
-   
-   
-                       <tr>
-   
-                           <td>
-                               <code>600</code>
-                           </td>
-   
-                           <td>
-                               Owner read/write only
-                           </td>
-   
-                           <td>
-                               <code>rw-------</code>
-                           </td>
-   
-                       </tr>
-   
-                   </tbody>
-   
-               </table>
-   
-           </div>
-   
-       </div>
-   
-   
-       <!-- Cybersecurity -->
-   
-       <div class="linux-security-box">
-   
-           <i class="bi bi-shield-check"></i>
-   
-           <div>
-   
-               <h4>
-                   Why Permissions Matter in Cybersecurity
-               </h4>
-   
-               <p>
-   
-                   Incorrect permissions can expose sensitive files,
-                   allow unauthorized modification or give attackers
-                   unnecessary privileges.
-   
-               </p>
-   
-           </div>
-   
-       </div>
-   
-   </section>
+
+                </div>
+
+            </div>
+
+
+            <!-- Numeric Permissions -->
+
+            <div class="permission-table-wrapper">
+
+                <h4>
+                    Common Numeric Permissions
+                </h4>
+
+                <div class="table-responsive">
+
+                    <table class="table permission-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Permission
+                                </th>
+
+                                <th>
+                                    Meaning
+                                </th>
+
+                                <th>
+                                    Example
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+
+                                <td>
+                                    <code>777</code>
+                                </td>
+
+                                <td>
+                                    Read, write and execute for everyone
+                                </td>
+
+                                <td>
+                                    <code>rwxrwxrwx</code>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    <code>755</code>
+                                </td>
+
+                                <td>
+                                    Owner full access; others read/execute
+                                </td>
+
+                                <td>
+                                    <code>rwxr-xr-x</code>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    <code>644</code>
+                                </td>
+
+                                <td>
+                                    Owner read/write; others read
+                                </td>
+
+                                <td>
+                                    <code>rw-r--r--</code>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    <code>600</code>
+                                </td>
+
+                                <td>
+                                    Owner read/write only
+                                </td>
+
+                                <td>
+                                    <code>rw-------</code>
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+
+            <!-- Cybersecurity -->
+
+            <div class="linux-security-box">
+
+                <i class="bi bi-shield-check"></i>
+
+                <div>
+
+                    <h4>
+                        Why Permissions Matter in Cybersecurity
+                    </h4>
+
+                    <p>
+
+                        Incorrect permissions can expose sensitive files,
+                        allow unauthorized modification or give attackers
+                        unnecessary privileges.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ==========================================
+   LINUX NETWORKING COMMANDS
+========================================== -->
+
+        <section class="topic-section">
+
+            <div class="section-heading">
+
+                <span class="section-number">
+                    05
+                </span>
+
+                <div>
+
+                    <h2>
+                        Linux Networking Commands
+                    </h2>
+
+                    <p>
+                        Linux provides powerful commands for checking
+                        network configuration, connectivity, connections,
+                        DNS and network traffic.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Command Cards -->
+
+            <div class="network-command-grid">
+
+
+                <!-- ip -->
+
+                <div class="network-command-card">
+
+                    <div class="network-command-icon">
+
+                        <i class="bi bi-diagram-3-fill"></i>
+
+                    </div>
+
+                    <h4>
+                        ip
+                    </h4>
+
+                    <code>
+              ip addr
+          </code>
+
+                    <p>
+                        Displays network interfaces and IP addresses.
+                    </p>
+
+                    <span class="network-use">
+                        Network Configuration
+                    </span>
+
+                </div>
+
+
+                <!-- ping -->
+
+                <div class="network-command-card">
+
+                    <div class="network-command-icon">
+
+                        <i class="bi bi-broadcast-pin"></i>
+
+                    </div>
+
+                    <h4>
+                        ping
+                    </h4>
+
+                    <code>
+              ping google.com
+          </code>
+
+                    <p>
+                        Tests whether a destination is reachable
+                        and measures response time.
+                    </p>
+
+                    <span class="network-use">
+                        Connectivity Testing
+                    </span>
+
+                </div>
+
+
+                <!-- ss -->
+
+                <div class="network-command-card">
+
+                    <div class="network-command-icon">
+
+                        <i class="bi bi-plug-fill"></i>
+
+                    </div>
+
+                    <h4>
+                        ss
+                    </h4>
+
+                    <code>
+              ss -tuln
+          </code>
+
+                    <p>
+                        Displays listening and active network sockets.
+                    </p>
+
+                    <span class="network-use">
+                        Port & Connection Analysis
+                    </span>
+
+                </div>
+
+
+                <!-- traceroute -->
+
+                <div class="network-command-card">
+
+                    <div class="network-command-icon">
+
+                        <i class="bi bi-signpost-split-fill"></i>
+
+                    </div>
+
+                    <h4>
+                        traceroute
+                    </h4>
+
+                    <code>
+              traceroute example.com
+          </code>
+
+                    <p>
+                        Shows the network path packets take
+                        toward a destination.
+                    </p>
+
+                    <span class="network-use">
+                        Route Analysis
+                    </span>
+
+                </div>
+
+
+                <!-- curl -->
+
+                <div class="network-command-card">
+
+                    <div class="network-command-icon">
+
+                        <i class="bi bi-globe2"></i>
+
+                    </div>
+
+                    <h4>
+                        curl
+                    </h4>
+
+                    <code>
+              curl https://example.com
+          </code>
+
+                    <p>
+                        Transfers data to or from a server using
+                        supported network protocols.
+                    </p>
+
+                    <span class="network-use">
+                        Web Testing
+                    </span>
+
+                </div>
+
+
+                <!-- wget -->
+
+                <div class="network-command-card">
+
+                    <div class="network-command-icon">
+
+                        <i class="bi bi-download"></i>
+
+                    </div>
+
+                    <h4>
+                        wget
+                    </h4>
+
+                    <code>
+              wget https://example.com/file
+          </code>
+
+                    <p>
+                        Downloads files from web servers and
+                        other supported network locations.
+                    </p>
+
+                    <span class="network-use">
+                        File Retrieval
+                    </span>
+
+                </div>
+
+
+                <!-- nslookup -->
+
+                <div class="network-command-card">
+
+                    <div class="network-command-icon">
+
+                        <i class="bi bi-search"></i>
+
+                    </div>
+
+                    <h4>
+                        nslookup
+                    </h4>
+
+                    <code>
+              nslookup example.com
+          </code>
+
+                    <p>
+                        Queries DNS information for a domain
+                        or hostname.
+                    </p>
+
+                    <span class="network-use">
+                        DNS Analysis
+                    </span>
+
+                </div>
+
+
+                <!-- dig -->
+
+                <div class="network-command-card">
+
+                    <div class="network-command-icon">
+
+                        <i class="bi bi-binoculars-fill"></i>
+
+                    </div>
+
+                    <h4>
+                        dig
+                    </h4>
+
+                    <code>
+              dig example.com
+          </code>
+
+                    <p>
+                        Performs detailed DNS queries and displays
+                        DNS response information.
+                    </p>
+
+                    <span class="network-use">
+                        DNS Investigation
+                    </span>
+
+                </div>
+
+
+                <!-- netstat -->
+
+                <div class="network-command-card">
+
+                    <div class="network-command-icon">
+
+                        <i class="bi bi-activity"></i>
+
+                    </div>
+
+                    <h4>
+                        netstat
+                    </h4>
+
+                    <code>
+              netstat -tuln
+          </code>
+
+                    <p>
+                        Displays network connections, routes and
+                        listening ports on systems where available.
+                    </p>
+
+                    <span class="network-use">
+                        Network Monitoring
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- ======================================
+       CYBERSECURITY EXAMPLES
+  ======================================= -->
+
+            <div class="linux-network-security">
+
+                <div class="linux-network-security-header">
+
+                    <i class="bi bi-shield-lock-fill"></i>
+
+                    <div>
+
+                        <h4>
+                            Linux Networking for Cybersecurity
+                        </h4>
+
+                        <p>
+                            These commands are commonly useful during
+                            network troubleshooting, security analysis
+                            and incident investigation.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="security-command-examples">
+
+
+                    <div>
+
+                        <span>
+                            Find listening ports
+                        </span>
+
+                        <code>
+                  ss -tuln
+              </code>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Check network interfaces
+                        </span>
+
+                        <code>
+                  ip addr
+              </code>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Test connectivity
+                        </span>
+
+                        <code>
+                  ping 192.168.1.1
+              </code>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Investigate DNS
+                        </span>
+
+                        <code>
+                  dig example.com
+              </code>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+        <!-- ==========================================
+        LINUX PROCESSES & SYSTEM MONITORING
+   ========================================== -->
+
+        <section class="topic-section">
+
+            <div class="section-heading">
+
+                <span class="section-number">
+                    06
+                </span>
+
+                <div>
+
+                    <h2>
+                        Processes & System Monitoring
+                    </h2>
+
+                    <p>
+                        Learn how to view running processes, monitor
+                        system resources and identify unusual activity.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Process Basics -->
+
+            <div class="process-intro">
+
+                <div class="process-intro-icon">
+
+                    <i class="bi bi-cpu-fill"></i>
+
+                </div>
+
+                <div>
+
+                    <h4>
+                        What is a Process?
+                    </h4>
+
+                    <p>
+                        A process is a running instance of a program.
+                        Linux assigns each process a unique Process ID
+                        (PID) and manages its CPU, memory and other resources.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Monitoring Commands -->
+
+            <div class="process-grid">
+
+
+                <!-- ps -->
+
+                <div class="process-card">
+
+                    <div class="process-icon">
+
+                        <i class="bi bi-list-ul"></i>
+
+                    </div>
+
+                    <h4>
+                        ps
+                    </h4>
+
+                    <code>
+                   ps aux
+               </code>
+
+                    <p>
+                        Displays currently running processes and
+                        information such as CPU and memory usage.
+                    </p>
+
+                </div>
+
+
+                <!-- top -->
+
+                <div class="process-card">
+
+                    <div class="process-icon">
+
+                        <i class="bi bi-bar-chart-fill"></i>
+
+                    </div>
+
+                    <h4>
+                        top
+                    </h4>
+
+                    <code>
+                   top
+               </code>
+
+                    <p>
+                        Provides a real-time view of processes and
+                        system resource usage.
+                    </p>
+
+                </div>
+
+
+                <!-- htop -->
+
+                <div class="process-card">
+
+                    <div class="process-icon">
+
+                        <i class="bi bi-graph-up"></i>
+
+                    </div>
+
+                    <h4>
+                        htop
+                    </h4>
+
+                    <code>
+                   htop
+               </code>
+
+                    <p>
+                        An interactive process viewer that makes
+                        process monitoring easier.
+                    </p>
+
+                </div>
+
+
+                <!-- kill -->
+
+                <div class="process-card">
+
+                    <div class="process-icon">
+
+                        <i class="bi bi-x-circle-fill"></i>
+
+                    </div>
+
+                    <h4>
+                        kill
+                    </h4>
+
+                    <code>
+                   kill PID
+               </code>
+
+                    <p>
+                        Sends a signal to a process, commonly to
+                        request termination.
+                    </p>
+
+                </div>
+
+
+                <!-- free -->
+
+                <div class="process-card">
+
+                    <div class="process-icon">
+
+                        <i class="bi bi-memory"></i>
+
+                    </div>
+
+                    <h4>
+                        free
+                    </h4>
+
+                    <code>
+                   free -h
+               </code>
+
+                    <p>
+                        Displays available and used system memory.
+                    </p>
+
+                </div>
+
+
+                <!-- df -->
+
+                <div class="process-card">
+
+                    <div class="process-icon">
+
+                        <i class="bi bi-device-hdd-fill"></i>
+
+                    </div>
+
+                    <h4>
+                        df
+                    </h4>
+
+                    <code>
+                   df -h
+               </code>
+
+                    <p>
+                        Shows available and used disk space
+                        on mounted file systems.
+                    </p>
+
+                </div>
+
+
+                <!-- uptime -->
+
+                <div class="process-card">
+
+                    <div class="process-icon">
+
+                        <i class="bi bi-clock-fill"></i>
+
+                    </div>
+
+                    <h4>
+                        uptime
+                    </h4>
+
+                    <code>
+                   uptime
+               </code>
+
+                    <p>
+                        Shows how long the system has been running
+                        and its load information.
+                    </p>
+
+                </div>
+
+
+                <!-- systemctl -->
+
+                <div class="process-card">
+
+                    <div class="process-icon">
+
+                        <i class="bi bi-gear-fill"></i>
+
+                    </div>
+
+                    <h4>
+                        systemctl
+                    </h4>
+
+                    <code>
+                   systemctl status ssh
+               </code>
+
+                    <p>
+                        Manages and checks services on systems
+                        using systemd.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Process Information -->
+
+            <div class="process-info-box">
+
+                <h4>
+                    🔎 Important Process Information
+                </h4>
+
+                <div class="process-info-grid">
+
+                    <div>
+
+                        <span>
+                            PID
+                        </span>
+
+                        <p>
+                            Process Identifier
+                        </p>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            CPU
+                        </span>
+
+                        <p>
+                            Processor usage
+                        </p>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            MEM
+                        </span>
+
+                        <p>
+                            Memory usage
+                        </p>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            USER
+                        </span>
+
+                        <p>
+                            Process owner
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Cybersecurity -->
+
+            <div class="process-security-box">
+
+                <i class="bi bi-shield-exclamation"></i>
+
+                <div>
+
+                    <h4>
+                        Why Process Monitoring Matters
+                    </h4>
+
+                    <p>
+                        Security analysts can inspect running processes
+                        to identify unexpected applications, unusual
+                        resource consumption or suspicious activity.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ==========================================
+   LINUX SHELL SCRIPTING
+========================================== -->
+
+        <section class="topic-section">
+
+            <div class="section-heading">
+
+                <span class="section-number">
+                    07
+                </span>
+
+                <div>
+
+                    <h2>
+                        Linux Shell Scripting
+                    </h2>
+
+                    <p>
+                        Automate repetitive tasks and system operations
+                        using shell scripts.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- What is Shell Scripting -->
+
+            <div class="shell-intro">
+
+                <div class="shell-intro-icon">
+
+                    <i class="bi bi-terminal-fill"></i>
+
+                </div>
+
+                <div>
+
+                    <h4>
+                        What is Shell Scripting?
+                    </h4>
+
+                    <p>
+                        A shell script is a text file containing a sequence
+                        of commands that can be executed by a shell.
+                        Bash is one of the most commonly used shells on Linux.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Basic Script -->
+
+            <div class="shell-code-card">
+
+                <div class="shell-code-header">
+
+                    <div>
+
+                        <i class="bi bi-filetype-sh"></i>
+
+                        <span>
+                            basic.sh
+                        </span>
+
+                    </div>
+
+                    <span class="shell-badge">
+                        Bash
+                    </span>
+
+                </div>
+
+
+                <pre><code>#!/bin/bash
+
+echo "Welcome to SecureSphere"
+
+name="Himanshu"
+
+echo "Hello $name"</code></pre>
+
+            </div>
+
+
+            <!-- Variables -->
+
+            <div class="shell-concept-grid">
+
+                <div class="shell-concept-card">
+
+                    <i class="bi bi-box-fill"></i>
+
+                    <h4>
+                        Variables
+                    </h4>
+
+                    <code>
+              name="Linux"
+          </code>
+
+                    <p>
+                        Store values that can be reused throughout
+                        a script.
+                    </p>
+
+                </div>
+
+
+                <div class="shell-concept-card">
+
+                    <i class="bi bi-question-circle-fill"></i>
+
+                    <h4>
+                        Conditions
+                    </h4>
+
+                    <code>
+              if [ "$x" -gt 5 ]
+          </code>
+
+                    <p>
+                        Execute different commands depending
+                        on whether a condition is true.
+                    </p>
+
+                </div>
+
+
+                <div class="shell-concept-card">
+
+                    <i class="bi bi-arrow-repeat"></i>
+
+                    <h4>
+                        Loops
+                    </h4>
+
+                    <code>
+              for file in *.log
+          </code>
+
+                    <p>
+                        Repeat commands for multiple values,
+                        files or tasks.
+                    </p>
+
+                </div>
+
+
+                <div class="shell-concept-card">
+
+                    <i class="bi bi-diagram-3-fill"></i>
+
+                    <h4>
+                        Functions
+                    </h4>
+
+                    <code>
+              function_name() { ... }
+          </code>
+
+                    <p>
+                        Organize reusable commands into
+                        logical blocks.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Useful Examples -->
+
+            <div class="shell-examples">
+
+                <h4>
+                    ⚡ Useful Shell Script Examples
+                </h4>
+
+
+                <div class="shell-example">
+
+                    <div>
+
+                        <span>
+                            Check current user
+                        </span>
+
+                        <small>
+                            Display the user running the script
+                        </small>
+
+                    </div>
+
+                    <code>
+              whoami
+          </code>
+
+                </div>
+
+
+                <div class="shell-example">
+
+                    <div>
+
+                        <span>
+                            Check current directory
+                        </span>
+
+                        <small>
+                            Display the working directory
+                        </small>
+
+                    </div>
+
+                    <code>
+              pwd
+          </code>
+
+                </div>
+
+
+                <div class="shell-example">
+
+                    <div>
+
+                        <span>
+                            Check disk usage
+                        </span>
+
+                        <small>
+                            Display filesystem disk usage
+                        </small>
+
+                    </div>
+
+                    <code>
+              df -h
+          </code>
+
+                </div>
+
+
+                <div class="shell-example">
+
+                    <div>
+
+                        <span>
+                            Search logs
+                        </span>
+
+                        <small>
+                            Find matching text in a log file
+                        </small>
+
+                    </div>
+
+                    <code>
+              grep "error" system.log
+          </code>
+
+                </div>
+
+            </div>
+
+
+            <!-- Cybersecurity -->
+
+            <div class="shell-security-box">
+
+                <i class="bi bi-shield-check"></i>
+
+                <div>
+
+                    <h4>
+                        Shell Scripting in Cybersecurity
+                    </h4>
+
+                    <p>
+                        Security professionals use shell scripts to automate
+                        repetitive tasks such as log processing, system checks,
+                        file monitoring and basic security administration.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ==========================================
+        LINUX SECURITY & HARDENING
+   ========================================== -->
+
+        <section class="topic-section">
+
+            <div class="section-heading">
+
+                <span class="section-number">
+                    08
+                </span>
+
+                <div>
+
+                    <h2>
+                        Linux Security & Hardening
+                    </h2>
+
+                    <p>
+                        Learn the basic practices used to protect Linux
+                        systems from unauthorized access and common threats.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Security Overview -->
+
+            <div class="hardening-intro">
+
+                <div class="hardening-intro-icon">
+
+                    <i class="bi bi-shield-lock-fill"></i>
+
+                </div>
+
+                <div>
+
+                    <h4>
+                        What is Linux Hardening?
+                    </h4>
+
+                    <p>
+                        Linux hardening is the process of reducing unnecessary
+                        security risks by securing accounts, permissions,
+                        services, network access and system configuration.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Security Practices -->
+
+            <div class="hardening-grid">
+
+
+                <!-- User Management -->
+
+                <div class="hardening-card">
+
+                    <div class="hardening-icon">
+
+                        <i class="bi bi-person-lock"></i>
+
+                    </div>
+
+                    <h4>
+                        User Management
+                    </h4>
+
+                    <p>
+                        Create only required accounts and avoid unnecessary
+                        privileged access.
+                    </p>
+
+                    <code>
+                   whoami
+               </code>
+
+                </div>
+
+
+                <!-- Least Privilege -->
+
+                <div class="hardening-card">
+
+                    <div class="hardening-icon">
+
+                        <i class="bi bi-key-fill"></i>
+
+                    </div>
+
+                    <h4>
+                        Least Privilege
+                    </h4>
+
+                    <p>
+                        Give users and applications only the permissions
+                        required to perform their tasks.
+                    </p>
+
+                    <code>
+                   sudo -l
+               </code>
+
+                </div>
+
+
+                <!-- SSH -->
+
+                <div class="hardening-card">
+
+                    <div class="hardening-icon">
+
+                        <i class="bi bi-terminal-fill"></i>
+
+                    </div>
+
+                    <h4>
+                        Secure SSH
+                    </h4>
+
+                    <p>
+                        Use strong authentication and restrict unnecessary
+                        remote access.
+                    </p>
+
+                    <code>
+                   systemctl status ssh
+               </code>
+
+                </div>
+
+
+                <!-- Firewall -->
+
+                <div class="hardening-card">
+
+                    <div class="hardening-icon">
+
+                        <i class="bi bi-fire"></i>
+
+                    </div>
+
+                    <h4>
+                        Firewall
+                    </h4>
+
+                    <p>
+                        Restrict unwanted network traffic and expose
+                        only required services.
+                    </p>
+
+                    <code>
+                   ufw status
+               </code>
+
+                </div>
+
+
+                <!-- Updates -->
+
+                <div class="hardening-card">
+
+                    <div class="hardening-icon">
+
+                        <i class="bi bi-arrow-repeat"></i>
+
+                    </div>
+
+                    <h4>
+                        Security Updates
+                    </h4>
+
+                    <p>
+                        Keep the operating system and installed software
+                        updated with security fixes.
+                    </p>
+
+                    <code>
+                   sudo apt update
+               </code>
+
+                </div>
+
+
+                <!-- Services -->
+
+                <div class="hardening-card">
+
+                    <div class="hardening-icon">
+
+                        <i class="bi bi-gear-wide-connected"></i>
+
+                    </div>
+
+                    <h4>
+                        Services
+                    </h4>
+
+                    <p>
+                        Disable unnecessary services to reduce the
+                        system's attack surface.
+                    </p>
+
+                    <code>
+                   systemctl --type=service
+               </code>
+
+                </div>
+
+            </div>
+
+
+            <!-- Hardening Checklist -->
+
+            <div class="hardening-checklist">
+
+                <h4>
+                    🛡 Linux Hardening Checklist
+                </h4>
+
+                <div class="checklist-grid">
+
+                    <div class="check-item">
+
+                        <i class="bi bi-check-circle-fill"></i>
+
+                        <span>
+                            Use strong authentication
+                        </span>
+
+                    </div>
+
+
+                    <div class="check-item">
+
+                        <i class="bi bi-check-circle-fill"></i>
+
+                        <span>
+                            Remove unnecessary users
+                        </span>
+
+                    </div>
+
+
+                    <div class="check-item">
+
+                        <i class="bi bi-check-circle-fill"></i>
+
+                        <span>
+                            Apply security updates
+                        </span>
+
+                    </div>
+
+
+                    <div class="check-item">
+
+                        <i class="bi bi-check-circle-fill"></i>
+
+                        <span>
+                            Restrict file permissions
+                        </span>
+
+                    </div>
+
+
+                    <div class="check-item">
+
+                        <i class="bi bi-check-circle-fill"></i>
+
+                        <span>
+                            Disable unnecessary services
+                        </span>
+
+                    </div>
+
+
+                    <div class="check-item">
+
+                        <i class="bi bi-check-circle-fill"></i>
+
+                        <span>
+                            Configure firewall rules
+                        </span>
+
+                    </div>
+
+
+                    <div class="check-item">
+
+                        <i class="bi bi-check-circle-fill"></i>
+
+                        <span>
+                            Monitor system logs
+                        </span>
+
+                    </div>
+
+
+                    <div class="check-item">
+
+                        <i class="bi bi-check-circle-fill"></i>
+
+                        <span>
+                            Minimize privileged access
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Security Commands -->
+
+            <div class="hardening-command-box">
+
+                <h4>
+                    ⚡ Useful Security Commands
+                </h4>
+
+                <div class="hardening-command-list">
+
+                    <div>
+
+                        <span>
+                            Check current user
+                        </span>
+
+                        <code>
+                       whoami
+                   </code>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Check privileges
+                        </span>
+
+                        <code>
+                       sudo -l
+                   </code>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Check listening ports
+                        </span>
+
+                        <code>
+                       ss -tuln
+                   </code>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Check firewall
+                        </span>
+
+                        <code>
+                       sudo ufw status
+                   </code>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Check services
+                        </span>
+
+                        <code>
+                       systemctl --type=service
+                   </code>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Cybersecurity Note -->
+
+            <div class="hardening-security-box">
+
+                <i class="bi bi-shield-check"></i>
+
+                <div>
+
+                    <h4>
+                        Security Principle
+                    </h4>
+
+                    <p>
+                        A secure Linux system should expose only the services,
+                        ports and permissions that are actually required.
+                        This reduces the overall attack surface.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
 
         <!-- ======================================
              CYBERSECURITY COMMANDS
@@ -1015,7 +2458,7 @@
             <div class="section-heading">
 
                 <span class="section-number">
-                    05
+                    09
                 </span>
 
                 <div>
