@@ -5022,3 +5022,1180 @@ html{
     }
 
 }
+
+/* ==========================================
+   LINUX FOR CYBERSECURITY
+========================================== */
+
+.cyber-linux-intro{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+    padding:25px;
+
+    margin-bottom:30px;
+
+    background:var(--bg-card);
+
+    border:1px solid var(--border);
+
+    border-left:5px solid #8b5cf6;
+
+    border-radius:16px;
+
+}
+
+.cyber-linux-icon{
+
+    min-width:60px;
+
+    width:60px;
+
+    height:60px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:14px;
+
+    background:rgba(139,92,246,.10);
+
+}
+
+.cyber-linux-icon i{
+
+    color:#8b5cf6;
+
+    font-size:28px;
+
+}
+
+.cyber-linux-intro h4{
+
+    color:var(--text-primary);
+
+    margin-bottom:7px;
+
+}
+
+.cyber-linux-intro p{
+
+    color:var(--text-secondary);
+
+    line-height:1.7;
+
+    margin:0;
+
+}
+
+
+/* ==========================================
+   CYBERSECURITY CARDS
+========================================== */
+
+.cyber-linux-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:20px;
+
+}
+
+.cyber-linux-card{
+
+    padding:25px;
+
+    background:var(--bg-card);
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+    transition:.3s ease;
+
+}
+
+.cyber-linux-card:hover{
+
+    transform:translateY(-6px);
+
+    border-color:#8b5cf6;
+
+    box-shadow:0 12px 28px rgba(139,92,246,.13);
+
+}
+
+.cyber-linux-card-icon{
+
+    width:52px;
+
+    height:52px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin-bottom:17px;
+
+    border-radius:13px;
+
+    background:rgba(139,92,246,.10);
+
+}
+
+.cyber-linux-card-icon i{
+
+    color:#8b5cf6;
+
+    font-size:23px;
+
+}
+
+.cyber-linux-card h4{
+
+    color:var(--text-primary);
+
+    margin-bottom:10px;
+
+}
+
+.cyber-linux-card p{
+
+    color:var(--text-secondary);
+
+    line-height:1.65;
+
+    margin-bottom:15px;
+
+}
+
+.cyber-linux-card span{
+
+    display:inline-block;
+
+    padding:5px 10px;
+
+    color:#8b5cf6;
+
+    background:rgba(139,92,246,.09);
+
+    border:1px solid rgba(139,92,246,.20);
+
+    border-radius:20px;
+
+    font-size:11px;
+
+    font-weight:700;
+
+}
+
+
+/* ==========================================
+   SOC COMMANDS
+========================================== */
+
+.linux-soc-box{
+
+    margin-top:30px;
+
+    padding:25px;
+
+    background:var(--bg-card);
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+}
+
+.linux-soc-box h4{
+
+    color:var(--text-primary);
+
+    margin-bottom:20px;
+
+}
+
+.linux-soc-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:12px;
+
+}
+
+.linux-soc-command{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:15px;
+
+    padding:14px;
+
+    background:rgba(139,92,246,.05);
+
+    border:1px solid var(--border);
+
+    border-radius:9px;
+
+}
+
+.linux-soc-command span{
+
+    color:var(--text-primary);
+
+    font-size:13px;
+
+}
+
+.linux-soc-command code{
+
+    padding:6px 9px;
+
+    color:#8b5cf6;
+
+    background:rgba(139,92,246,.09);
+
+    border-radius:6px;
+
+    font-family:monospace;
+
+    font-size:11px;
+
+}
+
+
+/* ==========================================
+   SECURITY WORKFLOW
+========================================== */
+
+.linux-security-workflow{
+
+    margin-top:25px;
+
+    padding:25px;
+
+    background:var(--bg-card);
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+}
+
+.linux-security-workflow h4{
+
+    color:var(--text-primary);
+
+    margin-bottom:25px;
+
+}
+
+.workflow-steps{
+
+    display:flex;
+
+    align-items:stretch;
+
+    gap:12px;
+
+}
+
+.workflow-step{
+
+    flex:1;
+
+    padding:20px;
+
+    background:rgba(88,166,255,.05);
+
+    border:1px solid var(--border);
+
+    border-radius:12px;
+
+}
+
+.workflow-step > span{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:35px;
+
+    height:35px;
+
+    margin-bottom:13px;
+
+    border-radius:9px;
+
+    background:rgba(88,166,255,.12);
+
+    color:var(--accent);
+
+    font-family:monospace;
+
+    font-weight:700;
+
+}
+
+.workflow-step strong{
+
+    display:block;
+
+    color:var(--text-primary);
+
+    margin-bottom:7px;
+
+}
+
+.workflow-step p{
+
+    color:var(--text-secondary);
+
+    line-height:1.6;
+
+    font-size:13px;
+
+    margin:0;
+
+}
+
+.workflow-arrow{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:var(--accent);
+
+    font-size:20px;
+
+}
+
+
+/* ==========================================
+   FINAL NOTE
+========================================== */
+
+.cyber-linux-note{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:18px;
+
+    margin-top:25px;
+
+    padding:25px;
+
+    background:rgba(34,197,94,.07);
+
+    border-left:5px solid #22c55e;
+
+    border-radius:15px;
+
+}
+
+.cyber-linux-note > i{
+
+    color:#22c55e;
+
+    font-size:30px;
+
+}
+
+.cyber-linux-note h4{
+
+    color:#22c55e;
+
+    margin-bottom:8px;
+
+}
+
+.cyber-linux-note p{
+
+    color:var(--text-secondary);
+
+    line-height:1.7;
+
+    margin:0;
+
+}
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:992px){
+
+    .cyber-linux-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .workflow-steps{
+
+        flex-wrap:wrap;
+
+    }
+
+    .workflow-step{
+
+        min-width:45%;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .cyber-linux-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .linux-soc-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .linux-soc-command{
+
+        align-items:flex-start;
+
+        flex-direction:column;
+
+    }
+
+    .workflow-steps{
+
+        flex-direction:column;
+
+    }
+
+    .workflow-arrow{
+
+        transform:rotate(90deg);
+
+    }
+
+    .cyber-linux-intro{
+
+        align-items:flex-start;
+
+        flex-direction:column;
+
+    }
+
+    .cyber-linux-note{
+
+        flex-direction:column;
+
+    }
+
+}
+
+/* ==========================================
+   LINUX QUICK REVISION
+========================================== */
+
+.linux-cheat-card{
+
+    overflow:hidden;
+
+    margin-bottom:25px;
+
+    background:var(--bg-card);
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+}
+
+.linux-cheat-header{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:15px;
+
+    padding:20px 25px;
+
+    background:rgba(88,166,255,.06);
+
+    border-bottom:1px solid var(--border);
+
+}
+
+.linux-cheat-header > div{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+.linux-cheat-header i{
+
+    color:var(--accent);
+
+    font-size:24px;
+
+}
+
+.linux-cheat-header h4{
+
+    color:var(--text-primary);
+
+    margin:0;
+
+}
+
+.linux-cheat-header > span{
+
+    padding:5px 9px;
+
+    color:var(--accent);
+
+    border:1px solid rgba(88,166,255,.2);
+
+    border-radius:20px;
+
+    font-size:10px;
+
+    font-weight:700;
+
+}
+
+.linux-cheat-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+}
+
+.linux-cheat-grid > div{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:7px;
+
+    padding:18px;
+
+    border-right:1px solid var(--border);
+
+    border-bottom:1px solid var(--border);
+
+}
+
+.linux-cheat-grid code{
+
+    color:#22c55e;
+
+    font-family:monospace;
+
+    font-size:13px;
+
+}
+
+.linux-cheat-grid span{
+
+    color:var(--text-secondary);
+
+    font-size:12px;
+
+}
+
+
+/* ==========================================
+   REVISION CARDS
+========================================== */
+
+.linux-revision-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:20px;
+
+    margin-bottom:25px;
+
+}
+
+.revision-card{
+
+    padding:23px;
+
+    background:var(--bg-card);
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+    transition:.3s ease;
+
+}
+
+.revision-card:hover{
+
+    transform:translateY(-5px);
+
+    border-color:var(--accent);
+
+}
+
+.revision-card > i{
+
+    display:block;
+
+    margin-bottom:15px;
+
+    color:var(--accent);
+
+    font-size:25px;
+
+}
+
+.revision-card h4{
+
+    color:var(--text-primary);
+
+    margin-bottom:10px;
+
+}
+
+.revision-card p{
+
+    color:var(--text-secondary);
+
+    line-height:1.6;
+
+    margin:0;
+
+}
+
+.revision-card code{
+
+    color:var(--accent);
+
+    font-family:monospace;
+
+}
+
+
+/* ==========================================
+   INTERVIEW QUESTIONS
+========================================== */
+
+.linux-interview-card{
+
+    padding:25px;
+
+    margin-bottom:25px;
+
+    background:var(--bg-card);
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+}
+
+.interview-header{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:16px;
+
+    margin-bottom:20px;
+
+}
+
+.interview-header > i{
+
+    color:#f59e0b;
+
+    font-size:28px;
+
+}
+
+.interview-header h4{
+
+    color:var(--text-primary);
+
+    margin:0 0 5px;
+
+}
+
+.interview-header p{
+
+    color:var(--text-secondary);
+
+    margin:0;
+
+}
+
+.interview-list details{
+
+    padding:15px 0;
+
+    border-bottom:1px solid var(--border);
+
+}
+
+.interview-list details:last-child{
+
+    border-bottom:0;
+
+}
+
+.interview-list summary{
+
+    cursor:pointer;
+
+    color:var(--text-primary);
+
+    font-weight:600;
+
+    list-style:none;
+
+}
+
+.interview-list summary::-webkit-details-marker{
+
+    display:none;
+
+}
+
+.interview-list summary::before{
+
+    content:"+";
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:25px;
+
+    height:25px;
+
+    margin-right:10px;
+
+    color:var(--accent);
+
+    background:rgba(88,166,255,.10);
+
+    border-radius:6px;
+
+}
+
+.interview-list details[open] summary::before{
+
+    content:"−";
+
+}
+
+.interview-list details p{
+
+    margin:12px 0 0 35px;
+
+    color:var(--text-secondary);
+
+    line-height:1.7;
+
+}
+
+.interview-list code{
+
+    color:var(--accent);
+
+}
+
+
+/* ==========================================
+   COMPLETION
+========================================== */
+
+.linux-complete-box{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+    padding:30px;
+
+    background:rgba(34,197,94,.07);
+
+    border:1px solid rgba(34,197,94,.25);
+
+    border-radius:18px;
+
+}
+
+.linux-complete-icon{
+
+    min-width:60px;
+
+    width:60px;
+
+    height:60px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:15px;
+
+    background:rgba(34,197,94,.12);
+
+}
+
+.linux-complete-icon i{
+
+    color:#22c55e;
+
+    font-size:32px;
+
+}
+
+.linux-complete-box h3{
+
+    color:#22c55e;
+
+    margin-bottom:7px;
+
+}
+
+.linux-complete-box p{
+
+    color:var(--text-secondary);
+
+    line-height:1.7;
+
+    margin:0;
+
+}
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:1100px){
+
+    .linux-cheat-grid{
+
+        grid-template-columns:repeat(3,1fr);
+
+    }
+
+    .linux-revision-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .linux-cheat-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .linux-revision-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .linux-cheat-header{
+
+        align-items:flex-start;
+
+        flex-direction:column;
+
+    }
+
+    .linux-complete-box{
+
+        align-items:flex-start;
+
+        flex-direction:column;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .linux-cheat-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+/* ==========================================
+   LINUX QUICK NAVIGATION
+========================================== */
+
+.linux-quick-nav {
+
+    width: 92%;
+
+    max-width: 1620px;
+
+    margin: 45px auto 60px;
+
+    padding: 28px 40px;
+
+    background: var(--bg-card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 22px;
+
+}
+
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.linux-quick-nav-header {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    margin-bottom: 25px;
+
+}
+
+.quick-nav-icon {
+
+    font-size: 28px;
+
+}
+
+.linux-quick-nav-header h2 {
+
+    margin: 0;
+
+    color: var(--accent);
+
+    font-size: 32px;
+
+    font-weight: 700;
+
+}
+
+
+/* ==========================================
+   NAVIGATION GRID
+========================================== */
+
+.linux-quick-nav-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+
+}
+
+
+/* ==========================================
+   NAVIGATION BUTTON
+========================================== */
+
+.linux-nav-btn {
+
+    height: 70px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    padding: 15px;
+
+    color: var(--text-primary);
+
+    background: transparent;
+
+    border: 1px solid var(--border);
+
+    border-radius: 15px;
+
+    text-decoration: none;
+
+    font-size: 17px;
+
+    font-weight: 600;
+
+    transition: all .25s ease;
+
+}
+
+
+/* Emoji / Icon */
+
+.linux-nav-btn span {
+
+    font-size: 20px;
+
+}
+
+
+/* Hover */
+
+.linux-nav-btn:hover {
+
+    color: var(--accent);
+
+    background: rgba(88, 166, 255, .06);
+
+    border-color: var(--accent);
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 20px rgba(88, 166, 255, .10);
+
+}
+
+
+/* ==========================================
+   SMOOTH SCROLL
+========================================== */
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+.topic-section {
+
+    scroll-margin-top: 110px;
+
+}
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 1100px) {
+
+    .linux-quick-nav {
+
+        width: 94%;
+
+        padding: 25px 30px;
+
+    }
+
+    .linux-quick-nav-grid {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 768px) {
+
+    .linux-quick-nav {
+
+        width: 94%;
+
+        padding: 22px 18px;
+
+        margin-top: 30px;
+
+    }
+
+    .linux-quick-nav-header h2 {
+
+        font-size: 25px;
+
+    }
+
+    .linux-quick-nav-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+
+    }
+
+    .linux-nav-btn {
+
+        height: 60px;
+
+        font-size: 15px;
+
+    }
+
+}

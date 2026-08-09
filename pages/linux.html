@@ -80,6 +80,143 @@
     </section>
 
 
+    <!-- ==========================================
+    LINUX QUICK NAVIGATION
+========================================== -->
+
+    <section class="linux-quick-nav">
+
+        <div class="linux-quick-nav-header">
+
+            <span class="quick-nav-icon">
+                📚
+            </span>
+
+            <h2>
+                Quick Navigation
+            </h2>
+
+        </div>
+
+
+        <div class="linux-quick-nav-grid">
+
+
+            <!-- Introduction -->
+
+            <a href="#linux-introduction" class="linux-nav-btn">
+
+                <span>📖</span>
+
+                Introduction
+
+            </a>
+
+
+            <!-- File System -->
+
+            <a href="#linux-filesystem" class="linux-nav-btn">
+
+                <span>📁</span>
+
+                Linux File System
+
+            </a>
+
+
+            <!-- Basic Commands -->
+
+            <a href="#linux-commands" class="linux-nav-btn">
+
+                <span>💻</span>
+
+                Basic Commands
+
+            </a>
+
+
+            <!-- Permissions -->
+
+            <a href="#linux-permissions" class="linux-nav-btn">
+
+                <span>🔐</span>
+
+                File Permissions
+
+            </a>
+
+
+            <!-- Networking -->
+
+            <a href="#linux-networking" class="linux-nav-btn">
+
+                <span>🌐</span>
+
+                Networking Commands
+
+            </a>
+
+
+            <!-- Processes -->
+
+            <a href="#linux-processes" class="linux-nav-btn">
+
+                <span>⚙️</span>
+
+                Processes & Monitoring
+
+            </a>
+
+
+            <!-- Shell -->
+
+            <a href="#linux-shell" class="linux-nav-btn">
+
+                <span>🖥️</span>
+
+                Shell Scripting
+
+            </a>
+
+
+            <!-- Security -->
+
+            <a href="#linux-hardening" class="linux-nav-btn">
+
+                <span>🛡️</span>
+
+                Security & Hardening
+
+            </a>
+
+
+            <!-- Cybersecurity -->
+
+            <a href="#linux-cybersecurity" class="linux-nav-btn">
+
+                <span>🔎</span>
+
+                Linux for Cybersecurity
+
+            </a>
+
+
+            <!-- Revision -->
+
+            <a href="#linux-revision" class="linux-nav-btn">
+
+                <span>📝</span>
+
+                Cheat Sheet & Interview
+
+            </a>
+
+
+        </div>
+
+    </section>
+
+
 
     <!-- ==========================================
          MAIN CONTENT
@@ -2449,9 +2586,10 @@ echo "Hello $name"</code></pre>
 
         </section>
 
-        <!-- ======================================
-             CYBERSECURITY COMMANDS
-        ======================================= -->
+
+        <!-- ==========================================
+        LINUX FOR CYBERSECURITY
+   ========================================== -->
 
         <section class="topic-section">
 
@@ -2468,8 +2606,8 @@ echo "Hello $name"</code></pre>
                     </h2>
 
                     <p>
-                        Linux provides many tools useful for
-                        security analysis and system monitoring.
+                        Understand how Linux is used by security analysts,
+                        SOC teams and cybersecurity professionals.
                     </p>
 
                 </div>
@@ -2477,80 +2615,415 @@ echo "Hello $name"</code></pre>
             </div>
 
 
-            <div class="security-command-grid">
+            <!-- Cybersecurity Introduction -->
 
+            <div class="cyber-linux-intro">
 
-                <div class="security-command-card">
+                <div class="cyber-linux-icon">
 
-                    <i class="bi bi-wifi"></i>
+                    <i class="bi bi-shield-shaded"></i>
+
+                </div>
+
+                <div>
 
                     <h4>
-                        Network Analysis
+                        Why Linux is Important in Cybersecurity
                     </h4>
 
-                    <code>
-                        ip addr
-                    </code>
-
                     <p>
-                        View network interfaces and IP addresses.
+                        Linux is widely used for security monitoring,
+                        penetration testing, digital forensics, incident
+                        response, network analysis and security automation.
                     </p>
 
                 </div>
 
+            </div>
 
-                <div class="security-command-card">
 
-                    <i class="bi bi-activity"></i>
+            <!-- Security Areas -->
+
+            <div class="cyber-linux-grid">
+
+
+                <!-- SOC -->
+
+                <div class="cyber-linux-card">
+
+                    <div class="cyber-linux-card-icon">
+
+                        <i class="bi bi-display-fill"></i>
+
+                    </div>
 
                     <h4>
-                        Process Monitoring
+                        SOC Operations
                     </h4>
 
-                    <code>
-                        ps aux
-                    </code>
-
                     <p>
-                        View running processes on the system.
+                        Analysts use Linux systems to inspect logs,
+                        monitor processes, investigate alerts and
+                        analyze suspicious activity.
                     </p>
+
+                    <span>
+                        SOC
+                    </span>
 
                 </div>
 
 
-                <div class="security-command-card">
+                <!-- Incident Response -->
 
-                    <i class="bi bi-file-earmark-text-fill"></i>
+                <div class="cyber-linux-card">
+
+                    <div class="cyber-linux-card-icon">
+
+                        <i class="bi bi-exclamation-triangle-fill"></i>
+
+                    </div>
+
+                    <h4>
+                        Incident Response
+                    </h4>
+
+                    <p>
+                        Linux commands help analysts collect system
+                        information and investigate potential security
+                        incidents.
+                    </p>
+
+                    <span>
+                        IR
+                    </span>
+
+                </div>
+
+
+                <!-- Log Analysis -->
+
+                <div class="cyber-linux-card">
+
+                    <div class="cyber-linux-card-icon">
+
+                        <i class="bi bi-file-earmark-text-fill"></i>
+
+                    </div>
 
                     <h4>
                         Log Analysis
                     </h4>
 
-                    <code>
-                        tail -f logfile
-                    </code>
-
                     <p>
-                        Monitor new entries being added to a log.
+                        System and application logs can provide valuable
+                        evidence about authentication, errors and
+                        suspicious events.
                     </p>
+
+                    <span>
+                        Logs
+                    </span>
 
                 </div>
 
 
-                <div class="security-command-card">
+                <!-- Threat Hunting -->
 
-                    <i class="bi bi-shield-lock-fill"></i>
+                <div class="cyber-linux-card">
+
+                    <div class="cyber-linux-card-icon">
+
+                        <i class="bi bi-search"></i>
+
+                    </div>
 
                     <h4>
-                        Permissions
+                        Threat Hunting
                     </h4>
 
-                    <code>
-                        ls -l
-                    </code>
+                    <p>
+                        Security teams can search processes, network
+                        connections, files and logs for indicators
+                        of suspicious behavior.
+                    </p>
+
+                    <span>
+                        Hunting
+                    </span>
+
+                </div>
+
+
+                <!-- Digital Forensics -->
+
+                <div class="cyber-linux-card">
+
+                    <div class="cyber-linux-card-icon">
+
+                        <i class="bi bi-fingerprint"></i>
+
+                    </div>
+
+                    <h4>
+                        Digital Forensics
+                    </h4>
 
                     <p>
-                        Inspect file ownership and permissions.
+                        Linux environments can be used to examine files,
+                        processes, logs and other digital evidence during
+                        investigations.
+                    </p>
+
+                    <span>
+                        Forensics
+                    </span>
+
+                </div>
+
+
+                <!-- Automation -->
+
+                <div class="cyber-linux-card">
+
+                    <div class="cyber-linux-card-icon">
+
+                        <i class="bi bi-lightning-charge-fill"></i>
+
+                    </div>
+
+                    <h4>
+                        Security Automation
+                    </h4>
+
+                    <p>
+                        Bash and other scripting tools can automate
+                        repetitive security and system administration tasks.
+                    </p>
+
+                    <span>
+                        Automation
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- SOC Commands -->
+
+            <div class="linux-soc-box">
+
+                <h4>
+                    🛡 Useful Linux Commands for Security Analysts
+                </h4>
+
+                <div class="linux-soc-grid">
+
+
+                    <div class="linux-soc-command">
+
+                        <span>
+                            Running processes
+                        </span>
+
+                        <code>
+                       ps aux
+                   </code>
+
+                    </div>
+
+
+                    <div class="linux-soc-command">
+
+                        <span>
+                            Network connections
+                        </span>
+
+                        <code>
+                       ss -tulnp
+                   </code>
+
+                    </div>
+
+
+                    <div class="linux-soc-command">
+
+                        <span>
+                            Recent authentication logs
+                        </span>
+
+                        <code>
+                       journalctl
+                   </code>
+
+                    </div>
+
+
+                    <div class="linux-soc-command">
+
+                        <span>
+                            Search suspicious text
+                        </span>
+
+                        <code>
+                       grep "failed" logfile
+                   </code>
+
+                    </div>
+
+
+                    <div class="linux-soc-command">
+
+                        <span>
+                            File permissions
+                        </span>
+
+                        <code>
+                       ls -la
+                   </code>
+
+                    </div>
+
+
+                    <div class="linux-soc-command">
+
+                        <span>
+                            Current user
+                        </span>
+
+                        <code>
+                       whoami
+                   </code>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Security Workflow -->
+
+            <div class="linux-security-workflow">
+
+                <h4>
+                    🔎 Basic Linux Security Investigation
+                </h4>
+
+                <div class="workflow-steps">
+
+
+                    <div class="workflow-step">
+
+                        <span>
+                            01
+                        </span>
+
+                        <strong>
+                            Identify
+                        </strong>
+
+                        <p>
+                            Identify the affected system or suspicious event.
+                        </p>
+
+                    </div>
+
+
+                    <div class="workflow-arrow">
+
+                        <i class="bi bi-arrow-right"></i>
+
+                    </div>
+
+
+                    <div class="workflow-step">
+
+                        <span>
+                            02
+                        </span>
+
+                        <strong>
+                            Inspect
+                        </strong>
+
+                        <p>
+                            Check users, processes, ports and system activity.
+                        </p>
+
+                    </div>
+
+
+                    <div class="workflow-arrow">
+
+                        <i class="bi bi-arrow-right"></i>
+
+                    </div>
+
+
+                    <div class="workflow-step">
+
+                        <span>
+                            03
+                        </span>
+
+                        <strong>
+                            Analyze
+                        </strong>
+
+                        <p>
+                            Review logs and identify unusual behavior.
+                        </p>
+
+                    </div>
+
+
+                    <div class="workflow-arrow">
+
+                        <i class="bi bi-arrow-right"></i>
+
+                    </div>
+
+
+                    <div class="workflow-step">
+
+                        <span>
+                            04
+                        </span>
+
+                        <strong>
+                            Respond
+                        </strong>
+
+                        <p>
+                            Follow the organization's incident response process.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Final Note -->
+
+            <div class="cyber-linux-note">
+
+                <i class="bi bi-shield-check"></i>
+
+                <div>
+
+                    <h4>
+                        Key Takeaway
+                    </h4>
+
+                    <p>
+                        Linux knowledge gives cybersecurity professionals
+                        direct visibility into systems, processes, files,
+                        network activity and logs. Strong Linux fundamentals
+                        are therefore valuable for SOC and security roles.
                     </p>
 
                 </div>
@@ -2559,30 +3032,385 @@ echo "Hello $name"</code></pre>
 
         </section>
 
+        <!-- ==========================================
+   LINUX QUICK REVISION & INTERVIEW
+========================================== -->
 
+        <section class="topic-section">
 
-        <!-- ======================================
-             NEXT SECTION
-        ======================================= -->
+            <div class="section-heading">
 
-        <div class="linux-next-box">
+                <span class="section-number">
+                    10
+                </span>
 
-            <i class="bi bi-arrow-right-circle-fill"></i>
+                <div>
 
-            <div>
+                    <h2>
+                        Linux Quick Revision
+                    </h2>
 
-                <h4>
-                    Next: Linux File Permissions
-                </h4>
+                    <p>
+                        Quickly revise important Linux commands,
+                        concepts and cybersecurity fundamentals.
+                    </p>
 
-                <p>
-                    Learn users, groups, chmod, chown and
-                    Linux permission notation.
-                </p>
+                </div>
 
             </div>
 
-        </div>
+
+            <!-- Quick Command Reference -->
+
+            <div class="linux-cheat-card">
+
+                <div class="linux-cheat-header">
+
+                    <div>
+
+                        <i class="bi bi-terminal-fill"></i>
+
+                        <h4>
+                            Linux Command Cheat Sheet
+                        </h4>
+
+                    </div>
+
+                    <span>
+                        QUICK REFERENCE
+                    </span>
+
+                </div>
+
+
+                <div class="linux-cheat-grid">
+
+                    <div>
+                        <code>pwd</code>
+                        <span>Current directory</span>
+                    </div>
+
+                    <div>
+                        <code>ls -la</code>
+                        <span>List files and permissions</span>
+                    </div>
+
+                    <div>
+                        <code>cd</code>
+                        <span>Change directory</span>
+                    </div>
+
+                    <div>
+                        <code>mkdir</code>
+                        <span>Create directory</span>
+                    </div>
+
+                    <div>
+                        <code>cp</code>
+                        <span>Copy files</span>
+                    </div>
+
+                    <div>
+                        <code>mv</code>
+                        <span>Move or rename</span>
+                    </div>
+
+                    <div>
+                        <code>rm</code>
+                        <span>Remove files</span>
+                    </div>
+
+                    <div>
+                        <code>grep</code>
+                        <span>Search text</span>
+                    </div>
+
+                    <div>
+                        <code>find</code>
+                        <span>Find files</span>
+                    </div>
+
+                    <div>
+                        <code>chmod</code>
+                        <span>Change permissions</span>
+                    </div>
+
+                    <div>
+                        <code>chown</code>
+                        <span>Change ownership</span>
+                    </div>
+
+                    <div>
+                        <code>ps aux</code>
+                        <span>View processes</span>
+                    </div>
+
+                    <div>
+                        <code>top</code>
+                        <span>Monitor processes</span>
+                    </div>
+
+                    <div>
+                        <code>ip addr</code>
+                        <span>View network interfaces</span>
+                    </div>
+
+                    <div>
+                        <code>ss -tuln</code>
+                        <span>View listening ports</span>
+                    </div>
+
+                    <div>
+                        <code>df -h</code>
+                        <span>Check disk usage</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Important Concepts -->
+
+            <div class="linux-revision-grid">
+
+                <div class="revision-card">
+
+                    <i class="bi bi-folder-fill"></i>
+
+                    <h4>
+                        File System
+                    </h4>
+
+                    <p>
+                        Linux uses a hierarchical file system beginning
+                        from the root directory <code>/</code>.
+                    </p>
+
+                </div>
+
+
+                <div class="revision-card">
+
+                    <i class="bi bi-shield-lock-fill"></i>
+
+                    <h4>
+                        Permissions
+                    </h4>
+
+                    <p>
+                        Permissions define read, write and execute
+                        access for users, groups and others.
+                    </p>
+
+                </div>
+
+
+                <div class="revision-card">
+
+                    <i class="bi bi-diagram-3-fill"></i>
+
+                    <h4>
+                        Networking
+                    </h4>
+
+                    <p>
+                        Commands such as <code>ip</code>, <code>ss</code>,
+                        <code>ping</code> and <code>dig</code> help
+                        analyze network activity.
+                    </p>
+
+                </div>
+
+
+                <div class="revision-card">
+
+                    <i class="bi bi-cpu-fill"></i>
+
+                    <h4>
+                        Processes
+                    </h4>
+
+                    <p>
+                        Linux assigns a unique PID to each running
+                        process and provides tools for monitoring them.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Interview Questions -->
+
+            <div class="linux-interview-card">
+
+                <div class="interview-header">
+
+                    <i class="bi bi-patch-question-fill"></i>
+
+                    <div>
+
+                        <h4>
+                            Linux Interview Questions
+                        </h4>
+
+                        <p>
+                            Test your understanding of Linux fundamentals.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="interview-list">
+
+
+                    <details>
+
+                        <summary>
+                            01. What is Linux?
+                        </summary>
+
+                        <p>
+                            Linux is an open-source operating system
+                            based on the Linux kernel.
+                        </p>
+
+                    </details>
+
+
+                    <details>
+
+                        <summary>
+                            02. What is the root directory?
+                        </summary>
+
+                        <p>
+                            The root directory <code>/</code> is the
+                            top-level directory of the Linux file system.
+                        </p>
+
+                    </details>
+
+
+                    <details>
+
+                        <summary>
+                            03. What does chmod do?
+                        </summary>
+
+                        <p>
+                            <code>chmod</code> changes the permissions
+                            of files and directories.
+                        </p>
+
+                    </details>
+
+
+                    <details>
+
+                        <summary>
+                            04. What is a PID?
+                        </summary>
+
+                        <p>
+                            PID stands for Process ID. It uniquely
+                            identifies a running process.
+                        </p>
+
+                    </details>
+
+
+                    <details>
+
+                        <summary>
+                            05. What is sudo?
+                        </summary>
+
+                        <p>
+                            <code>sudo</code> allows an authorized user
+                            to execute commands with elevated privileges.
+                        </p>
+
+                    </details>
+
+
+                    <details>
+
+                        <summary>
+                            06. What is SSH?
+                        </summary>
+
+                        <p>
+                            SSH is a protocol used for secure remote
+                            access to systems over a network.
+                        </p>
+
+                    </details>
+
+
+                    <details>
+
+                        <summary>
+                            07. How can you view listening ports?
+                        </summary>
+
+                        <p>
+                            A common command is
+                            <code>ss -tuln</code>.
+                        </p>
+
+                    </details>
+
+
+                    <details>
+
+                        <summary>
+                            08. Why is Linux important in cybersecurity?
+                        </summary>
+
+                        <p>
+                            Linux provides powerful tools for system
+                            administration, network analysis, log analysis,
+                            security monitoring and automation.
+                        </p>
+
+                    </details>
+
+                </div>
+
+            </div>
+
+
+            <!-- Completion -->
+
+            <div class="linux-complete-box">
+
+                <div class="linux-complete-icon">
+
+                    <i class="bi bi-check-circle-fill"></i>
+
+                </div>
+
+                <div>
+
+                    <h3>
+                        Linux Fundamentals Completed
+                    </h3>
+
+                    <p>
+                        You have covered Linux fundamentals, commands,
+                        permissions, networking, processes, scripting,
+                        hardening and cybersecurity applications.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
 
 
     </main>
