@@ -2534,3 +2534,961 @@ html{
     }
 
 }
+
+/* ==========================================
+   LINUX PAGE
+========================================== */
+
+.topic-section{
+
+    margin-bottom:70px;
+
+}
+
+.section-heading{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:20px;
+
+    margin-bottom:30px;
+
+}
+
+.section-number{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    min-width:48px;
+
+    height:48px;
+
+    border-radius:12px;
+
+    background:rgba(88,166,255,.12);
+
+    border:1px solid rgba(88,166,255,.25);
+
+    color:var(--accent);
+
+    font-weight:700;
+
+    font-size:13px;
+
+}
+
+.section-heading h2{
+
+    margin:0 0 8px;
+
+    color:var(--text-primary);
+
+    font-weight:700;
+
+}
+
+.section-heading p{
+
+    margin:0;
+
+    color:var(--text-secondary);
+
+    line-height:1.7;
+
+}
+
+
+/* ==========================================
+   INFO CARD
+========================================== */
+
+.info-card{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:22px;
+
+    padding:25px;
+
+    background:var(--bg-card);
+
+    border:1px solid var(--border);
+
+    border-left:4px solid var(--accent);
+
+    border-radius:16px;
+
+}
+
+.info-card-icon{
+
+    min-width:60px;
+
+    width:60px;
+
+    height:60px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:14px;
+
+    background:rgba(88,166,255,.12);
+
+}
+
+.info-card-icon i{
+
+    font-size:28px;
+
+    color:var(--accent);
+
+}
+
+.info-card h4{
+
+    color:var(--text-primary);
+
+    margin-bottom:8px;
+
+}
+
+.info-card p{
+
+    color:var(--text-secondary);
+
+    margin:0;
+
+    line-height:1.7;
+
+}
+
+
+/* ==========================================
+   LINUX CARDS
+========================================== */
+
+.linux-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:20px;
+
+}
+
+.linux-card{
+
+    padding:25px;
+
+    background:var(--bg-card);
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+    transition:.3s ease;
+
+}
+
+.linux-card:hover{
+
+    transform:translateY(-6px);
+
+    border-color:var(--accent);
+
+    box-shadow:0 12px 25px rgba(88,166,255,.14);
+
+}
+
+.linux-card-icon{
+
+    width:50px;
+
+    height:50px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin-bottom:18px;
+
+    border-radius:12px;
+
+    background:rgba(88,166,255,.12);
+
+}
+
+.linux-card-icon i{
+
+    font-size:23px;
+
+    color:var(--accent);
+
+}
+
+.linux-card h4{
+
+    color:var(--accent);
+
+    font-family:monospace;
+
+    margin-bottom:10px;
+
+}
+
+.linux-card p{
+
+    color:var(--text-secondary);
+
+    line-height:1.7;
+
+    margin:0;
+
+}
+
+
+/* ==========================================
+   COMMAND TABLE
+========================================== */
+
+.command-table-wrapper{
+
+    overflow:hidden;
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+}
+
+.linux-command-table{
+
+    margin:0;
+
+}
+
+.linux-command-table th{
+
+    background:var(--accent);
+
+    color:white;
+
+    padding:15px;
+
+    white-space:nowrap;
+
+}
+
+.linux-command-table td{
+
+    background:var(--bg-card);
+
+    color:var(--text-primary);
+
+    padding:14px;
+
+    border-color:var(--border);
+
+    vertical-align:middle;
+
+}
+
+.linux-command-table tbody tr{
+
+    transition:.25s ease;
+
+}
+
+.linux-command-table tbody tr:hover td{
+
+    background:rgba(88,166,255,.08);
+
+}
+
+.linux-command-table code{
+
+    color:var(--accent);
+
+    background:rgba(88,166,255,.10);
+
+    padding:5px 8px;
+
+    border-radius:6px;
+
+    font-family:monospace;
+
+}
+
+
+/* ==========================================
+   SECURITY COMMANDS
+========================================== */
+
+.security-command-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:20px;
+
+}
+
+.security-command-card{
+
+    padding:25px;
+
+    background:var(--bg-card);
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+    transition:.3s ease;
+
+}
+
+.security-command-card:hover{
+
+    transform:translateY(-6px);
+
+    border-color:#22c55e;
+
+}
+
+.security-command-card > i{
+
+    font-size:28px;
+
+    color:#22c55e;
+
+    margin-bottom:18px;
+
+    display:block;
+
+}
+
+.security-command-card h4{
+
+    color:var(--text-primary);
+
+    margin-bottom:12px;
+
+}
+
+.security-command-card code{
+
+    display:inline-block;
+
+    padding:7px 10px;
+
+    margin-bottom:12px;
+
+    color:#22c55e;
+
+    background:rgba(34,197,94,.10);
+
+    border-radius:7px;
+
+    font-family:monospace;
+
+}
+
+.security-command-card p{
+
+    color:var(--text-secondary);
+
+    line-height:1.6;
+
+    margin:0;
+
+}
+
+
+/* ==========================================
+   NEXT BOX
+========================================== */
+
+.linux-next-box{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+    padding:25px;
+
+    margin-bottom:40px;
+
+    background:rgba(88,166,255,.07);
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+}
+
+.linux-next-box > i{
+
+    font-size:35px;
+
+    color:var(--accent);
+
+}
+
+.linux-next-box h4{
+
+    color:var(--text-primary);
+
+    margin-bottom:5px;
+
+}
+
+.linux-next-box p{
+
+    color:var(--text-secondary);
+
+    margin:0;
+
+}
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:992px){
+
+    .linux-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .security-command-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .section-heading{
+
+        gap:12px;
+
+    }
+
+    .section-number{
+
+        min-width:40px;
+
+        height:40px;
+
+    }
+
+    .linux-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .security-command-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .info-card{
+
+        align-items:flex-start;
+
+        flex-direction:column;
+
+    }
+
+}
+
+/* ==========================================
+   LINUX FILE PERMISSIONS
+========================================== */
+
+.permission-card{
+
+    padding:30px;
+
+    background:var(--bg-card);
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    margin-bottom:25px;
+
+}
+
+.permission-card h4{
+
+    color:var(--text-primary);
+
+    margin-bottom:10px;
+
+}
+
+.permission-card p{
+
+    color:var(--text-secondary);
+
+    line-height:1.7;
+
+}
+
+.permission-card code{
+
+    color:var(--accent);
+
+}
+
+
+/* Permission Visual */
+
+.permission-visual{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:15px;
+
+    margin-top:25px;
+
+}
+
+.permission-group{
+
+    padding:20px;
+
+    text-align:center;
+
+    background:rgba(88,166,255,.06);
+
+    border:1px solid var(--border);
+
+    border-radius:14px;
+
+}
+
+.permission-label{
+
+    display:block;
+
+    color:var(--text-secondary);
+
+    font-size:13px;
+
+    margin-bottom:10px;
+
+}
+
+.permission-group strong{
+
+    display:block;
+
+    color:var(--accent);
+
+    font-family:monospace;
+
+    font-size:26px;
+
+    letter-spacing:5px;
+
+}
+
+.permission-group small{
+
+    color:var(--text-secondary);
+
+}
+
+
+/* Permission Values */
+
+.permission-values{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:20px;
+
+    margin-bottom:25px;
+
+}
+
+.permission-value-card{
+
+    padding:25px;
+
+    background:var(--bg-card);
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+    transition:.3s ease;
+
+}
+
+.permission-value-card:hover{
+
+    transform:translateY(-5px);
+
+    border-color:var(--accent);
+
+}
+
+.permission-value-card > span{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:48px;
+
+    height:48px;
+
+    margin-bottom:15px;
+
+    border-radius:12px;
+
+    background:rgba(88,166,255,.12);
+
+    color:var(--accent);
+
+    font-family:monospace;
+
+    font-size:24px;
+
+    font-weight:700;
+
+}
+
+.permission-value-card h4{
+
+    color:var(--text-primary);
+
+}
+
+.permission-value-card p{
+
+    color:var(--text-secondary);
+
+    line-height:1.6;
+
+}
+
+.permission-value-card strong{
+
+    color:#22c55e;
+
+    font-family:monospace;
+
+    font-size:20px;
+
+}
+
+
+/* Command Explanation */
+
+.command-explain-card{
+
+    padding:25px;
+
+    margin-bottom:20px;
+
+    background:var(--bg-card);
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+}
+
+.command-explain-header{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    margin-bottom:20px;
+
+}
+
+.command-explain-header > i{
+
+    width:50px;
+
+    height:50px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:12px;
+
+    background:rgba(88,166,255,.12);
+
+    color:var(--accent);
+
+    font-size:23px;
+
+}
+
+.command-explain-header h4{
+
+    color:var(--text-primary);
+
+    margin:0 0 4px;
+
+}
+
+.command-explain-header p{
+
+    color:var(--text-secondary);
+
+    margin:0;
+
+}
+
+.command-example{
+
+    padding:15px 18px;
+
+    background:#0d1117;
+
+    border:1px solid var(--border);
+
+    border-radius:10px;
+
+}
+
+.command-example code{
+
+    color:#22c55e;
+
+    font-family:monospace;
+
+    font-size:15px;
+
+}
+
+.permission-breakdown{
+
+    display:flex;
+
+    gap:12px;
+
+    margin-top:15px;
+
+}
+
+.permission-breakdown span{
+
+    padding:8px 12px;
+
+    border-radius:8px;
+
+    background:rgba(88,166,255,.08);
+
+    color:var(--text-secondary);
+
+    font-size:13px;
+
+}
+
+.permission-breakdown strong{
+
+    color:var(--accent);
+
+    margin-right:5px;
+
+}
+
+.permission-note{
+
+    color:var(--text-secondary);
+
+    line-height:1.7;
+
+    margin:15px 0 0;
+
+}
+
+
+/* Permission Table */
+
+.permission-table-wrapper{
+
+    padding:25px;
+
+    margin-top:25px;
+
+    background:var(--bg-card);
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+}
+
+.permission-table-wrapper h4{
+
+    color:var(--text-primary);
+
+    margin-bottom:18px;
+
+}
+
+.permission-table{
+
+    margin:0;
+
+}
+
+.permission-table th{
+
+    background:var(--accent);
+
+    color:white;
+
+    padding:14px;
+
+}
+
+.permission-table td{
+
+    background:var(--bg-card);
+
+    color:var(--text-primary);
+
+    border-color:var(--border);
+
+    padding:13px;
+
+}
+
+.permission-table code{
+
+    color:var(--accent);
+
+    background:rgba(88,166,255,.10);
+
+    padding:4px 7px;
+
+    border-radius:5px;
+
+}
+
+
+/* Security */
+
+.linux-security-box{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:18px;
+
+    padding:25px;
+
+    margin-top:25px;
+
+    background:rgba(34,197,94,.07);
+
+    border-left:5px solid #22c55e;
+
+    border-radius:15px;
+
+}
+
+.linux-security-box > i{
+
+    font-size:30px;
+
+    color:#22c55e;
+
+}
+
+.linux-security-box h4{
+
+    color:#22c55e;
+
+    margin-bottom:8px;
+
+}
+
+.linux-security-box p{
+
+    color:var(--text-secondary);
+
+    line-height:1.7;
+
+    margin:0;
+
+}
+
+
+/* Responsive */
+
+@media(max-width:768px){
+
+    .permission-visual{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .permission-values{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .permission-breakdown{
+
+        flex-wrap:wrap;
+
+    }
+
+    .linux-security-box{
+
+        flex-direction:column;
+
+    }
+
+}

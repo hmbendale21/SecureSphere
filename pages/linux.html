@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Linux Fundamentals | SecureSphere</title>
+
+
+    <!-- Bootstrap -->
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+
+    <!-- Bootstrap Icons -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
+
+
+    <!-- SecureSphere CSS -->
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/dashboard.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/learn-topic.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/theme.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/loading.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/transition.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- ==========================================
+         LEARN CYBER NAVBAR
+    =========================================== -->
+
+    <div id="learnNavbar"></div>
+
+
+
+    <!-- ==========================================
+         HERO
+    =========================================== -->
+
+    <section class="dashboard-hero">
+
+        <div class="container text-center">
+
+            <h1 class="hero-title">
+
+                <i class="bi bi-terminal-fill"></i>
+
+                Linux Fundamentals
+
+            </h1>
+
+            <p class="hero-subtitle">
+
+                Master Linux for Cybersecurity
+
+            </p>
+
+            <p class="hero-description">
+
+                Learn Linux commands, file systems, permissions,
+                processes, networking and system administration.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==========================================
+         MAIN CONTENT
+    =========================================== -->
+
+    <main class="container py-5">
+
+
+        <!-- ======================================
+             LINUX INTRODUCTION
+        ======================================= -->
+
+        <section class="topic-section">
+
+            <div class="section-heading">
+
+                <span class="section-number">
+                    01
+                </span>
+
+                <div>
+
+                    <h2>
+                        What is Linux?
+                    </h2>
+
+                    <p>
+                        Linux is an open-source operating system
+                        widely used in servers, cybersecurity,
+                        cloud computing and embedded systems.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <div class="info-card-icon">
+
+                    <i class="bi bi-terminal-fill"></i>
+
+                </div>
+
+                <div>
+
+                    <h4>
+                        Why Linux Matters in Cybersecurity
+                    </h4>
+
+                    <p>
+
+                        Linux provides powerful command-line tools
+                        for system administration, network analysis,
+                        security testing, log analysis and automation.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ======================================
+             LINUX FILE SYSTEM
+        ======================================= -->
+
+        <section class="topic-section">
+
+            <div class="section-heading">
+
+                <span class="section-number">
+                    02
+                </span>
+
+                <div>
+
+                    <h2>
+                        Linux File System
+                    </h2>
+
+                    <p>
+                        Linux organizes files and directories
+                        using a hierarchical structure.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="linux-grid">
+
+
+                <div class="linux-card">
+
+                    <div class="linux-card-icon">
+
+                        <i class="bi bi-folder-fill"></i>
+
+                    </div>
+
+                    <h4>/</h4>
+
+                    <p>
+                        Root directory. The starting point
+                        of the Linux file system.
+                    </p>
+
+                </div>
+
+
+                <div class="linux-card">
+
+                    <div class="linux-card-icon">
+
+                        <i class="bi bi-person-fill"></i>
+
+                    </div>
+
+                    <h4>/home</h4>
+
+                    <p>
+                        Contains personal directories
+                        belonging to users.
+                    </p>
+
+                </div>
+
+
+                <div class="linux-card">
+
+                    <div class="linux-card-icon">
+
+                        <i class="bi bi-gear-fill"></i>
+
+                    </div>
+
+                    <h4>/etc</h4>
+
+                    <p>
+                        Contains system-wide configuration
+                        files.
+                    </p>
+
+                </div>
+
+
+                <div class="linux-card">
+
+                    <div class="linux-card-icon">
+
+                        <i class="bi bi-hdd-fill"></i>
+
+                    </div>
+
+                    <h4>/var</h4>
+
+                    <p>
+                        Stores variable data such as logs
+                        and application data.
+                    </p>
+
+                </div>
+
+
+                <div class="linux-card">
+
+                    <div class="linux-card-icon">
+
+                        <i class="bi bi-cpu-fill"></i>
+
+                    </div>
+
+                    <h4>/proc</h4>
+
+                    <p>
+                        Virtual file system containing
+                        process and kernel information.
+                    </p>
+
+                </div>
+
+
+                <div class="linux-card">
+
+                    <div class="linux-card-icon">
+
+                        <i class="bi bi-tools"></i>
+
+                    </div>
+
+                    <h4>/bin</h4>
+
+                    <p>
+                        Contains essential executable
+                        programs and commands.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ======================================
+             BASIC COMMANDS
+        ======================================= -->
+
+        <section class="topic-section">
+
+            <div class="section-heading">
+
+                <span class="section-number">
+                    03
+                </span>
+
+                <div>
+
+                    <h2>
+                        Essential Linux Commands
+                    </h2>
+
+                    <p>
+                        These commands are fundamental for
+                        working with Linux from the terminal.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="command-table-wrapper">
+
+                <div class="table-responsive">
+
+                    <table class="table linux-command-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Command
+                                </th>
+
+                                <th>
+                                    Purpose
+                                </th>
+
+                                <th>
+                                    Example
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody>
+
+                            <tr>
+
+                                <td>
+                                    <code>pwd</code>
+                                </td>
+
+                                <td>
+                                    Shows the current directory.
+                                </td>
+
+                                <td>
+                                    <code>pwd</code>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    <code>ls</code>
+                                </td>
+
+                                <td>
+                                    Lists files and directories.
+                                </td>
+
+                                <td>
+                                    <code>ls -la</code>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    <code>cd</code>
+                                </td>
+
+                                <td>
+                                    Changes the current directory.
+                                </td>
+
+                                <td>
+                                    <code>cd /home</code>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    <code>mkdir</code>
+                                </td>
+
+                                <td>
+                                    Creates a directory.
+                                </td>
+
+                                <td>
+                                    <code>mkdir security</code>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    <code>touch</code>
+                                </td>
+
+                                <td>
+                                    Creates an empty file.
+                                </td>
+
+                                <td>
+                                    <code>touch notes.txt</code>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    <code>cp</code>
+                                </td>
+
+                                <td>
+                                    Copies files or directories.
+                                </td>
+
+                                <td>
+                                    <code>cp file.txt backup.txt</code>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    <code>mv</code>
+                                </td>
+
+                                <td>
+                                    Moves or renames files.
+                                </td>
+
+                                <td>
+                                    <code>mv old.txt new.txt</code>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    <code>rm</code>
+                                </td>
+
+                                <td>
+                                    Removes files.
+                                </td>
+
+                                <td>
+                                    <code>rm file.txt</code>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    <code>cat</code>
+                                </td>
+
+                                <td>
+                                    Displays file contents.
+                                </td>
+
+                                <td>
+                                    <code>cat notes.txt</code>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    <code>grep</code>
+                                </td>
+
+                                <td>
+                                    Searches text for matching patterns.
+                                </td>
+
+                                <td>
+                                    <code>grep "error" log.txt</code>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    <code>find</code>
+                                </td>
+
+                                <td>
+                                    Searches for files and directories.
+                                </td>
+
+                                <td>
+                                    <code>find /home -name "*.txt"</code>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    <code>sudo</code>
+                                </td>
+
+                                <td>
+                                    Executes a command with elevated privileges.
+                                </td>
+
+                                <td>
+                                    <code>sudo command</code>
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ==========================================
+        LINUX FILE PERMISSIONS
+   ========================================== -->
+   
+   <section class="topic-section">
+   
+       <div class="section-heading">
+   
+           <span class="section-number">
+               04
+           </span>
+   
+           <div>
+   
+               <h2>
+                   Linux File Permissions
+               </h2>
+   
+               <p>
+                   Linux permissions control who can read,
+                   modify and execute files and directories.
+               </p>
+   
+           </div>
+   
+       </div>
+   
+   
+       <!-- Permission Structure -->
+   
+       <div class="permission-card">
+   
+           <h4>
+               Understanding <code>rwx</code>
+           </h4>
+   
+           <p>
+               Every file and directory has permissions for three
+               categories of users: Owner, Group and Others.
+           </p>
+   
+           <div class="permission-visual">
+   
+               <div class="permission-group">
+   
+                   <span class="permission-label">
+                       Owner
+                   </span>
+   
+                   <strong>
+                       rwx
+                   </strong>
+   
+                   <small>
+                       Read · Write · Execute
+                   </small>
+   
+               </div>
+   
+   
+               <div class="permission-group">
+   
+                   <span class="permission-label">
+                       Group
+                   </span>
+   
+                   <strong>
+                       rwx
+                   </strong>
+   
+                   <small>
+                       Read · Write · Execute
+                   </small>
+   
+               </div>
+   
+   
+               <div class="permission-group">
+   
+                   <span class="permission-label">
+                       Others
+                   </span>
+   
+                   <strong>
+                       r-x
+                   </strong>
+   
+                   <small>
+                       Read · Execute
+                   </small>
+   
+               </div>
+   
+           </div>
+   
+       </div>
+   
+   
+       <!-- Permission Values -->
+   
+       <div class="permission-values">
+   
+           <div class="permission-value-card">
+   
+               <span>r</span>
+   
+               <h4>Read</h4>
+   
+               <p>
+                   Allows viewing the contents of a file.
+               </p>
+   
+               <strong>4</strong>
+   
+           </div>
+   
+   
+           <div class="permission-value-card">
+   
+               <span>w</span>
+   
+               <h4>Write</h4>
+   
+               <p>
+                   Allows modifying the contents of a file.
+               </p>
+   
+               <strong>2</strong>
+   
+           </div>
+   
+   
+           <div class="permission-value-card">
+   
+               <span>x</span>
+   
+               <h4>Execute</h4>
+   
+               <p>
+                   Allows executing a file or entering a directory.
+               </p>
+   
+               <strong>1</strong>
+   
+           </div>
+   
+       </div>
+   
+   
+       <!-- chmod -->
+   
+       <div class="command-explain-card">
+   
+           <div class="command-explain-header">
+   
+               <i class="bi bi-shield-lock-fill"></i>
+   
+               <div>
+   
+                   <h4>
+                       chmod
+                   </h4>
+   
+                   <p>
+                       Change file or directory permissions.
+                   </p>
+   
+               </div>
+   
+           </div>
+   
+   
+           <div class="command-example">
+   
+               <code>
+                   chmod 755 script.sh
+               </code>
+   
+           </div>
+   
+   
+           <div class="permission-breakdown">
+   
+               <span>
+                   <strong>7</strong>
+                   Owner
+               </span>
+   
+               <span>
+                   <strong>5</strong>
+                   Group
+               </span>
+   
+               <span>
+                   <strong>5</strong>
+                   Others
+               </span>
+   
+           </div>
+   
+   
+           <p class="permission-note">
+   
+               <strong>755</strong> means the owner can read,
+               write and execute, while group and others can
+               read and execute.
+   
+           </p>
+   
+       </div>
+   
+   
+       <!-- chown -->
+   
+       <div class="command-explain-card">
+   
+           <div class="command-explain-header">
+   
+               <i class="bi bi-person-fill"></i>
+   
+               <div>
+   
+                   <h4>
+                       chown
+                   </h4>
+   
+                   <p>
+                       Change file ownership.
+                   </p>
+   
+               </div>
+   
+           </div>
+   
+   
+           <div class="command-example">
+   
+               <code>
+                   sudo chown user:filegroup report.txt
+               </code>
+   
+           </div>
+   
+           <p class="permission-note">
+   
+               Ownership controls which user and group are
+               associated with a file.
+   
+           </p>
+   
+       </div>
+   
+   
+       <!-- chgrp -->
+   
+       <div class="command-explain-card">
+   
+           <div class="command-explain-header">
+   
+               <i class="bi bi-people-fill"></i>
+   
+               <div>
+   
+                   <h4>
+                       chgrp
+                   </h4>
+   
+                   <p>
+                       Change the group ownership of a file.
+                   </p>
+   
+               </div>
+   
+           </div>
+   
+   
+           <div class="command-example">
+   
+               <code>
+                   sudo chgrp security report.txt
+               </code>
+   
+           </div>
+   
+       </div>
+   
+   
+       <!-- Numeric Permissions -->
+   
+       <div class="permission-table-wrapper">
+   
+           <h4>
+               Common Numeric Permissions
+           </h4>
+   
+           <div class="table-responsive">
+   
+               <table class="table permission-table">
+   
+                   <thead>
+   
+                       <tr>
+   
+                           <th>
+                               Permission
+                           </th>
+   
+                           <th>
+                               Meaning
+                           </th>
+   
+                           <th>
+                               Example
+                           </th>
+   
+                       </tr>
+   
+                   </thead>
+   
+                   <tbody>
+   
+                       <tr>
+   
+                           <td>
+                               <code>777</code>
+                           </td>
+   
+                           <td>
+                               Read, write and execute for everyone
+                           </td>
+   
+                           <td>
+                               <code>rwxrwxrwx</code>
+                           </td>
+   
+                       </tr>
+   
+   
+                       <tr>
+   
+                           <td>
+                               <code>755</code>
+                           </td>
+   
+                           <td>
+                               Owner full access; others read/execute
+                           </td>
+   
+                           <td>
+                               <code>rwxr-xr-x</code>
+                           </td>
+   
+                       </tr>
+   
+   
+                       <tr>
+   
+                           <td>
+                               <code>644</code>
+                           </td>
+   
+                           <td>
+                               Owner read/write; others read
+                           </td>
+   
+                           <td>
+                               <code>rw-r--r--</code>
+                           </td>
+   
+                       </tr>
+   
+   
+                       <tr>
+   
+                           <td>
+                               <code>600</code>
+                           </td>
+   
+                           <td>
+                               Owner read/write only
+                           </td>
+   
+                           <td>
+                               <code>rw-------</code>
+                           </td>
+   
+                       </tr>
+   
+                   </tbody>
+   
+               </table>
+   
+           </div>
+   
+       </div>
+   
+   
+       <!-- Cybersecurity -->
+   
+       <div class="linux-security-box">
+   
+           <i class="bi bi-shield-check"></i>
+   
+           <div>
+   
+               <h4>
+                   Why Permissions Matter in Cybersecurity
+               </h4>
+   
+               <p>
+   
+                   Incorrect permissions can expose sensitive files,
+                   allow unauthorized modification or give attackers
+                   unnecessary privileges.
+   
+               </p>
+   
+           </div>
+   
+       </div>
+   
+   </section>
+
+        <!-- ======================================
+             CYBERSECURITY COMMANDS
+        ======================================= -->
+
+        <section class="topic-section">
+
+            <div class="section-heading">
+
+                <span class="section-number">
+                    05
+                </span>
+
+                <div>
+
+                    <h2>
+                        Linux for Cybersecurity
+                    </h2>
+
+                    <p>
+                        Linux provides many tools useful for
+                        security analysis and system monitoring.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="security-command-grid">
+
+
+                <div class="security-command-card">
+
+                    <i class="bi bi-wifi"></i>
+
+                    <h4>
+                        Network Analysis
+                    </h4>
+
+                    <code>
+                        ip addr
+                    </code>
+
+                    <p>
+                        View network interfaces and IP addresses.
+                    </p>
+
+                </div>
+
+
+                <div class="security-command-card">
+
+                    <i class="bi bi-activity"></i>
+
+                    <h4>
+                        Process Monitoring
+                    </h4>
+
+                    <code>
+                        ps aux
+                    </code>
+
+                    <p>
+                        View running processes on the system.
+                    </p>
+
+                </div>
+
+
+                <div class="security-command-card">
+
+                    <i class="bi bi-file-earmark-text-fill"></i>
+
+                    <h4>
+                        Log Analysis
+                    </h4>
+
+                    <code>
+                        tail -f logfile
+                    </code>
+
+                    <p>
+                        Monitor new entries being added to a log.
+                    </p>
+
+                </div>
+
+
+                <div class="security-command-card">
+
+                    <i class="bi bi-shield-lock-fill"></i>
+
+                    <h4>
+                        Permissions
+                    </h4>
+
+                    <code>
+                        ls -l
+                    </code>
+
+                    <p>
+                        Inspect file ownership and permissions.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ======================================
+             NEXT SECTION
+        ======================================= -->
+
+        <div class="linux-next-box">
+
+            <i class="bi bi-arrow-right-circle-fill"></i>
+
+            <div>
+
+                <h4>
+                    Next: Linux File Permissions
+                </h4>
+
+                <p>
+                    Learn users, groups, chmod, chown and
+                    Linux permission notation.
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </main>
+
+
+
+    <!-- ==========================================
+         SCRIPTS
+    =========================================== -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="../assets/js/loading.js"></script>
+
+    <script src="../assets/js/theme.js"></script>
+
+    <script src="../assets/js/transition.js"></script>
+
+
+    <!-- Learn Cyber Navbar -->
+
+    <script>
+
+        fetch("../assets/components/learn-navbar.html")
+
+            .then(response => {
+
+                if (!response.ok) {
+
+                    throw new Error(
+                        "Navbar file not found: " + response.status
+                    );
+
+                }
+
+                return response.text();
+
+            })
+
+            .then(data => {
+
+                const navbar =
+                    document.getElementById("learnNavbar");
+
+                navbar.innerHTML = data;
+
+
+                const currentPage =
+                    window.location.pathname
+                        .split("/")
+                        .pop();
+
+
+                document
+                    .querySelectorAll(".learn-nav-item")
+                    .forEach(link => {
+
+                        const linkPage =
+                            link
+                                .getAttribute("href")
+                                .split("/")
+                                .pop();
+
+
+                        if (linkPage === currentPage) {
+
+                            link.classList.add("active");
+
+                        }
+
+                    });
+
+            })
+
+            .catch(error => {
+
+                console.error(
+                    "Learn Navbar Error:",
+                    error
+                );
+
+            });
+
+    </script>
+
+
+</body>
+
+</html>
