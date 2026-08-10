@@ -1,0 +1,3382 @@
+/* ==========================================
+   Linux Fundamentals Page
+========================================== */
+
+/* ==========================================
+   Quick Navigation Section
+========================================== */
+
+.linux-quick-nav {
+
+    max-width: 1200px;
+
+    margin: 0 auto 50px;
+
+    padding: 35px;
+
+    background: var(--bg-card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 20px;
+
+    box-shadow: 0 8px 30px rgba(88, 166, 255, .10);
+
+}
+
+.linux-quick-nav-header {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 25px;
+
+}
+
+.linux-quick-nav-header h2 {
+
+    color: var(--text-primary);
+
+    font-weight: 700;
+
+    font-size: 1.4rem;
+
+    margin: 0;
+
+}
+
+.quick-nav-icon {
+
+    font-size: 28px;
+
+}
+
+.linux-quick-nav-grid {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+}
+
+.linux-nav-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 10px 18px;
+
+    background: var(--bg-card);
+
+    color: var(--text-primary);
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    font-size: 14px;
+
+    transition: .3s;
+
+}
+
+.linux-nav-btn:hover {
+
+    background: var(--accent);
+
+    color: white;
+
+    border-color: var(--accent);
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 8px 20px rgba(88, 166, 255, .25);
+
+}
+
+.linux-nav-btn span {
+
+    font-size: 16px;
+
+}
+
+
+/* ==========================================
+   Topic Section
+========================================== */
+
+.topic-section {
+
+    margin-bottom: 60px;
+
+    padding-bottom: 40px;
+
+    border-bottom: 1px solid var(--border);
+
+}
+
+.topic-section:last-child {
+
+    border-bottom: none;
+
+}
+
+.section-heading {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 20px;
+
+    margin-bottom: 30px;
+
+}
+
+.section-number {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 52px;
+
+    height: 52px;
+
+    background: linear-gradient(135deg, #2563eb, #4da3ff);
+
+    color: white;
+
+    font-weight: 800;
+
+    font-size: 16px;
+
+    border-radius: 14px;
+
+    flex-shrink: 0;
+
+}
+
+.section-heading h2 {
+
+    color: var(--text-primary);
+
+    font-weight: 700;
+
+    margin-bottom: 8px;
+
+    font-size: 1.5rem;
+
+}
+
+.section-heading p {
+
+    color: var(--text-secondary);
+
+    margin: 0;
+
+    line-height: 1.7;
+
+}
+
+
+/* ==========================================
+   Info Card (Introduction)
+========================================== */
+
+.info-card {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 20px;
+
+    padding: 28px;
+
+    background: rgba(88, 166, 255, .06);
+
+    border: 1px solid var(--border);
+
+    border-left: 5px solid var(--accent);
+
+    border-radius: 16px;
+
+    transition: .3s;
+
+}
+
+.info-card:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow: 0 12px 28px rgba(88, 166, 255, .15);
+
+}
+
+.info-card-icon {
+
+    width: 60px;
+
+    height: 60px;
+
+    min-width: 60px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: rgba(88, 166, 255, .12);
+
+    border-radius: 15px;
+
+    font-size: 26px;
+
+    color: var(--accent);
+
+}
+
+.info-card h4 {
+
+    color: var(--text-primary);
+
+    font-weight: 700;
+
+    margin-bottom: 10px;
+
+}
+
+.info-card p {
+
+    color: var(--text-secondary);
+
+    line-height: 1.7;
+
+    margin: 0;
+
+}
+
+
+/* ==========================================
+   Linux File System Grid
+========================================== */
+
+.linux-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+
+    margin-top: 10px;
+
+}
+
+.linux-card {
+
+    background: var(--bg-card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    padding: 28px;
+
+    text-align: center;
+
+    transition: .35s ease;
+
+}
+
+.linux-card:hover {
+
+    transform: translateY(-7px);
+
+    border-color: var(--accent);
+
+    box-shadow: 0 15px 30px rgba(88, 166, 255, .20);
+
+}
+
+.linux-card-icon {
+
+    width: 60px;
+
+    height: 60px;
+
+    margin: 0 auto 16px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 15px;
+
+    background: rgba(88, 166, 255, .10);
+
+    font-size: 26px;
+
+    color: var(--accent);
+
+}
+
+.linux-card h4 {
+
+    color: var(--accent);
+
+    font-weight: 700;
+
+    margin-bottom: 10px;
+
+    font-size: 1.1rem;
+
+}
+
+.linux-card p {
+
+    color: var(--text-secondary);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    margin: 0;
+
+}
+
+
+/* ==========================================
+   Command Table
+========================================== */
+
+.command-table-wrapper {
+
+    background: var(--bg-card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    margin-top: 10px;
+
+}
+
+.linux-command-table {
+
+    margin: 0;
+
+}
+
+.linux-command-table thead tr {
+
+    background: linear-gradient(135deg, #2563eb, #4da3ff);
+
+}
+
+.linux-command-table thead th {
+
+    color: white;
+
+    font-weight: 600;
+
+    padding: 16px 20px;
+
+    border: none;
+
+    background: transparent;
+
+}
+
+.linux-command-table tbody td {
+
+    padding: 14px 20px;
+
+    border-color: var(--border);
+
+    color: var(--text-primary);
+
+    background: var(--bg-card);
+
+    vertical-align: middle;
+
+}
+
+.linux-command-table tbody tr:hover td {
+
+    background: rgba(88, 166, 255, .06);
+
+}
+
+.linux-command-table code {
+
+    background: rgba(88, 166, 255, .10);
+
+    color: var(--accent);
+
+    padding: 3px 8px;
+
+    border-radius: 6px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+}
+
+
+/* ==========================================
+   File Permissions
+========================================== */
+
+.permission-card {
+
+    background: var(--bg-card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    padding: 30px;
+
+    margin-bottom: 24px;
+
+}
+
+.permission-card h4 {
+
+    color: var(--text-primary);
+
+    font-weight: 700;
+
+    margin-bottom: 12px;
+
+}
+
+.permission-card p {
+
+    color: var(--text-secondary);
+
+    line-height: 1.7;
+
+    margin-bottom: 20px;
+
+}
+
+.permission-card code {
+
+    background: rgba(88, 166, 255, .10);
+
+    color: var(--accent);
+
+    padding: 2px 8px;
+
+    border-radius: 6px;
+
+}
+
+.permission-visual {
+
+    display: flex;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+
+    margin-top: 15px;
+
+}
+
+.permission-group {
+
+    flex: 1;
+
+    min-width: 120px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 6px;
+
+    padding: 18px;
+
+    background: rgba(88, 166, 255, .06);
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    text-align: center;
+
+}
+
+.permission-label {
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    color: var(--accent);
+
+    text-transform: uppercase;
+
+    letter-spacing: .5px;
+
+}
+
+.permission-group strong {
+
+    color: var(--text-primary);
+
+    font-family: monospace;
+
+    font-size: 20px;
+
+    letter-spacing: 4px;
+
+}
+
+.permission-group small {
+
+    color: var(--text-secondary);
+
+    font-size: 12px;
+
+}
+
+.permission-values {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 16px;
+
+    margin: 20px 0;
+
+}
+
+.permission-value-card {
+
+    background: var(--bg-card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+
+    padding: 22px;
+
+    text-align: center;
+
+    transition: .3s;
+
+}
+
+.permission-value-card:hover {
+
+    border-color: var(--accent);
+
+    box-shadow: 0 8px 20px rgba(88, 166, 255, .15);
+
+}
+
+.permission-value-card span {
+
+    display: block;
+
+    font-size: 28px;
+
+    font-weight: 800;
+
+    color: var(--accent);
+
+    font-family: monospace;
+
+    margin-bottom: 8px;
+
+}
+
+.permission-value-card h4 {
+
+    color: var(--text-primary);
+
+    font-weight: 700;
+
+    margin-bottom: 8px;
+
+}
+
+.permission-value-card p {
+
+    color: var(--text-secondary);
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+    margin-bottom: 12px;
+
+}
+
+.permission-value-card strong {
+
+    display: inline-block;
+
+    padding: 4px 12px;
+
+    background: rgba(88, 166, 255, .10);
+
+    color: var(--accent);
+
+    border-radius: 20px;
+
+    font-size: 14px;
+
+}
+
+
+/* ==========================================
+   Command Explain Cards (chmod / chown)
+========================================== */
+
+.command-explain-card {
+
+    background: var(--bg-card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 16px;
+
+    padding: 24px;
+
+    margin-bottom: 20px;
+
+    transition: .3s;
+
+}
+
+.command-explain-card:hover {
+
+    border-color: var(--accent);
+
+    box-shadow: 0 8px 20px rgba(88, 166, 255, .12);
+
+}
+
+.command-explain-header {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 15px;
+
+    margin-bottom: 16px;
+
+}
+
+.command-explain-header i {
+
+    font-size: 26px;
+
+    color: var(--accent);
+
+    margin-top: 2px;
+
+}
+
+.command-explain-header h4 {
+
+    color: var(--text-primary);
+
+    font-weight: 700;
+
+    margin-bottom: 4px;
+
+    font-size: 1.1rem;
+
+    font-family: monospace;
+
+}
+
+.command-explain-header p {
+
+    color: var(--text-secondary);
+
+    font-size: 14px;
+
+    margin: 0;
+
+}
+
+.command-example {
+
+    background: rgba(88, 166, 255, .06);
+
+    border-radius: 10px;
+
+    padding: 14px 18px;
+
+    margin-bottom: 14px;
+
+    font-family: monospace;
+
+}
+
+.command-example code {
+
+    color: var(--accent);
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+}
+
+.permission-breakdown {
+
+    display: flex;
+
+    gap: 16px;
+
+    margin-bottom: 14px;
+
+    flex-wrap: wrap;
+
+}
+
+.permission-breakdown span {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    padding: 10px 18px;
+
+    background: rgba(88, 166, 255, .08);
+
+    border-radius: 10px;
+
+    font-size: 13px;
+
+    color: var(--text-secondary);
+
+    gap: 4px;
+
+}
+
+.permission-breakdown span strong {
+
+    font-size: 20px;
+
+    color: var(--accent);
+
+}
+
+.permission-note {
+
+    color: var(--text-secondary);
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    margin: 0;
+
+}
+
+.permission-table-wrapper {
+
+    background: var(--bg-card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 16px;
+
+    padding: 24px;
+
+    margin-top: 20px;
+
+}
+
+.permission-table-wrapper h4 {
+
+    color: var(--text-primary);
+
+    font-weight: 700;
+
+    margin-bottom: 16px;
+
+}
+
+.permission-table thead th {
+
+    background: linear-gradient(135deg, #2563eb, #4da3ff);
+
+    color: white;
+
+    border: none;
+
+}
+
+.permission-table tbody td {
+
+    color: var(--text-primary);
+
+    background: var(--bg-card);
+
+    border-color: var(--border);
+
+}
+
+.permission-table tbody tr:hover td {
+
+    background: rgba(88, 166, 255, .06);
+
+}
+
+.permission-table code {
+
+    background: rgba(88, 166, 255, .10);
+
+    color: var(--accent);
+
+    padding: 2px 8px;
+
+    border-radius: 5px;
+
+    font-size: 13px;
+
+}
+
+
+/* ==========================================
+   Security Box (Permissions Context)
+========================================== */
+
+.linux-security-box {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 18px;
+
+    padding: 24px;
+
+    margin-top: 24px;
+
+    background: rgba(34, 197, 94, .07);
+
+    border: 1px solid rgba(34, 197, 94, .25);
+
+    border-radius: 14px;
+
+}
+
+.linux-security-box i {
+
+    font-size: 28px;
+
+    color: #22c55e;
+
+    margin-top: 2px;
+
+    flex-shrink: 0;
+
+}
+
+.linux-security-box h4 {
+
+    color: var(--text-primary);
+
+    font-weight: 700;
+
+    margin-bottom: 8px;
+
+}
+
+.linux-security-box p {
+
+    color: var(--text-secondary);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    margin: 0;
+
+}
+
+
+/* ==========================================
+   Networking Commands Grid
+========================================== */
+
+.network-command-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 18px;
+
+    margin-bottom: 28px;
+
+}
+
+.network-command-card {
+
+    background: var(--bg-card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 16px;
+
+    padding: 22px;
+
+    text-align: center;
+
+    transition: .35s ease;
+
+}
+
+.network-command-card:hover {
+
+    transform: translateY(-6px);
+
+    border-color: var(--accent);
+
+    box-shadow: 0 12px 25px rgba(88, 166, 255, .18);
+
+}
+
+.network-command-icon {
+
+    width: 55px;
+
+    height: 55px;
+
+    margin: 0 auto 14px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: rgba(88, 166, 255, .10);
+
+    border-radius: 14px;
+
+    font-size: 24px;
+
+    color: var(--accent);
+
+}
+
+.network-command-card h4 {
+
+    color: var(--accent);
+
+    font-weight: 700;
+
+    font-size: 1.15rem;
+
+    font-family: monospace;
+
+    margin-bottom: 10px;
+
+}
+
+.network-command-card code {
+
+    display: block;
+
+    background: rgba(88, 166, 255, .08);
+
+    color: var(--accent);
+
+    padding: 8px;
+
+    border-radius: 8px;
+
+    font-size: 13px;
+
+    margin-bottom: 10px;
+
+    font-family: monospace;
+
+}
+
+.network-command-card p {
+
+    color: var(--text-secondary);
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+    margin-bottom: 12px;
+
+}
+
+.network-use {
+
+    display: inline-block;
+
+    padding: 4px 10px;
+
+    background: rgba(88, 166, 255, .10);
+
+    color: var(--accent);
+
+    border-radius: 20px;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+}
+
+
+/* ==========================================
+   Network Security Box
+========================================== */
+
+.linux-network-security {
+
+    background: var(--bg-card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    padding: 28px;
+
+    margin-top: 10px;
+
+}
+
+.linux-network-security-header {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+
+    padding-bottom: 20px;
+
+    border-bottom: 1px solid var(--border);
+
+}
+
+.linux-network-security-header i {
+
+    font-size: 30px;
+
+    color: var(--accent);
+
+    flex-shrink: 0;
+
+}
+
+.linux-network-security-header h4 {
+
+    color: var(--text-primary);
+
+    font-weight: 700;
+
+    margin-bottom: 6px;
+
+}
+
+.linux-network-security-header p {
+
+    color: var(--text-secondary);
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    margin: 0;
+
+}
+
+.security-command-examples {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 14px;
+
+}
+
+.security-command-examples>div {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 12px;
+
+    padding: 14px 18px;
+
+    background: rgba(88, 166, 255, .05);
+
+    border-radius: 10px;
+
+    border: 1px solid var(--border);
+
+}
+
+.security-command-examples span {
+
+    color: var(--text-primary);
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+}
+
+.security-command-examples code {
+
+    background: rgba(88, 166, 255, .12);
+
+    color: var(--accent);
+
+    padding: 5px 10px;
+
+    border-radius: 7px;
+
+    font-size: 13px;
+
+    font-family: monospace;
+
+    white-space: nowrap;
+
+}
+
+
+/* ==========================================
+   Processes & Monitoring
+========================================== */
+
+.process-intro {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 18px;
+
+    padding: 24px;
+
+    background: rgba(88, 166, 255, .06);
+
+    border: 1px solid var(--border);
+
+    border-radius: 16px;
+
+    margin-bottom: 24px;
+
+}
+
+.process-intro-icon {
+
+    width: 55px;
+
+    height: 55px;
+
+    min-width: 55px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: rgba(88, 166, 255, .12);
+
+    border-radius: 14px;
+
+    font-size: 24px;
+
+    color: var(--accent);
+
+}
+
+.process-intro h4 {
+
+    color: var(--text-primary);
+
+    font-weight: 700;
+
+    margin-bottom: 8px;
+
+}
+
+.process-intro p {
+
+    color: var(--text-secondary);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    margin: 0;
+
+}
+
+.process-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 16px;
+
+    margin-bottom: 24px;
+
+}
+
+.process-card {
+
+    background: var(--bg-card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 16px;
+
+    padding: 22px;
+
+    text-align: center;
+
+    transition: .35s;
+
+}
+
+.process-card:hover {
+
+    transform: translateY(-5px);
+
+    border-color: var(--accent);
+
+    box-shadow: 0 10px 25px rgba(88, 166, 255, .16);
+
+}
+
+.process-icon {
+
+    width: 52px;
+
+    height: 52px;
+
+    margin: 0 auto 12px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: rgba(88, 166, 255, .10);
+
+    border-radius: 13px;
+
+    font-size: 22px;
+
+    color: var(--accent);
+
+}
+
+.process-card h4 {
+
+    color: var(--accent);
+
+    font-weight: 700;
+
+    font-family: monospace;
+
+    font-size: 1rem;
+
+    margin-bottom: 8px;
+
+}
+
+.process-card code {
+
+    display: block;
+
+    background: rgba(88, 166, 255, .08);
+
+    color: var(--accent);
+
+    padding: 7px;
+
+    border-radius: 7px;
+
+    font-size: 12px;
+
+    margin-bottom: 8px;
+
+    font-family: monospace;
+
+}
+
+.process-card p {
+
+    color: var(--text-secondary);
+
+    font-size: 12px;
+
+    line-height: 1.6;
+
+    margin: 0;
+
+}
+
+.process-info-box {
+
+    background: var(--bg-card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 16px;
+
+    padding: 24px;
+
+    margin-bottom: 20px;
+
+}
+
+.process-info-box h4 {
+
+    color: var(--text-primary);
+
+    font-weight: 700;
+
+    margin-bottom: 16px;
+
+}
+
+.process-info-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 12px;
+
+}
+
+.process-info-grid>div {
+
+    text-align: center;
+
+    padding: 16px;
+
+    background: rgba(88, 166, 255, .06);
+
+    border-radius: 10px;
+
+}
+
+.process-info-grid span {
+
+    display: block;
+
+    font-size: 18px;
+
+    font-weight: 800;
+
+    color: var(--accent);
+
+    font-family: monospace;
+
+    margin-bottom: 6px;
+
+}
+
+.process-info-grid p {
+
+    color: var(--text-secondary);
+
+    font-size: 12px;
+
+    margin: 0;
+
+}
+
+.process-security-box {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 16px;
+
+    padding: 22px;
+
+    background: rgba(239, 68, 68, .06);
+
+    border: 1px solid rgba(239, 68, 68, .20);
+
+    border-radius: 14px;
+
+    margin-top: 4px;
+
+}
+
+.process-security-box i {
+
+    font-size: 26px;
+
+    color: #ef4444;
+
+    flex-shrink: 0;
+
+}
+
+.process-security-box h4 {
+
+    color: var(--text-primary);
+
+    font-weight: 700;
+
+    margin-bottom: 8px;
+
+}
+
+.process-security-box p {
+
+    color: var(--text-secondary);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    margin: 0;
+
+}
+
+
+/* ==========================================
+   Shell Scripting
+========================================== */
+
+.shell-intro {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 18px;
+
+    padding: 24px;
+
+    background: rgba(88, 166, 255, .06);
+
+    border: 1px solid var(--border);
+
+    border-radius: 16px;
+
+    margin-bottom: 24px;
+
+}
+
+.shell-intro-icon {
+
+    width: 55px;
+
+    height: 55px;
+
+    min-width: 55px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: rgba(88, 166, 255, .12);
+
+    border-radius: 14px;
+
+    font-size: 24px;
+
+    color: var(--accent);
+
+}
+
+.shell-intro h4 {
+
+    color: var(--text-primary);
+
+    font-weight: 700;
+
+    margin-bottom: 8px;
+
+}
+
+.shell-intro p {
+
+    color: var(--text-secondary);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    margin: 0;
+
+}
+
+.shell-code-card {
+
+    background: #0d1117;
+
+    border: 1px solid rgba(88, 166, 255, .20);
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    margin-bottom: 24px;
+
+}
+
+.shell-code-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 14px 20px;
+
+    background: rgba(255, 255, 255, .04);
+
+    border-bottom: 1px solid rgba(88, 166, 255, .15);
+
+}
+
+.shell-code-header div {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: #adbac7;
+
+    font-size: 14px;
+
+}
+
+.shell-code-header i {
+
+    color: var(--accent);
+
+    font-size: 18px;
+
+}
+
+.shell-badge {
+
+    padding: 4px 10px;
+
+    background: rgba(88, 166, 255, .15);
+
+    color: var(--accent);
+
+    border-radius: 6px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+}
+
+.shell-code-card pre {
+
+    margin: 0;
+
+    padding: 22px;
+
+    font-size: 14px;
+
+    color: #adbac7;
+
+    line-height: 1.8;
+
+    font-family: 'Courier New', Courier, monospace;
+
+    overflow-x: auto;
+
+}
+
+.shell-code-card pre code {
+
+    background: none;
+
+    color: inherit;
+
+    padding: 0;
+
+}
+
+.shell-concept-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 16px;
+
+    margin-bottom: 24px;
+
+}
+
+.shell-concept-card {
+
+    background: var(--bg-card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 16px;
+
+    padding: 22px;
+
+    text-align: center;
+
+    transition: .35s;
+
+}
+
+.shell-concept-card:hover {
+
+    transform: translateY(-5px);
+
+    border-color: var(--accent);
+
+    box-shadow: 0 10px 25px rgba(88, 166, 255, .15);
+
+}
+
+.shell-concept-card i {
+
+    font-size: 28px;
+
+    color: var(--accent);
+
+    margin-bottom: 12px;
+
+    display: block;
+
+}
+
+.shell-concept-card h4 {
+
+    color: var(--text-primary);
+
+    font-weight: 700;
+
+    margin-bottom: 10px;
+
+}
+
+.shell-concept-card code {
+
+    display: block;
+
+    background: rgba(88, 166, 255, .08);
+
+    color: var(--accent);
+
+    padding: 8px;
+
+    border-radius: 7px;
+
+    font-size: 12px;
+
+    margin-bottom: 10px;
+
+    font-family: monospace;
+
+    overflow-x: auto;
+
+}
+
+.shell-concept-card p {
+
+    color: var(--text-secondary);
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+    margin: 0;
+
+}
+
+.shell-examples {
+
+    background: var(--bg-card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    padding: 28px;
+
+    margin-bottom: 24px;
+
+}
+
+.shell-examples h4 {
+
+    color: var(--text-primary);
+
+    font-weight: 700;
+
+    margin-bottom: 18px;
+
+}
+
+.shell-example {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 16px;
+
+    padding: 14px 18px;
+
+    background: rgba(88, 166, 255, .04);
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    margin-bottom: 10px;
+
+    transition: .3s;
+
+}
+
+.shell-example:last-child {
+
+    margin-bottom: 0;
+
+}
+
+.shell-example:hover {
+
+    border-color: var(--accent);
+
+    background: rgba(88, 166, 255, .08);
+
+}
+
+.shell-example>div span {
+
+    display: block;
+
+    color: var(--text-primary);
+
+    font-weight: 600;
+
+    font-size: 14px;
+
+    margin-bottom: 3px;
+
+}
+
+.shell-example>div small {
+
+    color: var(--text-secondary);
+
+    font-size: 12px;
+
+}
+
+.shell-example>code {
+
+    background: rgba(88, 166, 255, .12);
+
+    color: var(--accent);
+
+    padding: 6px 12px;
+
+    border-radius: 8px;
+
+    font-size: 13px;
+
+    font-family: monospace;
+
+    white-space: nowrap;
+
+}
+
+.shell-security-box {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 16px;
+
+    padding: 22px;
+
+    background: rgba(34, 197, 94, .07);
+
+    border: 1px solid rgba(34, 197, 94, .25);
+
+    border-radius: 14px;
+
+}
+
+.shell-security-box i {
+
+    font-size: 26px;
+
+    color: #22c55e;
+
+    flex-shrink: 0;
+
+}
+
+.shell-security-box h4 {
+
+    color: var(--text-primary);
+
+    font-weight: 700;
+
+    margin-bottom: 8px;
+
+}
+
+.shell-security-box p {
+
+    color: var(--text-secondary);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    margin: 0;
+
+}
+
+
+/* ==========================================
+   Security & Hardening
+========================================== */
+
+.hardening-intro {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 18px;
+
+    padding: 24px;
+
+    background: rgba(88, 166, 255, .06);
+
+    border: 1px solid var(--border);
+
+    border-radius: 16px;
+
+    margin-bottom: 24px;
+
+}
+
+.hardening-intro-icon {
+
+    width: 55px;
+
+    height: 55px;
+
+    min-width: 55px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: rgba(88, 166, 255, .12);
+
+    border-radius: 14px;
+
+    font-size: 24px;
+
+    color: var(--accent);
+
+}
+
+.hardening-intro h4 {
+
+    color: var(--text-primary);
+
+    font-weight: 700;
+
+    margin-bottom: 8px;
+
+}
+
+.hardening-intro p {
+
+    color: var(--text-secondary);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    margin: 0;
+
+}
+
+.hardening-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 18px;
+
+    margin-bottom: 24px;
+
+}
+
+.hardening-card {
+
+    background: var(--bg-card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 16px;
+
+    padding: 24px;
+
+    transition: .35s;
+
+}
+
+.hardening-card:hover {
+
+    transform: translateY(-5px);
+
+    border-color: var(--accent);
+
+    box-shadow: 0 12px 25px rgba(88, 166, 255, .15);
+
+}
+
+.hardening-icon {
+
+    width: 52px;
+
+    height: 52px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: rgba(88, 166, 255, .10);
+
+    border-radius: 13px;
+
+    font-size: 22px;
+
+    color: var(--accent);
+
+    margin-bottom: 14px;
+
+}
+
+.hardening-card h4 {
+
+    color: var(--text-primary);
+
+    font-weight: 700;
+
+    margin-bottom: 10px;
+
+}
+
+.hardening-card p {
+
+    color: var(--text-secondary);
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    margin-bottom: 14px;
+
+}
+
+.hardening-card code {
+
+    display: block;
+
+    background: rgba(88, 166, 255, .08);
+
+    color: var(--accent);
+
+    padding: 8px 12px;
+
+    border-radius: 8px;
+
+    font-size: 13px;
+
+    font-family: monospace;
+
+}
+
+.hardening-checklist {
+
+    background: var(--bg-card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    padding: 28px;
+
+    margin-bottom: 24px;
+
+}
+
+.hardening-checklist h4 {
+
+    color: var(--text-primary);
+
+    font-weight: 700;
+
+    margin-bottom: 18px;
+
+}
+
+.checklist-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 12px;
+
+}
+
+.check-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 12px 16px;
+
+    background: rgba(34, 197, 94, .06);
+
+    border: 1px solid rgba(34, 197, 94, .20);
+
+    border-radius: 10px;
+
+    transition: .3s;
+
+}
+
+.check-item:hover {
+
+    background: rgba(34, 197, 94, .12);
+
+}
+
+.check-item i {
+
+    color: #22c55e;
+
+    font-size: 18px;
+
+    flex-shrink: 0;
+
+}
+
+.check-item span {
+
+    color: var(--text-primary);
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+}
+
+.hardening-command-box {
+
+    background: var(--bg-card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    padding: 28px;
+
+    margin-bottom: 24px;
+
+}
+
+.hardening-command-box h4 {
+
+    color: var(--text-primary);
+
+    font-weight: 700;
+
+    margin-bottom: 18px;
+
+}
+
+.hardening-command-list {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 12px;
+
+}
+
+.hardening-command-list>div {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 12px;
+
+    padding: 12px 16px;
+
+    background: rgba(88, 166, 255, .05);
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+}
+
+.hardening-command-list span {
+
+    color: var(--text-primary);
+
+    font-size: 14px;
+
+}
+
+.hardening-command-list code {
+
+    background: rgba(88, 166, 255, .12);
+
+    color: var(--accent);
+
+    padding: 5px 10px;
+
+    border-radius: 7px;
+
+    font-size: 13px;
+
+    font-family: monospace;
+
+    white-space: nowrap;
+
+}
+
+.hardening-security-box {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 16px;
+
+    padding: 22px;
+
+    background: rgba(34, 197, 94, .07);
+
+    border: 1px solid rgba(34, 197, 94, .25);
+
+    border-radius: 14px;
+
+}
+
+.hardening-security-box i {
+
+    font-size: 26px;
+
+    color: #22c55e;
+
+    flex-shrink: 0;
+
+}
+
+.hardening-security-box h4 {
+
+    color: var(--text-primary);
+
+    font-weight: 700;
+
+    margin-bottom: 8px;
+
+}
+
+.hardening-security-box p {
+
+    color: var(--text-secondary);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    margin: 0;
+
+}
+
+
+/* ==========================================
+   Linux for Cybersecurity
+========================================== */
+
+.cyber-linux-intro {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 18px;
+
+    padding: 24px;
+
+    background: rgba(88, 166, 255, .06);
+
+    border: 1px solid var(--border);
+
+    border-radius: 16px;
+
+    margin-bottom: 24px;
+
+}
+
+.cyber-linux-icon {
+
+    width: 55px;
+
+    height: 55px;
+
+    min-width: 55px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: rgba(88, 166, 255, .12);
+
+    border-radius: 14px;
+
+    font-size: 26px;
+
+    color: var(--accent);
+
+}
+
+.cyber-linux-intro h4 {
+
+    color: var(--text-primary);
+
+    font-weight: 700;
+
+    margin-bottom: 8px;
+
+}
+
+.cyber-linux-intro p {
+
+    color: var(--text-secondary);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    margin: 0;
+
+}
+
+.cyber-linux-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 18px;
+
+    margin-bottom: 24px;
+
+}
+
+.cyber-linux-card {
+
+    background: var(--bg-card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 16px;
+
+    padding: 24px;
+
+    transition: .35s;
+
+}
+
+.cyber-linux-card:hover {
+
+    transform: translateY(-6px);
+
+    border-color: var(--accent);
+
+    box-shadow: 0 12px 28px rgba(88, 166, 255, .18);
+
+}
+
+.cyber-linux-card-icon {
+
+    width: 52px;
+
+    height: 52px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: rgba(88, 166, 255, .10);
+
+    border-radius: 13px;
+
+    font-size: 22px;
+
+    color: var(--accent);
+
+    margin-bottom: 14px;
+
+}
+
+.cyber-linux-card h4 {
+
+    color: var(--text-primary);
+
+    font-weight: 700;
+
+    margin-bottom: 10px;
+
+}
+
+.cyber-linux-card p {
+
+    color: var(--text-secondary);
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    margin-bottom: 14px;
+
+}
+
+.cyber-linux-card span {
+
+    display: inline-block;
+
+    padding: 4px 12px;
+
+    background: rgba(88, 166, 255, .10);
+
+    color: var(--accent);
+
+    border-radius: 20px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: .5px;
+
+}
+
+/* SOC Commands Box */
+
+.linux-soc-box {
+
+    background: var(--bg-card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    padding: 28px;
+
+    margin-bottom: 24px;
+
+}
+
+.linux-soc-box h4 {
+
+    color: var(--text-primary);
+
+    font-weight: 700;
+
+    margin-bottom: 18px;
+
+}
+
+.linux-soc-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 12px;
+
+}
+
+.linux-soc-command {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+    padding: 16px;
+
+    background: rgba(88, 166, 255, .05);
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    transition: .3s;
+
+}
+
+.linux-soc-command:hover {
+
+    border-color: var(--accent);
+
+    background: rgba(88, 166, 255, .10);
+
+}
+
+.linux-soc-command span {
+
+    color: var(--text-primary);
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+}
+
+.linux-soc-command code {
+
+    background: rgba(88, 166, 255, .12);
+
+    color: var(--accent);
+
+    padding: 6px 10px;
+
+    border-radius: 7px;
+
+    font-size: 13px;
+
+    font-family: monospace;
+
+}
+
+/* Security Workflow */
+
+.linux-security-workflow {
+
+    background: var(--bg-card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    padding: 28px;
+
+    margin-bottom: 24px;
+
+}
+
+.linux-security-workflow h4 {
+
+    color: var(--text-primary);
+
+    font-weight: 700;
+
+    margin-bottom: 24px;
+
+}
+
+.workflow-steps {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 0;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+}
+
+.workflow-step {
+
+    flex: 1;
+
+    min-width: 150px;
+
+    text-align: center;
+
+    padding: 20px 16px;
+
+    background: rgba(88, 166, 255, .06);
+
+    border-radius: 14px;
+
+    border: 1px solid var(--border);
+
+    transition: .3s;
+
+}
+
+.workflow-step:hover {
+
+    border-color: var(--accent);
+
+    background: rgba(88, 166, 255, .12);
+
+}
+
+.workflow-step span {
+
+    display: block;
+
+    font-size: 26px;
+
+    font-weight: 800;
+
+    color: var(--accent);
+
+    font-family: monospace;
+
+    margin-bottom: 8px;
+
+}
+
+.workflow-step strong {
+
+    display: block;
+
+    color: var(--text-primary);
+
+    font-weight: 700;
+
+    margin-bottom: 6px;
+
+}
+
+.workflow-step p {
+
+    color: var(--text-secondary);
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+    margin: 0;
+
+}
+
+.workflow-arrow {
+
+    padding: 0 12px;
+
+    color: var(--accent);
+
+    font-size: 22px;
+
+    flex-shrink: 0;
+
+}
+
+/* Cyber Linux Note */
+
+.cyber-linux-note {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 16px;
+
+    padding: 22px;
+
+    background: rgba(88, 166, 255, .07);
+
+    border: 1px solid rgba(88, 166, 255, .25);
+
+    border-radius: 14px;
+
+}
+
+.cyber-linux-note i {
+
+    font-size: 26px;
+
+    color: var(--accent);
+
+    flex-shrink: 0;
+
+}
+
+.cyber-linux-note h4 {
+
+    color: var(--text-primary);
+
+    font-weight: 700;
+
+    margin-bottom: 8px;
+
+}
+
+.cyber-linux-note p {
+
+    color: var(--text-secondary);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    margin: 0;
+
+}
+
+
+/* ==========================================
+   Cheat Sheet
+========================================== */
+
+.linux-cheat-card {
+
+    background: #0d1117;
+
+    border: 1px solid rgba(88, 166, 255, .20);
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    margin-bottom: 28px;
+
+}
+
+.linux-cheat-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 18px 24px;
+
+    background: rgba(255, 255, 255, .04);
+
+    border-bottom: 1px solid rgba(88, 166, 255, .15);
+
+}
+
+.linux-cheat-header>div {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+.linux-cheat-header i {
+
+    font-size: 22px;
+
+    color: var(--accent);
+
+}
+
+.linux-cheat-header h4 {
+
+    color: #adbac7;
+
+    margin: 0;
+
+    font-size: 1rem;
+
+}
+
+.linux-cheat-header>span {
+
+    padding: 4px 10px;
+
+    background: rgba(88, 166, 255, .15);
+
+    color: var(--accent);
+
+    border-radius: 6px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+}
+
+.linux-cheat-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 1px;
+
+    background: rgba(88, 166, 255, .10);
+
+    padding: 1px;
+
+}
+
+.linux-cheat-grid>div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+    padding: 14px 18px;
+
+    background: #0d1117;
+
+    transition: .2s;
+
+}
+
+.linux-cheat-grid>div:hover {
+
+    background: rgba(88, 166, 255, .08);
+
+}
+
+.linux-cheat-grid code {
+
+    color: #58a6ff;
+
+    font-size: 14px;
+
+    font-family: 'Courier New', monospace;
+
+    font-weight: 600;
+
+}
+
+.linux-cheat-grid span {
+
+    color: #8b949e;
+
+    font-size: 12px;
+
+}
+
+
+/* ==========================================
+   Revision Grid
+========================================== */
+
+.linux-revision-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 16px;
+
+    margin-bottom: 24px;
+
+}
+
+.revision-card {
+
+    background: var(--bg-card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 16px;
+
+    padding: 22px;
+
+    text-align: center;
+
+    transition: .35s;
+
+}
+
+.revision-card:hover {
+
+    transform: translateY(-5px);
+
+    border-color: var(--accent);
+
+    box-shadow: 0 10px 25px rgba(88, 166, 255, .15);
+
+}
+
+.revision-card i {
+
+    font-size: 28px;
+
+    color: var(--accent);
+
+    margin-bottom: 12px;
+
+    display: block;
+
+}
+
+.revision-card h4 {
+
+    color: var(--text-primary);
+
+    font-weight: 700;
+
+    margin-bottom: 10px;
+
+}
+
+.revision-card p {
+
+    color: var(--text-secondary);
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+    margin: 0;
+
+}
+
+.revision-card code {
+
+    background: rgba(88, 166, 255, .10);
+
+    color: var(--accent);
+
+    padding: 1px 6px;
+
+    border-radius: 4px;
+
+    font-size: 12px;
+
+}
+
+
+/* ==========================================
+   Interview Section
+========================================== */
+
+.linux-interview-card {
+
+    background: var(--bg-card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    margin-bottom: 24px;
+
+}
+
+.interview-header {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 16px;
+
+    padding: 24px 28px;
+
+    background: linear-gradient(135deg,
+            rgba(37, 99, 235, .15),
+            rgba(77, 163, 255, .10));
+
+    border-bottom: 1px solid var(--border);
+
+}
+
+.interview-header i {
+
+    font-size: 28px;
+
+    color: var(--accent);
+
+    flex-shrink: 0;
+
+}
+
+.interview-header h4 {
+
+    color: var(--text-primary);
+
+    font-weight: 700;
+
+    margin-bottom: 6px;
+
+}
+
+.interview-header p {
+
+    color: var(--text-secondary);
+
+    font-size: 14px;
+
+    margin: 0;
+
+}
+
+.interview-list {
+
+    padding: 20px 28px;
+
+}
+
+.interview-list details {
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    margin-bottom: 10px;
+
+    overflow: hidden;
+
+    transition: .3s;
+
+}
+
+.interview-list details[open] {
+
+    border-color: var(--accent);
+
+    box-shadow: 0 4px 16px rgba(88, 166, 255, .12);
+
+}
+
+.interview-list summary {
+
+    padding: 16px 20px;
+
+    cursor: pointer;
+
+    color: var(--text-primary);
+
+    font-weight: 600;
+
+    font-size: 15px;
+
+    list-style: none;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    background: rgba(88, 166, 255, .03);
+
+    transition: .2s;
+
+}
+
+.interview-list summary::-webkit-details-marker {
+
+    display: none;
+
+}
+
+.interview-list summary::before {
+
+    content: "▶";
+
+    font-size: 10px;
+
+    color: var(--accent);
+
+    transition: transform .3s;
+
+    flex-shrink: 0;
+
+}
+
+.interview-list details[open] summary::before {
+
+    transform: rotate(90deg);
+
+}
+
+.interview-list summary:hover {
+
+    background: rgba(88, 166, 255, .08);
+
+}
+
+.interview-list details p {
+
+    padding: 14px 20px 18px;
+
+    margin: 0;
+
+    color: var(--text-secondary);
+
+    line-height: 1.7;
+
+    font-size: 14px;
+
+    border-top: 1px solid var(--border);
+
+    background: rgba(88, 166, 255, .03);
+
+}
+
+.interview-list details p code {
+
+    background: rgba(88, 166, 255, .10);
+
+    color: var(--accent);
+
+    padding: 2px 7px;
+
+    border-radius: 5px;
+
+    font-size: 13px;
+
+}
+
+
+/* ==========================================
+   Completion Box
+========================================== */
+
+.linux-complete-box {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 30px;
+
+    background: linear-gradient(135deg,
+            rgba(34, 197, 94, .10),
+            rgba(88, 166, 255, .10));
+
+    border: 1px solid rgba(34, 197, 94, .30);
+
+    border-radius: 18px;
+
+    margin-top: 10px;
+
+}
+
+.linux-complete-icon {
+
+    width: 65px;
+
+    height: 65px;
+
+    min-width: 65px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: rgba(34, 197, 94, .15);
+
+    border-radius: 18px;
+
+    font-size: 32px;
+
+    color: #22c55e;
+
+}
+
+.linux-complete-box h3 {
+
+    color: var(--text-primary);
+
+    font-weight: 700;
+
+    margin-bottom: 10px;
+
+}
+
+.linux-complete-box p {
+
+    color: var(--text-secondary);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    margin: 0;
+
+}
+
+
+/* ==========================================
+   Inline Code
+========================================== */
+
+code {
+
+    background: rgba(88, 166, 255, .10);
+
+    color: var(--accent);
+
+    padding: 2px 7px;
+
+    border-radius: 5px;
+
+    font-size: 14px;
+
+    font-family: 'Courier New', Courier, monospace;
+
+}
+
+
+/* ==========================================
+   Responsive
+========================================== */
+
+@media (max-width: 1024px) {
+
+    .network-command-grid,
+    .process-grid {
+
+        grid-template-columns: repeat(3, 1fr);
+
+    }
+
+    .linux-grid,
+    .shell-concept-grid,
+    .hardening-grid,
+    .cyber-linux-grid {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+    .linux-cheat-grid {
+
+        grid-template-columns: repeat(3, 1fr);
+
+    }
+
+    .linux-revision-grid {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .linux-quick-nav {
+
+        padding: 22px;
+
+    }
+
+    .network-command-grid,
+    .process-grid,
+    .shell-concept-grid {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+    .linux-grid,
+    .hardening-grid,
+    .cyber-linux-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .permission-values {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .checklist-grid,
+    .hardening-command-list,
+    .security-command-examples {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .linux-soc-grid {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+    .linux-cheat-grid,
+    .linux-revision-grid {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+    .process-info-grid {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+    .workflow-steps {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+    }
+
+    .workflow-arrow {
+
+        transform: rotate(90deg);
+
+        text-align: center;
+
+    }
+
+}
+
+@media (max-width: 576px) {
+
+    .network-command-grid,
+    .process-grid,
+    .shell-concept-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .linux-soc-grid,
+    .linux-cheat-grid,
+    .linux-revision-grid,
+    .process-info-grid {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+    .section-heading {
+
+        flex-direction: column;
+
+    }
+
+    .linux-complete-box {
+
+        flex-direction: column;
+
+        text-align: center;
+
+    }
+
+    .permission-visual {
+
+        flex-direction: column;
+
+    }
+
+}
