@@ -2,350 +2,199 @@
    Linux Fundamentals — Interactive JS
 ========================================== */
 
+document.addEventListener('DOMContentLoaded', () => {
 
-/* ==========================================
-   COMMAND SEARCH
-   Filters topic-sections by keyword
-========================================== */
+    /* ==========================================
+       TOPIC SEARCH FILTER
+    ========================================== */
 
-(function () {
+    const searchInput = document.getElementById('topicSearch');
 
-    'use strict';
+    if (searchInput) {
 
-    /* ---- Wait for DOM ---- */
+        searchInput.addEventListener('keyup', () => {
 
-    document.addEventListener('DOMContentLoaded', function () {
+            const keyword = searchInput.value.toLowerCase().trim();
 
-        /* ==========================================
-           Quick-navigation smooth scroll highlight
-        ========================================== */
+            const sections = document.querySelectorAll('.topic-section');
 
-        const navBtns = document.querySelectorAll('.linux-nav-btn');
 
-        navBtns.forEach(function (btn) {
+            sections.forEach(section => {
 
-            btn.addEventListener('click', function () {
+                const text = section.innerText.toLowerCase();
 
-                /* Remove active class from all buttons */
+                if (!keyword || text.includes(keyword)) {
 
-                navBtns.forEach(function (b) {
+                    section.style.display = 'block';
 
-                    b.classList.remove('active-nav');
+                } else {
 
-                });
+                    section.style.display = 'none';
 
-                /* Add to clicked */
-
-                btn.classList.add('active-nav');
+                }
 
             });
 
         });
 
+    }
 
-        /* ==========================================
-           SCROLL SPY — highlight active nav btn
-        ========================================== */
 
-        const navLinks = document.querySelectorAll('.linux-nav-btn[href^="#"]');
+    /* ==========================================
+       SCROLL SPY — QUICK NAV HIGHLIGHT
+    ========================================== */
 
-        if (navLinks.length && 'IntersectionObserver' in window) {
+    const navLinks = document.querySelectorAll('.learn-link[href^="#"]');
 
-            const observer = new IntersectionObserver(
+    const sections = document.querySelectorAll('.topic-section, section[id]');
 
-                function (entries) {
 
-                    entries.forEach(function (entry) {
+    if (navLinks.length && 'IntersectionObserver' in window) {
 
-                        if (entry.isIntersecting) {
+        const observer = new IntersectionObserver((entries) => {
 
-                            const id = entry.target.id;
+            entries.forEach(entry => {
 
-                            navLinks.forEach(function (link) {
+                if (entry.isIntersecting) {
 
-                                link.classList.remove('active-nav');
+                    const id = entry.target.id;
 
-                                if (id && link.getAttribute('href') === '#' + id) {
+                    navLinks.forEach(link => {
 
-                                    link.classList.add('active-nav');
+                        const targetHref = link.getAttribute('href')?.replace('#', '');
 
-                                }
+                        if (targetHref === id) {
 
-                            });
+                            link.classList.add('active');
+
+                        } else {
+
+                            link.classList.remove('active');
 
                         }
 
                     });
 
-                },
-
-                { threshold: 0.25, rootMargin: '-80px 0px -40% 0px' }
-
-            );
-
-            document.querySelectorAll('section[id]').forEach(function (s) {
-
-                observer.observe(s);
+                }
 
             });
 
-        }
+        }, { threshold: 0.25, rootMargin: '-80px 0px -40% 0px' });
 
 
-        /* ==========================================
-           TOPIC SEARCH
-           Filters each .topic-section by keyword
-        ========================================== */
+        sections.forEach(section => {
 
-        const searchInput = document.getElementById('linuxSearch');
+            if (section.id) observer.observe(section);
 
-        if (searchInput) {
+        });
 
-            searchInput.addEventListener('keyup', function () {
+    }
 
-                const keyword = searchInput.value.trim().toLowerCase();
 
-                const topicSections =
-                    document.querySelectorAll('.topic-section');
+    /* ==========================================
+       INTERVIEW ACCORDION & DETAILS
+    ========================================== */
 
-                topicSections.forEach(function (section) {
+    const allDetails = document.querySelectorAll('.interview-list details, details');
 
-                    const text = section.innerText.toLowerCase();
+    allDetails.forEach(detail => {
 
-                    if (!keyword || text.includes(keyword)) {
+        detail.addEventListener('toggle', () => {
 
-                        section.style.display = '';
+            if (detail.open) {
 
-                    } else {
+                allDetails.forEach(other => {
 
-                        section.style.display = 'none';
+                    if (other !== detail && other.open) {
+
+                        other.open = false;
 
                     }
 
                 });
 
-                /* Hide quick nav while searching */
-
-                const quickNav =
-                    document.querySelector('.linux-quick-nav');
-
-                if (quickNav) {
-
-                    quickNav.style.display = keyword ? 'none' : '';
-
-                }
-
-            });
-
-        }
-
-
-        /* ==========================================
-           INTERVIEW ACCORDION
-           <details> elements handle open/close
-           natively; we close others on open
-        ========================================== */
-
-        const allDetails =
-            document.querySelectorAll('.interview-list details');
-
-        allDetails.forEach(function (detail) {
-
-            detail.addEventListener('toggle', function () {
-
-                if (detail.open) {
-
-                    allDetails.forEach(function (other) {
-
-                        if (other !== detail && other.open) {
-
-                            other.open = false;
-
-                        }
-
-                    });
-
-                }
-
-            });
+            }
 
         });
 
-
-        /* ==========================================
-           COPY CODE — click any <code> block
-        ========================================== */
-
-        document.querySelectorAll(
-            '.linux-cheat-grid code, ' +
-            '.command-example code, ' +
-            '.shell-code-card pre code, ' +
-            '.hardening-card code, ' +
-            '.process-card code, ' +
-            '.network-command-card code, ' +
-            '.linux-soc-command code, ' +
-            '.hardening-command-list code, ' +
-            '.security-command-examples code, ' +
-            '.shell-example > code, ' +
-            '.shell-examples code'
-        ).forEach(function (el) {
-
-            el.title = 'Click to copy';
-
-            el.style.cursor = 'pointer';
-
-            el.addEventListener('click', function () {
-
-                const text = el.innerText.trim();
-
-                if (navigator.clipboard) {
-
-                    navigator.clipboard.writeText(text).then(function () {
-
-                        showCopied(el);
-
-                    });
-
-                } else {
-
-                    const ta = document.createElement('textarea');
-
-                    ta.value = text;
-
-                    document.body.appendChild(ta);
-
-                    ta.select();
-
-                    document.execCommand('copy');
-
-                    document.body.removeChild(ta);
-
-                    showCopied(el);
-
-                }
-
-            });
-
-        });
-
-
-        /* ==========================================
-           CARD ENTRANCE ANIMATION
-        ========================================== */
-
-        if ('IntersectionObserver' in window) {
-
-            const cardObserver = new IntersectionObserver(
-
-                function (entries) {
-
-                    entries.forEach(function (entry) {
-
-                        if (entry.isIntersecting) {
-
-                            entry.target.classList.add('linux-visible');
-
-                            cardObserver.unobserve(entry.target);
-
-                        }
-
-                    });
-
-                },
-
-                { threshold: 0.10 }
-
-            );
-
-            document.querySelectorAll(
-
-                '.linux-card, .process-card, .network-command-card, ' +
-                '.shell-concept-card, .hardening-card, .cyber-linux-card, ' +
-                '.revision-card, .permission-value-card, .check-item, ' +
-                '.workflow-step, .linux-soc-command, .shell-example'
-
-            ).forEach(function (card) {
-
-                card.style.opacity = '0';
-
-                card.style.transform = 'translateY(20px)';
-
-                card.style.transition =
-                    'opacity .5s ease, transform .5s ease';
-
-                cardObserver.observe(card);
-
-            });
-
-        }
-
-    }); /* end DOMContentLoaded */
+    });
 
 
     /* ==========================================
-       HELPER — show copied tooltip
+       CLICK TO COPY WITH TOAST NOTIFICATION
     ========================================== */
 
-    function showCopied(el) {
+    function showCopyToast(text) {
 
-        const original = el.innerText;
+        let toast = document.getElementById('copyToast');
 
-        el.innerText = 'Copied!';
+        if (!toast) {
 
-        el.style.background = 'rgba(34, 197, 94, .20)';
+            toast = document.createElement('div');
 
-        el.style.color = '#22c55e';
+            toast.id = 'copyToast';
 
-        setTimeout(function () {
+            toast.className = 'copy-toast';
 
-            el.innerText = original;
+            toast.innerHTML = '<i class="bi bi-check-circle-fill"></i><span>Copied to clipboard!</span>';
 
-            el.style.background = '';
+            document.body.appendChild(toast);
 
-            el.style.color = '';
+        }
 
-        }, 1500);
+        toast.classList.add('show');
+
+        setTimeout(() => {
+
+            toast.classList.remove('show');
+
+        }, 2000);
 
     }
 
 
-}());
+    document.addEventListener('click', (event) => {
+
+        const codeEl = event.target.closest('code, pre code');
+
+        if (!codeEl) return;
 
 
-/* ==========================================
-   INJECT RUNTIME STYLES
-========================================== */
+        const codeText = codeEl.innerText.trim();
 
-document.addEventListener('DOMContentLoaded', function () {
+        if (!codeText) return;
 
-    const style = document.createElement('style');
 
-    style.textContent = `
+        if (navigator.clipboard && navigator.clipboard.writeText) {
 
-        .linux-card.linux-visible,
-        .process-card.linux-visible,
-        .network-command-card.linux-visible,
-        .shell-concept-card.linux-visible,
-        .hardening-card.linux-visible,
-        .cyber-linux-card.linux-visible,
-        .revision-card.linux-visible,
-        .permission-value-card.linux-visible,
-        .check-item.linux-visible,
-        .workflow-step.linux-visible,
-        .linux-soc-command.linux-visible,
-        .shell-example.linux-visible {
-            opacity: 1 !important;
-            transform: translateY(0) !important;
+            navigator.clipboard.writeText(codeText).then(() => {
+
+                showCopyToast(codeText);
+
+            }).catch(err => {
+
+                console.error("Copy failed:", err);
+
+            });
+
+        } else {
+
+            const ta = document.createElement('textarea');
+
+            ta.value = codeText;
+
+            document.body.appendChild(ta);
+
+            ta.select();
+
+            document.execCommand('copy');
+
+            document.body.removeChild(ta);
+
+            showCopyToast(codeText);
+
         }
 
-        .linux-nav-btn.active-nav {
-            background: var(--accent);
-            color: white;
-            border-color: var(--accent);
-        }
-
-    `;
-
-    document.head.appendChild(style);
+    });
 
 });

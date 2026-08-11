@@ -83,140 +83,107 @@
 
 
     <!-- ==========================================
-    LINUX QUICK NAVIGATION
-========================================== -->
+         Search Section
+    ========================================== -->
 
-    <section class="linux-quick-nav">
+    <section class="container mb-4">
 
-        <div class="linux-quick-nav-header">
+        <div class="row justify-content-center">
 
-            <span class="quick-nav-icon">
-                📚
-            </span>
+            <div class="col-lg-8">
 
-            <h2>
-                Quick Navigation
-            </h2>
+                <div class="search-box">
 
-        </div>
+                    <i class="bi bi-search"></i>
 
+                    <input type="text" id="topicSearch" class="form-control" placeholder="Search Linux Topics, Commands & Security...">
 
-        <div class="linux-quick-nav-grid">
+                </div>
 
-
-            <!-- Introduction -->
-
-            <a href="#linux-introduction" class="linux-nav-btn">
-
-                <span>📖</span>
-
-                Introduction
-
-            </a>
-
-
-            <!-- File System -->
-
-            <a href="#linux-filesystem" class="linux-nav-btn">
-
-                <span>📁</span>
-
-                Linux File System
-
-            </a>
-
-
-            <!-- Basic Commands -->
-
-            <a href="#linux-commands" class="linux-nav-btn">
-
-                <span>💻</span>
-
-                Basic Commands
-
-            </a>
-
-
-            <!-- Permissions -->
-
-            <a href="#linux-permissions" class="linux-nav-btn">
-
-                <span>🔐</span>
-
-                File Permissions
-
-            </a>
-
-
-            <!-- Networking -->
-
-            <a href="#linux-networking" class="linux-nav-btn">
-
-                <span>🌐</span>
-
-                Networking Commands
-
-            </a>
-
-
-            <!-- Processes -->
-
-            <a href="#linux-processes" class="linux-nav-btn">
-
-                <span>⚙️</span>
-
-                Processes & Monitoring
-
-            </a>
-
-
-            <!-- Shell -->
-
-            <a href="#linux-shell" class="linux-nav-btn">
-
-                <span>🖥️</span>
-
-                Shell Scripting
-
-            </a>
-
-
-            <!-- Security -->
-
-            <a href="#linux-hardening" class="linux-nav-btn">
-
-                <span>🛡️</span>
-
-                Security & Hardening
-
-            </a>
-
-
-            <!-- Cybersecurity -->
-
-            <a href="#linux-cybersecurity" class="linux-nav-btn">
-
-                <span>🔎</span>
-
-                Linux for Cybersecurity
-
-            </a>
-
-
-            <!-- Revision -->
-
-            <a href="#linux-revision" class="linux-nav-btn">
-
-                <span>📝</span>
-
-                Cheat Sheet & Interview
-
-            </a>
-
+            </div>
 
         </div>
 
     </section>
+
+    <!-- ==========================================
+         Quick Navigation
+    ========================================== -->
+
+    <section class="container mb-5">
+
+        <div class="dashboard-card">
+
+            <h3>📚 Quick Navigation</h3>
+
+            <div class="row g-3">
+
+                <div class="col-md-3">
+
+                    <a href="#linux-introduction" class="learn-link">📖 Introduction</a>
+
+                </div>
+
+                <div class="col-md-3">
+
+                    <a href="#linux-filesystem" class="learn-link">📁 Linux File System</a>
+
+                </div>
+
+                <div class="col-md-3">
+
+                    <a href="#linux-commands" class="learn-link">💻 Basic Commands</a>
+
+                </div>
+
+                <div class="col-md-3">
+
+                    <a href="#linux-permissions" class="learn-link">🔐 File Permissions</a>
+
+                </div>
+
+                <div class="col-md-3">
+
+                    <a href="#linux-networking" class="learn-link">🌐 Networking Commands</a>
+
+                </div>
+
+                <div class="col-md-3">
+
+                    <a href="#linux-processes" class="learn-link">⚙️ Processes & Monitoring</a>
+
+                </div>
+
+                <div class="col-md-3">
+
+                    <a href="#linux-shell" class="learn-link">🖥️ Shell Scripting</a>
+
+                </div>
+
+                <div class="col-md-3">
+
+                    <a href="#linux-hardening" class="learn-link">🛡️ Security & Hardening</a>
+
+                </div>
+
+                <div class="col-md-3">
+
+                    <a href="#linux-cybersecurity" class="learn-link">🔎 Linux for Cyber</a>
+
+                </div>
+
+                <div class="col-md-3">
+
+                    <a href="#linux-revision" class="learn-link">📝 Cheat Sheet & Interview</a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
 
 
 
@@ -3431,76 +3398,7 @@ echo "Hello $name"</code></pre>
 
     <script src="../assets/js/transition.js"></script>
 
+    <script src="../assets/js/learn-navbar.js"></script>
     <script src="../assets/js/linux.js"></script>
-
-
-    <!-- Learn Cyber Navbar -->
-
-    <script>
-
-        fetch("../assets/components/learn-navbar.html")
-
-            .then(response => {
-
-                if (!response.ok) {
-
-                    throw new Error(
-                        "Navbar file not found: " + response.status
-                    );
-
-                }
-
-                return response.text();
-
-            })
-
-            .then(data => {
-
-                const navbar =
-                    document.getElementById("learnNavbar");
-
-                navbar.innerHTML = data;
-
-
-                const currentPage =
-                    window.location.pathname
-                        .split("/")
-                        .pop();
-
-
-                document
-                    .querySelectorAll(".learn-nav-item")
-                    .forEach(link => {
-
-                        const linkPage =
-                            link
-                                .getAttribute("href")
-                                .split("/")
-                                .pop();
-
-
-                        if (linkPage === currentPage) {
-
-                            link.classList.add("active");
-
-                        }
-
-                    });
-
-            })
-
-            .catch(error => {
-
-                console.error(
-                    "Learn Navbar Error:",
-                    error
-                );
-
-            });
-
-    </script>
-
-
 </body>
-
-</html>
+</html>

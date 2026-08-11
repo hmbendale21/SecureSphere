@@ -230,74 +230,7 @@ Hero Section
 <script src="../assets/js/loading.js"></script>
 <script src="../assets/js/theme.js"></script>
 <script src="../assets/js/transition.js"></script>   
+<script src="../assets/js/learn-navbar.js"></script>
 <script src="../assets/js/networking.js"></script>
-
-<script>
-
-    fetch("../assets/components/learn-navbar.html")
-    
-        .then(response => {
-
-            if (!response.ok) {
-
-                throw new Error(
-                    "Navbar file not found: " + response.status
-                );
-
-            }
-
-            return response.text();
-
-        })
-
-        .then(data => {
-
-            const navbar =
-                document.getElementById("learnNavbar");
-
-            navbar.innerHTML = data;
-
-
-            /* ===============================
-               ACTIVE PAGE
-            =============================== */
-
-            const currentPage =
-                window.location.pathname
-                    .split("/")
-                    .pop();
-
-
-            document
-                .querySelectorAll(".learn-nav-item")
-                .forEach(link => {
-
-                    const linkPage =
-                        link.getAttribute("href")
-                            .split("/")
-                            .pop();
-
-
-                    if(linkPage === currentPage){
-
-                        link.classList.add("active");
-
-                    }
-
-                });
-
-        })
-
-        .catch(error => {
-
-            console.error(
-                "Learn Navbar Error:",
-                error
-            );
-
-        });
-
-</script>
 </body>
-
-</html>
+</html>

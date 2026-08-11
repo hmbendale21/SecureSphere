@@ -1,0 +1,1600 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>OWASP Top 10 | SecureSphere</title>
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <!-- SecureSphere CSS -->
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+    <link rel="stylesheet" href="../assets/css/learn-topic.css">
+    <link rel="stylesheet" href="../assets/css/theme.css">
+    <link rel="stylesheet" href="../assets/css/loading.css">
+    <link rel="stylesheet" href="../assets/css/transition.css">
+    <link rel="stylesheet" href="../assets/css/owasp.css">
+
+</head>
+
+
+<body class="owasp-page">
+
+
+<!-- ==========================================================
+     LEARN CYBER MAIN NAVBAR
+========================================================== -->
+
+<div id="learnNavbar"></div>
+
+
+<!-- ==========================================================
+     HERO
+========================================================== -->
+
+<section class="dashboard-hero">
+
+    <div class="container text-center">
+
+        <h1 class="hero-title">
+
+            <i class="bi bi-shield-lock-fill"></i>
+
+            OWASP Top 10
+
+        </h1>
+
+
+        <h2 class="hero-subtitle">
+
+            Web Application Security Risks
+
+        </h2>
+
+
+        <p class="hero-description">
+
+            Learn the most critical security risks affecting
+            modern web applications and how developers can
+            prevent them.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================================
+     SEARCH SECTION
+========================================================== -->
+
+<section class="container mb-4">
+
+    <div class="row justify-content-center">
+
+        <div class="col-lg-8">
+
+            <div class="search-box">
+
+                <i class="bi bi-search"></i>
+
+                <input type="text"
+                       id="topicSearch"
+                       class="form-control"
+                       placeholder="Search OWASP Top 10 Vulnerabilities, Mitigations & Code...">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================================
+     QUICK NAVIGATION
+========================================================== -->
+
+<section class="container mb-5">
+
+    <div class="dashboard-card">
+
+        <h3>
+            📚 Quick Navigation
+        </h3>
+
+        <div class="row g-3">
+
+            <div class="col-md-3">
+
+                <a href="#introduction" class="learn-link">
+                    📖 Introduction
+                </a>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <a href="#a01" class="learn-link">
+                    🛡️ A01: Access Control
+                </a>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <a href="#a02" class="learn-link">
+                    ⚙️ A02: Security Misconfig
+                </a>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <a href="#a03" class="learn-link">
+                    📦 A03: Supply Chain
+                </a>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <a href="#a04" class="learn-link">
+                    🔐 A04: Crypto Failures
+                </a>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <a href="#a05" class="learn-link">
+                    💉 A05: Injection
+                </a>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <a href="#a06" class="learn-link">
+                    🏗️ A06: Insecure Design
+                </a>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <a href="#a07" class="learn-link">
+                    🔑 A07: Auth Failures
+                </a>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <a href="#a08" class="learn-link">
+                    🧬 A08: Data Integrity
+                </a>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <a href="#a09" class="learn-link">
+                    📊 A09: Logging & Alerting
+                </a>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <a href="#a10" class="learn-link">
+                    ⚠️ A10: Exception Handling
+                </a>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <a href="#cheatsheet" class="learn-link">
+                    📝 Cheat Sheet & Summary
+                </a>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <a href="#interview" class="learn-link">
+                    📝 Interview Questions
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+<!-- ==========================================================
+     MAIN CONTENT
+========================================================== -->
+
+<main class="container py-4">
+
+<!-- ==========================================================
+     01 — INTRODUCTION
+========================================================== -->
+
+<section id="introduction"
+         class="topic-section">
+
+    <div class="container">
+
+
+        <div class="section-heading">
+
+            <div class="section-number">
+
+                01
+
+            </div>
+
+
+            <div>
+
+                <h2>
+
+                    Introduction to OWASP Top 10
+
+                </h2>
+
+                <p>
+
+                    Understand why OWASP Top 10 is important
+                    for web application security.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <div class="info-card-icon">
+
+                <i class="bi bi-shield-check"></i>
+
+            </div>
+
+
+            <div>
+
+                <h4>
+
+                    What is OWASP?
+
+                </h4>
+
+                <p>
+
+                    The Open Worldwide Application Security
+                    Project (OWASP) is an open community focused
+                    on improving application and API security.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================================
+     A01
+========================================================== -->
+
+<section id="a01"
+         class="topic-section">
+
+    <div class="container">
+
+
+        <div class="section-heading">
+
+            <div class="section-number">
+
+                01
+
+            </div>
+
+
+            <div>
+
+                <h2>
+
+                    Broken Access Control
+
+                </h2>
+
+                <p>
+
+                    Access controls determine which users are
+                    allowed to access specific resources.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="owasp-content-grid">
+
+
+            <div class="owasp-card">
+
+                <i class="bi bi-lock-fill"></i>
+
+                <h4>
+
+                    What is it?
+
+                </h4>
+
+                <p>
+
+                    Broken Access Control occurs when an
+                    application fails to properly enforce
+                    authorization rules.
+
+                </p>
+
+            </div>
+
+
+            <div class="owasp-card">
+
+                <i class="bi bi-exclamation-triangle-fill"></i>
+
+                <h4>
+
+                    Impact
+
+                </h4>
+
+                <ul>
+
+                    <li>Unauthorized data access</li>
+
+                    <li>Privilege escalation</li>
+
+                    <li>Unauthorized actions</li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="owasp-card">
+
+                <i class="bi bi-shield-check"></i>
+
+                <h4>
+
+                    Prevention
+
+                </h4>
+
+                <ul>
+
+                    <li>Deny access by default</li>
+
+                    <li>Enforce authorization server-side</li>
+
+                    <li>Test access-control rules</li>
+
+                </ul>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================================
+     A02
+========================================================== -->
+
+<section id="a02"
+         class="topic-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-number">
+
+                02
+
+            </div>
+
+            <div>
+
+                <h2>
+
+                    Security Misconfiguration
+
+                </h2>
+
+                <p>
+
+                    Insecure configuration of applications,
+                    servers, frameworks and cloud services.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="owasp-card">
+
+            <h4>
+
+                Common Examples
+
+            </h4>
+
+            <div class="owasp-list-grid">
+
+                <div>
+
+                    <i class="bi bi-x-circle"></i>
+
+                    Default credentials
+
+                </div>
+
+                <div>
+
+                    <i class="bi bi-bug"></i>
+
+                    Debug mode enabled
+
+                </div>
+
+                <div>
+
+                    <i class="bi bi-server"></i>
+
+                    Unnecessary services
+
+                </div>
+
+                <div>
+
+                    <i class="bi bi-file-lock"></i>
+
+                    Improper security settings
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================================
+     A03
+========================================================== -->
+
+<section id="a03"
+         class="topic-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-number">
+
+                03
+
+            </div>
+
+            <div>
+
+                <h2>
+
+                    Software Supply Chain Failures
+
+                </h2>
+
+                <p>
+
+                    Risks introduced through software dependencies,
+                    build systems and third-party components.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="owasp-card">
+
+            <h4>
+
+                Key Areas
+
+            </h4>
+
+            <ul>
+
+                <li>Third-party dependencies</li>
+
+                <li>Compromised packages</li>
+
+                <li>Build pipeline security</li>
+
+                <li>Dependency management</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================================
+     A04
+========================================================== -->
+
+<section id="a04"
+         class="topic-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-number">
+
+                04
+
+            </div>
+
+            <div>
+
+                <h2>
+
+                    Cryptographic Failures
+
+                </h2>
+
+                <p>
+
+                    Weak or incorrectly implemented protection
+                    of sensitive information.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="owasp-content-grid">
+
+            <div class="owasp-card">
+
+                <i class="bi bi-key-fill"></i>
+
+                <h4>
+
+                    Sensitive Data
+
+                </h4>
+
+                <p>
+
+                    Applications should properly protect
+                    passwords, credentials and sensitive data.
+
+                </p>
+
+            </div>
+
+
+            <div class="owasp-card">
+
+                <i class="bi bi-shield-lock-fill"></i>
+
+                <h4>
+
+                    Secure Cryptography
+
+                </h4>
+
+                <p>
+
+                    Use modern cryptographic algorithms,
+                    secure key management and protected
+                    communication channels.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================================
+     A05
+========================================================== -->
+
+<section id="a05"
+         class="topic-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-number">
+
+                05
+
+            </div>
+
+            <div>
+
+                <h2>
+
+                    Injection
+
+                </h2>
+
+                <p>
+
+                    Injection occurs when untrusted input is
+                    interpreted as part of a command or query.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="owasp-content-grid">
+
+            <div class="owasp-card">
+
+                <i class="bi bi-database-fill"></i>
+
+                <h4>
+
+                    SQL Injection
+
+                </h4>
+
+                <p>
+
+                    Malicious input can alter the intended
+                    database query.
+
+                </p>
+
+            </div>
+
+
+            <div class="owasp-card">
+
+                <i class="bi bi-code-slash"></i>
+
+                <h4>
+
+                    Command Injection
+
+                </h4>
+
+                <p>
+
+                    Untrusted input may influence operating
+                    system commands.
+
+                </p>
+
+            </div>
+
+
+            <div class="owasp-card">
+
+                <i class="bi bi-braces"></i>
+
+                <h4>
+
+                    Prevention
+
+                </h4>
+
+                <p>
+
+                    Validate input and use parameterized
+                    queries or safe APIs.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================================
+     A06
+========================================================== -->
+
+<section id="a06"
+         class="topic-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-number">
+
+                06
+
+            </div>
+
+            <div>
+
+                <h2>
+
+                    Insecure Design
+
+                </h2>
+
+                <p>
+
+                    Security weaknesses introduced during the
+                    design and architecture stage.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="owasp-card">
+
+            <h4>
+
+                Secure Design Principles
+
+            </h4>
+
+            <ul>
+
+                <li>Threat modeling</li>
+
+                <li>Secure architecture</li>
+
+                <li>Security requirements</li>
+
+                <li>Abuse-case analysis</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================================
+     A07
+========================================================== -->
+
+<section id="a07"
+         class="topic-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-number">
+
+                07
+
+            </div>
+
+            <div>
+
+                <h2>
+
+                    Authentication Failures
+
+                </h2>
+
+                <p>
+
+                    Weak authentication or session management
+                    can allow attackers to impersonate users.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="owasp-content-grid">
+
+            <div class="owasp-card">
+
+                <i class="bi bi-person-lock"></i>
+
+                <h4>
+
+                    Common Risks
+
+                </h4>
+
+                <ul>
+
+                    <li>Weak passwords</li>
+
+                    <li>Credential attacks</li>
+
+                    <li>Session weaknesses</li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="owasp-card">
+
+                <i class="bi bi-shield-check"></i>
+
+                <h4>
+
+                    Protection
+
+                </h4>
+
+                <ul>
+
+                    <li>Multi-factor authentication</li>
+
+                    <li>Secure session management</li>
+
+                    <li>Strong password policies</li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================================
+     A08
+========================================================== -->
+
+<section id="a08"
+         class="topic-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-number">
+
+                08
+
+            </div>
+
+            <div>
+
+                <h2>
+
+                    Software or Data Integrity Failures
+
+                </h2>
+
+                <p>
+
+                    Applications may become vulnerable when
+                    software or data integrity is not properly
+                    protected.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="owasp-card">
+
+            <h4>
+
+                Security Focus
+
+            </h4>
+
+            <ul>
+
+                <li>Trusted software sources</li>
+
+                <li>Secure update mechanisms</li>
+
+                <li>Integrity verification</li>
+
+                <li>Protected CI/CD pipelines</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================================
+     A09
+========================================================== -->
+
+<section id="a09"
+         class="topic-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-number">
+
+                09
+
+            </div>
+
+            <div>
+
+                <h2>
+
+                    Security Logging and Alerting Failures
+
+                </h2>
+
+                <p>
+
+                    Insufficient logging and alerting can prevent
+                    organizations from detecting and responding
+                    to attacks.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="owasp-content-grid">
+
+            <div class="owasp-card">
+
+                <i class="bi bi-journal-text"></i>
+
+                <h4>
+
+                    Logging
+
+                </h4>
+
+                <p>
+
+                    Record important security events with
+                    useful context.
+
+                </p>
+
+            </div>
+
+
+            <div class="owasp-card">
+
+                <i class="bi bi-bell-fill"></i>
+
+                <h4>
+
+                    Alerting
+
+                </h4>
+
+                <p>
+
+                    Generate actionable alerts for suspicious
+                    or high-risk events.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================================
+     A10
+========================================================== -->
+
+<section id="a10"
+         class="topic-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-number">
+
+                10
+
+            </div>
+
+            <div>
+
+                <h2>
+
+                    Mishandling of Exceptional Conditions
+
+                </h2>
+
+                <p>
+
+                    Applications can become vulnerable when
+                    unexpected errors, failures or exceptional
+                    conditions are handled insecurely.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="owasp-content-grid">
+
+            <div class="owasp-card">
+
+                <i class="bi bi-exclamation-octagon-fill"></i>
+
+                <h4>
+
+                    Common Problems
+
+                </h4>
+
+                <ul>
+
+                    <li>Unexpected application states</li>
+
+                    <li>Unsafe error handling</li>
+
+                    <li>Resource exhaustion</li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="owasp-card">
+
+                <i class="bi bi-shield-check"></i>
+
+                <h4>
+
+                    Prevention
+
+                </h4>
+
+                <ul>
+
+                    <li>Handle errors safely</li>
+
+                    <li>Validate exceptional states</li>
+
+                    <li>Apply appropriate resource limits</li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================================
+     OWASP COMPARISON
+========================================================== -->
+
+<section class="topic-section">
+
+    <div class="container">
+
+
+        <div class="section-heading">
+
+            <div class="section-number">
+
+                11
+
+            </div>
+
+            <div>
+
+                <h2>
+
+                    OWASP Top 10 at a Glance
+
+                </h2>
+
+                <p>
+
+                    Quick comparison of the ten major risk
+                    categories.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="owasp-table-wrapper">
+
+            <div class="table-responsive">
+
+                <table class="table owasp-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Risk</th>
+
+                            <th>Focus</th>
+
+                            <th>Primary Defense</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        <tr>
+                            <td>A01</td>
+                            <td>Access Control</td>
+                            <td>Authorization</td>
+                        </tr>
+
+                        <tr>
+                            <td>A02</td>
+                            <td>Configuration</td>
+                            <td>Secure Defaults</td>
+                        </tr>
+
+                        <tr>
+                            <td>A03</td>
+                            <td>Supply Chain</td>
+                            <td>Dependency Security</td>
+                        </tr>
+
+                        <tr>
+                            <td>A04</td>
+                            <td>Cryptography</td>
+                            <td>Strong Cryptographic Controls</td>
+                        </tr>
+
+                        <tr>
+                            <td>A05</td>
+                            <td>Injection</td>
+                            <td>Input Validation</td>
+                        </tr>
+
+                        <tr>
+                            <td>A06</td>
+                            <td>Design</td>
+                            <td>Threat Modeling</td>
+                        </tr>
+
+                        <tr>
+                            <td>A07</td>
+                            <td>Authentication</td>
+                            <td>Strong Authentication</td>
+                        </tr>
+
+                        <tr>
+                            <td>A08</td>
+                            <td>Integrity</td>
+                            <td>Verification</td>
+                        </tr>
+
+                        <tr>
+                            <td>A09</td>
+                            <td>Logging</td>
+                            <td>Monitoring & Alerting</td>
+                        </tr>
+
+                        <tr>
+                            <td>A10</td>
+                            <td>Exceptional Conditions</td>
+                            <td>Safe Error Handling</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================================
+     CHEAT SHEET
+========================================================== -->
+
+<section id="cheatsheet"
+         class="topic-section">
+
+    <div class="container">
+
+
+        <div class="section-heading">
+
+            <div class="section-number">
+
+                12
+
+            </div>
+
+            <div>
+
+                <h2>
+
+                    OWASP Quick Cheat Sheet
+
+                </h2>
+
+                <p>
+
+                    Remember the main security principle
+                    behind each category.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="owasp-cheat-grid">
+
+
+            <div>
+                <strong>A01</strong>
+                <span>Control access</span>
+            </div>
+
+
+            <div>
+                <strong>A02</strong>
+                <span>Secure configuration</span>
+            </div>
+
+
+            <div>
+                <strong>A03</strong>
+                <span>Secure dependencies</span>
+            </div>
+
+
+            <div>
+                <strong>A04</strong>
+                <span>Protect sensitive data</span>
+            </div>
+
+
+            <div>
+                <strong>A05</strong>
+                <span>Validate input</span>
+            </div>
+
+
+            <div>
+                <strong>A06</strong>
+                <span>Design securely</span>
+            </div>
+
+
+            <div>
+                <strong>A07</strong>
+                <span>Protect identities</span>
+            </div>
+
+
+            <div>
+                <strong>A08</strong>
+                <span>Protect integrity</span>
+            </div>
+
+
+            <div>
+                <strong>A09</strong>
+                <span>Log and alert</span>
+            </div>
+
+
+            <div>
+                <strong>A10</strong>
+                <span>Handle failures safely</span>
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================================
+     INTERVIEW QUESTIONS
+========================================================== -->
+
+<section id="interview" class="topic-section">
+
+    <div class="container">
+
+
+        <div class="section-heading">
+
+            <div class="section-number">
+
+                13
+
+            </div>
+
+            <div>
+
+                <h2>
+
+                    Interview Questions
+
+                </h2>
+
+                <p>
+
+                    Test your understanding of OWASP Top 10.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="owasp-interview-card">
+
+
+            <details>
+
+                <summary>
+
+                    What is OWASP?
+
+                </summary>
+
+                <p>
+
+                    OWASP is an open community focused on
+                    improving application security.
+
+                </p>
+
+            </details>
+
+
+            <details>
+
+                <summary>
+
+                    What is Broken Access Control?
+
+                </summary>
+
+                <p>
+
+                    It occurs when an application does not
+                    properly enforce authorization rules.
+
+                </p>
+
+            </details>
+
+
+            <details>
+
+                <summary>
+
+                    What is Injection?
+
+                </summary>
+
+                <p>
+
+                    Injection occurs when untrusted input is
+                    interpreted as part of a command or query.
+
+                </p>
+
+            </details>
+
+
+            <details>
+
+                <summary>
+
+                    Why is security logging important?
+
+                </summary>
+
+                <p>
+
+                    Logging and alerting help organizations
+                    detect and respond to suspicious activity.
+
+                </p>
+
+            </details>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================================
+     COMPLETION
+========================================================== -->
+
+<section class="topic-section">
+
+    <div class="container">
+
+        <div class="linux-complete-box">
+
+            <div class="linux-complete-icon">
+
+                <i class="bi bi-check-circle-fill"></i>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+
+                    OWASP Top 10 Completed
+
+                </h3>
+
+                <p>
+
+                    You now have a foundation for understanding
+                    the major web application security risks.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+<!-- ==========================================================
+     SCRIPTS
+========================================================== -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="../assets/js/learn-navbar.js"></script>
+<script src="../assets/js/owasp.js"></script>
+
+</body>
+
+</html>

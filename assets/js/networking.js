@@ -2489,3 +2489,105 @@ document.addEventListener("click", function(event){
     }
 
 });
+
+/* ==========================================
+   CODE CLICK TO COPY & TOAST FEEDBACK
+========================================== */
+
+function showCopyToast(text) {
+
+    let toast = document.getElementById("copyToast");
+
+    if (!toast) {
+
+        toast = document.createElement("div");
+
+        toast.id = "copyToast";
+
+        toast.className = "copy-toast";
+
+        toast.innerHTML = '<i class="bi bi-check-circle-fill"></i><span>Copied to clipboard!</span>';
+
+        document.body.appendChild(toast);
+
+    }
+
+    toast.classList.add("show");
+
+    setTimeout(() => {
+
+        toast.classList.remove("show");
+
+    }, 2000);
+
+}
+
+document.addEventListener("click", function(event) {
+
+    const codeEl = event.target.closest("code, pre code");
+
+    if (!codeEl) return;
+
+    const codeText = codeEl.innerText.trim();
+
+    if (!codeText) return;
+
+    navigator.clipboard.writeText(codeText).then(() => {
+
+        showCopyToast(codeText);
+
+    }).catch(err => {
+
+        console.error("Failed to copy code: ", err);
+
+    });
+
+});
+
+/* ==========================================
+   SCROLLSPY QUICK NAV HIGHLIGHT
+========================================== */
+
+document.addEventListener("DOMContentLoaded", function() {
+
+    const navLinks = document.querySelectorAll('.learn-link[href^="#"]');
+
+    if (navLinks.length && 'IntersectionObserver' in window) {
+
+        const observer = new IntersectionObserver((entries) => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    const id = entry.target.id;
+
+                    navLinks.forEach(link => {
+
+                        if (id && link.getAttribute('href') === '#' + id) {
+
+                            link.classList.add('active');
+
+                        } else {
+
+                            link.classList.remove('active');
+
+                        }
+
+                    });
+
+                }
+
+            });
+
+        }, { threshold: 0.3 });
+
+        document.querySelectorAll('#networkContent .dashboard-card').forEach(card => {
+
+            if (card.id) observer.observe(card);
+
+        });
+
+    }
+
+});
