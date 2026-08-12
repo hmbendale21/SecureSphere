@@ -17,93 +17,99 @@
    HERO
    ========================================================== */
 
-.cryptography-page .dashboard-hero {
-    padding-bottom: 35px;
+   .cryptography-page .dashboard-hero {
+    padding-top: 45px;
+    padding-bottom: 55px;
+
+    min-height: 330px;
+
+    display: flex;
+    align-items: center;
 }
 
-.cryptography-page .hero-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 9px;
-
-    margin-bottom: 16px;
-    padding: 7px 14px;
-
-    color: var(--accent, #60a5fa);
-
-    background: rgba(37, 99, 235, 0.10);
-
-    border: 1px solid rgba(37, 99, 235, 0.20);
-    border-radius: 999px;
-
-    font-size: 12px;
-    font-weight: 600;
+.cryptography-page .dashboard-hero .container {
+    width: 100%;
 }
 
-.cryptography-page .hero-badge span {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+.cryptography-page .hero-title {
+    margin: 0 0 18px;
+
+    color: var(--text-primary, #f1f5f9);
+
+    font-size: 2.8rem;
+    font-weight: 700;
+
+    line-height: 1.2;
 }
 
 .cryptography-page .hero-title i {
-    margin-right: 8px;
-    color: var(--accent, #60a5fa);
+    margin-right: 10px;
+
+    color: #60a5fa;
+
+    font-size: 2.5rem;
 }
 
 .cryptography-page .hero-description {
-    max-width: 780px;
-    margin-left: auto;
-    margin-right: auto;
-}
+    max-width: 850px;
 
+    margin: 0 auto;
+
+    color: var(--text-secondary, #a8b1c0);
+
+    font-size: 16px;
+
+    line-height: 1.75;
+}
 
 /* ==========================================================
    SEARCH
    ========================================================== */
 
-.cryptography-page .topic-search {
+   .cryptography-page .topic-search {
     position: relative;
 
-    width: min(620px, 100%);
+    width: min(680px, 100%);
 
-    margin: 25px auto 0;
+    margin: 32px auto 0;
 }
 
 .cryptography-page .topic-search > i {
     position: absolute;
 
-    left: 16px;
+    left: 20px;
     top: 50%;
 
     transform: translateY(-50%);
 
-    color: var(--accent, #60a5fa);
+    color: #60a5fa;
 
-    font-size: 16px;
+    font-size: 21px;
 
     pointer-events: none;
 }
 
 .cryptography-page .topic-search input {
     width: 100%;
+    height: 58px;
 
-    padding: 13px 18px 13px 45px;
+    padding: 0 22px 0 54px;
 
     color: var(--text-primary, #f1f5f9);
+
     background: var(--bg-card, #151b25);
 
     border: 1px solid var(--border, #263750);
-    border-radius: 11px;
+
+    border-radius: 14px;
 
     outline: none;
 
-    font-size: 14px;
+    font-size: 15px;
 
     transition:
         border-color 0.2s ease,
-        box-shadow 0.2s ease,
-        background 0.2s ease;
+        box-shadow 0.2s ease;
 }
 
 .cryptography-page .topic-search input::placeholder {
@@ -111,38 +117,45 @@
 }
 
 .cryptography-page .topic-search input:focus {
-    border-color: var(--accent, #2563eb);
+    border-color: #2563eb;
 
     box-shadow:
         0 0 0 3px rgba(37, 99, 235, 0.10);
 }
 
 
+
 /* ==========================================================
    QUICK NAVIGATION
+   — Linux-style layout
    ========================================================== */
 
 .cryptography-page .quick-navigation {
-    margin-bottom: 60px;
+    margin-bottom: 65px;
 }
 
 .cryptography-page .quick-nav-card {
-    padding: 22px;
+    padding: 30px 34px 34px;
 
     background: var(--bg-card, #151b25);
 
     border: 1px solid var(--border, #263750);
 
-    border-radius: 16px;
+    border-radius: 18px;
 }
+
+
+/* ==========================================================
+   QUICK NAV HEADER
+   ========================================================== */
 
 .cryptography-page .quick-nav-header {
     display: flex;
     align-items: center;
 
-    gap: 12px;
+    gap: 14px;
 
-    margin-bottom: 18px;
+    margin-bottom: 25px;
 }
 
 .cryptography-page .quick-nav-icon {
@@ -155,35 +168,45 @@
     align-items: center;
     justify-content: center;
 
-    color: var(--accent, #60a5fa);
+    color: #60a5fa;
 
     background: rgba(37, 99, 235, 0.10);
 
-    border: 1px solid rgba(37, 99, 235, 0.16);
+    border: 1px solid rgba(37, 99, 235, 0.22);
 
     border-radius: 10px;
 }
 
 .cryptography-page .quick-nav-icon i {
-    font-size: 19px;
+    font-size: 20px;
 }
 
+
+/* Title */
+
 .cryptography-page .quick-nav-header h2 {
-    margin: 0 0 3px;
+    margin: 0;
 
     color: var(--text-primary, #f1f5f9);
 
-    font-size: 20px;
+    font-size: 1.55rem;
     font-weight: 700;
+
+    line-height: 1.2;
 }
 
 .cryptography-page .quick-nav-header p {
-    margin: 0;
+    margin: 5px 0 0;
 
     color: var(--text-secondary, #a8b1c0);
 
-    font-size: 12px;
+    font-size: 13px;
 }
+
+
+/* ==========================================================
+   NAVIGATION GRID
+   ========================================================== */
 
 .cryptography-page .quick-nav-grid {
     display: grid;
@@ -191,86 +214,182 @@
     grid-template-columns:
         repeat(4, minmax(0, 1fr));
 
-    gap: 10px;
+    gap: 14px 18px;
 }
 
+
+/* ==========================================================
+   NAVIGATION BUTTON
+   ========================================================== */
+
 .cryptography-page .learn-link {
-    min-height: 48px;
+    min-height: 60px;
 
     display: flex;
     align-items: center;
 
-    gap: 9px;
+    gap: 10px;
 
-    padding: 9px 11px;
+    padding: 13px 18px;
 
-    color: var(--text-secondary, #a8b1c0);
+    color: var(--text-primary, #f1f5f9);
 
-    background: var(--bg-primary, #0d1526);
+    background: transparent;
 
     border: 1px solid var(--border, #263750);
 
-    border-radius: 9px;
+    border-radius: 12px;
 
     text-decoration: none;
 
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 600;
 
     transition:
-        color 0.2s ease,
         background 0.2s ease,
         border-color 0.2s ease,
+        color 0.2s ease,
         transform 0.2s ease,
         box-shadow 0.2s ease;
 }
 
-.cryptography-page .learn-link > span:first-child {
-    min-width: 29px;
-    height: 29px;
 
+/* ==========================================================
+   REMOVE 01 / 02 / 03 NUMBER BOX
+   ========================================================== */
+
+.cryptography-page .learn-link > span:first-child {
+    display: none;
+}
+
+
+/* ==========================================================
+   CREATE ICONS AUTOMATICALLY
+   ========================================================== */
+
+.cryptography-page .learn-link::before {
     display: inline-flex;
+
     align-items: center;
     justify-content: center;
 
-    padding: 0 5px;
+    width: 28px;
 
-    color: var(--accent, #60a5fa);
+    flex: 0 0 28px;
 
-    background: rgba(37, 99, 235, 0.10);
+    font-size: 17px;
 
-    border-radius: 7px;
-
-    font-family: monospace;
-    font-size: 10px;
-    font-weight: 700;
+    line-height: 1;
 }
 
-.cryptography-page .learn-link > i {
-    color: var(--accent, #60a5fa);
 
-    font-size: 15px;
+/* 01 */
+
+.cryptography-page .learn-link:nth-child(1)::before {
+    content: "🔐";
 }
+
+/* 02 */
+
+.cryptography-page .learn-link:nth-child(2)::before {
+    content: "🛡️";
+}
+
+/* 03 */
+
+.cryptography-page .learn-link:nth-child(3)::before {
+    content: "🔄";
+}
+
+/* 04 */
+
+.cryptography-page .learn-link:nth-child(4)::before {
+    content: "🔑";
+}
+
+/* 05 */
+
+.cryptography-page .learn-link:nth-child(5)::before {
+    content: "🔐";
+}
+
+/* 06 */
+
+.cryptography-page .learn-link:nth-child(6)::before {
+    content: "#️⃣";
+}
+
+/* 07 */
+
+.cryptography-page .learn-link:nth-child(7)::before {
+    content: "✍️";
+}
+
+/* 08 */
+
+.cryptography-page .learn-link:nth-child(8)::before {
+    content: "🏛️";
+}
+
+/* 09 */
+
+.cryptography-page .learn-link:nth-child(9)::before {
+    content: "🌐";
+}
+
+/* 10 */
+
+.cryptography-page .learn-link:nth-child(10)::before {
+    content: "⚠️";
+}
+
+/* 11 */
+
+.cryptography-page .learn-link:nth-child(11)::before {
+    content: "🛡️";
+}
+
+/* 12 */
+
+.cryptography-page .learn-link:nth-child(12)::before {
+    content: "📋";
+}
+
+/* 13 */
+
+.cryptography-page .learn-link:nth-child(13)::before {
+    content: "📝";
+}
+
+
+/* ==========================================================
+   HOVER
+   ========================================================== */
 
 .cryptography-page .learn-link:hover {
     color: #ffffff;
 
-    background: rgba(37, 99, 235, 0.10);
+    background: rgba(37, 99, 235, 0.07);
 
-    border-color: var(--accent, #2563eb);
+    border-color: #2563eb;
 
     transform: translateY(-2px);
 
     box-shadow:
-        0 6px 18px rgba(37, 99, 235, 0.10);
+        0 7px 20px rgba(37, 99, 235, 0.08);
 }
+
+
+/* ==========================================================
+   ACTIVE SECTION
+   ========================================================== */
 
 .cryptography-page .learn-link.active {
     color: #ffffff;
 
-    background: rgba(37, 99, 235, 0.16);
+    background: rgba(37, 99, 235, 0.12);
 
-    border-color: var(--accent, #2563eb);
+    border-color: #2563eb;
 }
 
 
@@ -980,7 +1099,6 @@
    Your theme.js uses body.light-theme
    ========================================================== */
 
-body.light-theme .cryptography-page .quick-nav-card,
 body.light-theme .cryptography-page .dashboard-card,
 body.light-theme .cryptography-page .owasp-card,
 body.light-theme .cryptography-page .owasp-cheat-grid > div,
@@ -990,15 +1108,39 @@ body.light-theme .cryptography-page .owasp-interview-card {
         0 7px 22px rgba(0, 0, 0, 0.06);
 }
 
-body.light-theme .cryptography-page .learn-link {
-    background: #f8fafc;
+body.light-theme .cryptography-page .quick-nav-card {
+    background: #ffffff;
 
-    color: #475569;
+    border-color: #d9e2ef;
+
+    box-shadow:
+        0 7px 22px rgba(0, 0, 0, 0.06);
+}
+
+body.light-theme .cryptography-page .learn-link {
+    color: #334155;
+
+    background: #ffffff;
+
+    border-color: #d9e2ef;
 }
 
 body.light-theme .cryptography-page .learn-link:hover {
     color: #111827;
+
+    background: #f1f6ff;
+
+    border-color: #2563eb;
 }
+
+body.light-theme .cryptography-page .learn-link.active {
+    color: #111827;
+
+    background: #edf4ff;
+
+    border-color: #2563eb;
+}
+
 
 body.light-theme .cryptography-page .crypto-flow-item {
     background: #f8fafc;
@@ -1024,7 +1166,8 @@ body.light-theme .cryptography-page .owasp-table tbody td {
 @media (max-width: 1100px) {
 
     .cryptography-page .quick-nav-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
     }
 
     .cryptography-page .owasp-content-grid {
@@ -1044,12 +1187,59 @@ body.light-theme .cryptography-page .owasp-table tbody td {
 
 @media (max-width: 768px) {
 
+
+    .cryptography-page .quick-nav-card {
+        padding: 24px;
+    }
+
     .cryptography-page .quick-navigation {
         margin-bottom: 45px;
     }
 
     .cryptography-page .quick-nav-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 12px;
+    }
+
+    .cryptography-page #learnNavbar {
+        margin-bottom: 40px;
+    }
+
+    .cryptography-page .dashboard-hero {
+        min-height: 290px;
+
+        padding-top: 35px;
+        padding-bottom: 45px;
+    }
+
+    .cryptography-page .hero-title {
+        font-size: 2.2rem;
+    }
+
+    .cryptography-page .hero-title i {
+        font-size: 2rem;
+    }
+
+    .cryptography-page .hero-description {
+        font-size: 14px;
+    }
+
+    .cryptography-page .learn-link {
+        min-height: 56px;
+
+        padding: 12px 14px;
+
+        font-size: 14px;
+    }
+
+    .cryptography-page .hero-title {
+        font-size: 2rem;
+    }
+
+    .cryptography-page .hero-description {
+        font-size: 14px;
     }
 
     .cryptography-page .topic-section {
@@ -1125,6 +1315,7 @@ body.light-theme .cryptography-page .owasp-table tbody td {
         padding: 25px;
     }
 
+
 }
 
 
@@ -1145,7 +1336,35 @@ body.light-theme .cryptography-page .owasp-table tbody td {
     .cryptography-page .section-heading {
         gap: 12px;
     }
+    .cryptography-page #learnNavbar {
+        margin-bottom: 30px;
+    }
 
+    .cryptography-page .dashboard-hero {
+        min-height: 260px;
+
+        padding-top: 30px;
+        padding-bottom: 40px;
+    }
+
+    .cryptography-page .hero-title {
+        font-size: 1.8rem;
+    }
+
+    .cryptography-page .hero-title i {
+        font-size: 1.7rem;
+    }
+
+    .cryptography-page .topic-search {
+        margin-top: 25px;
+    }
+
+    .cryptography-page .topic-search input {
+        height: 52px;
+
+        font-size: 14px;
+    }
+    
     .cryptography-page .section-number {
         width: 48px;
         height: 48px;
@@ -1160,7 +1379,7 @@ body.light-theme .cryptography-page .owasp-table tbody td {
     }
 
     .cryptography-page .section-heading h2 {
-        font-size: 1.25rem;
+        font-size: 1.35rem;
     }
 
     .cryptography-page .section-heading p {
@@ -1197,4 +1416,12 @@ body.light-theme .cryptography-page .owasp-table tbody td {
         border-radius: 14px;
     }
 
+}
+
+/* ==========================================================
+   SPACE BELOW LEARN CYBER NAVBAR
+   ========================================================== */
+
+.cryptography-page #learnNavbar {
+    margin-bottom: 55px;
 }
