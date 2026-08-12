@@ -57,7 +57,7 @@ const topics = [
         title: "Cyber Certifications",
         icon: "bi-award-fill",
         description: "Explore CEH, Security+, CISSP, CompTIA, Google and Cisco certification roadmaps.",
-        link: "certifications.html"
+        link: "certification.html"
     }
 
 ];

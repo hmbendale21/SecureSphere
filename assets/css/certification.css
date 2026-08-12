@@ -1,0 +1,929 @@
+/* ==========================================================
+   SECURESPHERE — CYBERSECURITY CERTIFICATIONS
+   certification.css
+
+   Same visual system as AI in Cybersecurity / Cloud Security
+   ========================================================== */
+
+
+/* ==========================================================
+   PAGE
+========================================================== */
+
+body {
+    overflow-x: hidden;
+}
+
+#certificationContent {
+    width: 100%;
+}
+
+
+/* ==========================================================
+   HERO
+========================================================== */
+
+.dashboard-hero {
+    padding-top: 45px;
+    padding-bottom: 55px;
+
+    min-height: 330px;
+
+    display: flex;
+    align-items: center;
+}
+
+.hero-title {
+    margin: 0 0 15px;
+
+    color: var(--text-primary, #f1f5f9);
+
+    font-size: 2.8rem;
+    font-weight: 700;
+
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    margin: 0 0 14px;
+
+    color: var(--accent, #60a5fa);
+
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.hero-description {
+    max-width: 850px;
+
+    margin: 0 auto;
+
+    color: var(--text-secondary, #a8b1c0);
+
+    font-size: 16px;
+
+    line-height: 1.75;
+}
+
+
+/* ==========================================================
+   SEARCH
+========================================================== */
+
+.search-box {
+    position: relative;
+
+    width: 100%;
+}
+
+.search-box > i {
+    position: absolute;
+
+    left: 19px;
+    top: 50%;
+
+    z-index: 5;
+
+    transform: translateY(-50%);
+
+    color: var(--accent, #60a5fa);
+
+    font-size: 19px;
+
+    pointer-events: none;
+}
+
+.search-box input {
+    width: 100%;
+
+    height: 56px;
+
+    padding: 0 20px 0 50px;
+
+    color: var(--text-primary, #f1f5f9);
+
+    background: var(--bg-card, #151b25);
+
+    border: 1px solid var(--border, #263750);
+
+    border-radius: 13px;
+
+    outline: none;
+
+    font-size: 15px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.search-box input::placeholder {
+    color: var(--text-secondary, #a8b1c0);
+}
+
+.search-box input:focus {
+    color: var(--text-primary, #f1f5f9);
+
+    background: var(--bg-card, #151b25);
+
+    border-color: var(--accent, #2563eb);
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.10);
+}
+
+
+/* ==========================================================
+   QUICK NAVIGATION
+========================================================== */
+
+.dashboard-card {
+    background: var(--bg-card, #151b25);
+
+    border: 1px solid var(--border, #263750);
+
+    border-radius: 17px;
+}
+
+.container > .dashboard-card {
+    padding: 28px 32px 32px;
+}
+
+.dashboard-card > h3 {
+    margin: 0 0 24px;
+
+    color: var(--text-primary, #f1f5f9);
+
+    font-size: 1.45rem;
+    font-weight: 700;
+}
+
+
+/* ==========================================================
+   QUICK NAVIGATION LINKS
+========================================================== */
+
+.learn-link {
+    min-height: 58px;
+
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+
+    padding: 13px 16px;
+
+    color: var(--text-primary, #f1f5f9);
+
+    background: transparent;
+
+    border: 1px solid var(--border, #263750);
+
+    border-radius: 11px;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition:
+        transform 0.2s ease,
+        color 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.learn-link:hover {
+    color: #ffffff;
+
+    background: rgba(37, 99, 235, 0.08);
+
+    border-color: var(--accent, #2563eb);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 7px 20px rgba(37, 99, 235, 0.08);
+}
+
+.learn-link.active {
+    color: #ffffff;
+
+    background: rgba(37, 99, 235, 0.13);
+
+    border-color: var(--accent, #2563eb);
+}
+
+
+/* ==========================================================
+   TOPIC SECTIONS
+========================================================== */
+
+.topic-section {
+    margin-bottom: 85px;
+
+    scroll-margin-top: 35px;
+}
+
+
+/* ==========================================================
+   SECTION HEADING
+========================================================== */
+
+.section-heading {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 20px;
+
+    margin-bottom: 30px;
+}
+
+.section-number {
+    width: 64px;
+    height: 64px;
+
+    min-width: 64px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #ffffff;
+
+    background: linear-gradient(
+        135deg,
+        #2563eb,
+        #4da3ff
+    );
+
+    border-radius: 16px;
+
+    font-size: 16px;
+    font-weight: 800;
+
+    box-shadow:
+        0 9px 23px rgba(37, 99, 235, 0.25);
+}
+
+.section-heading h2 {
+    margin: 0 0 8px;
+
+    color: var(--text-primary, #f1f5f9);
+
+    font-size: 1.55rem;
+    font-weight: 700;
+
+    line-height: 1.3;
+}
+
+.section-heading p {
+    max-width: 850px;
+
+    margin: 0;
+
+    color: var(--text-secondary, #a8b1c0);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* ==========================================================
+   INFO CARD
+========================================================== */
+
+.info-card {
+    display: flex;
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 28px;
+}
+
+.info-card-icon {
+    width: 62px;
+    height: 62px;
+
+    min-width: 62px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--accent, #60a5fa);
+
+    background: rgba(37, 99, 235, 0.10);
+
+    border: 1px solid rgba(37, 99, 235, 0.18);
+
+    border-radius: 15px;
+}
+
+.info-card-icon i {
+    font-size: 26px;
+}
+
+.info-card h4 {
+    margin: 0 0 9px;
+
+    color: var(--text-primary, #f1f5f9);
+
+    font-size: 1.12rem;
+    font-weight: 700;
+}
+
+.info-card p {
+    max-width: 900px;
+
+    margin: 0;
+
+    color: var(--text-secondary, #a8b1c0);
+
+    font-size: 14px;
+
+    line-height: 1.75;
+}
+
+
+/* ==========================================================
+   CONTENT GRID
+========================================================== */
+
+.owasp-content-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 20px;
+
+    padding: 25px;
+}
+
+
+/* ==========================================================
+   CONTENT CARDS
+========================================================== */
+
+.owasp-card {
+    padding: 25px;
+
+    background: var(--bg-card, #151b25);
+
+    border: 1px solid var(--border, #263750);
+
+    border-radius: 15px;
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.owasp-card:hover {
+    transform: translateY(-4px);
+
+    border-color: rgba(37, 99, 235, 0.65);
+
+    box-shadow:
+        0 10px 28px rgba(37, 99, 235, 0.09);
+}
+
+.owasp-card > i {
+    width: 56px;
+    height: 56px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 16px;
+
+    color: var(--accent, #60a5fa);
+
+    background: rgba(37, 99, 235, 0.10);
+
+    border: 1px solid rgba(37, 99, 235, 0.16);
+
+    border-radius: 14px;
+
+    font-size: 24px;
+}
+
+.owasp-card h4 {
+    margin: 0 0 10px;
+
+    color: var(--text-primary, #f1f5f9);
+
+    font-size: 1.08rem;
+    font-weight: 700;
+
+    line-height: 1.4;
+}
+
+.owasp-card p {
+    margin: 0;
+
+    color: var(--text-secondary, #a8b1c0);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+.owasp-card ul {
+    margin: 13px 0 0;
+
+    padding-left: 19px;
+}
+
+.owasp-card li {
+    margin-bottom: 7px;
+
+    color: var(--text-secondary, #a8b1c0);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* ==========================================================
+   LIST GRID
+========================================================== */
+
+.owasp-list-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 13px;
+
+    padding: 25px;
+}
+
+.owasp-list-grid > div {
+    min-height: 55px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+
+    padding: 14px 16px;
+
+    color: var(--text-secondary, #a8b1c0);
+
+    background: var(--bg-primary, #0d1526);
+
+    border: 1px solid var(--border, #263750);
+
+    border-radius: 10px;
+
+    font-size: 14px;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.owasp-list-grid > div:hover {
+    background: rgba(37, 99, 235, 0.06);
+
+    border-color: var(--accent, #2563eb);
+}
+
+.owasp-list-grid i {
+    color: var(--accent, #60a5fa);
+
+    font-size: 16px;
+}
+
+
+/* ==========================================================
+   INTERVIEW QUESTIONS
+========================================================== */
+
+.owasp-interview-card {
+    overflow: hidden;
+
+    background: var(--bg-card, #151b25);
+
+    border: 1px solid var(--border, #263750);
+
+    border-radius: 15px;
+}
+
+.owasp-interview-card details {
+    border-bottom: 1px solid var(--border, #263750);
+}
+
+.owasp-interview-card details:last-child {
+    border-bottom: none;
+}
+
+.owasp-interview-card summary {
+    display: flex;
+    align-items: center;
+
+    padding: 17px 20px;
+
+    color: var(--text-primary, #f1f5f9);
+
+    cursor: pointer;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    list-style: none;
+
+    transition:
+        color 0.2s ease,
+        background 0.2s ease;
+}
+
+.owasp-interview-card summary::-webkit-details-marker {
+    display: none;
+}
+
+.owasp-interview-card summary::before {
+    content: "+";
+
+    width: 30px;
+    height: 30px;
+
+    min-width: 30px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-right: 12px;
+
+    color: var(--accent, #60a5fa);
+
+    background: rgba(37, 99, 235, 0.10);
+
+    border-radius: 7px;
+
+    font-size: 18px;
+}
+
+.owasp-interview-card details[open] summary::before {
+    content: "−";
+}
+
+.owasp-interview-card summary:hover {
+    color: var(--accent, #60a5fa);
+
+    background: rgba(37, 99, 235, 0.04);
+}
+
+.owasp-interview-card details p {
+    margin: 0;
+
+    padding: 0 25px 20px 62px;
+
+    color: var(--text-secondary, #a8b1c0);
+
+    font-size: 14px;
+
+    line-height: 1.75;
+}
+
+
+/* ==========================================================
+   COMPLETION BOX
+========================================================== */
+
+.linux-complete-box {
+    display: flex;
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 30px;
+
+    background: linear-gradient(
+        135deg,
+        rgba(34, 197, 94, 0.12),
+        rgba(34, 197, 94, 0.045)
+    );
+
+    border: 1px solid rgba(34, 197, 94, 0.28);
+
+    border-left: 4px solid #22c55e;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 10px 30px rgba(34, 197, 94, 0.07);
+}
+
+.linux-complete-icon {
+    width: 64px;
+    height: 64px;
+
+    min-width: 64px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #22c55e;
+
+    background: rgba(34, 197, 94, 0.12);
+
+    border: 1px solid rgba(34, 197, 94, 0.20);
+
+    border-radius: 16px;
+}
+
+.linux-complete-icon i {
+    font-size: 29px;
+}
+
+.linux-complete-box h3 {
+    margin: 0 0 7px;
+
+    color: #22c55e;
+
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.linux-complete-box p {
+    margin: 0;
+
+    color: var(--text-secondary, #a8b1c0);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* ==========================================================
+   LIGHT THEME
+========================================================== */
+
+body.light-theme .dashboard-card,
+body.light-theme .owasp-card,
+body.light-theme .owasp-interview-card {
+    box-shadow:
+        0 7px 22px rgba(0, 0, 0, 0.055);
+}
+
+body.light-theme .search-box input {
+    color: #1e293b;
+
+    background: #ffffff;
+
+    border-color: #d9e2ef;
+}
+
+body.light-theme .search-box input:focus {
+    color: #1e293b;
+
+    background: #ffffff;
+}
+
+body.light-theme .learn-link {
+    color: #334155;
+
+    background: #ffffff;
+
+    border-color: #d9e2ef;
+}
+
+body.light-theme .learn-link:hover {
+    color: #111827;
+
+    background: #f1f6ff;
+
+    border-color: #2563eb;
+}
+
+body.light-theme .learn-link.active {
+    color: #111827;
+
+    background: #edf4ff;
+
+    border-color: #2563eb;
+}
+
+body.light-theme .owasp-list-grid > div {
+    color: #475569;
+
+    background: #f8fafc;
+
+    border-color: #d9e2ef;
+}
+
+
+/* ==========================================================
+   DESKTOP
+========================================================== */
+
+@media (min-width: 992px) {
+
+    .dashboard-hero + section {
+        margin-top: 5px;
+    }
+
+}
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width: 1100px) {
+
+    .owasp-content-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 768px) {
+
+    .dashboard-hero {
+        min-height: 290px;
+
+        padding-top: 35px;
+        padding-bottom: 45px;
+    }
+
+    .hero-title {
+        font-size: 2.2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .hero-description {
+        font-size: 14px;
+    }
+
+    .container > .dashboard-card {
+        padding: 24px;
+    }
+
+    .dashboard-card > h3 {
+        font-size: 1.3rem;
+    }
+
+    .owasp-content-grid {
+        grid-template-columns: 1fr;
+
+        padding: 20px;
+    }
+
+    .owasp-list-grid {
+        grid-template-columns: 1fr;
+
+        padding: 20px;
+    }
+
+    .topic-section {
+        margin-bottom: 65px;
+    }
+
+    .section-heading {
+        gap: 15px;
+    }
+
+    .section-number {
+        width: 55px;
+        height: 55px;
+
+        min-width: 55px;
+
+        border-radius: 14px;
+
+        font-size: 15px;
+    }
+
+    .section-heading h2 {
+        font-size: 1.4rem;
+    }
+
+    .info-card {
+        align-items: flex-start;
+
+        padding: 23px;
+    }
+
+    .linux-complete-box {
+        align-items: flex-start;
+
+        padding: 25px;
+    }
+
+}
+
+
+/* ==========================================================
+   SMALL MOBILE
+========================================================== */
+
+@media (max-width: 480px) {
+
+    .dashboard-hero {
+        min-height: 260px;
+
+        padding-top: 30px;
+        padding-bottom: 40px;
+    }
+
+    .hero-title {
+        font-size: 1.8rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .hero-description {
+        font-size: 13px;
+    }
+
+    .search-box input {
+        height: 52px;
+
+        font-size: 14px;
+    }
+
+    .container > .dashboard-card {
+        padding: 20px;
+    }
+
+    .learn-link {
+        min-height: 54px;
+
+        padding: 12px 14px;
+
+        font-size: 13px;
+    }
+
+    .section-heading {
+        gap: 12px;
+    }
+
+    .section-number {
+        width: 48px;
+        height: 48px;
+
+        min-width: 48px;
+
+        border-radius: 12px;
+
+        font-size: 13px;
+    }
+
+    .section-heading h2 {
+        font-size: 1.25rem;
+    }
+
+    .section-heading p {
+        font-size: 13px;
+    }
+
+    .info-card {
+        flex-direction: column;
+
+        padding: 21px;
+    }
+
+    .info-card-icon {
+        width: 52px;
+        height: 52px;
+
+        min-width: 52px;
+    }
+
+    .owasp-card {
+        padding: 21px;
+    }
+
+    .linux-complete-box {
+        flex-direction: column;
+
+        padding: 22px;
+    }
+
+}
