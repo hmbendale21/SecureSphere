@@ -11,12 +11,11 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <!-- Dashboard CSS -->
     <link rel="stylesheet" href="../assets/css/dashboard.css">
-    <link rel="stylesheet" href="../assets/css/theme.css">  
+    <link rel="stylesheet" href="../assets/css/theme.css">
     <link rel="stylesheet" href="../assets/css/loading.css">
     <link rel="stylesheet" href="../assets/css/transition.css">
 
@@ -124,24 +123,20 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
+                        <a class="nav-link" href="contact.html">Contact</a>
                     </li>
 
                 </ul>
 
                 <div class="nav-actions">
 
-                    <button
-                    id="themeToggle"
-                    class="theme-btn">
-                
-                    <i
-                        id="themeIcon"
-                        class="bi bi-moon-stars">
-                
-                    </i>
-                
-                </button>
+                    <button id="themeToggle" class="theme-btn">
+
+                        <i id="themeIcon" class="bi bi-moon-stars">
+
+                        </i>
+
+                    </button>
 
                 </div>
 
@@ -183,221 +178,782 @@
 
     <div class="container mb-5">
 
-        <div class="row text-center">
+        <div class="row text-center g-4">
+
+
+            <!-- THREATS BLOCKED -->
 
             <div class="col-md-3">
 
-                <h2>154</h2>
+                <div class="live-metric">
 
-                <p>Threats Blocked</p>
+                    <h2 id="threatsBlocked">
+                        0
+                    </h2>
+
+                    <p>
+                        Threats Blocked
+                    </p>
+
+                    <small id="threatTrend">
+                        Monitoring...
+                    </small>
+
+                </div>
 
             </div>
+
+
+            <!-- PASSWORDS CHECKED -->
 
             <div class="col-md-3">
 
-                <h2>12</h2>
+                <div class="live-metric">
 
-                <p>Passwords Checked</p>
+                    <h2 id="passwordsChecked">
+                        0
+                    </h2>
+
+                    <p>
+                        Passwords Checked
+                    </p>
+
+                    <small id="passwordTrend">
+                        Monitoring...
+                    </small>
+
+                </div>
 
             </div>
+
+
+            <!-- SECURITY TOOLS -->
 
             <div class="col-md-3">
 
-                <h2>8</h2>
+                <div class="live-metric">
 
-                <p>Security Tools</p>
+                    <h2 id="securityTools">
+                        8
+                    </h2>
+
+                    <p>
+                        Security Tools
+                    </p>
+
+                    <small>
+                        Available
+                    </small>
+
+                </div>
 
             </div>
+
+
+            <!-- SYSTEM UPTIME -->
 
             <div class="col-md-3">
 
-                <h2>99.8%</h2>
+                <div class="live-metric">
 
-                <p>System Uptime</p>
+                    <h2 id="systemUptime">
+                        99.9%
+                    </h2>
+
+                    <p>
+                        System Uptime
+                    </p>
+
+                    <small id="uptimeStatus">
+                        Operational
+                    </small>
+
+                </div>
 
             </div>
+
 
         </div>
 
     </div>
+    <!-- =========================================================
+    DASHBOARD CONTENT
+========================================================= -->
 
-    <!-- ========================= -->
-    <!-- Dashboard Placeholder -->
-    <!-- ========================= -->
+<section class="dashboard-content">
 
-    <section class="dashboard-content">
+   <div class="container">
 
-        <div class="container">
+       <!-- =================================================
+            ROW 1
+            SECURITY SCORE + THREAT LEVEL
+       ================================================== -->
 
-            <div class="row g-4">
+       <div class="row g-4 mb-4">
 
-                <!-- Security Score -->
-                <div class="col-lg-6">
 
-                    <div class="dashboard-card">
+           <!-- SECURITY SCORE -->
 
-                        <h3><i class="bi bi-shield-check"></i> Security Score</h3>
+           <div class="col-lg-6">
 
-                        <div class="score-circle">
+               <div class="dashboard-card h-100">
 
-                            <h1 id="securityScore">
+                   <h3>
+                       <i class="bi bi-shield-check"></i>
+                       Security Score
+                   </h3>
 
-                                85%
 
-                            </h1>
+                   <div class="score-circle">
 
-                        </div>
+                       <h1 id="securityScore">
+                           85%
+                       </h1>
 
-                        <p>Your system security status.</p>
+                   </div>
 
-                    </div>
 
-                </div>
+                   <p id="scoreMessage">
+                       Your system security status.
+                   </p>
 
-                <!-- Threat Level -->
-                <div class="col-lg-6">
+               </div>
 
-                    <div class="dashboard-card">
+           </div>
 
-                        <h3><i class="bi bi-exclamation-triangle"></i> Threat Level</h3>
 
-                        <span class="badge bg-success fs-6">
 
-                            LOW
+           <!-- THREAT LEVEL -->
 
-                        </span>
+           <div class="col-lg-6">
 
-                        <p class="mt-3">
+               <div class="dashboard-card threat-card h-100">
 
-                            No active threats detected.
 
-                        </p>
+                   <div class="card-title">
 
-                    </div>
+                       <i class="bi bi-exclamation-triangle"></i>
 
-                </div>
+                       <h2>
+                           Threat Level
+                       </h2>
 
-                <div class="col-lg-6">
+                   </div>
 
-                    <div class="dashboard-card">
 
-                        <h3>
-                            <i class="bi bi-clock-history"></i>
-                            Last Security Scan
-                        </h3>
+                   <!-- CURRENT LEVEL -->
 
-                        <h2 id="lastScan">
+                   <div class="threat-status">
 
-                            2 minutes ago
+                       <span
+                           id="threatLevel"
+                           class="badge bg-warning text-dark fs-6"
+                       >
+                           MEDIUM
+                       </span>
 
-                        </h2>
 
-                        <p>
+                       <span class="threat-live">
 
-                            Your latest security scan completed successfully.
+                           <span class="live-dot"></span>
 
-                        </p>
+                           Live Monitoring
 
-                    </div>
+                       </span>
 
-                </div>
+                   </div>
 
 
-                <div class="col-lg-6">
+                   <!-- MESSAGE -->
 
-                    <div class="dashboard-card">
+                   <p
+                       id="threatMessage"
+                       class="threat-message"
+                   >
+                       Some security events require monitoring.
+                   </p>
 
-                        <h3>
-                            <i class="bi bi-hdd-network"></i>
-                            System Status
-                        </h3>
 
-                        <h2>
+                   <!-- THREAT DETAILS -->
 
-                            🟢 Online
+                   <div class="threat-details">
 
-                        </h2>
 
-                        <p>
+                       <div class="threat-detail">
 
-                            All SecureSphere services are operational.
+                           <span class="detail-label">
+                               Current Risk
+                           </span>
 
-                        </p>
+                           <strong id="riskPercentage">
+                               35%
+                           </strong>
 
-                    </div>
+                       </div>
 
-                </div>
 
-                <!-- Quick Tools -->
-                <div class="col-lg-6">
+                       <div class="threat-detail">
 
-                    <div class="dashboard-card">
+                           <span class="detail-label">
+                               Activity
+                           </span>
 
-                        <h3><i class="bi bi-tools"></i> Quick Tools</h3>
+                           <strong id="threatActivity">
+                               Normal
+                           </strong>
 
-                        <div class="d-grid gap-2 mt-4">
+                       </div>
 
-                            <a href="password-tools.html" class="btn btn-primary">
-                                Password Generator
-                            </a>
 
-                            <a href="password-analyzer.html" class="btn btn-outline-info">
-                                Password Analyzer
-                            </a>
+                       <div class="threat-detail">
 
-                            <a href="hash-generator.html" class="btn btn-outline-warning">
-                                Hash Generator
-                            </a>
+                           <span class="detail-label">
+                               Monitoring
+                           </span>
 
-                        </div>
+                           <strong class="monitoring-active">
+                               Active
+                           </strong>
 
-                    </div>
+                       </div>
 
-                </div>
+                   </div>
 
-                <!-- Security Tip -->
-                <div class="col-lg-6">
 
-                    <div class="dashboard-card">
+                   <!-- RECOMMENDATION -->
 
-                        <h3><i class="bi bi-lightbulb"></i> Daily Security Tip</h3>
+                   <div
+                       id="threatRecommendation"
+                       class="threat-recommendation"
+                   >
 
-                        <p id="securityTip">
+                       <i class="bi bi-shield-check"></i>
 
-                            Never reuse the same password across multiple websites.
+                       <span>
+                           Continue normal security monitoring.
+                       </span>
 
-                        </p>
+                   </div>
 
-                    </div>
 
-                </div>
+               </div>
 
-                <!-- Latest News -->
-                <div class="col-12">
+           </div>
 
-                    <div class="dashboard-card">
+       </div>
 
-                        <h3><i class="bi bi-newspaper"></i> Latest Cyber News</h3>
 
-                        <ul class="news-list">
 
-                            <li>Cyber news integration coming soon.</li>
+       <!-- =================================================
+            ROW 2
+            LAST SCAN + SYSTEM STATUS
+       ================================================== -->
 
-                            <li>Security advisories will appear here.</li>
+       <div class="row g-4 mb-4">
 
-                            <li>Latest ransomware alerts.</li>
 
-                        </ul>
+           <!-- LAST SECURITY SCAN -->
 
-                    </div>
+           <div class="col-lg-6">
 
-                </div>
+               <div class="dashboard-card h-100">
 
-            </div>
+                   <h3>
 
-        </div>
+                       <i class="bi bi-clock-history"></i>
 
-    </section>
+                       Last Security Scan
+
+                   </h3>
+
+
+                   <h2 id="lastScan">
+
+                       Just now
+
+                   </h2>
+
+
+                   <p id="scanStatus">
+
+                       Security monitoring is active.
+
+                   </p>
+
+
+                   <!-- SCAN DETAILS -->
+
+                   <div class="scan-details">
+
+
+                       <div>
+
+                           <span>
+                               Scan Status
+                           </span>
+
+                           <strong class="status-online">
+                               Completed
+                           </strong>
+
+                       </div>
+
+
+                       <div>
+
+                           <span>
+                               Scan Type
+                           </span>
+
+                           <strong>
+                               Security Check
+                           </strong>
+
+                       </div>
+
+
+                       <div>
+
+                           <span>
+                               Monitoring
+                           </span>
+
+                           <strong class="status-online">
+                               Active
+                           </strong>
+
+                       </div>
+
+                   </div>
+
+               </div>
+
+           </div>
+
+
+
+           <!-- SYSTEM STATUS -->
+
+           <div class="col-lg-6">
+
+               <div class="dashboard-card h-100">
+
+                   <h3>
+
+                       <i class="bi bi-hdd-network"></i>
+
+                       System Status
+
+                   </h3>
+
+
+                   <div class="system-online">
+
+                       <span class="online-dot"></span>
+
+                       <h2>
+                           Online
+                       </h2>
+
+                   </div>
+
+
+                   <p>
+                       All SecureSphere services are operational.
+                   </p>
+
+
+                   <!-- SYSTEM DETAILS -->
+
+                   <div class="system-details">
+
+
+                       <div>
+
+                           <span>
+                               Platform
+                           </span>
+
+                           <strong>
+                               SecureSphere
+                           </strong>
+
+                       </div>
+
+
+                       <div>
+
+                           <span>
+                               Monitoring
+                           </span>
+
+                           <strong class="status-online">
+                               Active
+                           </strong>
+
+                       </div>
+
+
+                       <div>
+
+                           <span>
+                               Services
+                           </span>
+
+                           <strong class="status-online">
+                               Operational
+                           </strong>
+
+                       </div>
+
+                   </div>
+
+               </div>
+
+           </div>
+
+       </div>
+
+
+
+       <!-- =================================================
+            ROW 3
+            QUICK TOOLS + DAILY SECURITY TIP
+       ================================================== -->
+
+       <div class="row g-4 mb-4">
+
+
+           <!-- QUICK TOOLS -->
+
+           <div class="col-lg-6">
+
+               <div class="dashboard-card quick-tools-card h-100">
+
+
+                   <h3>
+
+                       <i class="bi bi-tools"></i>
+
+                       Quick Tools
+
+                   </h3>
+
+
+                   <div class="quick-tools-list">
+
+
+                       <!-- PASSWORD GENERATOR -->
+
+                       <a
+                           href="password-tools.html"
+                           class="quick-tool password-tool"
+                       >
+
+                           <i class="bi bi-key-fill"></i>
+
+                           <span>
+                               Password Generator
+                           </span>
+
+                           <i class="bi bi-arrow-right"></i>
+
+                       </a>
+
+
+                       <!-- PASSWORD ANALYZER -->
+
+                       <a
+                           href="password-analyzer.html"
+                           class="quick-tool analyzer-tool"
+                       >
+
+                           <i class="bi bi-shield-check"></i>
+
+                           <span>
+                               Password Analyzer
+                           </span>
+
+                           <i class="bi bi-arrow-right"></i>
+
+                       </a>
+
+
+                       <!-- HASH GENERATOR -->
+
+                       <a
+                           href="hash-generator.html"
+                           class="quick-tool hash-tool"
+                       >
+
+                           <i class="bi bi-hash"></i>
+
+                           <span>
+                               Hash Generator
+                           </span>
+
+                           <i class="bi bi-arrow-right"></i>
+
+                       </a>
+
+
+                   </div>
+
+               </div>
+
+           </div>
+
+
+
+           <!-- DAILY SECURITY TIP -->
+
+           <div class="col-lg-6">
+
+               <div class="dashboard-card security-tip-card h-100">
+
+
+                   <!-- TITLE -->
+
+                   <div class="card-title">
+
+                       <i class="bi bi-lightbulb"></i>
+
+                       <h2>
+                           Daily Security Tip
+                       </h2>
+
+                   </div>
+
+
+                   <!-- CATEGORY -->
+
+                   <div class="tip-category">
+
+                       <span>
+
+                           <i class="bi bi-shield-lock"></i>
+
+                           <span id="tipCategory">
+                               ACCOUNT SECURITY
+                           </span>
+
+                       </span>
+
+
+                       <span id="tipNumber">
+
+                           TIP #01
+
+                       </span>
+
+                   </div>
+
+
+                   <!-- TIP -->
+
+                   <div class="security-tip-content">
+
+
+                       <div class="tip-icon">
+
+                           <i class="bi bi-lightbulb-fill"></i>
+
+                       </div>
+
+
+                       <div>
+
+                           <h3 id="securityTipTitle">
+
+                               Protect Your Accounts
+
+                           </h3>
+
+
+                           <p id="securityTip">
+
+                               Enable multi-factor authentication
+                               on your important accounts to add
+                               an additional layer of protection.
+
+                           </p>
+
+                       </div>
+
+                   </div>
+
+
+                   <!-- ACTION -->
+
+                   <div class="tip-action">
+
+                       <i class="bi bi-check-circle-fill"></i>
+
+                       <span id="securityTipAction">
+
+                           Recommended: Enable MFA on email,
+                           banking and social media accounts.
+
+                       </span>
+
+                   </div>
+
+
+                   <!-- FOOTER -->
+
+                   <div class="tip-footer">
+
+                       <span>
+
+                           <i class="bi bi-arrow-repeat"></i>
+
+                           Security tips update automatically
+
+                       </span>
+
+
+                       <span id="tipUpdated">
+
+                           Updated now
+
+                       </span>
+
+                   </div>
+
+
+               </div>
+
+           </div>
+
+       </div>
+
+
+
+       <!-- =================================================
+            LATEST CYBER NEWS
+       ================================================== -->
+
+       <div class="row g-4">
+
+
+           <div class="col-12">
+
+               <div class="dashboard-card cyber-news-card">
+
+
+                   <!-- NEWS HEADER -->
+
+                   <div class="news-header">
+
+
+                       <div>
+
+                           <h3>
+
+                               <i class="bi bi-newspaper"></i>
+
+                               Latest Cyber News
+
+                           </h3>
+
+
+                           <p>
+                               Latest cybersecurity advisories
+                               and vulnerability updates.
+                           </p>
+
+                       </div>
+
+
+                       <div class="news-live-status">
+
+                           <span class="live-dot"></span>
+
+                           Live Feed
+
+                       </div>
+
+                   </div>
+
+
+                   <!-- LAST UPDATED -->
+
+                   <div class="news-updated">
+
+                       <span>
+
+                           <i class="bi bi-clock"></i>
+
+                           Last updated:
+
+                       </span>
+
+                       <strong id="newsUpdated">
+                           Loading...
+                       </strong>
+
+                   </div>
+
+
+                   <!-- NEWS LIST -->
+
+                   <div
+                       id="cyberNewsList"
+                       class="cyber-news-list"
+                   >
+
+                       <!-- JavaScript loads news here -->
+
+                       <div class="news-loading">
+
+                           <div class="spinner-border spinner-border-sm">
+                           </div>
+
+                           Loading latest cybersecurity updates...
+
+                       </div>
+
+                   </div>
+
+
+                   <!-- NEWS FOOTER -->
+
+                   <div class="news-footer">
+
+                       <span>
+
+                           <i class="bi bi-shield-check"></i>
+
+                           Source: CISA Known Exploited Vulnerabilities
+
+                       </span>
+
+
+                       <a
+                           href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                       >
+
+                           View CISA Catalog
+
+                           <i class="bi bi-box-arrow-up-right"></i>
+
+                       </a>
+
+                   </div>
+
+
+               </div>
+
+           </div>
+
+       </div>
+
+
+   </div>
+
+</section>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
@@ -405,7 +961,7 @@
     <!-- Dashboard JS -->
     <script src="../assets/js/loading.js"></script>
     <script src="../assets/js/theme.js"></script>
-    <script src="../assets/js/transition.js"></script>   
+    <script src="../assets/js/transition.js"></script>
     <script src="../assets/js/dashboard.js"></script>
 
 </body>
