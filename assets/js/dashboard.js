@@ -5,9 +5,7 @@
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    console.log(
-        "SecureSphere Dashboard initialized."
-    );
+    console.log("SecureSphere Dashboard initialized.");
 
 
     /* ======================================================
@@ -54,9 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("threatActivity");
 
     const recommendationElement =
-        document.getElementById(
-            "threatRecommendation"
-        );
+        document.getElementById("threatRecommendation");
 
     const scanElement =
         document.getElementById("lastScan");
@@ -68,31 +64,20 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("greeting");
 
     const dateTimeElement =
-        document.getElementById(
-            "currentDateTime"
-        );
+        document.getElementById("currentDateTime");
+
+    const newsList =
+        document.getElementById("cyberNewsList");
+
+    const newsUpdated =
+        document.getElementById("newsUpdated");
+
+    const newsLiveStatus =
+        document.querySelector(".news-live-status");
 
 
     /* ======================================================
-       VALUES
-    ====================================================== */
-
-    let threatsBlocked =
-        randomNumber(150, 190);
-
-    let passwordsChecked =
-        randomNumber(20, 60);
-
-    const securityTools = 8;
-
-    let securityScore =
-        randomNumber(85, 94);
-
-    let secondsSinceScan = 0;
-
-
-    /* ======================================================
-       RANDOM NUMBER
+       HELPER
     ====================================================== */
 
     function randomNumber(min, max) {
@@ -106,10 +91,72 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* ======================================================
-       THREATS
+       PERSISTENT DASHBOARD NUMBERS
+       
+       These values stay between page refreshes.
+    ====================================================== */
+
+    let threatsBlocked =
+        Number(
+            localStorage.getItem(
+                "secureSphereThreats"
+            )
+        ) || 1247;
+
+
+    let passwordsChecked =
+        Number(
+            localStorage.getItem(
+                "secureSpherePasswords"
+            )
+        ) || 386;
+
+
+    let securityScore =
+        Number(
+            localStorage.getItem(
+                "secureSphereScore"
+            )
+        ) || 91;
+
+
+    const securityTools = 8;
+
+
+    /* ======================================================
+       SAVE VALUES
+    ====================================================== */
+
+    function saveDashboardData() {
+
+        localStorage.setItem(
+            "secureSphereThreats",
+            threatsBlocked
+        );
+
+        localStorage.setItem(
+            "secureSpherePasswords",
+            passwordsChecked
+        );
+
+        localStorage.setItem(
+            "secureSphereScore",
+            securityScore
+        );
+
+    }
+
+
+    /* ======================================================
+       THREATS BLOCKED
     ====================================================== */
 
     function updateThreats() {
+
+        /*
+         * Simulated security telemetry for the dashboard.
+         * The value persists between page refreshes.
+         */
 
         const increase =
             randomNumber(0, 3);
@@ -127,21 +174,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (threatTrend) {
 
-            threatTrend.textContent =
-                increase > 0
-                    ? `+${increase} blocked recently`
-                    : "Monitoring threats";
+            if (increase > 0) {
+
+                threatTrend.textContent =
+                    `+${increase} blocked recently`;
+
+            } else {
+
+                threatTrend.textContent =
+                    "Monitoring threats...";
+
+            }
 
         }
+
+
+        saveDashboardData();
 
     }
 
 
     /* ======================================================
-       PASSWORDS
+       PASSWORDS CHECKED
     ====================================================== */
 
     function updatePasswords() {
+
+        /*
+         * Simulated password-analysis telemetry.
+         */
 
         const increase =
             randomNumber(0, 2);
@@ -159,18 +220,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (passwordTrend) {
 
-            passwordTrend.textContent =
-                increase > 0
-                    ? `+${increase} analyzed recently`
-                    : "Analyzer ready";
+            if (increase > 0) {
+
+                passwordTrend.textContent =
+                    `+${increase} analyzed recently`;
+
+            } else {
+
+                passwordTrend.textContent =
+                    "Analyzer ready";
+
+            }
 
         }
+
+
+        saveDashboardData();
 
     }
 
 
     /* ======================================================
-       TOOLS
+       SECURITY TOOLS
     ====================================================== */
 
     function updateTools() {
@@ -186,7 +257,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* ======================================================
-       UPTIME
+       SYSTEM UPTIME
     ====================================================== */
 
     function updateUptime() {
@@ -201,7 +272,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (uptimeElement) {
 
             uptimeElement.textContent =
-                uptime + "%";
+                `${uptime}%`;
 
         }
 
@@ -222,6 +293,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function updateSecurityScore() {
 
+        /*
+         * Small controlled movement so the score
+         * doesn't jump unrealistically.
+         */
+
         const change =
             randomNumber(-1, 1);
 
@@ -230,7 +306,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         securityScore =
             Math.max(
-                80,
+                82,
                 Math.min(
                     98,
                     securityScore
@@ -241,10 +317,20 @@ document.addEventListener("DOMContentLoaded", () => {
         if (scoreElement) {
 
             scoreElement.textContent =
-                securityScore + "%";
+                `${securityScore}%`;
 
         }
 
+
+        if (scoreMessage) {
+
+            scoreMessage.textContent =
+                `Security score currently stands at ${securityScore}%.`;
+
+        }
+
+
+        saveDashboardData();
 
         updateThreatLevel();
 
@@ -259,11 +345,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const risk =
             Math.max(
-                5,
+                4,
                 Math.min(
-                    45,
-                    100 - securityScore +
-                    randomNumber(-3, 3)
+                    40,
+                    100 -
+                    securityScore +
+                    randomNumber(-2, 2)
                 )
             );
 
@@ -271,12 +358,15 @@ document.addEventListener("DOMContentLoaded", () => {
         if (riskElement) {
 
             riskElement.textContent =
-                risk + "%";
+                `${risk}%`;
 
         }
 
 
-        if (securityScore >= 90) {
+        if (
+            securityScore >= 90 &&
+            threatLevelElement
+        ) {
 
             threatLevelElement.textContent =
                 "LOW";
@@ -285,8 +375,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 "badge bg-success fs-6";
 
 
-            threatMessageElement.textContent =
-                "Security environment is stable. No significant threats detected.";
+            if (threatMessageElement) {
+
+                threatMessageElement.textContent =
+                    "Security environment is stable. No significant threats detected.";
+
+            }
 
 
             if (activityElement) {
@@ -310,7 +404,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         }
 
-        else if (securityScore >= 80) {
+        else if (
+            securityScore >= 80 &&
+            threatLevelElement
+        ) {
 
             threatLevelElement.textContent =
                 "MEDIUM";
@@ -319,8 +416,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 "badge bg-warning text-dark fs-6";
 
 
-            threatMessageElement.textContent =
-                "Some security events require monitoring.";
+            if (threatMessageElement) {
+
+                threatMessageElement.textContent =
+                    "Some security events require monitoring.";
+
+            }
 
 
             if (activityElement) {
@@ -347,15 +448,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
         else {
 
-            threatLevelElement.textContent =
-                "HIGH";
+            if (threatLevelElement) {
 
-            threatLevelElement.className =
-                "badge bg-danger fs-6";
+                threatLevelElement.textContent =
+                    "HIGH";
+
+                threatLevelElement.className =
+                    "badge bg-danger fs-6";
+
+            }
 
 
-            threatMessageElement.textContent =
-                "Elevated security activity detected.";
+            if (threatMessageElement) {
+
+                threatMessageElement.textContent =
+                    "Elevated security activity detected.";
+
+            }
 
 
             if (activityElement) {
@@ -380,20 +489,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
         }
 
-
-        if (scoreMessage) {
-
-            scoreMessage.textContent =
-                `Security score currently stands at
-                 ${securityScore}%.`;
-
-        }
-
     }
 
 
     /* ======================================================
-       DATE / TIME
+       DATE & TIME
     ====================================================== */
 
     function updateDateTime() {
@@ -464,8 +564,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* ======================================================
-       LAST SCAN
+       LAST SECURITY SCAN
     ====================================================== */
+
+    let secondsSinceScan = 0;
+
 
     function updateScan() {
 
@@ -630,62 +733,200 @@ document.addEventListener("DOMContentLoaded", () => {
         text.textContent =
             tip.text;
 
-        action.textContent =
-            tip.action;
+        if (action) {
+            action.textContent =
+                tip.action;
+        }
 
-        category.textContent =
-            tip.category;
+        if (category) {
+            category.textContent =
+                tip.category;
+        }
 
-        number.textContent =
-            `TIP #${String(index + 1).padStart(2, "0")}`;
+        if (number) {
+            number.textContent =
+                `TIP #${String(index + 1).padStart(2, "0")}`;
+        }
 
-        updated.textContent =
-            "Updated just now";
+        if (updated) {
+            updated.textContent =
+                "Updated just now";
+        }
 
     }
 
 
     /* ======================================================
-       LIVE CYBER NEWS
-       CISA KEV FEED
+       LIVE CISA KEV NEWS
+       
+       Official CISA-maintained GitHub mirror.
+       This mirror is updated whenever CISA updates
+       the Known Exploited Vulnerabilities catalog.
     ====================================================== */
 
-    const CISA_FEED =
-        "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json";
+    const CISA_KEV_FEED =
+        "https://raw.githubusercontent.com/cisagov/kev-data/develop/known_exploited_vulnerabilities.json";
 
+
+    /* ======================================================
+       NEWS DATE
+    ====================================================== */
+
+    function formatNewsDate(date) {
+
+        if (!date) {
+            return "Recent";
+        }
+
+
+        return new Date(
+            date
+        ).toLocaleDateString(
+            undefined,
+            {
+                day: "2-digit",
+                month: "short",
+                year: "numeric"
+            }
+        );
+
+    }
+
+
+    /* ======================================================
+       NEWS SEVERITY
+    ====================================================== */
+
+    function getSeverity(item) {
+
+        const text =
+            (
+                `${item.vulnerabilityName || ""} ` +
+                `${item.shortDescription || ""}`
+            ).toLowerCase();
+
+
+        if (
+            text.includes("remote code execution") ||
+            text.includes("command injection") ||
+            text.includes("authentication bypass") ||
+            text.includes("sql injection")
+        ) {
+
+            return "HIGH";
+
+        }
+
+
+        return "EXPLOITED";
+
+    }
+
+
+    /* ======================================================
+       HTML ESCAPE
+    ====================================================== */
+
+    function escapeHTML(value) {
+
+        return String(value)
+            .replace(
+                /&/g,
+                "&amp;"
+            )
+            .replace(
+                /</g,
+                "&lt;"
+            )
+            .replace(
+                />/g,
+                "&gt;"
+            )
+            .replace(
+                /"/g,
+                "&quot;"
+            )
+            .replace(
+                /'/g,
+                "&#039;"
+            );
+
+    }
+
+
+    /* ======================================================
+       NEWS STATUS
+    ====================================================== */
+
+    function setNewsStatus(
+        live,
+        text
+    ) {
+
+        if (!newsLiveStatus) {
+            return;
+        }
+
+
+        const dot =
+            newsLiveStatus.querySelector(
+                ".live-dot"
+            );
+
+
+        if (live) {
+
+            newsLiveStatus.innerHTML = `
+                <span class="live-dot"></span>
+                Live Feed
+            `;
+
+        }
+
+        else {
+
+            newsLiveStatus.innerHTML = `
+                <span
+                    class="live-dot"
+                    style="
+                        background:#f0b900;
+                        box-shadow:0 0 10px rgba(240,185,0,.6);
+                    "
+                ></span>
+                ${text}
+            `;
+
+        }
+
+    }
+
+
+    /* ======================================================
+       LOAD CYBER NEWS
+    ====================================================== */
 
     async function loadCyberNews() {
-
-        const newsList =
-            document.getElementById(
-                "cyberNewsList"
-            );
-
-        const newsUpdated =
-            document.getElementById(
-                "newsUpdated"
-            );
-
 
         if (!newsList) {
             return;
         }
 
 
+        newsList.innerHTML = `
+            <div class="news-loading">
+                <div class="spinner-border spinner-border-sm"></div>
+                Fetching latest cybersecurity updates...
+            </div>
+        `;
+
+
         try {
-
-            newsList.innerHTML = `
-                <div class="news-loading">
-                    <div class="spinner-border spinner-border-sm"></div>
-                    Loading latest cybersecurity updates...
-                </div>
-            `;
-
 
             const response =
                 await fetch(
-                    CISA_FEED,
+                    CISA_KEV_FEED,
                     {
+                        method: "GET",
                         cache: "no-store"
                     }
                 );
@@ -694,7 +935,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (!response.ok) {
 
                 throw new Error(
-                    "CISA feed unavailable"
+                    `Feed request failed: ${response.status}`
                 );
 
             }
@@ -705,10 +946,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
             const vulnerabilities =
-                data.vulnerabilities || [];
+                Array.isArray(
+                    data.vulnerabilities
+                )
+                    ? data.vulnerabilities
+                    : [];
 
 
-            /* newest first */
+            if (!vulnerabilities.length) {
+
+                throw new Error(
+                    "No vulnerability data found."
+                );
+
+            }
+
+
+            /*
+             * Newest vulnerabilities first.
+             */
 
             vulnerabilities.sort(
                 (a, b) =>
@@ -728,15 +984,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 );
 
 
-            if (!latest.length) {
-
-                throw new Error(
-                    "No updates available"
-                );
-
-            }
-
-
             newsList.innerHTML =
                 latest.map(
                     (item, index) => {
@@ -751,6 +998,11 @@ document.addEventListener("DOMContentLoaded", () => {
                             getSeverity(
                                 item
                             );
+
+
+                        const cve =
+                            item.cveID ||
+                            "CVE";
 
 
                         return `
@@ -771,22 +1023,27 @@ document.addEventListener("DOMContentLoaded", () => {
                                     <h4>
                                         ${escapeHTML(
                                             item.vulnerabilityName ||
-                                            "Known Exploited Vulnerability"
+                                            cve
                                         )}
                                     </h4>
 
 
                                     <p>
-
                                         ${escapeHTML(
                                             item.shortDescription ||
-                                            "A vulnerability has been added to the CISA Known Exploited Vulnerabilities catalog."
+                                            "Known exploited vulnerability listed by CISA."
                                         )}
-
                                     </p>
 
 
                                     <div class="news-meta">
+
+                                        <span>
+                                            ${escapeHTML(
+                                                cve
+                                            )}
+                                        </span>
+
 
                                         <span>
                                             ${escapeHTML(
@@ -820,10 +1077,20 @@ document.addEventListener("DOMContentLoaded", () => {
             if (newsUpdated) {
 
                 newsUpdated.textContent =
-                    new Date().toLocaleString();
+                    `Updated ${new Date().toLocaleString()}`;
 
             }
 
+
+            setNewsStatus(
+                true,
+                "Live Feed"
+            );
+
+
+            console.log(
+                `CISA KEV: ${data.count || vulnerabilities.length} vulnerabilities loaded.`
+            );
 
         }
 
@@ -835,111 +1102,117 @@ document.addEventListener("DOMContentLoaded", () => {
             );
 
 
-            newsList.innerHTML = `
+            /*
+             * We do NOT pretend this is live data.
+             * Instead we show a useful fallback.
+             */
 
-                <div class="news-loading">
+            const fallbackNews = [
 
-                    <i class="bi bi-exclamation-circle"></i>
+                {
+                    cve: "CISA KEV",
+                    title:
+                        "Known Exploited Vulnerabilities",
+                    description:
+                        "The CISA Known Exploited Vulnerabilities catalog tracks vulnerabilities known to be exploited in real-world attacks.",
+                    type:
+                        "CISA Advisory"
+                },
 
-                    Unable to load the live CISA feed.
-                    Please try again later.
+                {
+                    cve: "PRIORITY",
+                    title:
+                        "Prioritize Known Exploited Vulnerabilities",
+                    description:
+                        "Security teams should prioritize remediation of vulnerabilities listed in the CISA KEV catalog.",
+                    type:
+                        "Threat Intelligence"
+                },
 
-                </div>
+                {
+                    cve: "PATCH",
+                    title:
+                        "Apply Vendor Security Updates",
+                    description:
+                        "Review affected products and apply available vendor patches or mitigations as soon as possible.",
+                    type:
+                        "Security Advisory"
+                }
 
-            `;
+            ];
+
+
+            newsList.innerHTML =
+                fallbackNews.map(
+                    (item, index) => `
+
+                        <article
+                            class="cyber-news-item"
+                        >
+
+                            <div class="news-number">
+                                ${String(
+                                    index + 1
+                                ).padStart(2, "0")}
+                            </div>
+
+
+                            <div class="news-content">
+
+                                <h4>
+                                    ${item.title}
+                                </h4>
+
+
+                                <p>
+                                    ${item.description}
+                                </p>
+
+
+                                <div class="news-meta">
+
+                                    <span>
+                                        ${item.cve}
+                                    </span>
+
+                                    <span>
+                                        CISA
+                                    </span>
+
+                                    <span class="severity">
+                                        ${item.type}
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+                    `
+                ).join("");
 
 
             if (newsUpdated) {
 
                 newsUpdated.textContent =
-                    "Feed unavailable";
+                    "Live feed temporarily unavailable";
 
             }
 
-        }
 
-    }
-
-
-    /* ======================================================
-       NEWS HELPERS
-    ====================================================== */
-
-    function formatNewsDate(date) {
-
-        if (!date) {
-            return "Recent";
-        }
-
-
-        return new Date(
-            date
-        ).toLocaleDateString(
-            undefined,
-            {
-                day: "2-digit",
-                month: "short",
-                year: "numeric"
-            }
-        );
-
-    }
-
-
-    function getSeverity(item) {
-
-        const name =
-            (
-                item.vulnerabilityName ||
-                ""
-            ).toLowerCase();
-
-
-        if (
-            name.includes("remote code") ||
-            name.includes("command injection") ||
-            name.includes("authentication")
-        ) {
-
-            return "HIGH";
-
-        }
-
-
-        return "EXPLOITED";
-
-    }
-
-
-    function escapeHTML(value) {
-
-        return String(value)
-            .replace(
-                /&/g,
-                "&amp;"
-            )
-            .replace(
-                /</g,
-                "&lt;"
-            )
-            .replace(
-                />/g,
-                "&gt;"
-            )
-            .replace(
-                /"/g,
-                "&quot;"
-            )
-            .replace(
-                /'/g,
-                "&#039;"
+            setNewsStatus(
+                false,
+                "Fallback"
             );
 
+        }
+
     }
 
 
     /* ======================================================
-       INITIALIZE
+       INITIALIZE DASHBOARD
     ====================================================== */
 
     updateThreats();
@@ -960,12 +1233,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     updateSecurityTip();
 
+    updateScan();
+
     loadCyberNews();
 
 
     /* ======================================================
-       LIVE UPDATES
+       LIVE UPDATE INTERVALS
     ====================================================== */
+
+    /*
+     * Threat telemetry
+     */
 
     setInterval(
         updateThreats,
@@ -973,11 +1252,19 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
 
+    /*
+     * Password analysis telemetry
+     */
+
     setInterval(
         updatePasswords,
         7000
     );
 
+
+    /*
+     * Security score
+     */
 
     setInterval(
         updateSecurityScore,
@@ -985,11 +1272,19 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
 
+    /*
+     * System uptime
+     */
+
     setInterval(
         updateUptime,
         15000
     );
 
+
+    /*
+     * Daily security tip
+     */
 
     setInterval(
         updateSecurityTip,
@@ -997,17 +1292,29 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
 
+    /*
+     * Date/time
+     */
+
     setInterval(
         updateDateTime,
         1000
     );
 
 
+    /*
+     * Greeting
+     */
+
     setInterval(
         updateGreeting,
         60000
     );
 
+
+    /*
+     * Last security scan timer
+     */
 
     setInterval(
         updateScan,
@@ -1016,10 +1323,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /*
-     * Refresh cyber updates every hour.
+     * CISA KEV refresh.
      *
-     * The source itself is updated by CISA,
-     * so this checks for newly published entries.
+     * The official CISA mirror is updated
+     * whenever the catalog changes.
      */
 
     setInterval(
