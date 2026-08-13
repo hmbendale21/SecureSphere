@@ -16,43 +16,114 @@ const categoryContainer =
 
 async function loadNews() {
 
-    const newsData =
-        await fetchNewsData();
+    try {
 
-    const gNews =
-        await fetchGNews();
+        console.log(
+            "Loading cybersecurity news..."
+        );
 
-    allArticles = removeDuplicateArticles([
+        // Get news from our Vercel serverless API
+        const response =
+            await fetchCyberNews();
 
-        ...newsData,
+        console.log(
+            "Cyber News API:",
+            response
+        );
 
-        ...gNews
 
-    ]);
+        if (
+            !response ||
+            !response.success
+        ) {
 
-    displayAllArticles(allArticles);
+            throw new Error(
+                response?.error ||
+                "Unable to load cybersecurity news"
+            );
 
-    createCategoryButtons();
+        }
 
-    updateBreakingNews();
 
-    updateStatistics();
+        // Get articles returned by Vercel
+        allArticles =
+            response.articles || [];
 
-    updateLastRefresh();
 
-    console.log("News Updated Successfully");
-    console.log("NewsData:", newsData);
+        console.log(
+            "Articles received:",
+            allArticles
+        );
 
-    console.log("GNews:", gNews);
 
-    console.log("All Articles:", allArticles);
+        // Remove duplicates
+        allArticles =
+            removeDuplicateArticles(
+                allArticles
+            );
 
-    console.table(
-        allArticles.map(article => ({
-            Title: article.title,
-            Category: article.category
-        }))
-    );
+
+        // Display articles
+        displayAllArticles(
+            allArticles
+        );
+
+
+        // Update page components
+        createCategoryButtons();
+
+        updateBreakingNews();
+
+        updateStatistics();
+
+        updateLastRefresh();
+
+
+        console.log(
+            `News Updated Successfully: ${allArticles.length} articles`
+        );
+
+    }
+
+    catch (error) {
+
+        console.error(
+            "News loading failed:",
+            error
+        );
+
+
+        if (newsContainer) {
+
+            newsContainer.innerHTML = `
+    
+                    <div class="col-12 text-center py-5">
+    
+                        <i class="bi bi-exclamation-triangle fs-1 text-warning"></i>
+    
+                        <h3 class="mt-3">
+                            Unable to Load Cyber News
+                        </h3>
+    
+                        <p class="text-secondary">
+                            The live cybersecurity news feed is temporarily unavailable.
+                        </p>
+    
+                        <button
+                            class="btn btn-primary mt-3"
+                            onclick="loadNews()"
+                        >
+                            <i class="bi bi-arrow-clockwise"></i>
+                            Try Again
+                        </button>
+    
+                    </div>
+    
+                `;
+
+        }
+
+    }
 }
 
 function displayAllArticles(articles) {
@@ -153,19 +224,17 @@ function displayAllArticles(articles) {
                     <button
                     class="bookmark-btn ${isBookmarked(article.url) ? 'saved' : ''}"
                     onclick="toggleBookmark(${index})"                
-                    <i class="bi ${
-                        isBookmarked(article.url)
-                            ? "bi-bookmark-fill"
-                            : "bi-bookmark"
-                    }"></i>
+                    <i class="bi ${isBookmarked(article.url)
+                ? "bi-bookmark-fill"
+                : "bi-bookmark"
+            }"></i>
                 
                     <span>
                 
-                        ${
-                            isBookmarked(article.url)
-                                ? "Saved"
-                                : "Save"
-                        }
+                        ${isBookmarked(article.url)
+                ? "Saved"
+                : "Save"
+            }
                 
                     </span>
                 
@@ -524,7 +593,7 @@ function removeDuplicateArticles(articles) {
       Bookmark System
 ========================================== */
 
-function toggleBookmark(index){
+function toggleBookmark(index) {
 
     const article = allArticles[index];
 
@@ -540,7 +609,7 @@ function toggleBookmark(index){
 
     );
 
-    if(exists){
+    if (exists) {
 
         bookmarks = bookmarks.filter(
 
@@ -552,7 +621,7 @@ function toggleBookmark(index){
 
     }
 
-    else{
+    else {
 
         bookmarks.push(article);
 
@@ -572,7 +641,7 @@ function toggleBookmark(index){
 
 }
 
-function isBookmarked(url){
+function isBookmarked(url) {
 
     const bookmarks = JSON.parse(
 
@@ -591,7 +660,7 @@ function isBookmarked(url){
       Toast Notification
 ========================================== */
 
-function showToast(message){
+function showToast(message) {
 
     const toast =
         document.getElementById("toastNotification");
@@ -603,10 +672,10 @@ function showToast(message){
 
     toast.classList.add("show");
 
-    setTimeout(()=>{
+    setTimeout(() => {
 
         toast.classList.remove("show");
 
-    },3000);
+    }, 3000);
 
 }
